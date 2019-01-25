@@ -1,0 +1,36 @@
+Flask 开发笔记
+
+安装虚拟环境
+python3 -m venv venv
+source venv/bin/active
+
+安装flask
+pip install flask
+
+启动服务
+export FLASK_APP=start.py
+export FLASK_DEBUG=1
+flask run --host 0.0.0.0
+
+
+安装PySerial包
+参考文档
+https://pyserial.readthedocs.io/en/latest/pyserial.html
+pip install pyserial
+
+安装Bootstrap
+pip install flask-bootstrap
+
+安装Flask-WTF
+pip install flask-wtf
+
+
+安装数据库
+pip install flask-sqlalchemy
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+{% extends "bootstrap/base.html" %}
+#{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %} Smart Home {% endblock %}
+
+{% block head %}
+	{{ super() }}
+{% endblock %}
+
+
+
+
+{% block body %} 
+	<h1>Smart Home</h1>
+
+	{{ wtf.quick_form(form) }}
+	
+	<div class="container">
+	
+		{% for message in get_flashed_messages() %}
+
+		<div class="alert alert-warning">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			{{ message }}
+		</div>	
+		{% endfor %}
+	</div>
+	
+
+	<button type="button" class="btn btn-secondary btn-lg">关</button>
+ {% endblock %}

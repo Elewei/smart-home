@@ -23,18 +23,30 @@ def index():
     return render_template('index.html', form=form, message = session.get('message'))
 
 
-def move_forward():
-    #Moving forward code
-    message = "Moving Forward..."
+def device_registry():
+    #Device Register
+    message = "Device Register"
+    # Step 1 Open the serial port
     s = serial.Serial('/dev/ttyAMA0',230400)
-    d=bytes.fromhex('10 11 12 34 3f')
+    # Device Register
+    # 55 AA code Stands for dispatching fix head
+    # C0 code stands for disapching default frequency
+    # 02 code stands for data length
+    # FF FF code stands for Lora ID
+    d=bytes.fromhex('55 AA C0 02 FF FF')
     s.write(d)
+    # return Code 57 AB C0 01 00
+    # 57 AB stands for upload fix head
+    # C0 code stands for set default frequency
+    # 01 code stands data length
+    # 00 code stands frequence Success
+    # FF code stands frequence Failed
+    line = s.read(5)
+    print(line)
+
     s.close()
-    print(message)
-    return d
-
-
-
+    print(line)
+    return line
 
 
 class NameForm(FlaskForm):

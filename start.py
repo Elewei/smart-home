@@ -21,6 +21,7 @@ def index():
 
     if form.validate_on_submit():
         two_switch_on()
+        get_status()
         #session['message'] = message_host_fre
         #flash(session.get('message'))
         return redirect(url_for('index'))
@@ -176,6 +177,37 @@ def two_switch_off():
 
 
 
+def get_status():
+    s = serial.Serial('/dev/ttyAMA0',230400)
+    s.timeout = 3
+
+    # Open the switch
+    # 01 01 stands for HostID
+    # BB stands for Control Code
+    # 21 stands for two switch code
+    # 13 stands for LoraID
+    # 02 stands for sub Device ID
+    # 00 stands on
+    d = bytes.fromhex('01 01 AA 21 13 02 01 02')
+    s.write(d)
+
+    # return Value 01 01 cc 21 13
+    # 01 01 code Stands for LoraID
+    # cc Stands for code Set Device ID
+    # 21 code stands for 2 touch switch
+    # 13 code stands for DeviceID
+    reading = s.read(10)
+    reading_str = ''.join(['%02x ' % b for b in reading])
+    # TODO:  Verity it is success
+    print(reading_str)
+
+
+    s.close()
+    return reading_str
+
+
+
+
 
 
 class NameForm(FlaskForm):
@@ -188,4 +220,5 @@ if __name__ == '__main__':
     message_registry = device_registry()
     message_device_id = set_device_id()
     message_host_fre = change_host_fre()
-    app.run()
+    app.debug = True
+    app.run(host='0.0.0.0')

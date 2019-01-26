@@ -21,7 +21,7 @@ def index():
         message_registry = device_registry()
         message_device_id = set_device_id()
         message_host_fre = change_host_fre()
-
+        two_switch_on()
         session['message'] = message_host_fre
         flash(session.get('message'))
         return redirect(url_for('index'))
@@ -105,6 +105,66 @@ def change_host_fre():
 
     s.close()
     return reading_str
+
+
+
+def two_switch_on():
+    s = serial.Serial('/dev/ttyAMA0',230400)
+    s.timeout = 3
+    # Open the switch
+    # 01 01 stands for HostID
+    # BB stands for Control Code
+    # 21 stands for two switch code
+    # 13 stands for LoraID
+    # 02 stands for sub Device ID
+    # 00 stands on
+    d = bytes.fromhex('01 01 BB 21 13 02 00')
+    s.write(d)
+
+    # return Value 01 01 cc 21 13
+    # 01 01 code Stands for LoraID
+    # cc Stands for code Set Device ID
+    # 21 code stands for 2 touch switch
+    # 13 code stands for DeviceID
+    reading = s.read(10)
+    reading_str = ''.join(['%02x ' % b for b in reading])
+    # TODO:  Verity it is success
+    print(reading_str)
+
+
+    s.close()
+    return reading_str
+
+
+
+def two_switch_off():
+    s = serial.Serial('/dev/ttyAMA0',230400)
+    s.timeout = 3
+
+    # Open the switch
+    # 01 01 stands for HostID
+    # BB stands for Control Code
+    # 21 stands for two switch code
+    # 13 stands for LoraID
+    # 02 stands for sub Device ID
+    # 00 stands on
+    d = bytes.fromhex('01 01 BB 21 13 02 01')
+    s.write(d)
+
+    # return Value 01 01 cc 21 13
+    # 01 01 code Stands for LoraID
+    # cc Stands for code Set Device ID
+    # 21 code stands for 2 touch switch
+    # 13 code stands for DeviceID
+    reading = s.read(10)
+    reading_str = ''.join(['%02x ' % b for b in reading])
+    # TODO:  Verity it is success
+    print(reading_str)
+
+
+    s.close()
+    return reading_str
+
 
 
 

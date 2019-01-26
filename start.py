@@ -19,8 +19,8 @@ def index():
     form = NameForm()
     if form.validate_on_submit():
     	#message_registry = device_registry()
-        message_device_id = set_device_id()
-    	session['message'] = message_device_id
+        #message_device_id = set_device_id()
+    	session['message'] = set_device_id()
     	flash(message)
     	return redirect(url_for('index'))
     return render_template('index.html', form=form, message = session.get('message'))

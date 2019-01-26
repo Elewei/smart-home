@@ -38,8 +38,7 @@ def device_registry():
     d = bytes.fromhex('55 AA C0 02 FF FF')
     s.write(d)
 
-    reading = s.read(6)
-    reading_hex = bytes.fromhex(reading)
+    reading = s.read(6).decode('hex')
     # return Code 57 AB C0 01 00
     # 57 AB stands for upload fix head
     # C0 code stands for set default frequency
@@ -48,7 +47,7 @@ def device_registry():
     # FF code stands frequence Failed
 
     s.close()
-    return reading_hex
+    return reading
 
 
 

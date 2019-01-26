@@ -17,14 +17,21 @@ bootstrap = Bootstrap(app)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form = NameForm()
+    close = CloseForm()
+
     if form.validate_on_submit():
-        message_registry = device_registry()
-        message_device_id = set_device_id()
-        message_host_fre = change_host_fre()
         two_switch_on()
-        session['message'] = message_host_fre
-        flash(session.get('message'))
+        #session['message'] = message_host_fre
+        #flash(session.get('message'))
         return redirect(url_for('index'))
+
+    if close.validate_on_submit():
+        two_switch_off()
+        #session['message'] = message_host_fre
+        #flash(session.get('message'))
+        return redirect(url_for('index'))
+
+
 
     return render_template('index.html', form=form, message = session.get('message'))
 
@@ -174,7 +181,11 @@ def two_switch_off():
 class NameForm(FlaskForm):
     submit = SubmitField('Open')
 
-
+class CloseForm(FlaskForm):
+    submit = SubmitField('Close')
 
 if __name__ == '__main__':
+    message_registry = device_registry()
+    message_device_id = set_device_id()
+    message_host_fre = change_host_fre()
     app.run()

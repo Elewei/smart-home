@@ -23,8 +23,8 @@ def index():
         message_host_fre = change_host_fre()
 
         session['message'] = message_host_fre
-    	flash(session.get('message'))
-    	return redirect(url_for('index'))
+        flash(session.get('message'))
+        return redirect(url_for('index'))
 
     return render_template('index.html', form=form, message = session.get('message'))
 

@@ -18,8 +18,9 @@ bootstrap = Bootstrap(app)
 def index():
     form = NameForm()
     if form.validate_on_submit():
-    	message = device_registry()
-    	session['message'] = message
+    	#message_registry = device_registry()
+        message_device_id = set_device_id()
+    	session['message'] = message_device_id
     	flash(message)
     	return redirect(url_for('index'))
     return render_template('index.html', form=form, message = session.get('message'))
@@ -50,6 +51,25 @@ def device_registry():
     s.close()
     return reading_str
 
+
+def set_device_id():
+    s = serial.Serial('/dev/ttyAMA0',230400)
+
+    # Set Device 0xff  0xff  0xcc  0x21  0x13 0x02  0x01  0x01
+    # FF FF code Stands for dispatching fix head
+    # CC code stands for Set Device ID
+    # 21 code stands for 2 touch switch
+    # 13 code stands for DeviceID
+    # 02 code stands for Data length
+    #01 01 code stands for LoraID
+    d = bytes.fromhex('ff ff cc 21 13 02 01 01')
+    s.write(d)
+
+    reading = s.read(6)
+    reading_str = ''.join(['%02x ' % b for b in reading])
+
+    s.close()
+    return reading_str
 
 
 

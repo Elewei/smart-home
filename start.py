@@ -18,10 +18,11 @@ bootstrap = Bootstrap(app)
 def index():
     form = NameForm()
     if form.validate_on_submit():
-    	#message_registry = device_registry()
-        #message_device_id = set_device_id()
-    	session['message'] = set_device_id()
-    	flash(message)
+    	message_registry = device_registry()
+        message_device_id = set_device_id()
+        message_host_fre = change_host_fre()
+    	session['message'] = message_host_fre
+    	flash(session.get('message'))
     	return redirect(url_for('index'))
     return render_template('index.html', form=form, message = session.get('message'))
 
@@ -31,6 +32,7 @@ def device_registry():
     message = "Device Register"
     # Step 1 Open the serial port
     s = serial.Serial('/dev/ttyAMA0',230400)
+    s.timeout = 3
     # Device Register
     # 55 AA code Stands for dispatching fix head
     # C0 code stands for disapching default frequency
@@ -41,6 +43,7 @@ def device_registry():
 
     reading = s.read(6)
     reading_str = ''.join(['%02x ' % b for b in reading])
+    print(reading_str)
     # return Code 57 AB C0 01 00
     # 57 AB stands for upload fix head
     # C0 code stands for set default frequency
@@ -54,7 +57,7 @@ def device_registry():
 
 def set_device_id():
     s = serial.Serial('/dev/ttyAMA0',230400)
-
+    s.timeout = 3
     # Set Device 0xff  0xff  0xcc  0x21  0x13 0x02  0x01  0x01
     # FF FF code Stands for dispatching fix head
     # CC code stands for Set Device ID
@@ -65,11 +68,44 @@ def set_device_id():
     d = bytes.fromhex('ff ff cc 21 13 02 01 01')
     s.write(d)
 
-    reading = s.read(6)
+    # return Value 01 01 cc 21 13
+    # 01 01 code Stands for LoraID
+    # cc Stands for code Set Device ID
+    # 21 code stands for 2 touch switch
+    # 13 code stands for DeviceID
+    reading = s.read(10)
     reading_str = ''.join(['%02x ' % b for b in reading])
+    # TODO:  Verity it is success
+    print(reading_str)
+
 
     s.close()
     return reading_str
+
+
+def change_host_fre():
+    s = serial.Serial('/dev/ttyAMA0',230400)
+    s.timeout = 3
+
+    d = bytes.fromhex('55 AA C1 02 01 01')
+    s.write(d)
+
+    # return Value 01 01 cc 21 13
+    # 01 01 code Stands for LoraID
+    # cc Stands for code Set Device ID
+    # 21 code stands for 2 touch switch
+    # 13 code stands for DeviceID
+    reading = s.read(10)
+    reading_str = ''.join(['%02x ' % b for b in reading])
+    # TODO:  Verity it is success
+    print(reading_str)
+
+
+    s.close()
+    return reading_str
+
+
+
 
 
 

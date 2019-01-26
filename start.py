@@ -25,23 +25,11 @@ def index():
     return render_template('index.html', form=form, message = session.get('message'))
 
 
-def handle_data(data):
-    print(data)
-
-def read_from_port(ser):
-    while True:
-       print("test")
-       reading = ser.read(6)
-       handle_data(reading)
-
-
 def device_registry():
     #Device Register
     message = "Device Register"
     # Step 1 Open the serial port
     s = serial.Serial('/dev/ttyAMA0',230400)
-    thread = threading.Thread(target=read_from_port, args=(s,))
-    thread.start()
     # Device Register
     # 55 AA code Stands for dispatching fix head
     # C0 code stands for disapching default frequency
@@ -50,7 +38,7 @@ def device_registry():
     d = bytes.fromhex('55 AA C0 02 FF FF')
     s.write(d)
 
-
+    reading = ser.read(6)
     # return Code 57 AB C0 01 00
     # 57 AB stands for upload fix head
     # C0 code stands for set default frequency
@@ -59,8 +47,7 @@ def device_registry():
     # FF code stands frequence Failed
 
     s.close()
-    thread.stop()
-    return d
+    return reading
 
 
 

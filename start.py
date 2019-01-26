@@ -63,8 +63,7 @@ def device_registry():
     # FF code stands frequence Failed
 
     s.close()
-    print(line)
-    return line
+    return d
 
 
 

@@ -28,9 +28,12 @@ def move_forward():
 
 
 
+
+
 class NameForm(FlaskForm):
     submit = SubmitField('Open')
 
 
 
-
+if __name__ == '__main__':
+    app.run()

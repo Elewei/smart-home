@@ -18,6 +18,10 @@ flask run --host 0.0.0.0
 https://pyserial.readthedocs.io/en/latest/pyserial.html
 pip install pyserial
 
+sudo apt-get install minicom
+sudo minicom -D /dev/ttyAMA0 -b 230400
+
+
 安装Bootstrap
 pip install flask-bootstrap
 
@@ -27,10 +31,3 @@ pip install flask-wtf
 
 安装数据库
 pip install flask-sqlalchemy
-
-
-
-
-
-
-

@@ -3,6 +3,9 @@ from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
+import serial
+import string
+import binascii
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "smart home"
@@ -15,7 +18,7 @@ def index():
     if form.validate_on_submit():
     	message = move_forward()
     	session['message'] = message
-    	flash('Successed!')
+    	flash(message)
     	return redirect(url_for('index'))
     return render_template('index.html', form=form, message = session.get('message'))
 
@@ -23,8 +26,12 @@ def index():
 def move_forward():
     #Moving forward code
     message = "Moving Forward..."
+    s = serial.Serial('/dev/ttyAMA0',230400)
+    d=bytes.fromhex('10 11 12 34 3f')
+    s.write(d)
+    s.close()
     print(message)
-    return message
+    return d
 
 
 

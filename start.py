@@ -31,7 +31,7 @@ def handle_data(data):
 def read_from_port(ser):
     while True:
        print("test")
-       reading = ser.readline().decode()
+       reading = ser.read(6)
        handle_data(reading)
 
 
@@ -59,6 +59,7 @@ def device_registry():
     # FF code stands frequence Failed
 
     s.close()
+    thread.stop()
     return d
 
 

@@ -191,11 +191,14 @@ def get_status():
     d = bytes.fromhex('01 01 AA 21 13 02 01 02')
     s.write(d)
 
-    # return Value 01 01 cc 21 13
+    # return Value 01 01 aa 21 13 04 01 01 02 00
     # 01 01 code Stands for LoraID
-    # cc Stands for code Set Device ID
+    # aa Stands for code get status
     # 21 code stands for 2 touch switch
     # 13 code stands for DeviceID
+    # 04 Data length
+    # 01 01 (0) stands for close
+    # 02 00 (1)
     reading = s.read(10)
     reading_str = ''.join(['%02x ' % b for b in reading])
     # TODO:  Verity it is success

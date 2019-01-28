@@ -3,6 +3,7 @@ import os
 from flask import Flask
 from . import db
 from . import switch
+from . import main
 
 def create_app(test_config=None):
     # create and configure the app
@@ -27,10 +28,17 @@ def create_app(test_config=None):
 
     db.init_app(app)
     app.register_blueprint(switch.bp)
+    app.register_blueprint(main.bp)
 
     # a simple page that says hello
     @app.route('/hello')
     def hello():
         return 'Hello, World!'
+
+    # make url_for('index') == url_for('blog.index')
+    # in another app, you might define a separate main index here with
+    # app.route, while giving the blog blueprint a url_prefix, but for
+    # the tutorial the blog will be the main index
+    app.add_url_rule('/', endpoint=main.index)
 
     return app

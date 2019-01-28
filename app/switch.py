@@ -1,11 +1,11 @@
 import functools
-import import serial
+import serial
 
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
 from werkzeug.security import check_password_hash, generate_password_hash
-from flaskr.db import get_db
+from app.db import get_db
 from . import packet
 
 bp = Blueprint('switch', __name__, url_prefix='/switch')
@@ -66,5 +66,5 @@ def device_registry():
     # 00 code stands frequence Success
     # FF code stands frequence Failed
 
-    s.close()
+    ser.close()
     return reading_str

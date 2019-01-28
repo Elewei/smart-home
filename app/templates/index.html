@@ -1,1 +1,17 @@
-<h1>Smart Home</h1>
+{% extends 'base.html' %}
+
+{% block title %}主页{% endblock %}
+
+
+
+
+{% block body %}
+	<h1>body Here</h1>
+{% endblock %}
+
+
+
+
+{% block script %}
+  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+{% endblock %}

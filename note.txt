@@ -8,7 +8,7 @@ source venv/bin/active
 pip install flask
 
 启动服务
-export FLASK_APP=start.py
+export FLASK_APP=app
 export FLASK_DEBUG=1
 flask run --host 0.0.0.0
 

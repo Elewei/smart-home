@@ -1,10 +1,27 @@
-<!doctype html>
-<title>{% block title %}{% endblock %} - 智能家居</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+		<!--  Custom heads -->
+		{% block head %}{% endblock %}
+		
+		<title>{% block title %}{% endblock %} - 智能家居</title>
+	</head>
+	
+	<body>
+		{% block body %}{% endblock %}
 
 
-{% block body %}{% endblock %}
+		<!-- Optional JavaScript -->
+		{% block script %}{% endblock %}
+		<script src="{{ url_for('static', filename='js/popper.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+  		<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	</body>
+</html>
 
-{% block script %}{% endblock %}

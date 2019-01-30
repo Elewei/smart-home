@@ -10,52 +10,65 @@
 
 {% block title %}主页{% endblock %}
 
-
-
-
 {% block body %}
 
+	<div class="main">
+	    <div class="wrap">
+	        <div class="top">
 
+	        </div>
 
+	        <div class="header">
+	        	<ul>
+		        	<li>
+		        		<a href="#">
+		        			<img src="{{ url_for('static', filename='img/smart_control.png') }}">
+		        		</a>
+		        	</li>
+		        	<li>
+		        		<a href="#">
+		        			<img src="{{ url_for('static', filename='img/manage_entry.png') }}">
+		        		</a>
+		        	</li>
+		        	<li>
+		        		<a href="#">
+		        			<img src="{{ url_for('static', filename='img/set_guide.png') }}">
+		        		</a>
+		        	</li>
+		        	<li>
+		        		<a href="#">
+		        			<img src="{{ url_for('static', filename='img/other.png') }}">
+		        		</a>
+		        	</li>
+	        	</ul>
+	        </div>
 
-	    <div class="main">
-	        <div class="wrap">
-	            <div class="top">
+	        <div class="content">
+	            <div class="first">
 
 	            </div>
+	            <div class="second">
+	                <div class="second-one">
 
-	            <div class="header">
+	                </div>
+	                <div class="second-two">
 
+	                </div>
 	            </div>
-
-	            <div class="content">
-	                <div class="first">
-
-	                </div>
-	                <div class="second">
-	                    <div class="second-one">
-
-	                    </div>
-	                    <div class="second-two">
-
-	                    </div>
-	                </div>
-	                <div class="third">
-	                    <div class="third-one">
-
-	                    </div>
-	                    <div class="third-two">
-
-	                    </div>
-	                </div>
-	                <div class="fourth">
+	            <div class="third">
+	                <div class="third-one">
 
 	                </div>
+	                <div class="third-two">
+
+	                </div>
+	            </div>
+	            <div class="fourth">
+
 	            </div>
 	        </div>
 	    </div>
-
-
+	</div>
 
 {% endblock %}
 

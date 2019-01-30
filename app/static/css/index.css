@@ -1,8 +1,40 @@
-.body {
-	background-color: yellow;
+#main-panel {
+  background-color: green;
+  height: 500px;
+
 }
 
-.content {
-	background: grey;
+#home-manage {
+  background-color: grey;
+  height: 500px;
+  vertical-align:middle;
+}
 
+#device-manage {
+  background-color: grey;
+  height: 245px;
+}
+
+#device-class {
+  background-color: grey;
+  height: 245px;
+  margin-top: 10px;
+
+}
+
+#scene-manage {
+  background-color: grey;
+  height: 245px;
+}
+
+#gateway-class {
+  background-color: grey;
+  height: 245px;
+  margin-top: 10px;
+
+}
+
+#free-group {
+  background-color: grey;
+  height: 500px;
 }

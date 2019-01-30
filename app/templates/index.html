@@ -2,14 +2,19 @@
 
 {% block head %}
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+
+
 {% endblock %}
+
+
 {% block title %}主页{% endblock %}
 
 
 
 
 {% block body %}
-	
+
 	<div class="container-fluid">
 		<!-- 标题 -->
 		<div class="container">
@@ -17,11 +22,11 @@
 		    	<div class="col">
 		      		<a href="#"><p>智能控制</p></a>
 		    	</div>
-		    	
+
 		    	<div class="col">
 		      		<a href="#"><p>管理入口</p></a>
 		    	</div>
-		    	
+
 		    	<div class="col">
 		      		<a href="#"><p>设置向导</p></a>
 		    	</div>
@@ -33,40 +38,40 @@
 		</div>
 
 
+		<div id="main-panel" class="container">
+				<div class="row">
+					<div id="home-manage" class="col border" style="vertical-align: middle;display: table-cell;">
+							<p>家庭管理</p>
+					</div>
 
-		<div class="container">
-	  		<div class="row mx-lg-n5">
-		    	<div class="col border bg-light ">
-		      		家庭管理
-		    	</div>
-		    	
-		    	<div class="col border bg-light">
-		      		<div class = "row">
-		      			设备管理
-		      		</div>
+					<div class="col">
+							<div id="device-manage" class = "row">
+								设备管理
+							</div>
 
-		      		<div class = "row border">
-		      			设备分类
-		      		</div>
-		    	</div>
-		    	
-		    	<div class="col border bg-light">
-		      		<div class = "row border">
-		      			情景管理
-		      		</div>
+							<div id="device-class" class = "row">
+								设备分类
+							</div>
+					</div>
 
-		      		<div class = "row border">
-		      			网关管理
-		      		</div>
-		    	</div>
+					<div class="col border">
+							<div id="scene-manage" class = "row border">
+								情景管理
+							</div>
 
-		    	<div class="col border bg-light">
-		      		自由组合
-		    	</div>
+							<div id="gateway-class" class = "row border">
+								网关管理
+							</div>
+					</div>
 
-		  	</div>
+					<div id="free-group" class="col border">
+							自由组合
+					</div>
 
-		</div>		
+				</div>
+
+		</div>
+
 
 	</div>
 

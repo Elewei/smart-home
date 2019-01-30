@@ -1,40 +1,99 @@
-#main-panel {
-  background-color: green;
-  height: 500px;
-
+*{
+    padding: 0;
+    margin: 0;
+}
+.clearfix:after{
+    content: "020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
 }
 
-#home-manage {
-  background-color: grey;
-  height: 500px;
-  vertical-align:middle;
+.clearfix {
+    zoom: 1;
 }
-
-#device-manage {
-  background-color: grey;
-  height: 245px;
+body,html{
+    width: 100%;
+    height: 100%;
 }
-
-#device-class {
-  background-color: grey;
-  height: 245px;
-  margin-top: 10px;
+.main{
+    width: 100%;
+    height: 100%;
+    background: #1558BB;
 
 }
-
-#scene-manage {
-  background-color: grey;
-  height: 245px;
+.wrap{
+    width: 100%;
+    height: 100%;
+    max-width: 1160px;
+    margin:0 auto;
+    padding-top: 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
-
-#gateway-class {
-  background-color: grey;
-  height: 245px;
-  margin-top: 10px;
-
+.top{
+    height: 65px;
+    background: indianred;
 }
-
-#free-group {
-  background-color: grey;
-  height: 500px;
+.header{
+    height: 65px;
+    background: pink;
+    margin-top: 25px;
+}
+.content{
+    margin-top: 25px;
+    width: 100%;
+}
+.first{
+    width: 25%;
+    height: 420px;
+    background: #5ED020;
+    float: left;
+}
+.second{
+    width: calc(25% - 10px);
+    margin-left: 10px;
+    float: left;
+}
+.second-one{
+    width: 100%;
+    height: 205px;
+    background: #198cdf;
+}
+.second-two{
+    width: 100%;
+    height: 205px;
+    background: #51c4f1;
+    margin-top: 10px;
+}
+.second{
+    width: calc(25% - 15px);
+    margin-left: 10px;
+    margin-right: 5px;
+    float: left;
+}
+.third{
+    width: calc(25% - 15px);
+    margin-left: 5px;
+    margin-right: 10px;
+    float: left;
+}
+.third-one{
+    width: 100%;
+    height: 205px;
+    background: #b7c500;
+}
+.third-two{
+    width: 100%;
+    height: 205px;
+    background: #f680e1;
+    margin-top: 10px;
+}
+.fourth{
+    width: 25%;
+    height: 420px;
+    background: #ffbc01;
+    float: left;
 }

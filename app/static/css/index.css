@@ -64,9 +64,13 @@ li {
 .first{
     width: 25%;
     height: 420px;
-    background: #5ED020;
     float: left;
 }
+
+.first img {
+  width: 100%;
+}
+
 .second{
     width: calc(25% - 10px);
     margin-left: 10px;

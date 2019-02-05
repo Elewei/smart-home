@@ -15,59 +15,377 @@
 	<div class="main">
 	    <div class="wrap">
 	        <div class="top">
-
+						<div class="user-home">
+							<img src="{{ url_for('static', filename='img/avator.png') }}" alt="头像">
+							<p>启卫的家</p>
+						</div>
+						<div class="show-header">
+							<p>管理入口</p>
+						</div>
+						<div class="wifi">
+							<img src="{{ url_for('static', filename='img/wifi-strong.png') }}" alt="wifi信号">
+						</div>
+						<div class="show-date">
+							<p><span class="date" style="font-size: 24px;">2019年01月01号</span><br><span class="lunar" style="font-size: 17px;">甲午【马】年六月二十</span></p>
+						</div>
+						<div class="show-time">
+							<p>22:45</p>
+						</div>
+						<div class="weather">
+							<p><span>18℃-30℃</span><br><span>多云转晴 苏州</span></p>
+							<img src="{{ url_for('static', filename='img/duoyun.png') }}" alt="天气图标">
+						</div>
 	        </div>
 
 	        <div class="header">
-	        	<ul>
-		        	<li>
-		        		<a href="#">
-		        			<img src="{{ url_for('static', filename='img/smart_control.png') }}">
-		        		</a>
-		        	</li>
-		        	<li>
-		        		<a href="#">
-		        			<img src="{{ url_for('static', filename='img/manage_entry.png') }}">
-		        		</a>
-		        	</li>
-		        	<li>
-		        		<a href="#">
-		        			<img src="{{ url_for('static', filename='img/set_guide.png') }}">
-		        		</a>
-		        	</li>
-		        	<li>
-		        		<a href="#">
-		        			<img src="{{ url_for('static', filename='img/other.png') }}">
-		        		</a>
-		        	</li>
-	        	</ul>
+						<div class="smart-control hide">
+							<a href="#">
+								<img src="{{ url_for('static', filename='img/smart_control.png') }}">
+							</a>
+						</div>
+
+						<div class="smart-control-on">
+							<a href="#">
+								<img src="{{ url_for('static', filename='img/smart_control_on.png') }}">
+							</a>
+						</div>
+
+						<div class="manage-entry">
+							<a href="#">
+								<img src="{{ url_for('static', filename='img/manage_entry.png') }}">
+							</a>
+						</div>
+
+						<div class="manage-entry-on hide">
+							<a href="#">
+								<img src="{{ url_for('static', filename='img/manage_entry_on.png') }}">
+							</a>
+						</div>
+
+						<div class="set-guide">
+							<a href="#">
+								<img src="{{ url_for('static', filename='img/set_guide.png') }}">
+							</a>
+						</div>
+
+						<div class="set-guide-on hide">
+							<a href="#">
+								<img src="{{ url_for('static', filename='img/set_guide_on.png') }}">
+							</a>
+						</div>
+
+						<div class="other">
+							<a href="#">
+								<img src="{{ url_for('static', filename='img/other.png') }}">
+							</a>
+						</div>
+
+						<div class="other-on hide">
+							<a href="#">
+								<img src="{{ url_for('static', filename='img/other_on.png') }}">
+							</a>
+						</div>
+
 	        </div>
 
-	        <div class="content">
-	            <div class="first">
+	        <div class="smart-control-content hide">
+	            <div class="first scene-control">
 								<img src="{{ url_for('static', filename='img/scene-control.png') }}">
 	            </div>
 	            <div class="second">
-	                <div class="second-one">
+	                <div class="second-one room-control">
 									  <img src="{{ url_for('static', filename='img/room-control.png') }}">
 	                </div>
 
-									<div class="second-two">
+									<div class="second-two independant-control">
 										<img src="{{ url_for('static', filename='img/independant-control.png') }}">
 	                </div>
 	            </div>
 	            <div class="third">
-	                <div class="third-one">
+	                <div class="third-one time-control">
 										<img src="{{ url_for('static', filename='img/time-control.png') }}">
 	                </div>
-	                <div class="third-two">
+	                <div class="third-two voice-control">
 										<img src="{{ url_for('static', filename='img/voice-control.png') }}">
 	                </div>
 	            </div>
-	            <div class="fourth">
+	            <div class="fourth home-monitor">
 								<img src="{{ url_for('static', filename='img/home-monitor.png') }}">
 	            </div>
 	        </div>
+
+					<div class="manage-entry-content hide">
+							<div class="first">
+								<img src="{{ url_for('static', filename='img/home_manage.png') }}">
+							</div>
+
+							<div class="second">
+									<div class="second-one">
+										<img src="{{ url_for('static', filename='img/device_manage.png') }}">
+									</div>
+
+									<div class="second-two">
+										<img src="{{ url_for('static', filename='img/device_class.png') }}">
+									</div>
+							</div>
+
+							<div class="third">
+									<div class="third-one">
+										<img src="{{ url_for('static', filename='img/scene_manage.png') }}">
+									</div>
+									<div class="third-two">
+										<img src="{{ url_for('static', filename='img/gateway_manage.png') }}">
+									</div>
+							</div>
+
+							<div class="fourth">
+								<img src="{{ url_for('static', filename='img/free_group.png') }}">
+							</div>
+					</div>
+
+
+					<div class="set-guide-content hide">
+							<div class="first">
+								<div class="first-one">
+									<img src="{{ url_for('static', filename='img/network_setup.png') }}">
+								</div>
+
+								<div class="first-two">
+									<img src="{{ url_for('static', filename='img/sleep_setup.png') }}">
+								</div>
+							</div>
+
+							<div class="second">
+									<div class="second-one">
+										<img src="{{ url_for('static', filename='img/user_setup.png') }}">
+									</div>
+
+									<div class="second-two">
+										<img src="{{ url_for('static', filename='img/assist_feature.png') }}">
+									</div>
+							</div>
+
+							<div class="third">
+									<div class="third-one">
+										<img src="{{ url_for('static', filename='img/display_setup.png') }}">
+									</div>
+									<div class="third-two">
+										<img src="{{ url_for('static', filename='img/initial_setup.png') }}">
+									</div>
+							</div>
+
+							<div class="fourth">
+									<div class="fourth-one">
+										<img src="{{ url_for('static', filename='img/voice_setup.png') }}">
+									</div>
+
+									<div class="fourth-two">
+										<img src="{{ url_for('static', filename='img/other_setup.png') }}">
+									</div>
+							</div>
+
+					</div>
+
+					<div class="other-content hide">
+							<div class="first">
+								<img src="{{ url_for('static', filename='img/common_faq.png') }}">
+							</div>
+
+							<div class="second">
+									<div class="second-one">
+										<img src="{{ url_for('static', filename='img/contact_us.png') }}">
+									</div>
+							</div>
+
+							<div class="third">
+									<div class="third-one">
+										<img src="{{ url_for('static', filename='img/version.png') }}">
+									</div>
+							</div>
+
+							<div class="fourth">
+									<div class="third-one">
+										<img src="{{ url_for('static', filename='img/about_us.png') }}">
+									</div>
+							</div>
+					</div>
+
+					<div class="independant-control-content hide">
+							<div class="left-side">
+								<div class="my-device">
+									<p>我的设备</p>
+								</div>
+								<div class="exec-log">
+									<p>执行记录</p>
+								</div>
+							</div>
+
+							<div class="right-side">
+								<div class="up">
+									<div class="open-window-machine">
+										<p>开窗器</p>
+									</div>
+									<div class="curtain">
+										<p>窗帘</p>
+									</div>
+									<div class="touch-switch">
+										<p>触控开关</p>
+									</div>
+								</div>
+
+								<div class="down">
+									<div class="air-box">
+										<p>空气盒子</p>
+									</div>
+									<div class="smart-plug">
+										<p>智能插座</p>
+									</div>
+									<div class="dimming-lamp">
+										<p>调光灯</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="buttom">
+								<div class="apply">
+									<p>应用</p>
+								</div>
+								<div class="back">
+									<p>返回</p>
+								</div>
+							</div>
+
+					</div>
+
+					<div class="touch-switch-content">
+							<div class="left-side">
+								<div class="my-device">
+									<img src="{{ url_for('static', filename='img/right_side_bar_blue.png') }}" alt="">
+								</div>
+
+								<div class="my-device-on hide">
+									<img src="{{ url_for('static', filename='img/right_side_bar_green.png') }}" alt="">
+								</div>
+
+								<div class="exec-log hide">
+									<img src="{{ url_for('static', filename='img/right_side_bar_blue.png') }}" alt="">
+								</div>
+
+								<div class="exec-log-on">
+									<img src="{{ url_for('static', filename='img/right_side_bar_green.png') }}" alt="">
+								</div>
+
+								<div class="my-device-text">
+									<p>触控开关</p>
+								</div>
+
+								<div class="exec-log-text">
+									<p>执行记录</p>
+								</div>
+							</div>
+
+							<div class="right-side">
+								<div class="switch-board">
+									<div class="one-key-switch">
+								  	<div class="switch-panel">
+											<img src="{{ url_for('static', filename='img/one_key_switch_panel.png') }}" alt="一键触控开关">
+								  	</div>
+										<div class="key-panel">
+											<p>一键</p>
+											<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
+										</div>
+										<div class="switch-key-on">
+											<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
+										</div>
+										<div class="switch-key-off">
+											<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
+										</div>
+									</div>
+
+									<div class="two-key-switch">
+										<div class="switch-panel">
+											<img src="{{ url_for('static', filename='img/two_key_switch_panel.png') }}" alt="二键触控开关">
+								  	</div>
+
+										<div class="key-panel">
+											<p>一键</p>
+											<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
+										</div>
+										<div class="switch-key-on">
+											<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
+										</div>
+										<div class="switch-key-off">
+											<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
+										</div>
+
+										<div class="two-key-panel">
+											<p>二键</p>
+											<img src="{{ url_for('static', filename='img/touch_switch_last.png') }}" alt="">
+										</div>
+										<div class="two-switch-key-on">
+											<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
+										</div>
+										<div class="two-switch-key-off">
+											<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
+										</div>
+									</div>
+
+									<div class="three-key-switch">
+										<div class="switch-panel">
+											<img src="{{ url_for('static', filename='img/three_key_switch_panel.png') }}" alt="一键触控开关">
+								  	</div>
+										<div class="key-panel">
+											<p>一键</p>
+											<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
+										</div>
+										<div class="switch-key-on">
+											<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
+										</div>
+										<div class="switch-key-off">
+											<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
+										</div>
+
+										<div class="two-key-panel">
+											<p>二键</p>
+											<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
+										</div>
+										<div class="two-switch-key-on">
+											<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
+										</div>
+										<div class="two-switch-key-off">
+											<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
+										</div>
+
+										<div class="three-key-panel">
+											<p>三键</p>
+											<img src="{{ url_for('static', filename='img/touch_switch_last.png') }}" alt="">
+										</div>
+										<div class="three-switch-key-on">
+											<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
+										</div>
+										<div class="three-switch-key-off">
+											<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
+										</div>
+									</div>
+								</div>
+
+								<div class="video">
+
+								</div>
+								<p>演示动画</p>
+							</div>
+
+							<div class="buttom">
+								<div class="apply">
+									<p>应用</p>
+								</div>
+								<div class="back">
+									<p>返回</p>
+								</div>
+							</div>
+
+					</div>
+
 	    </div>
 	</div>
 
@@ -77,5 +395,5 @@
 
 
 {% block script %}
-
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 {% endblock %}

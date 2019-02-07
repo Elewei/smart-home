@@ -4,6 +4,8 @@ Flask 开发笔记
 python3 -m venv venv
 source venv/bin/active
 
+
+
 安装flask
 pip install flask
 

@@ -2,6 +2,7 @@ import os
 
 from flask import Flask
 from . import db
+from . import auth
 from . import switch
 from . import main
 
@@ -9,8 +10,8 @@ def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-        SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
+        SECRET_KEY='smart-home',
+        DATABASE=os.path.join(app.instance_path, 'app.sqlite'),
     )
 
     if test_config is None:
@@ -26,14 +27,13 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    # init Database
     db.init_app(app)
+
+    # 注册switch
     app.register_blueprint(switch.bp)
     app.register_blueprint(main.bp)
-
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+    app.register_blueprint(auth.bp)
 
     # make url_for('index') == url_for('blog.index')
     # in another app, you might define a separate main index here with

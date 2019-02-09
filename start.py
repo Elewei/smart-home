@@ -32,8 +32,6 @@ def index():
         #flash(session.get('message'))
         return redirect(url_for('index'))
 
-
-
     return render_template('index.html', form=form, message = session.get('message'))
 
 
@@ -87,7 +85,6 @@ def set_device_id():
     reading_str = ''.join(['%02x ' % b for b in reading])
     # TODO:  Verity it is success
     print(reading_str)
-
 
     s.close()
     return reading_str

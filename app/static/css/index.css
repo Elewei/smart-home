@@ -31,7 +31,7 @@
     box-sizing: border-box;
 }
 
-/* 第一栏 - 标题栏 */
+/* ======== 第一栏 - 标题栏 ======== */
 .top{
     width: 100%;
     height: 60px;
@@ -149,18 +149,21 @@
   width: 100%;
   height: 100%;
 }
+/* ====END 第一栏 - 标题栏 END==== */
 
-/* 第二栏 - 菜单栏 */
+
+
+/* ======== 第二栏 - 菜单栏 ======== */
 .header{
   clear: both;
   width: 100%;
-  height: 60px;
+  height: 40px;
   background-color: grey;
 }
 
 .header div {
   float: left;
-  padding-left: 10px;
+  padding-left: 20px;
 }
 
 .header div img {
@@ -170,22 +173,8 @@
 .hide {
   display: none;
 }
+/* ====END 第二栏 -  菜单栏 END==== */
 
-.smart-control-content {
-    width: 100%;
-}
-
-.manage-entry-content {
-    width: 100%;
-}
-
-.set-guide-content {
-    width: 100%;
-}
-
-.other-content {
-    width: 100%;
-}
 
 .first{
     width: 25%;
@@ -253,12 +242,158 @@
     margin-top: 10px;
 }
 
+/* ======== 智能控制页面 - Card ======== */
+.smart-control-content {
+    width: 100%;
+}
+
+/* ======== 管理入口页面 - Card ======== */
+.manage-entry-content {
+    width: 100%;
+}
+
+/* ======== 设置向导页面 - Card ======== */
+.set-guide-content {
+    width: 100%;
+}
+
+/* ======== 其他页面 - Card ======== */
+.other-content {
+    width: 100%;
+}
+
+
+/* ======== 独立控制页面 - Page ======== */
 .left-side {
   background-image: url('/static/img/left_side_background.png');
+  background-size: 100% 100%;
   float: left;
   width: 15%;
   height: 360px;
-  background-size: 100% 100%;
+}
+
+.left-side-buttom-one {
+  clear: both;
+  width: 80%;
+  height: 60px;
+  margin-left: 16px;
+  margin-top: 10px;
+  background-image: url('/static/img/left_side_bar_blue.png');
+  background-size: cover;
+}
+
+.left-side-buttom-one-on {
+  clear: both;
+  width: 80%;
+  height: 60px;
+  margin-left: 16px;
+  margin-top: 10px;
+  background-image: url('/static/img/left_side_bar_green.png');
+  background-size: cover;
+}
+
+.left-side-buttom-two {
+  clear: both;
+  width: 80%;
+  height: 60px;
+  margin-left: 16px;
+  margin-top: 10px;
+  background-image: url('/static/img/left_side_bar_blue.png');
+  background-size: cover;
+}
+
+.left-side-buttom-two-on {
+  clear: both;
+  width: 80%;
+  height: 60px;
+  margin-left: 16px;
+  margin-top: 10px;
+  background-image: url('/static/img/left_side_bar_green.png');
+  background-size: cover;
+}
+
+.buttom-text {
+  clear: both;
+  position: relative;
+  width: 80%;
+  height: 60px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  margin-left: 16px;
+  margin-top: 10px;
+  top: -140px;
+}
+
+.buttom-text p {
+  position: relative;
+  top: 15px;
+}
+
+#independant-left-my-device-text {
+  clear: both;
+  position: relative;
+  width: 80%;
+  height: 60px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  margin-left: 16px;
+  margin-top: 10px;
+  top: -140px;
+}
+
+#independant-left-my-device-text p {
+  position: relative;
+  top: 15px;
+}
+
+#independant-left-exec-log-text {
+  clear: both;
+  position: relative;
+  width: 80%;
+  height: 60px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  margin-left: 16px;
+  margin-top: 10px;
+  top: -140px;
+}
+
+#independant-left-exec-log-text p {
+  position: relative;
+  top: 15px;
+}
+
+.exec-log-text {
+  clear: both;
+  color: white;
+  position: relative;
+  display: inline-block;
+  top: -45px;
+  left: -20px;
+  z-index: 10;
+}
+
+.exec-log-text {
+  clear: both;
+  color: white;
+  position: relative;
+  display: inline-block;
+  top: -45px;
+  left: -20px;
+  z-index: 10;
+}
+
+.register-off-text {
+  clear: both;
+  color: white;
+  position: relative;
+  display: inline-block;
+  top: -45px;
+  left: -20px;
+  z-index: 10;
 }
 
 .my-device {
@@ -277,7 +412,6 @@
   margin-top: 10px;
 }
 
-
 .device-list {
   clear: both;
   width: 100%;
@@ -293,7 +427,6 @@
   margin-left: 12px;
   margin-top: 10px;
 }
-
 
 .device-list-text {
   clear: both;
@@ -338,43 +471,9 @@
   margin-top: 10px;
 }
 
-.exec-log-text {
-  clear: both;
-  color: white;
-  position: relative;
-  display: inline-block;
-  top: -45px;
-  left: -20px;
-  z-index: 10;
-}
 
-.register-off-text {
-  clear: both;
-  color: white;
-  position: relative;
-  display: inline-block;
-  top: -45px;
-  left: -20px;
-  z-index: 10;
-}
 
-.my-device-text {
-  clear: both;
-  width: 100%;
-  height: 60px;
-  margin-left: 12px;
-  margin-top: 10px;
-}
 
-.exec-log-text {
-  clear: both;
-  color: white;
-  position: relative;
-  display: inline-block;
-  top: -45px;
-  left: -20px;
-  z-index: 10;
-}
 
 
 .right-side {
@@ -451,18 +550,18 @@
   float: right;
 }
 
+/* 触控开关-页面 */
 .switch-board {
-  float: left;
   width: 50%;
   height: 90%;
+  float: left;
   background-color: pink;
 }
 
 .one-key-switch {
-  clear: both;
   width: 100%;
   height: 70px;
-  background-color: blue;
+  background-color: grey;
   margin-top: 40px;
 }
 
@@ -471,109 +570,125 @@
   height: 100%;
   margin-left: 30px;
   float: left;
+  margin-top: 3px;
 }
 
-.key-panel {
-  background-color: orange;
-  position: relative;
+.one-key-panel {
   width: 100px;
   height: 60px;
+  background-color: orange;
+  position: relative;
   float: left;
+  top:5px;
   margin-left: 30px;
 }
 
-.key-panel p{
+.switch-bar p{
   width: 100%;
-  height: 40%;
+  height: 30%;
   color: white;
+  background-color: red;
+  font-size: 15px;
+  text-align: center;
 }
 
-.key-panel img{
+.switch-bar img{
   width: 100%;
-  height: 60%;
-  float: left;
-  position: absolute;
-  margin-top: -10px;
+  height: 35px;
+  position: relative;
+  top: -15px;
 }
 
-#one-key-switch-on {
+.one-key-switch-on {
   clear: both;
-  #background-color: red;
-  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: green;
+  position: relative;
+  z-index: 15;
+  top: -50px;
+  left: 3px;
+}
+
+.one-key-switch-off {
+  #clear:both;
+  width: 35px;
+  height: 35px;
+  background-color: red;
   position: relative;
   z-index: 10;
-  top: 30px;
-  left: -94px;
+  top: -50px;
+  left: 63px;
 }
-
-#one-key-switch-off {
-  clear: both;
-  #background-color: red;
-  display: inline-block;
-  position: relative;
-  z-index: 10;
-  top: 30px;
-  left: -79px;
-}
-
 
 .two-key-switch {
   width: 100%;
   height: 70px;
-  background-color: blue;
+  background-color: grey;
   margin-top: 40px;
-  clear: both;
 }
-
 
 .two-key-panel {
-  background-color: orange;
-  position: relative;
   width: 100px;
   height: 60px;
+  background-color: orange;
+  position: relative;
   float: left;
-  top: -68px;
-  margin-left: 150px;
+  margin-left: 30px;
+  top: 5px;
 }
 
-.two-key-panel p{
-  width: 100%;
-  height: 40%;
-  margin-left: 30%;
-  color: white;
-}
-
-.two-key-panel img{
-  width: 100%;
-  height: 60%;
-  float: left;
-  position: absolute;
-  margin-top: -10px;
-}
-
-.two-switch-key-on {
+.two-key-one-switch-on {
+  clear: both;
+  width: 35px;
+  height: 35px;
+  background-color: green;
   position: relative;
   z-index: 10;
-  top: -37px;
-  left: -93px;
+  top: -50px;
+  left: 3px;
 }
 
-.two-switch-key-off {
+.two-key-one-switch-off {
+  clear: both;
+  width: 35px;
+  height: 35px;
+  background-color: red;
   position: relative;
   z-index: 10;
-  left: -41px;
-  top: -71px;
+  top: -50px;
+  left: 63px;
 }
+
+.two-key-two-switch-on {
+  clear: both;
+  width: 35px;
+  height: 35px;
+  background-color: green;
+  position: relative;
+  z-index: 10;
+  top: -50px;
+  left: 3px;
+}
+
+.two-key-two-switch-off {
+  clear: both;
+  width: 35px;
+  height: 35px;
+  background-color: red;
+  position: relative;
+  z-index: 10;
+  top: -50px;
+  left: 63px;
+}
+
 
 .three-key-switch {
   width: 100%;
   height: 70px;
-  background-color: blue;
+  background-color: grey;
   margin-top: 40px;
-  clear: both;
 }
-
-
 
 .three-key-switch {
   width: 100%;
@@ -585,42 +700,79 @@
 
 
 .three-key-panel {
-  background-color: orange;
-  position: relative;
   width: 100px;
   height: 60px;
+  background-color: orange;
+  position: relative;
   float: left;
-  top: -136px;
-  margin-left: 360px;
+  margin-left: 30px;
+  top: 5px;
 }
 
-.three-key-panel p{
-  width: 100%;
-  height: 40%;
-  margin-left: 30%;
-  color: white;
-}
-
-.three-key-panel img{
-  width: 100%;
-  height: 60%;
-  float: left;
-  position: absolute;
-  margin-top: -10px;
-}
-
-.three-switch-key-on {
+.three-key-one-switch-on {
+  clear: both;
+  width: 35px;
+  height: 35px;
+  background-color: green;
   position: relative;
   z-index: 10;
-  top: -165px;
-  left: 368px;
+  top: -50px;
+  left: 3px;
 }
 
-.three-switch-key-off {
+.three-key-one-switch-off {
+  clear: both;
+  width: 35px;
+  height: 35px;
+  background-color: red;
   position: relative;
   z-index: 10;
-  top: -199px;
-  left: 420px;
+  top: -50px;
+  left: 63px;
+}
+
+.three-key-two-switch-on {
+  clear: both;
+  width: 35px;
+  height: 35px;
+  background-color: green;
+  position: relative;
+  z-index: 10;
+  top: -50px;
+  left: 3px;
+}
+
+.three-key-two-switch-off {
+  clear: both;
+  width: 35px;
+  height: 35px;
+  background-color: red;
+  position: relative;
+  z-index: 10;
+  top: -50px;
+  left: 63px;
+}
+
+.three-key-three-switch-on {
+  clear: both;
+  width: 35px;
+  height: 35px;
+  background-color: green;
+  position: relative;
+  z-index: 10;
+  top: -50px;
+  left: 3px;
+}
+
+.three-key-three-switch-off {
+  clear: both;
+  width: 35px;
+  height: 35px;
+  background-color: red;
+  position: relative;
+  z-index: 10;
+  top: -50px;
+  left: 63px;
 }
 
 .video {
@@ -630,13 +782,6 @@
   width: 49%;
   border-radius: 15%;
   margin-top: 10px;
-}
-
-.right-side p {
-  color: white;
-  font-size: 20px;
-  text-align: center;
-  z-index: 10;
 }
 
 .apply {
@@ -661,7 +806,6 @@
     width: 100%;
     height: 205px;
 }
-
 
 table {
   width: 90%;

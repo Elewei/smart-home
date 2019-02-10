@@ -801,6 +801,271 @@
   background-size: cover;
 }
 
+/*  end */
+
+
+/* 智能插座 */
+.smart-plug-bar {
+  width: 100%;
+  height: 70px;
+  background-color: grey;
+  margin-top: 30px;
+}
+
+.smart-plug-img {
+  width: 60px;
+  height: 60px;
+  background-color: blue;
+  float: left;
+  position: relative;
+  top: 5px;
+  left: 15px;
+}
+
+.smart-plug-toggle {
+  width: 100px;
+  height: 40px;
+  background-color: orange;
+  position: relative;
+  top: 20px;
+  left: 105px;
+}
+
+.smart-plug-on {
+  width: 35px;
+  height: 35px;
+  background-color: green;
+  position: relative;
+  top: -15px;
+  left: 110px;
+}
+
+.smart-plug-off {
+  width: 35px;
+  height: 35px;
+  background-color: red;
+  position: relative;
+  top: -15px;
+  left: 165px;
+}
+
+
+/* 智能插座结束  */
+
+
+/* 智能窗帘开始 */
+.curtain-first-line {
+  width: 100%;
+  height: 60px;
+  background-color: grey;
+  margin-top: 15px;
+}
+
+.curtain-second-line {
+  width: 100%;
+  height: 60px;
+  background-color: grey;
+  margin-top: 15px;
+}
+
+.curtain-third-line {
+  width: 100%;
+  height: 60px;
+  background-color: grey;
+  margin-top: 15px;
+}
+
+.curtain-forth-line {
+  width: 100%;
+  height: 60px;
+  background-color: grey;
+  margin-top: 15px;
+}
+
+.curtain-all_open {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-color: orange;
+}
+
+.curtain-all_open p {
+  color: white;
+  float: left;
+  font-size: 20px;
+  position: relative;
+  top: 15px;
+  left: 25px;
+}
+
+.curtain-all_open img {
+  background-color: red;
+  position: relative;
+  float: right;
+  left: -60px;
+}
+
+.curtain-all_close {
+  width: 50%;
+  height: 100%;
+  float: right;
+  background-color: orange;
+}
+
+.curtain-all_close p {
+  color: white;
+  float: left;
+  font-size: 20px;
+  position: relative;
+  top: 15px;
+  left: 25px;
+}
+
+.curtain-all_close img {
+  background-color: red;
+  position: relative;
+  float: right;
+  left: -60px;
+}
+
+.curtain-stop {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-color: orange;
+}
+
+.curtain-reverse {
+  width: 50%;
+  height: 100%;
+  float: right;
+  background-color: orange;
+}
+
+.curtain-stop  p {
+  color: white;
+  float: left;
+  font-size: 20px;
+  position: relative;
+  top: 15px;
+  left: 25px;
+}
+
+.curtain-stop  img {
+  background-color: red;
+  position: relative;
+  float: right;
+  left: -60px;
+}
+
+.curtain-reverse  p {
+  color: white;
+  float: left;
+  font-size: 20px;
+  position: relative;
+  top: 15px;
+  left: 25px;
+}
+
+.curtain-reverse  img {
+  background-color: red;
+  position: relative;
+  float: right;
+  left: -60px;
+}
+
+.curtain-check {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-color: orange;
+}
+
+.curtain-check  p {
+  color: white;
+  float: left;
+  font-size: 20px;
+  position: relative;
+  top: 15px;
+  left: 25px;
+}
+
+.curtain-check  img {
+  background-color: red;
+  position: relative;
+  float: right;
+  left: -60px;
+}
+
+.crutain-free-group {
+  width: 100%;
+  height: 100%;
+  #background-color: red;
+  float: left;
+}
+
+.crutain-free-group p {
+  color: white;
+  float: left;
+  font-size: 20px;
+  position: relative;
+  top: 15px;
+  left: 25px;
+}
+
+.crutain-free-group  img {
+  #background-color: red;
+  position: relative;
+  float: left;
+  top: 10px;
+  left: 75px;
+}
+
+.curtain-free-toggle {
+  position: relative;
+  left: -40px;
+  top: 3px;
+}
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 300px; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-moz-range-thumb {
+  height: 35px;
+  width: 35px;
+  border-radius: 100%;
+  border-color: black;
+  background: black;
+  cursor: pointer;
+  background-image: url('/static/img/switch_key.png');
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 38px;
+  cursor: pointer;
+  outline: none;
+  background-image: url('/static/img/process_bar.png');
+}
+
+#curtain-toggle-bar {
+  position: relative;
+  top: 15px;
+  left: 120px;
+}
+
+/* 智能窗帘结束 */
 
 .device-manage-card {
     width: 100%;

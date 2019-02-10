@@ -335,8 +335,6 @@ $(document).ready(() => {
       console.log(data.result);
     });
 
-
-
   });
 
   /* 点击二键触控开关二 - 关 */
@@ -531,5 +529,9 @@ $(document).ready(() => {
     });
 
   });
+
+
+
+
 
 });

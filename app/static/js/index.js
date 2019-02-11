@@ -55,6 +55,8 @@ $(document).ready(() => {
   const $threeKeyThreeSwitchOn = $('.three-key-three-switch-on');
   const $threeKeyThreeSwitchOff = $('.three-key-three-switch-off');
 
+  const $roomControl = $('.room-control');
+  const $roomControlContent = $('.room-control-content');
 
   const $deviceList = $('.device-list');
   const $deviceListOn = $('.device-list-on');
@@ -62,13 +64,16 @@ $(document).ready(() => {
   const $registerOffOn = $('.register-off-on');
 
   const $deviceManageContent = $('.device-manage-content');
-
+  const $smartPlugContent = $('.smart-plug-content');
   const $deviceListPage = $('.device-list-page');
   const $registerOffPage = $('.register-off-page');
 
   const $deviceManageCard = $('.device-manage-card');
-
+  const $airBoxContent = $('.air-box-content');
   const $registerPlug = $('#register-plug');
+  const $smartCurtainContent = $('.smart-curtain-content');
+  const $dimmingLampContent = $('.dimming-lamp-content');
+  const $sceneControlContent = $('.scene-control-content');
 
   /* 点击智能控制 */
   $smartControl.on('click', ()=>{
@@ -531,6 +536,34 @@ $(document).ready(() => {
   });
 
 
+  /* 点击房间控制 */
+  $roomControl.on('click', ()=>{
+    console.log("点击房间控制");
+    
+    $smartControl.hide();
+    $smartControlOn.show();
+    $manageEntry.show();
+    $manageEntryOn.hide();
+    $setGuide.show();
+    $setGuideOn.hide();
+    $other.show();
+    $otherOn.hide();
+
+    $smartHomeContent.hide();
+    $manageEntryContent.hide();
+    $setGuideContent.hide();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.show();
+
+  });
 
 
 

@@ -1027,10 +1027,11 @@
   top: 3px;
 }
 
+/*
 input[type=range] {
-  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-  width: 300px; /* Specific width is required for Firefox. */
-  background: transparent; /* Otherwise white in Chrome */
+  -webkit-appearance: none;
+  width: 300px;
+  background: transparent;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -1038,7 +1039,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 input[type=range]:focus {
-  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  outline: none;
 }
 
 input[type=range]::-moz-range-thumb {
@@ -1055,9 +1056,9 @@ input[type=range]::-moz-range-track {
   width: 100%;
   height: 38px;
   cursor: pointer;
-  outline: none;
   background-image: url('/static/img/process_bar.png');
 }
+*/
 
 #curtain-toggle-bar {
   position: relative;
@@ -1066,6 +1067,61 @@ input[type=range]::-moz-range-track {
 }
 
 /* 智能窗帘结束 */
+
+
+/* 空气盒子开始 */
+.air-box-line {
+  background-color: grey;
+  width: 100%;
+  height: 35px;
+  margin-top: 8px;
+}
+
+.air-box-line p{
+  background-color: red;
+  float: left;
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: 3px;
+  left: 15px;
+}
+
+.air-box-line input[type=range]{
+  -webkit-appearance: none;
+  width: 300px;
+  height: 35px;
+  background: transparent;
+  position: relative;
+  float: right;
+  top: 0px;
+  left: -80px;
+  outline: none;
+}
+
+.air-box-line input[type=range]::-moz-range-thumb {
+  height: 33px;
+  width: 33px;
+  border-radius: 100%;
+  border-color: black;
+  background: black;
+  cursor: pointer;
+  background-image: url('/static/img/switch_key.png');
+}
+
+.air-box-line input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 35px;
+  cursor: pointer;
+  outline: none;
+  background-image: url('/static/img/process_bar.png');
+}
+
+
+
+
+/* 空气盒子结束 */
+
 
 .device-manage-card {
     width: 100%;

@@ -102,7 +102,7 @@
     </div>
 
 		<!-- 智能控制-页面  -->
-    <div class="smart-control-content hide">
+    <div class="smart-control-content">
         <div class="first scene-control">
 					<img src="{{ url_for('static', filename='img/scene-control.png') }}">
         </div>
@@ -569,7 +569,7 @@
 		</div>
 
 		<!-- 调光灯-页面 -->
-		<div class="smart-curtain-content hide">
+		<div class="dimming-lamp-content hide">
 		  <div class="left-side">
 				<div class="left-side-buttom-one hide">
 				</div>
@@ -627,6 +627,78 @@
 								<input type="range" id="curtain-toggle-bar" name="curtain-toggle-bar" min="0" max="100">
 							</div>
 						</div>
+					</div>
+				</div>
+
+				<div class="video">
+
+				</div>
+				<p>演示动画</p>
+			</div>
+
+			<div class="buttom">
+				<div class="apply">
+					<p>应用</p>
+				</div>
+				<div class="back">
+					<p>返回</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- 空气盒子-页面 -->
+		<div class="air-box-content hide">
+		  <div class="left-side">
+				<div class="left-side-buttom-one hide">
+				</div>
+
+				<div class="left-side-buttom-one-on">
+				</div>
+
+				<div class="left-side-buttom-two">
+				</div>
+
+				<div class="left-side-buttom-two-on hide">
+				</div>
+
+				<div id="touch-switch-text" class="buttom-text">
+					<p>空气盒子</p>
+				</div>
+
+				<div id="touch-switch-exec-log-text" class="buttom-text">
+					<p>执行记录</p>
+				</div>
+			</div>
+
+			<div class="right-side">
+				<div class="switch-board">
+					<div class="air-box-line">
+						<p>PM2.5</p>
+						<input type="range" name="" value="">
+					</div>
+					<div class="air-box-line">
+						<p>甲苯</p>
+						<input type="range" name="" value="">
+					</div>
+					<div class="air-box-line">
+						<p>PM2.5</p>
+						<input type="range" name="" value="">
+					</div>
+					<div class="air-box-line">
+						<p>PM2.5</p>
+						<input type="range" name="" value="">
+					</div>
+					<div class="air-box-line">
+						<p>PM2.5</p>
+						<input type="range" name="" value="">
+					</div>
+					<div class="air-box-line">
+						<p>PM2.5</p>
+						<input type="range" name="" value="">
+					</div>
+					<div class="air-box-line">
+						<p>PM2.5</p>
+						<input type="range" name="" value="">
 					</div>
 				</div>
 
@@ -727,6 +799,76 @@
 				</div>
 			</div>
 		</div>
+
+		<!-- 设备管理-页面 -->
+		<div class="scene-control-content hide">
+
+		</div>
+
+		<!-- 房间控制-页面 -->
+		<div class="room-control-content hide">
+			<div class="left-side">
+				<div id="independant-left-side-buttom-one" class="left-side-buttom-one">
+
+				</div>
+
+				<div id="independant-left-side-buttom-one-on" class="left-side-buttom-one-on hide">
+
+				</div>
+
+				<div id="independant-left-side-buttom-two" class="left-side-buttom-two hide">
+
+				</div>
+
+				<div id="independant-left-sice-buttom-two-on" class="left-side-buttom-two-on show">
+
+				</div>
+
+				<div id="independant-left-my-device-text">
+					<p>我的房间</p>
+				</div>
+
+				<div id="independant-left-exec-log-text">
+					<p>房间描述</p>
+				</div>
+			</div>
+
+			<div class="right-side">
+				<div class="up">
+					<div class="open-window-machine living-room">
+						<p>客厅</p>
+					</div>
+					<div class="curtain">
+						<p>主卧</p>
+					</div>
+					<div class="touch-switch">
+						<p>次卧</p>
+					</div>
+				</div>
+
+				<div class="down">
+					<div class="air-box">
+						<p>卫生间</p>
+					</div>
+					<div class="smart-plug">
+						<p>厨房</p>
+					</div>
+					<div class="dimming-lamp">
+						<p>其他房间</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="buttom">
+				<div class="apply">
+					<p>应用</p>
+				</div>
+				<div class="back">
+					<p>返回</p>
+				</div>
+			</div>
+		</div>
+
 
   </div>
 </div>

@@ -58,10 +58,10 @@ $(document).ready(() => {
   const $roomControl = $('.room-control');
   const $roomControlContent = $('.room-control-content');
 
-  const $deviceList = $('.device-list');
-  const $deviceListOn = $('.device-list-on');
-  const $registerOff = $('.register-off');
-  const $registerOffOn = $('.register-off-on');
+  const $deviceManageDeviceList = $('#device-manage-device-list');
+  const $deviceManageDeviceListOn = $('#device-manage-device-list-on');
+  const $deviceManageRegisterOff = $('#device-manage-register-off');
+  const $deviceManageRegisterOffOn = $('#device-manage-register-off-on');
 
   const $deviceManageContent = $('.device-manage-content');
   const $smartPlugContent = $('.smart-plug-content');
@@ -75,6 +75,7 @@ $(document).ready(() => {
   const $dimmingLampContent = $('.dimming-lamp-content');
   const $sceneControlContent = $('.scene-control-content');
 
+
   /* 点击智能控制 */
   $smartControl.on('click', ()=>{
     $smartControl.hide();
@@ -86,15 +87,23 @@ $(document).ready(() => {
     $other.show();
     $otherOn.hide();
 
-    $smartHomeContent.show();
-    $manageEntryContent.hide();
-    $setGuideContent.hide();
-    $otherContent.hide();
-
     /* 独立控制页面 */
     $independantControlContent.hide();
     $touchSwitchContent.hide();
     $deviceManageContent.hide();
+    $manageEntryContent.hide();
+    $setGuideContent.hide();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
+    $smartHomeContent.show();
 
   });
 
@@ -109,11 +118,23 @@ $(document).ready(() => {
     $other.show();
     $otherOn.hide();
 
-    $smartHomeContent.hide();
-    $manageEntryContent.show();
+    /* 独立控制页面 */
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $deviceManageContent.hide();
     $setGuideContent.hide();
     $otherContent.hide();
-
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
+    $smartHomeContent.hide();
+    $manageEntryContent.show();
   });
 
   /* 点击设置向导 */
@@ -127,10 +148,23 @@ $(document).ready(() => {
     $other.show();
     $otherOn.hide();
 
+    /* 独立控制页面 */
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $deviceManageContent.hide();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
     $smartHomeContent.hide();
     $manageEntryContent.hide();
     $setGuideContent.show();
-    $otherContent.hide();
 
   });
 
@@ -145,6 +179,19 @@ $(document).ready(() => {
     $other.hide();
     $otherOn.show();
 
+    /* 独立控制页面 */
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $deviceManageContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
     $smartHomeContent.hide();
     $manageEntryContent.hide();
     $setGuideContent.hide();
@@ -457,7 +504,7 @@ $(document).ready(() => {
   });
 
   /* 点击 管理入口->设备管理->设备列表 */
-  $deviceList.on('click', ()=>{
+  $deviceManageDeviceList.on('click', ()=>{
     /* 选定管理入口 */
     $smartControl.show();
     $smartControlOn.hide();
@@ -476,10 +523,10 @@ $(document).ready(() => {
     $deviceManageContent.show();
 
     /* 选定设备列表 */
-    $deviceList.hide();
-    $deviceListOn.show();
-    $registerOff.show();
-    $registerOffOn.hide();
+    $deviceManageDeviceList.hide();
+    $deviceManageDeviceListOn.show();
+    $deviceManageRegisterOff.show();
+    $deviceManageRegisterOffOn.hide();
 
     $deviceListPage.show();
     $registerOffPage.hide();
@@ -489,7 +536,7 @@ $(document).ready(() => {
   });
 
   /* 点击 管理入口->设备管理->注册/注销 */
-  $registerOff.on('click', ()=>{
+  $deviceManageRegisterOff.on('click', ()=>{
     /* 选定管理入口 */
     $smartControl.show();
     $smartControlOn.hide();
@@ -508,10 +555,10 @@ $(document).ready(() => {
     $deviceManageContent.show();
 
     /* 选定注册注销 */
-    $deviceList.show();
-    $deviceListOn.hide();
-    $registerOff.hide();
-    $registerOffOn.show();
+    $deviceManageDeviceList.show();
+    $deviceManageDeviceListOn.hide();
+    $deviceManageRegisterOff.hide();
+    $deviceManageRegisterOffOn.show();
 
     $deviceListPage.hide();
     $registerOffPage.show();
@@ -539,7 +586,7 @@ $(document).ready(() => {
   /* 点击房间控制 */
   $roomControl.on('click', ()=>{
     console.log("点击房间控制");
-    
+
     $smartControl.hide();
     $smartControlOn.show();
     $manageEntry.show();

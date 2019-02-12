@@ -5,6 +5,7 @@ from . import db
 from . import auth
 from . import switch
 from . import main
+import webview
 
 def create_app(test_config=None):
     # create and configure the app
@@ -42,3 +43,16 @@ def create_app(test_config=None):
     app.add_url_rule('/', endpoint=main.index)
 
     return app
+
+
+if __name__ == '__main__':
+    """  https://github.com/r0x0r/pywebview/blob/master/examples/http_server.py
+    """
+
+    t = threading.Thread(target=start_server)
+    t.daemon = True
+    t.start()
+
+    webview.create_window("It works, Joe!", "http://127.0.0.1:5000/")
+
+    sys.exit()

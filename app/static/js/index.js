@@ -75,6 +75,10 @@ $(document).ready(() => {
   const $dimmingLampContent = $('.dimming-lamp-content');
   const $sceneControlContent = $('.scene-control-content');
 
+  const $openWindowMachine = $('.open-window-machine');
+  const $curtain = $('.curtain');
+  const $airBox = $('.air-box');
+  const $dimmingLamp = $('.dimming-lamp');
 
   /* 点击智能控制 */
   $smartControl.on('click', ()=>{
@@ -238,7 +242,7 @@ $(document).ready(() => {
     $leftSideButtomTwoOn.show();
   });
 
-  /* 点击触控开关 */
+  /* 点击 管理入口 -> 独立控制 -> 触控开关 */
   $touchSwitch.on('click', ()=>{
     $smartControl.hide();
     $smartControlOn.show();
@@ -582,8 +586,84 @@ $(document).ready(() => {
 
   });
 
+  /* 点击 智能控制 -> 独立控制 -> 开窗器   */
+  $openWindowMachine.on('click', ()=>{
+    console.log('点击开窗器');
 
-  /* 点击房间控制 */
+  });
+
+  /* 点击 智能控制 -> 独立控制 -> 窗帘   */
+  $curtain.on('click', ()=>{
+    console.log('点击打开窗帘页面');
+
+  });
+
+  /* 点击 智能控制 -> 独立控制 -> 空气盒子   */
+  $airBox.on('click', ()=>{
+    console.log('点击打开空气盒子');
+
+    /* 显示 智能控制 标签*/
+    $smartControl.hide();
+    $smartControlOn.show();
+    $manageEntry.show();
+    $manageEntryOn.hide();
+    $setGuide.show();
+    $setGuideOn.hide();
+    $other.show();
+    $otherOn.hide();
+
+    $smartHomeContent.hide();
+    $manageEntryContent.hide();
+    $setGuideContent.hide();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.show();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
+
+  });
+
+  /* 点击 管理入口 -> 独立控制 -> 智能插座   */
+  $smartPlug.on('click', ()=>{
+    console.log('点击开智能插座');
+
+    $smartControl.hide();
+    $smartControlOn.show();
+    $manageEntry.show();
+    $manageEntryOn.hide();
+    $setGuide.show();
+    $setGuideOn.hide();
+    $other.show();
+    $otherOn.hide();
+
+    $smartHomeContent.hide();
+    $manageEntryContent.hide();
+    $setGuideContent.hide();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.show();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
+
+  });
+
+  /* 点击 管理入口 -> 独立控制 -> 调光灯   */
+  $dimmingLamp.on('click', ()=>{
+    console.log('点击打开调光灯');
+
+  });
+
+  /* 点击 房间控制 */
   $roomControl.on('click', ()=>{
     console.log("点击房间控制");
 

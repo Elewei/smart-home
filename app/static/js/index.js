@@ -80,6 +80,16 @@ $(document).ready(() => {
   const $airBox = $('.air-box');
   const $dimmingLamp = $('.dimming-lamp');
 
+  const $userSetupContent = $('.user-setup-content');
+  const $setGuideUserSetup = $('#set-guide-user-setup');
+
+  const $userSetupBasicInfo = $('#user-setup-basic-info');
+  const $userSetupBasicInfoOn = $('#user-setup-basic-info-on');
+  const $userSetupChangePasswd = $('#user-setup-change-passwd');
+  const $userSetupChangePasswdOn = $('#user-setup-change-passwd-on');
+  const $userSetupBasicInfoText = $('#user-setup-basic-info-text');
+  const $userSetupChangePasswdText = $('#user-setup-change-passwd-text');
+
   /* 点击智能控制 */
   $smartControl.on('click', ()=>{
     $smartControl.hide();
@@ -107,6 +117,7 @@ $(document).ready(() => {
     $deviceManageContent.hide();
     $sceneControlContent.hide();
     $roomControlContent.hide();
+    $userSetupContent.hide();
     $smartHomeContent.show();
 
   });
@@ -138,6 +149,7 @@ $(document).ready(() => {
     $sceneControlContent.hide();
     $roomControlContent.hide();
     $smartHomeContent.hide();
+    $userSetupContent.hide();
     $manageEntryContent.show();
   });
 
@@ -168,6 +180,7 @@ $(document).ready(() => {
     $roomControlContent.hide();
     $smartHomeContent.hide();
     $manageEntryContent.hide();
+    $userSetupContent.hide();
     $setGuideContent.show();
 
   });
@@ -199,6 +212,7 @@ $(document).ready(() => {
     $smartHomeContent.hide();
     $manageEntryContent.hide();
     $setGuideContent.hide();
+    $userSetupContent.hide();
     $otherContent.show();
 
   });
@@ -241,6 +255,28 @@ $(document).ready(() => {
     $leftSideButtomTwo.hide();
     $leftSideButtomTwoOn.show();
   });
+
+  /* 设置向导 -> 用户设置-页面 左侧按钮 */
+  $userSetupBasicInfoText.on('click', ()=>{
+    console.log('设置向导 -> 用户设置-页面 左侧按钮 基本信息');
+
+    $userSetupBasicInfo.hide();
+    $userSetupBasicInfoOn.show();
+    $userSetupChangePasswd.show();
+    $userSetupChangePasswdOn.hide();
+  });
+
+
+  /* 设置向导 -> 用户设置-页面 左侧按钮 */
+  $userSetupChangePasswdText.on('click', ()=>{
+    console.log('设置向导 -> 用户设置-页面 左侧按钮 修改密码');
+
+    $userSetupBasicInfo.show();
+    $userSetupBasicInfoOn.hide();
+    $userSetupChangePasswd.hide();
+    $userSetupChangePasswdOn.show();
+  });
+
 
   /* 点击 管理入口 -> 独立控制 -> 触控开关 */
   $touchSwitch.on('click', ()=>{
@@ -692,6 +728,38 @@ $(document).ready(() => {
 
   });
 
+  /* 点击设置向导 -> 用户设置 */
+  $setGuideUserSetup.on('click', ()=>{
+    console.log('点击设置向导 -> 用户设置');
+    /* 标题显示设置向导 */
+    $smartControl.show();
+    $smartControlOn.hide();
+    $manageEntry.show();
+    $manageEntryOn.hide();
+    $setGuide.hide();
+    $setGuideOn.show();
+    $other.show();
+    $otherOn.hide();
+
+    /* 显示用户设置页面 */
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $deviceManageContent.hide();
+    $setGuideContent.hide();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
+    $smartHomeContent.hide();
+    $manageEntryContent.hide();
+    $userSetupContent.show();
+  });
 
 
 });

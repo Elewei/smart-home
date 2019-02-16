@@ -232,27 +232,33 @@
     width: 25%;
     height: 420px;
     float: right;
+    #background-color: grey;
 }
 
 .fourth img {
   width: 100%;
-
 }
 
 .fourth-one{
     width: 100%;
     height: 205px;
+    background-color: grey;
 }
 
 .fourth-two{
     width: 100%;
     height: 205px;
     margin-top: 10px;
+    background-color: grey;
 }
 
 /* ======== 智能控制页面 - Card ======== */
 .smart-control-content {
     width: 100%;
+}
+
+.home-monitor img {
+
 }
 
 /* ======== 管理入口页面 - Card ======== */
@@ -263,6 +269,14 @@
 /* ======== 设置向导页面 - Card ======== */
 .set-guide-content {
     width: 100%;
+}
+
+.voice-setup img{
+  height: 100%;
+}
+
+.other-setup img {
+
 }
 
 /* ======== 其他页面 - Card ======== */
@@ -334,8 +348,7 @@
 }
 
 .buttom-text p {
-  position: relative;
-  top: 15px;
+  line-height: 60px;
 }
 
 #independant-left-my-device-text {
@@ -1158,6 +1171,12 @@ input[type=range]::-moz-range-track {
 
 
 /* 空气盒子结束 */
+
+
+#user-setup-basic-info-text {
+
+}
+
 
 
 .device-manage-card {

@@ -102,7 +102,7 @@
     </div>
 
 		<!-- 智能控制-页面  -->
-    <div class="smart-control-content">
+    <div class="smart-control-content hide">
         <div class="first scene-control">
 					<img src="{{ url_for('static', filename='img/scene-control.png') }}">
         </div>
@@ -171,7 +171,7 @@
 				</div>
 
 				<div class="second">
-						<div class="second-one">
+						<div class="second-one" id="set-guide-user-setup">
 							<img src="{{ url_for('static', filename='img/user_setup.png') }}">
 						</div>
 
@@ -190,11 +190,11 @@
 				</div>
 
 				<div class="fourth">
-						<div class="fourth-one">
+						<div class="fourth-one voice-setup">
 							<img src="{{ url_for('static', filename='img/voice_setup.png') }}">
 						</div>
 
-						<div class="fourth-two">
+						<div class="fourth-two other-setup">
 							<img src="{{ url_for('static', filename='img/other_setup.png') }}">
 						</div>
 				</div>
@@ -828,6 +828,43 @@
 							<button type="button" id="off-open-window-macheine">注销</button>
 						</td>
 					</tr>
+					<tr>
+						<td>窗帘</td>
+						<td>主卧</td>
+						<td>192.168.3.1</td>
+						<td>
+							<button type="button" id="register-open-window-macheine">注册</button>
+							<button type="button" id="off-open-window-macheine">注销</button>
+						</td>
+					</tr>
+					<tr>
+						<td>窗帘</td>
+						<td>主卧</td>
+						<td>192.168.3.1</td>
+						<td>
+							<button type="button" id="register-open-window-macheine">注册</button>
+							<button type="button" id="off-open-window-macheine">注销</button>
+						</td>
+					</tr>
+					<tr>
+						<td>窗帘</td>
+						<td>主卧</td>
+						<td>192.168.3.1</td>
+						<td>
+							<button type="button" id="register-open-window-macheine">注册</button>
+							<button type="button" id="off-open-window-macheine">注销</button>
+						</td>
+					</tr>
+					<tr>
+						<td>窗帘</td>
+						<td>主卧</td>
+						<td>192.168.3.1</td>
+						<td>
+							<button type="button" id="register-open-window-macheine">注册</button>
+							<button type="button" id="off-open-window-macheine">注销</button>
+						</td>
+					</tr>
+
 				</table>
 			</div>
 
@@ -909,6 +946,64 @@
 			</div>
 		</div>
 
+		<!-- 设置向导 -> 用户设置-页面 -->
+		<div class="user-setup-content">
+		  <div class="left-side">
+				<div id="user-setup-basic-info" class="left-side-buttom-one">
+				</div>
+
+				<div id="user-setup-basic-info-on" class="left-side-buttom-one-on hide">
+				</div>
+
+				<div id="user-setup-change-passwd" class="left-side-buttom-two hide">
+				</div>
+
+				<div id="user-setup-change-passwd-on" class="left-side-buttom-two-on" >
+				</div>
+
+				<div id="user-setup-basic-info-text" class="buttom-text">
+					<p>基本信息</p>
+				</div>
+
+				<div id="user-setup-change-passwd-text" class="buttom-text">
+					<p>修改密码</p>
+				</div>
+
+			</div>
+
+			<div class="right-side">
+				<div class="switch-board">
+					<div class="smart-plug-bar">
+						<div class="smart-plug-img">
+							<img src="" alt="">
+						</div>
+						<div class="smart-plug-toggle">
+							<img src="" alt="">
+						</div>
+						<div class="smart-plug-on hide">
+
+						</div>
+						<div class="smart-plug-off">
+
+						</div>
+					</div>
+				</div>
+
+				<div class="video">
+
+				</div>
+				<p>演示动画</p>
+			</div>
+
+			<div class="buttom">
+				<div class="apply">
+					<p>应用</p>
+				</div>
+				<div class="back">
+					<p>返回</p>
+				</div>
+			</div>
+		</div>
 
   </div>
 </div>

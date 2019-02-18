@@ -130,11 +130,11 @@
 
 		<!-- 管理入口-页面  -->
 		<div class="manage-entry-content hide">
-				<div class="first">
+				<div id="manage-entry-home-manage" class="first">
 					<img src="{{ url_for('static', filename='img/home_manage.png') }}">
 				</div>
 
-				<div class="second">
+				<div id="" class="second">
 						<div class="second-one device-manage-card">
 							<img src="{{ url_for('static', filename='img/device_manage.png') }}">
 						</div>
@@ -153,7 +153,7 @@
 						</div>
 				</div>
 
-				<div class="fourth">
+				<div id="manage-entry-free-group" class="fourth">
 					<img src="{{ url_for('static', filename='img/free_group.png') }}">
 				</div>
 		</div>
@@ -524,7 +524,7 @@
 		</div>
 
 		<!-- 智能插座-页面 -->
-		<div class="smart-plug-content">
+		<div class="smart-plug-content hide">
 		  <div class="left-side">
 				<div class="left-side-buttom-one hide">
 				</div>
@@ -1105,6 +1105,178 @@
 						<td>开</td>
 					</tr>
 				</table>
+			</div>
+
+			<div class="buttom">
+				<div class="apply">
+					<p>应用</p>
+				</div>
+				<div id="scene-control-content-back" class="back">
+					<p>返回</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- 管理入口 -> 家庭管理-页面 -->
+		<div class="home-manage-content hide">
+			<div class="left-side">
+				<div id="home-manage-left-side-buttom-one" class="left-side-buttom-one hide">
+
+				</div>
+
+				<div id="home-manage-left-side-buttom-one-on" class="left-side-buttom-one-on">
+
+				</div>
+
+				<div id="home-manage-left-side-buttom-two" class="left-side-buttom-two">
+
+				</div>
+
+				<div id="home-manage-left-sice-buttom-two-on" class="left-side-buttom-two-on hide">
+
+				</div>
+
+				<div id="home-manage-left-side-buttom-three" class="left-side-buttom-three">
+
+				</div>
+
+				<div id="home-manage-left-sice-buttom-three-on" class="left-side-buttom-three-on hide">
+
+				</div>
+
+				<div class="buttom-text" id="home-manage-my-scene-text">
+					<p>家庭信息</p>
+				</div>
+
+				<div class="buttom-text" id="home-manage-home-mamber-text">
+					<p>家庭成员</p>
+				</div>
+
+				<div class="buttom-text" id="home-manage-home-list-text">
+					<p>房间列表</p>
+				</div>
+			</div>
+
+			<div id="home-manage-home-information" class="right-side hide">
+				<div class="home-manage-home-name">
+					<span class="home-manage-home-info-label">家庭名称:</span>
+					<input id="home-manage-user-home-name" class="home-manage-home-info-input" type="text" name="home-manage-user-home-name" value="elewei的家">
+				</div>
+				<div class="home-manage-home-address">
+					<span class="home-manage-home-info-label">家庭地址:</span>
+					<input class="home-manage-home-info-input" type="text" name="home-manage-user-home-address" value="江苏省苏州市高新区">
+				</div>
+				<div class="home-manage-home-background">
+					<span class="home-manage-home-info-label">家庭背景:</span>
+					<img id="home-manage-home-background-img" src="{{ url_for('static', filename='img/background_entry.png') }}" alt="">
+				</div>
+			</div>
+
+			<div id="home-manage-home-member" class="right-side">
+				<div class="home-member-first">
+					<img src="{{ url_for('static', filename='img/home_member_qingse.png') }}" alt="">
+					<span class="home-member-text">阿毛</span>
+				</div>
+				<div class="home-member-add">
+					<img src="{{ url_for('static', filename='img/home_member_add.png') }}" alt="">
+				</div>
+			</div>
+
+			<div id="home-manage-home-room-list" class="right-side hide">
+				<table class="home-room-list-table">
+					<tr>
+						<th>序号</th>
+						<th>房间</th>
+					</tr>
+					<tr>
+						<td>01</td>
+						<td>主卧</td>
+					</tr>
+					<tr>
+						<td>02</td>
+						<td>次卧</td>
+					</tr>
+				</table>
+			</div>
+
+			<div id="scene-control-exec-log" class="right-side hide">
+				<table class="device-manage-table">
+					<tr>
+						<th>设备名称</th>
+						<th>执行动作</th>
+					</tr>
+					<tr>
+						<td>插座</td>
+						<td>开</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="buttom">
+				<div class="apply">
+					<p>应用</p>
+				</div>
+				<div id="home-manage-content-back" class="back">
+					<p>返回</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- 管理入口 -> 自由组合-页面 -->
+		<div class="free-group-content">
+			<div class="left-side">
+				<div id="scene-control-left-side-buttom-one" class="left-side-buttom-one hide">
+
+				</div>
+
+				<div id="scene-control-left-side-buttom-one-on" class="left-side-buttom-one-on">
+
+				</div>
+
+				<div id="scene-control-left-side-buttom-two" class="left-side-buttom-two">
+
+				</div>
+
+				<div id="scene-control-left-sice-buttom-two-on" class="left-side-buttom-two-on hide">
+
+				</div>
+
+				<div class="buttom-text" id="free-group-list-text">
+					<p>组合列表</p>
+				</div>
+
+				<div class="buttom-text" id="free-group-add-text">
+					<p>添加组合</p>
+				</div>
+			</div>
+
+			<div id="scene-control-my-scene" class="right-side hide">
+				<table class="device-manage-table">
+					<tr>
+						<th>条件</th>
+						<th>执行动作</th>
+					</tr>
+					<tr>
+						<td>当温度低于15</td>
+						<td>关闭窗户，打开智能插座1</td>
+					</tr>
+					<tr>
+						<td>当PM2.5低于90</td>
+						<td>打开窗户</td>
+					</tr>
+				</table>
+			</div>
+
+			<div id="scene-control-exec-log" class="right-side">
+				<div class="free-group-name">
+
+				</div>
+				<div class="free-group-condition">
+
+				</div>
+				<div class="free-group-action">
+
+				</div>
 			</div>
 
 			<div class="buttom">

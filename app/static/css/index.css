@@ -334,17 +334,37 @@
   background-size: cover;
 }
 
-.buttom-text {
+.left-side-buttom-three {
   clear: both;
-  position: relative;
   width: 80%;
   height: 60px;
-  text-align: center;
+  margin-left: 16px;
+  margin-top: 10px;
+  background-image: url('/static/img/left_side_bar_blue.png');
+  background-size: cover;
+}
+
+.left-side-buttom-three-on {
+  clear: both;
+  width: 80%;
+  height: 60px;
+  margin-left: 16px;
+  margin-top: 10px;
+  background-image: url('/static/img/left_side_bar_green.png');
+  background-size: cover;
+}
+
+.buttom-text {
+  clear: both;
+  position: fixed;
+  width: 80%;
+  height: 60px;
   color: white;
   font-size: 20px;
   margin-left: 16px;
   margin-top: 10px;
-  top: -140px;
+  top: 0px;
+  left: -300px
 }
 
 .buttom-text p {
@@ -385,6 +405,28 @@
 #independant-left-exec-log-text p {
   position: relative;
   top: 15px;
+}
+
+#touch-switch-text {
+  clear: both;
+  position: fixed;
+  width: 80%;
+  height: 60px;
+  color: white;
+  font-size: 20px;
+  top: 208px;
+  left: 113px;
+}
+
+#touch-switch-exec-log-text {
+  clear: both;
+  position: fixed;
+  width: 80%;
+  height: 60px;
+  color: white;
+  font-size: 20px;
+  top: 275px;
+  left: 113px;
 }
 
 .exec-log-text {
@@ -492,11 +534,6 @@
   margin-top: 10px;
 }
 
-
-
-
-
-
 .right-side {
   width: 84%;
   height: 360px;
@@ -519,6 +556,17 @@
   float: left;
 }
 
+.up-first {
+  width: 33%;
+  height: 100%;
+  float: left;
+}
+
+.up-first img {
+  width: 100%;
+  height: 100%;
+}
+
 .open-window-machine img {
   width: 100%;
   height: 100%;
@@ -537,6 +585,19 @@
   height: 100%;
 }
 
+.up-second {
+  width: 33%;
+  height: 100%;
+  float: left;
+  margin-left: 5px;
+  background-color: blue;
+}
+
+.up-second img {
+  width: 100%;
+  height: 100%;
+}
+
 .touch-switch {
   width: 33%;
   height: 100%;
@@ -545,6 +606,17 @@
 }
 
 .touch-switch img {
+  width: 100%;
+  height: 100%;
+}
+
+.up-third {
+  width: 33%;
+  height: 100%;
+  float: right;
+}
+
+.up-third img {
   width: 100%;
   height: 100%;
 }
@@ -568,6 +640,17 @@
   height: 100%;
 }
 
+.down-first {
+  width: 33%;
+  height: 100%;
+  float: left;
+}
+
+.down-first img {
+  width: 100%;
+  height: 100%;
+}
+
 .smart-plug {
   width: 33%;
   height: 100%;
@@ -581,6 +664,18 @@
   height: 100%;
 }
 
+.down-second {
+  width: 33%;
+  height: 100%;
+  float: left;
+  margin-left: 5px;
+}
+
+.down-second img {
+  width: 100%;
+  height: 100%;
+}
+
 .dimming-lamp {
   width: 33%;
   height: 100%;
@@ -589,6 +684,17 @@
 }
 
 .dimming-lamp img {
+  width: 100%;
+  height: 100%;
+}
+
+.down-third {
+  width: 33%;
+  height: 100%;
+  float: right;
+}
+
+.down-third img {
   width: 100%;
   height: 100%;
 }
@@ -629,7 +735,7 @@
   background-color: orange;
   position: relative;
   float: left;
-  top:5px;
+  top: 5px;
   margin-left: 30px;
 }
 
@@ -646,7 +752,7 @@
   width: 100%;
   height: 35px;
   position: relative;
-  top: -15px;
+  top: 1px;
 }
 
 .one-key-switch-on {
@@ -656,7 +762,7 @@
   background-color: green;
   position: relative;
   z-index: 15;
-  top: -50px;
+  top: -34px;
   left: 3px;
 }
 
@@ -667,7 +773,7 @@
   background-color: red;
   position: relative;
   z-index: 10;
-  top: -50px;
+  top: -34px;
   left: 63px;
 }
 
@@ -695,7 +801,7 @@
   background-color: green;
   position: relative;
   z-index: 10;
-  top: -50px;
+  top: -34px;
   left: 3px;
 }
 
@@ -706,7 +812,7 @@
   background-color: red;
   position: relative;
   z-index: 10;
-  top: -50px;
+  top: -34px;
   left: 63px;
 }
 
@@ -717,7 +823,7 @@
   background-color: green;
   position: relative;
   z-index: 10;
-  top: -50px;
+  top: -34px;
   left: 3px;
 }
 
@@ -728,7 +834,7 @@
   background-color: red;
   position: relative;
   z-index: 10;
-  top: -50px;
+  top: -34px;
   left: 63px;
 }
 
@@ -766,7 +872,7 @@
   background-color: green;
   position: relative;
   z-index: 10;
-  top: -50px;
+  top: -34px;
   left: 3px;
 }
 
@@ -777,7 +883,7 @@
   background-color: red;
   position: relative;
   z-index: 10;
-  top: -50px;
+  top: -34px;
   left: 63px;
 }
 
@@ -788,7 +894,7 @@
   background-color: green;
   position: relative;
   z-index: 10;
-  top: -50px;
+  top: -34px;
   left: 3px;
 }
 
@@ -799,7 +905,7 @@
   background-color: red;
   position: relative;
   z-index: 10;
-  top: -50px;
+  top: -34px;
   left: 63px;
 }
 
@@ -807,10 +913,9 @@
   clear: both;
   width: 35px;
   height: 35px;
-  background-color: green;
   position: relative;
   z-index: 10;
-  top: -50px;
+  top: -34px;
   left: 3px;
 }
 
@@ -818,20 +923,37 @@
   clear: both;
   width: 35px;
   height: 35px;
-  background-color: red;
   position: relative;
   z-index: 10;
-  top: -50px;
+  top: -34px;
   left: 63px;
 }
 
 .video {
   float: right;
-  background-color: pink;
   height: 85%;
   width: 49%;
-  border-radius: 15%;
+  border-radius: 5%;
   margin-top: 10px;
+  margin-right: 4px;
+  text-align: center;
+}
+
+.video img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5%;
+}
+
+#touch-switch-background-img {
+  width: 70%;
+  height: 100%;
+}
+
+.video-text {
+  color: white;
+  text-align: center;
+  font-size: 15px;
 }
 
 .apply {
@@ -843,6 +965,13 @@
   background-size: cover;
 }
 
+.apply p {
+  color: white;
+  text-align: center;
+  line-height: 60px;
+  font-size: 20px;
+}
+
 .back {
   width: calc(50% - 3px);
   height: 100%;
@@ -851,10 +980,17 @@
   background-size: cover;
 }
 
+.back p {
+  color: white;
+  text-align: center;
+  line-height: 60px;
+  font-size: 20px;
+}
+
 /*  end */
 
 
-/* 智能插座 */
+/* 智能插座开始 */
 .smart-plug-bar {
   width: 100%;
   height: 70px;
@@ -863,7 +999,7 @@
 }
 
 .smart-plug-img {
-  width: 60px;
+  width: 80px;
   height: 60px;
   background-color: blue;
   float: left;
@@ -875,28 +1011,31 @@
 .smart-plug-toggle {
   width: 100px;
   height: 40px;
+  float: left;
   background-color: orange;
   position: relative;
   top: 20px;
-  left: 105px;
+  left:40px;
 }
 
 .smart-plug-on {
+  clear: both;
   width: 35px;
   height: 35px;
-  background-color: green;
+  #background-color: green;
   position: relative;
-  top: -15px;
-  left: 110px;
+  top: -38px;
+  left: 125px;
 }
 
 .smart-plug-off {
+  clear: both;
   width: 35px;
   height: 35px;
-  background-color: red;
+  #background-color: red;
   position: relative;
-  top: -15px;
-  left: 165px;
+  top: -38px;
+  left: 181px;
 }
 
 
@@ -1073,9 +1212,43 @@
 
 .curtain-free-toggle {
   position: relative;
-  left: -40px;
-  top: 3px;
+  width: 300px;
+  height: 60px;
+  left: 118px;
+  top: 0px;
+  background-color: red;
 }
+
+.curtain-free-toggle input[type=range]{
+  -webkit-appearance: none;
+  width: 300px;
+  height: 35px;
+  background: transparent;
+  outline: none;
+  position: relative;
+  top: -17px;
+  left: 0px;
+}
+
+.curtain-free-toggle input[type=range]::-moz-range-thumb {
+  height: 33px;
+  width: 33px;
+  border-radius: 100%;
+  border-color: black;
+  background: black;
+  cursor: pointer;
+  background-image: url('/static/img/switch_key.png');
+}
+
+.curtain-free-toggle input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+  outline: none;
+  background-image: url('/static/img/process_bar.png');
+}
+
+
 
 /*
 input[type=range] {
@@ -1110,11 +1283,6 @@ input[type=range]::-moz-range-track {
 }
 */
 
-#curtain-toggle-bar {
-  position: relative;
-  top: 15px;
-  left: 120px;
-}
 
 /* 智能窗帘结束 */
 
@@ -1123,7 +1291,7 @@ input[type=range]::-moz-range-track {
 .air-box-line {
   background-color: grey;
   width: 100%;
-  height: 35px;
+  height: 37px;
   margin-top: 8px;
 }
 
@@ -1161,7 +1329,7 @@ input[type=range]::-moz-range-track {
 
 .air-box-line input[type=range]::-moz-range-track {
   width: 100%;
-  height: 35px;
+  height: 37px;
   cursor: pointer;
   outline: none;
   background-image: url('/static/img/process_bar.png');
@@ -1173,9 +1341,16 @@ input[type=range]::-moz-range-track {
 /* 空气盒子结束 */
 
 
-#user-setup-basic-info-text {
 
+
+/* 智能控制 -> 情景控制 开始 */
+#scene-control-my-scene-child-text {
+  position: relative;
+  top: -70px;
 }
+
+
+/* 智能控制 -> 情景控制 结束 */
 
 
 
@@ -1208,4 +1383,237 @@ table,td {
 	border-style: solid;
 	border-color: white;
   border-spacing: 10px;
+}
+
+select {
+  background-color:transparent;
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  color: white;
+  background-image: none !important;
+  filter: none !important;
+  border: none;
+  outline: none;
+  height: 25px !important;
+  line-height: 25px;
+}
+
+.button-register {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  border-radius: 10%;
+  color: white;
+  padding: 7px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+}
+
+.button-off {
+  background-color: #f44336; /* Red */
+  border: none;
+  border-radius: 10%;
+  color: white;
+  padding: 7px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+}
+
+.register-off-page p {
+  color: white;
+  font-size: 17px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: -10px;
+}
+
+
+
+.open-window-forth-line {
+  width: 100%;
+  height: 60px;
+  background-color: grey;
+  margin-top: 15px;
+}
+
+.open-window-free-group {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+.open-window-free-group p {
+  color: white;
+  float: left;
+  font-size: 20px;
+  position: relative;
+  top: 15px;
+  left: 25px;
+}
+
+.open-window-free-group  img {
+  position: relative;
+  float: left;
+  top: 10px;
+  left: 75px;
+}
+
+.open-window-free-toggle {
+  position: relative;
+  width: 300px;
+  height: 60px;
+  left: 118px;
+  top: 0px;
+}
+
+.open-window-free-toggle input[type=range]{
+  -webkit-appearance: none;
+  width: 300px;
+  height: 35px;
+  background: transparent;
+  outline: none;
+  position: relative;
+  top: -17px;
+  left: 0px;
+}
+
+.open-window-free-toggle input[type=range]::-moz-range-thumb {
+  height: 33px;
+  width: 33px;
+  border-radius: 100%;
+  border-color: black;
+  background: black;
+  cursor: pointer;
+  background-image: url('/static/img/switch_key.png');
+}
+
+.open-window-free-toggle input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+  outline: none;
+  background-image: url('/static/img/process_bar.png');
+}
+
+#air-box-left-side-text {
+  clear: both;
+  position: fixed;
+  width: 80%;
+  height: 60px;
+  color: white;
+  font-size: 20px;
+  top: 208px;
+  left: 113px;
+}
+
+#air-box-left-side-exec-log-text {
+  clear: both;
+  position: fixed;
+  width: 80%;
+  height: 60px;
+  color: white;
+  font-size: 20px;
+  top: 275px;
+  left: 113px;
+}
+
+#open-window-left-side-text {
+  clear: both;
+  position: fixed;
+  width: 80%;
+  height: 60px;
+  color: white;
+  font-size: 20px;
+  top: 208px;
+  left: 113px;
+}
+
+#open-window-exec-log-text {
+  clear: both;
+  position: fixed;
+  width: 80%;
+  height: 60px;
+  color: white;
+  font-size: 20px;
+  top: 275px;
+  left: 113px;
+}
+
+
+#smart-curtain-left-side-text {
+  clear: both;
+  position: fixed;
+  width: 80%;
+  height: 60px;
+  color: white;
+  font-size: 20px;
+  top: 208px;
+  left: 113px;
+}
+
+#smart-curtain-exec-log-text {
+  clear: both;
+  position: fixed;
+  width: 80%;
+  height: 60px;
+  color: white;
+  font-size: 20px;
+  top: 275px;
+  left: 113px;
+}
+
+
+
+#smart-plug-left-side-text {
+  clear: both;
+  position: fixed;
+  width: 80%;
+  height: 60px;
+  color: white;
+  font-size: 20px;
+  top: 208px;
+  left: 113px;
+}
+
+#smart-plug-exec-log-text {
+  clear: both;
+  position: fixed;
+  width: 80%;
+  height: 60px;
+  color: white;
+  font-size: 20px;
+  top: 275px;
+  left: 113px;
+}
+
+#smart-plug-img {
+  width: 70%;
+  height: 100%;
+}
+
+
+#dimming-lamp-left-side-text {
+  clear: both;
+  position: fixed;
+  width: 80%;
+  height: 60px;
+  color: white;
+  font-size: 20px;
+  top: 208px;
+  left: 113px;
+}
+
+#dimming-lamp-exec-log-text {
+  clear: both;
+  position: fixed;
+  width: 80%;
+  height: 60px;
+  color: white;
+  font-size: 20px;
+  top: 275px;
+  left: 113px;
 }

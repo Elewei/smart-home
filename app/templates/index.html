@@ -291,7 +291,7 @@
 
 		</div>
 
-		<!-- 开窗器-页面 -->
+		<!-- 智能控制->开窗器-页面 -->
 		<div class="open-window-machine-content hide">
 		  <div class="left-side">
 				<div class="left-side-buttom-one hide">
@@ -306,32 +306,66 @@
 				<div class="left-side-buttom-two-on hide">
 				</div>
 
-				<div id="touch-switch-text" class="buttom-text">
-					<p>触控开关</p>
+				<div id="open-window-left-side-text" class="">
+					<p>开窗器</p>
 				</div>
 
-				<div id="touch-switch-exec-log-text" class="buttom-text">
+				<div id="open-window-exec-log-text" class="">
 					<p>执行记录</p>
 				</div>
 			</div>
 
 			<div class="right-side">
 				<div class="switch-board">
-
+					<div class="curtain-first-line">
+						<div class="curtain-all_open">
+							<p>全开</p>
+							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						</div>
+						<div class="curtain-all_close">
+							<p>全关</p>
+							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						</div>
+					</div>
+					<div class="curtain-second-line">
+						<div class="curtain-stop">
+							<p>停</p>
+							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						</div>
+						<div class="curtain-reverse">
+							<p>反转</p>
+							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						</div>
+					</div>
+					<div class="curtain-third-line">
+						<div class="curtain-check">
+							<p>校准</p>
+							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						</div>
+					</div>
+					<div class="open-window-forth-line">
+						<div class="open-window-free-group">
+							<p>自由开合</p>
+							<div class="open-window-free-toggle">
+								<input type="range" id="open-window-toggle-bar" name="open-window-toggle-bar" min="0" max="100">
+								<span>10%</span>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<div class="video">
-
+					<img src="{{ url_for('static', filename='img/open_window_img/open_window1.jpg') }}" alt="">
 				</div>
-				<p>演示动画</p>
+				<p class="video-text">演示动画</p>
 			</div>
 
 			<div class="buttom">
 				<div class="apply">
-					<p>应用</p>
+					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
 				</div>
-				<div class="back">
-					<p>返回</p>
+				<div id="open-window-machine-content-back" class="back">
+					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
 				</div>
 			</div>
 		</div>
@@ -351,11 +385,23 @@
 				<div class="left-side-buttom-two-on hide">
 				</div>
 
-				<div id="touch-switch-text" class="buttom-text">
+				<div class="left-side-buttom-three">
+				</div>
+
+				<div class="left-side-buttom-three-on hide">
+				</div>
+
+				<div class="left-side-buttom-three">
+				</div>
+
+				<div class="left-side-buttom-three-on hide">
+				</div>
+
+				<div id="touch-switch-text" class="">
 					<p>触控开关</p>
 				</div>
 
-				<div id="touch-switch-exec-log-text" class="buttom-text">
+				<div id="touch-switch-exec-log-text" class="">
 					<p>执行记录</p>
 				</div>
 			</div>
@@ -462,23 +508,23 @@
 				</div>
 
 				<div class="video">
-
+					<img id="touch-switch-background-img" src="{{ url_for('static', filename='img/touch_switch/switch_background.png') }}" alt="">
 				</div>
-				<p>演示动画</p>
+				<p class="video-text">演示动画</p>
 			</div>
 
 			<div class="buttom">
 				<div class="apply">
-					<p>应用</p>
+					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
 				</div>
-				<div class="back">
-					<p>返回</p>
+				<div id="touch-switch-content-back" class="back">
+					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
 				</div>
 			</div>
 		</div>
 
 		<!-- 智能插座-页面 -->
-		<div class="smart-plug-content hide">
+		<div class="smart-plug-content">
 		  <div class="left-side">
 				<div class="left-side-buttom-one hide">
 				</div>
@@ -492,11 +538,11 @@
 				<div class="left-side-buttom-two-on hide">
 				</div>
 
-				<div id="touch-switch-text" class="buttom-text">
+				<div id="smart-plug-left-side-text" class="">
 					<p>智能插座</p>
 				</div>
 
-				<div id="touch-switch-exec-log-text" class="buttom-text">
+				<div id="smart-plug-exec-log-text" class="">
 					<p>执行记录</p>
 				</div>
 			</div>
@@ -505,37 +551,37 @@
 				<div class="switch-board">
 					<div class="smart-plug-bar">
 						<div class="smart-plug-img">
-							<img src="" alt="">
+							<img src="{{ url_for('static', filename='img/smart_plug_panel.png') }}" alt="">
 						</div>
 						<div class="smart-plug-toggle">
-							<img src="" alt="">
+							<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
 						</div>
-						<div class="smart-plug-on hide">
-
+						<div class="smart-plug-on">
+							<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="">
 						</div>
-						<div class="smart-plug-off">
-
+						<div class="smart-plug-off hide">
+							<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="">
 						</div>
 					</div>
 				</div>
 
 				<div class="video">
-
+					<img id="smart-plug-img" src="{{ url_for('static', filename='img/touch_switch/smart_plug.png') }}" alt="">
 				</div>
-				<p>演示动画</p>
+				<p class="video-text">演示动画</p>
 			</div>
 
 			<div class="buttom">
-				<div class="apply">
+				<div  class="apply">
 					<p>应用</p>
 				</div>
-				<div class="back">
+				<div id="smart-plug-content-back" class="back">
 					<p>返回</p>
 				</div>
 			</div>
 		</div>
 
-		<!-- 窗帘-页面 -->
+		<!-- 智能窗帘-页面 -->
 		<div class="smart-curtain-content hide">
 		  <div class="left-side">
 				<div class="left-side-buttom-one hide">
@@ -550,11 +596,11 @@
 				<div class="left-side-buttom-two-on hide">
 				</div>
 
-				<div id="touch-switch-text" class="buttom-text">
+				<div id="smart-curtain-left-side-text" class="">
 					<p>智能窗帘</p>
 				</div>
 
-				<div id="touch-switch-exec-log-text" class="buttom-text">
+				<div id="smart-curtain-exec-log-text" class="">
 					<p>执行记录</p>
 				</div>
 			</div>
@@ -589,7 +635,7 @@
 					</div>
 					<div class="curtain-forth-line">
 						<div class="crutain-free-group">
-							<p>校准</p>
+							<p>自由开合</p>
 							<div class="curtain-free-toggle">
 								<input type="range" id="curtain-toggle-bar" name="curtain-toggle-bar" min="0" max="100">
 							</div>
@@ -598,17 +644,17 @@
 				</div>
 
 				<div class="video">
-
+					<img src="{{ url_for('static', filename='img/smart_curtain/curtain_01.jpg') }}" alt="">
 				</div>
-				<p>演示动画</p>
+				<p class="video-text">演示动画</p>
 			</div>
 
 			<div class="buttom">
-				<div class="apply">
-					<p>应用</p>
+				<div  class="apply">
+					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
 				</div>
-				<div class="back">
-					<p>返回</p>
+				<div id="smart-curtain-content-back" class="back">
+					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
 				</div>
 			</div>
 		</div>
@@ -628,11 +674,11 @@
 				<div class="left-side-buttom-two-on hide">
 				</div>
 
-				<div id="touch-switch-text" class="buttom-text">
-					<p>智能窗帘</p>
+				<div id="dimming-lamp-left-side-text" class="">
+					<p>调光灯</p>
 				</div>
 
-				<div id="touch-switch-exec-log-text" class="buttom-text">
+				<div id="dimming-lamp-exec-log-text" class="">
 					<p>执行记录</p>
 				</div>
 			</div>
@@ -644,30 +690,16 @@
 							<p>全开</p>
 							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
 						</div>
-						<div class="curtain-all_close">
-							<p>全关</p>
-							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						</div>
 					</div>
 					<div class="curtain-second-line">
 						<div class="curtain-stop">
 							<p>停</p>
 							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
 						</div>
-						<div class="curtain-reverse">
-							<p>反转</p>
-							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						</div>
-					</div>
-					<div class="curtain-third-line">
-						<div class="curtain-check">
-							<p>校准</p>
-							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						</div>
 					</div>
 					<div class="curtain-forth-line">
 						<div class="crutain-free-group">
-							<p>校准</p>
+							<p>百分比</p>
 							<div class="curtain-free-toggle">
 								<input type="range" id="curtain-toggle-bar" name="curtain-toggle-bar" min="0" max="100">
 							</div>
@@ -706,11 +738,11 @@
 				<div class="left-side-buttom-two-on hide">
 				</div>
 
-				<div id="touch-switch-text" class="buttom-text">
+				<div id="air-box-left-side-text" class="">
 					<p>空气盒子</p>
 				</div>
 
-				<div id="touch-switch-exec-log-text" class="buttom-text">
+				<div id="air-box-left-side-exec-log-text" class="">
 					<p>执行记录</p>
 				</div>
 			</div>
@@ -722,7 +754,7 @@
 						<input type="range" name="" value="">
 					</div>
 					<div class="air-box-line">
-						<p>甲苯</p>
+						<p>甲醛</p>
 						<input type="range" name="" value="">
 					</div>
 					<div class="air-box-line">
@@ -750,20 +782,20 @@
 				<div class="video">
 
 				</div>
-				<p>演示动画</p>
+				<p class="video-text">演示动画</p>
 			</div>
 
 			<div class="buttom">
 				<div class="apply">
-					<p>应用</p>
+					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
 				</div>
-				<div class="back">
-					<p>返回</p>
+				<div id="air-box-content-back" class="back">
+					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
 				</div>
 			</div>
 		</div>
 
-		<!-- 设备管理-页面 -->
+		<!-- 管理入口->设备管理-页面 -->
 		<div class="device-manage-content hide">
 			<div class="left-side">
 				<div id="device-manage-device-list" class="left-side-buttom-one hide">
@@ -803,6 +835,7 @@
 			</div>
 
 			<div class="right-side register-off-page hide">
+				<p>设备注册</p>
 				<table id="device-manage-table">
 					<tr>
 						<th>设备名称</th>
@@ -811,78 +844,80 @@
 						<th>注册/注销</th>
 					</tr>
 					<tr>
-						<td>插座</td>
-						<td>主卧</td>
+						<td>
+							<select>
+							  <option value="register-off-open-window-machine">开窗器</option>
+							  <option value="register-off-curtain">窗帘</option>
+							  <option value="register-off-touch-switch">触控开关</option>
+							  <option value="register-off-air-box">空气盒子</option>
+								<option value="register-off-smart-plug">智能插座</option>
+								<option value="register-off-dimming-lamp">调光灯</option>
+							</select>
+						</td>
+						<td>
+							<select>
+							  <option value="register-off-dinner-room">客厅</option>
+							  <option value="register-off-first-room">主卧</option>
+							  <option value="register-off-second-room">次卧</option>
+							  <option value="register-off-bath-room">卫生间</option>
+								<option value="register-off-kitchen-room">厨房</option>
+								<option value="register-off-other-room">其他房间</option>
+							</select>
+						</td>
+						<td></td>
+						<td>
+							<button class="button-register" type="button" id="register-plug">注册</button>
+						</td>
+					</tr>
+				</table>
+				<p>设备注销</p>
+				<table id="device-manage-table">
+					<tr>
+						<th>设备名称</th>
+						<th>所属房间</th>
+						<th>设备地址</th>
+						<th>注册/注销</th>
+					</tr>
+					<tr>
+						<td>
+							<select>
+								<option value="register-off-open-window-machine">开窗器</option>
+								<option value="register-off-curtain">窗帘</option>
+								<option value="register-off-touch-switch">触控开关</option>
+								<option value="register-off-air-box">空气盒子</option>
+								<option value="register-off-smart-plug">智能插座</option>
+								<option value="register-off-dimming-lamp">调光灯</option>
+							</select>
+						</td>
+						<td>
+							<select>
+								<option value="register-off-dinner-room">客厅</option>
+								<option value="register-off-first-room">主卧</option>
+								<option value="register-off-second-room">次卧</option>
+								<option value="register-off-bath-room">卫生间</option>
+								<option value="register-off-kitchen-room">厨房</option>
+								<option value="register-off-other-room">其他房间</option>
+							</select>
+						</td>
 						<td>192.168.1.1</td>
 						<td>
-							<button type="button" id="register-plug">注册</button>
-							<button type="button" id="off-plug">注销</button>
+							<button class="button-off" type="button" id="off-plug">注销</button>
 						</td>
 					</tr>
-					<tr>
-						<td>开窗器</td>
-						<td>主卧</td>
-						<td>192.168.2.1</td>
-						<td>
-							<button type="button" id="register-open-window-macheine">注册</button>
-							<button type="button" id="off-open-window-macheine">注销</button>
-						</td>
-					</tr>
-					<tr>
-						<td>窗帘</td>
-						<td>主卧</td>
-						<td>192.168.3.1</td>
-						<td>
-							<button type="button" id="register-open-window-macheine">注册</button>
-							<button type="button" id="off-open-window-macheine">注销</button>
-						</td>
-					</tr>
-					<tr>
-						<td>窗帘</td>
-						<td>主卧</td>
-						<td>192.168.3.1</td>
-						<td>
-							<button type="button" id="register-open-window-macheine">注册</button>
-							<button type="button" id="off-open-window-macheine">注销</button>
-						</td>
-					</tr>
-					<tr>
-						<td>窗帘</td>
-						<td>主卧</td>
-						<td>192.168.3.1</td>
-						<td>
-							<button type="button" id="register-open-window-macheine">注册</button>
-							<button type="button" id="off-open-window-macheine">注销</button>
-						</td>
-					</tr>
-					<tr>
-						<td>窗帘</td>
-						<td>主卧</td>
-						<td>192.168.3.1</td>
-						<td>
-							<button type="button" id="register-open-window-macheine">注册</button>
-							<button type="button" id="off-open-window-macheine">注销</button>
-						</td>
-					</tr>
-
 				</table>
 			</div>
 
 			<div class="buttom">
 				<div class="apply">
-					<span>应用</span>
+					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
 				</div>
-				<div class="back">
-					<a href="javascript :;" onClick="javascript :history.back(-1);"><span>返回</span></a>
+				<div id="device-manage-content-back" class="back">
+					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
 				</div>
 			</div>
 		</div>
 
-		<!-- 情景控制-页面 -->
-		<div class="scene-control-content hide">
-		</div>
-
-		<!-- 房间控制-页面 -->
+		<!-- 智能控制->房间控制-页面 -->
 		<div class="room-control-content hide">
 			<div class="left-side">
 				<div id="independant-left-side-buttom-one" class="left-side-buttom-one">
@@ -913,25 +948,25 @@
 			<div class="right-side">
 				<div class="up">
 					<div class="open-window-machine living-room">
-						<p>客厅</p>
+						<img src="{{ url_for('static', filename='img/room_control_dinner_room.png') }}" alt="">
 					</div>
 					<div class="curtain">
-						<p>主卧</p>
+						<img src="{{ url_for('static', filename='img/room_control_first_room.png') }}" alt="">
 					</div>
 					<div class="touch-switch">
-						<p>次卧</p>
+						<img src="{{ url_for('static', filename='img/room_control_second_room.png') }}" alt="">
 					</div>
 				</div>
 
 				<div class="down">
 					<div class="air-box">
-						<p>卫生间</p>
+						<img src="{{ url_for('static', filename='img/room_control_bath_room.png') }}" alt="">
 					</div>
 					<div class="smart-plug">
-						<p>厨房</p>
+						<img src="{{ url_for('static', filename='img/room_control_kitchen_room.png') }}" alt="">
 					</div>
 					<div class="dimming-lamp">
-						<p>其他房间</p>
+						<img src="{{ url_for('static', filename='img/room_control_other_room.png') }}" alt="">
 					</div>
 				</div>
 			</div>
@@ -947,7 +982,7 @@
 		</div>
 
 		<!-- 设置向导 -> 用户设置-页面 -->
-		<div class="user-setup-content">
+		<div class="user-setup-content hide">
 		  <div class="left-side">
 				<div id="user-setup-basic-info" class="left-side-buttom-one">
 				</div>
@@ -1000,6 +1035,83 @@
 					<p>应用</p>
 				</div>
 				<div class="back">
+					<p>返回</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- 智能控制->情景控制-页面 -->
+		<div class="scene-control-content hide">
+			<div class="left-side">
+				<div id="scene-control-left-side-buttom-one" class="left-side-buttom-one hide">
+
+				</div>
+
+				<div id="scene-control-left-side-buttom-one-on" class="left-side-buttom-one-on">
+
+				</div>
+
+				<div id="scene-control-left-side-buttom-two" class="left-side-buttom-two">
+
+				</div>
+
+				<div id="scene-control-left-sice-buttom-two-on" class="left-side-buttom-two-on hide">
+
+				</div>
+
+				<div class="buttom-text" id="scene-control-my-scene-text">
+					<p>我的情景</p>
+				</div>
+
+				<div class="buttom-text" id="scene-control-exec-log-text">
+					<p>执行记录</p>
+				</div>
+			</div>
+
+			<div id="scene-control-my-scene" class="right-side">
+				<div class="up">
+					<div id="scene-control-back-home-mode" class="up-first">
+						<img src="{{ url_for('static', filename='img/scene_control_back_home_mode.png') }}" alt="">
+					</div>
+					<div id="scene-control-dinner-mode" class="up-second">
+						<img src="{{ url_for('static', filename='img/scene_control_dinner_mode.png') }}" alt="">
+					</div>
+					<div id="scene-control-leave-home-mode" class="up-third">
+						<img src="{{ url_for('static', filename='img/scene_control_leave_home_mode.png') }}" alt="">
+					</div>
+				</div>
+
+				<div class="down">
+					<div id="scene-control-rain-mode" class="down-first">
+						<img src="{{ url_for('static', filename='img/scene_control_rain_mode.png') }}" alt="">
+					</div>
+					<div id="scene-control-sleep-mode" class="down-second">
+						<img src="{{ url_for('static', filename='img/scene_control_sleep_mode.png') }}" alt="">
+					</div>
+					<div id="scene-control-custom-mode" class="down-third">
+						<img src="{{ url_for('static', filename='img/scene_control_custom_mode.png') }}" alt="">
+					</div>
+				</div>
+			</div>
+
+			<div id="scene-control-exec-log" class="right-side hide">
+				<table class="device-manage-table">
+					<tr>
+						<th>设备名称</th>
+						<th>执行动作</th>
+					</tr>
+					<tr>
+						<td>插座</td>
+						<td>开</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="buttom">
+				<div class="apply">
+					<p>应用</p>
+				</div>
+				<div id="scene-control-content-back" class="back">
 					<p>返回</p>
 				</div>
 			</div>

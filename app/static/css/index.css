@@ -1730,3 +1730,12 @@ select {
 
 
 /* 管理入口 -> 自由组合 结束 */
+
+
+#scene-control-my-scene-text {
+  top: -140px;
+}
+
+#scene-control-exec-log-text {
+  top: -140px;  
+}

@@ -130,6 +130,7 @@ $(document).ready(() => {
   const $independantControlContentBack = $('#independant-control-content-back');
   const $openWindowToggleBar = $('#open-window-toggle-bar');
   const $windowImg = $('#window-img');
+  const $roomControlContentBack = $('#room-control-content-back');
 
 
   /* 点击智能控制 */
@@ -1440,18 +1441,31 @@ $(document).ready(() => {
     $smartHomeContent.show();
   });
 
-  setInterval(function() {
+  url = window.location.href
+
+
+  $openWindowToggleBar.on('click', ()=>{
+    console.log($openWindowToggleBar.val());
+
     console.log($openWindowToggleBar.val());
 
     let windowToggle = $openWindowToggleBar.val();
 
+
     if (windowToggle == 0) {
       console.log($windowImg[0].src);
-      if ($windowImg[0].src == "")
-      $windowImg.attr("src","/static/img/open_window_img/1.jpg");
+      //if ($windowImg[0].src == "")
+      preImgPath = $windowImg[0].src;
+      newImgPath = "/static/img/open_window_img/1.jpg";
+      if (preImgPath != newImgPath) {
+        $windowImg.attr("src",newImgPath);
+      }
     } else if(windowToggle == 5) {
-      $windowImg.attr("src","/static/img/open_window_img/2.jpg");
-      console.log($windowImg[0].src);
+      preImgPath = $windowImg[0].src;
+      newImgPath = "/static/img/open_window_img/2.jpg";
+      if (preImgPath != newImgPath) {
+        $windowImg.attr("src",newImgPath);
+      }
     }else if(windowToggle == 10) {
       $windowImg.attr("src","/static/img/open_window_img/3.jpg");
       console.log($windowImg[0].src);
@@ -1508,11 +1522,44 @@ $(document).ready(() => {
       console.log($windowImg[0].src);
     }
 
-  }, 20);
-
-  /*
-  $openWindowToggleBar.on('click', ()=>{
-    console.log($openWindowToggleBar.val());
   });
-  */
+
+
+  $roomControlContentBack.on('click', ()=> {
+    $smartControl.hide();
+    $smartControlOn.show();
+    $manageEntry.show();
+    $manageEntryOn.hide();
+    $setGuide.show();
+    $setGuideOn.hide();
+    $other.show();
+    $otherOn.hide();
+
+    /* 独立控制页面 */
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $deviceManageContent.hide();
+    $manageEntryContent.hide();
+    $setGuideContent.hide();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
+    $userSetupContent.hide();
+    $sceneControlMySceneChildContent.hide();
+    $openWindowMachineContent.hide();
+    $homeManageContent.hide();
+    $freeGroupContent.hide();
+    $smartHomeContent.show();
+    
+  });
+
+
+
 });

@@ -127,6 +127,10 @@ $(document).ready(() => {
   const $homeManageContentBack = $('#home-manage-content-back');
   const $manageEntryFreeGroup = $('#manage-entry-free-group');
   const $freeGroupContent = $('.free-group-content');
+  const $independantControlContentBack = $('#independant-control-content-back');
+  const $openWindowToggleBar = $('#open-window-toggle-bar');
+  const $windowImg = $('#window-img');
+
 
   /* 点击智能控制 */
   $smartControl.on('click', ()=>{
@@ -1400,4 +1404,115 @@ $(document).ready(() => {
 
   });
 
+  /* 点击独立控制 返回按钮 */
+  $independantControlContentBack.on('click', ()=>{
+    console.log("点击独立控制 返回按钮");
+    $smartControl.hide();
+    $smartControlOn.show();
+    $manageEntry.show();
+    $manageEntryOn.hide();
+    $setGuide.show();
+    $setGuideOn.hide();
+    $other.show();
+    $otherOn.hide();
+
+    /* 独立控制页面 */
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $deviceManageContent.hide();
+    $manageEntryContent.hide();
+    $setGuideContent.hide();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
+    $userSetupContent.hide();
+    $sceneControlMySceneChildContent.hide();
+    $openWindowMachineContent.hide();
+    $homeManageContent.hide();
+    $freeGroupContent.hide();
+    $smartHomeContent.show();
+  });
+
+  setInterval(function() {
+    console.log($openWindowToggleBar.val());
+
+    let windowToggle = $openWindowToggleBar.val();
+
+    if (windowToggle == 0) {
+      console.log($windowImg[0].src);
+      if ($windowImg[0].src == "")
+      $windowImg.attr("src","/static/img/open_window_img/1.jpg");
+    } else if(windowToggle == 5) {
+      $windowImg.attr("src","/static/img/open_window_img/2.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 10) {
+      $windowImg.attr("src","/static/img/open_window_img/3.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 15) {
+      $windowImg.attr("src","/static/img/open_window_img/4.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 25) {
+      $windowImg.attr("src","/static/img/open_window_img/5.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 30) {
+      $windowImg.attr("src","/static/img/open_window_img/6.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 35) {
+      $windowImg.attr("src","/static/img/open_window_img/7.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 40) {
+      $windowImg.attr("src","/static/img/open_window_img/8.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 45) {
+      $windowImg.attr("src","/static/img/open_window_img/9.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 50) {
+      $windowImg.attr("src","/static/img/open_window_img/10.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 55) {
+      $windowImg.attr("src","/static/img/open_window_img/11.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 60) {
+      $windowImg.attr("src","/static/img/open_window_img/12.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 65) {
+      $windowImg.attr("src","/static/img/open_window_img/13.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 70) {
+      $windowImg.attr("src","/static/img/open_window_img/14.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 75) {
+      $windowImg.attr("src","/static/img/open_window_img/15.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 80) {
+      $windowImg.attr("src","/static/img/open_window_img/16.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 85) {
+      $windowImg.attr("src","/static/img/open_window_img/17.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 90) {
+      $windowImg.attr("src","/static/img/open_window_img/18.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 95) {
+      $windowImg.attr("src","/static/img/open_window_img/19.jpg");
+      console.log($windowImg[0].src);
+    }else if(windowToggle == 100) {
+      $windowImg.attr("src","/static/img/open_window_img/20.jpg");
+      console.log($windowImg[0].src);
+    }
+
+  }, 20);
+
+  /*
+  $openWindowToggleBar.on('click', ()=>{
+    console.log($openWindowToggleBar.val());
+  });
+  */
 });

@@ -102,7 +102,7 @@
     </div>
 
 		<!-- 智能控制-页面  -->
-    <div class="smart-control-content hide">
+    <div class="smart-control-content">
         <div class="first scene-control">
 					<img src="{{ url_for('static', filename='img/scene-control.png') }}">
         </div>
@@ -284,7 +284,7 @@
 					<div class="apply">
 						<p>应用</p>
 					</div>
-					<div class="back">
+					<div id="independant-control-content-back" class="back">
 						<p>返回</p>
 					</div>
 				</div>
@@ -347,7 +347,7 @@
 						<div class="open-window-free-group">
 							<p>自由开合</p>
 							<div class="open-window-free-toggle">
-								<input type="range" id="open-window-toggle-bar" name="open-window-toggle-bar" min="0" max="100">
+								<input type="range" id="open-window-toggle-bar" name="open-window-toggle-bar" step="5" min="0" max="100">
 								<span>10%</span>
 							</div>
 						</div>
@@ -355,7 +355,7 @@
 				</div>
 
 				<div class="video">
-					<img src="{{ url_for('static', filename='img/open_window_img/open_window1.jpg') }}" alt="">
+					<img id = "window-img" src="{{ url_for('static', filename='img/open_window_img/1.jpg') }}" alt="">
 				</div>
 				<p class="video-text">演示动画</p>
 			</div>
@@ -1223,7 +1223,7 @@
 		</div>
 
 		<!-- 管理入口 -> 自由组合-页面 -->
-		<div class="free-group-content">
+		<div class="free-group-content hide">
 			<div class="left-side">
 				<div id="scene-control-left-side-buttom-one" class="left-side-buttom-one hide">
 

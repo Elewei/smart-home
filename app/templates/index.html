@@ -17,7 +17,7 @@
 			<div class="user-home">
 				{% if g.user %}
 					<img src="{{ url_for('static', filename='img/avator.png') }}" alt="头像">
-					<span>{{ g.user['username'] }}的家</span>
+					<span class="user-home-text">{{ g.user['username'] }}的家</span>
 				{% else %}
 					<a href="{{ url_for('auth.register') }}">注册</a>
 					<a href="{{ url_for('auth.login') }}">登录</a>
@@ -36,8 +36,8 @@
 
 			<!-- 显示当前日期 -->
 			<div class="show-date">
-				<span class="date" style="font-size: 24px;">2019年01月01号</span>  <br>
-				<span class="lunar" style="font-size: 17px;">甲午【马】年六月二十</span>
+				<span class="date" style="font-size: 20px;">2019年01月01号</span>  <br>
+				<span class="lunar" style="font-size: 15px;">甲午【马】年六月二十</span>
 			</div>
 
 			<!-- 显示当前时间 -->
@@ -47,10 +47,11 @@
 
 			<!-- 显示当前天气 -->
 			<div class="weather">
-				<span>18℃-30℃</span> <br />
-				<span>多云转晴</span>
-				<span>苏州</span>
+				<span id="wendu">18℃-30℃</span> <br />
+				<span id="tianqi">多云转晴</span>
+				<span id="city">苏州</span>
 			</div>
+
 			<div class="weather_img">
 				<img src="{{ url_for('static', filename='img/weather/sunny.png') }}" alt="天气图标">
 			</div>
@@ -219,9 +220,9 @@
 				</div>
 
 				<div class="fourth">
-						<div class="third-one">
-							<img src="{{ url_for('static', filename='img/about_us.png') }}">
-						</div>
+					<div class="fourth-one other-content-about-us">
+						<img src="{{ url_for('static', filename='img/about_us.png') }}">
+					</div>
 				</div>
 		</div>
 

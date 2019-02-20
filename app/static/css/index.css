@@ -181,7 +181,7 @@
   height: 40px;
   #background-color: grey;
   margin-top: 40px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .header div {
@@ -201,18 +201,18 @@
 
 .first{
     width: 25%;
-    height: 420px;
+    height: 450px;
     float: left;
 }
 
 .first-one {
   width: 100%;
-  height: 205px;
+  height: 220px;
 }
 
 .first-two{
     width: 100%;
-    height: 205px;
+    height: 220px;
     margin-top: 10px;
 }
 

@@ -417,7 +417,7 @@
   color: white;
   font-size: 20px;
   top: 208px;
-  left: 113px;
+  left: 100px;
 }
 
 #touch-switch-exec-log-text {
@@ -428,7 +428,7 @@
   color: white;
   font-size: 20px;
   top: 275px;
-  left: 113px;
+  left: 100px;
 }
 
 .exec-log-text {
@@ -708,7 +708,7 @@
   float: right;
 }
 
-/* 触控开关-页面 */
+/* 触控开关-页面 开始*/
 .switch-board {
   width: 50%;
   height: 90%;
@@ -947,9 +947,64 @@
   border-radius: 5%;
 }
 
-#touch-switch-background-img {
+#video-touch-switch-background-img {
   width: 70%;
   height: 100%;
+}
+
+#video-one-key-switch {
+  #background-color: red;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 300px;
+  left: 930px;
+}
+
+
+#video-two-key-one-switch {
+  #background-color: red;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 300px;
+  left: 890px;  
+}
+
+#video-two-key-two-switch {
+  #background-color: green;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 300px;
+  left: 980px;  
+}
+
+#video-three-key-one-switch {
+  #background-color: red;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 300px;
+  left: 855px;    
+}
+
+#video-three-key-two-switch {
+  #background-color: green;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 300px;
+  left: 935px;    
+}
+
+#video-three-key-three-switch {
+  #background-color: green;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 300px;
+  left: 1015px;    
 }
 
 .video-text {

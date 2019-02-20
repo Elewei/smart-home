@@ -131,7 +131,16 @@ $(document).ready(() => {
   const $openWindowToggleBar = $('#open-window-toggle-bar');
   const $windowImg = $('#window-img');
   const $roomControlContentBack = $('#room-control-content-back');
+  const $curtainToggleBar = $('#curtain-toggle-bar');
+  const $curtainImg = $('#curtain-img');
+  const $dimmingLampContentBack = $('#dimming-lamp-content-back');
+  const $videoOneKeySwitch = $('#video-one-key-switch');
+  const $videoTwoKeyOneSwitch = $('#video-two-key-one-switch');
+  const $videoTwoKeyTwoSwitch = $('#video-two-key-two-switch');
 
+  const $videoThreeKeyOneSwitch = $('#video-three-key-one-switch');
+  const $videoThreeKeyTwoSwitch = $('#video-three-key-two-switch');
+  const $videoThreeKeyThreeSwitch = $('#video-three-key-three-switch');
 
   /* 点击智能控制 */
   $smartControl.on('click', ()=>{
@@ -166,7 +175,6 @@ $(document).ready(() => {
     $homeManageContent.hide();
     $freeGroupContent.hide();
     $smartHomeContent.show();
-
   });
 
   /* 点击管理入口 */
@@ -229,7 +237,6 @@ $(document).ready(() => {
     $manageEntryContent.hide();
     $userSetupContent.hide();
     $setGuideContent.show();
-
   });
 
   /* 点击其他 */
@@ -466,10 +473,16 @@ $(document).ready(() => {
 
   /* 点击一键触控开关 - 开 */
   $oneKeySwitchKeyOn.on('click', ()=>{
-    console.log("click onekey On");
+    console.log("点击一键触控开关 - 开");
+    console.log($videoOneKeySwitch[0].src);
 
     $oneKeySwitchKeyOn.hide();
     $oneKeySwitchKeyOff.show();
+    
+    $videoOneKeySwitch.show();
+
+    let oneKeySwitchKeyOnImgPath = "/static/img/touch_switch/touch_switch_on.png";
+    $videoOneKeySwitch.attr("src",oneKeySwitchKeyOnImgPath);
 
     $.getJSON($SCRIPT_ROOT + '/switch', {
       keypanel: 1,
@@ -478,26 +491,36 @@ $(document).ready(() => {
     }, function(data) {
       console.log(data.result);
     });
-
-
-
   });
 
   /* 点击一键触控开关 - 关 */
   $oneKeySwitchKeyOff.on('click', ()=>{
-    console.log("click onekey Off");
+    console.log("点击一键触控开关 - 关");
 
     $oneKeySwitchKeyOn.show();
     $oneKeySwitchKeyOff.hide();
+    
+    $videoOneKeySwitch.show();
+
+    let oneKeySwitchKeyOnImgPath = "/static/img/touch_switch/touch_switch_off.png";
+    $videoOneKeySwitch.attr("src",oneKeySwitchKeyOnImgPath);
 
   });
 
   /* 点击二键触控开关一 - 开 */
   $twoKeyOneSwitchOn.on('click', ()=>{
-    console.log("click onekey On");
+    console.log("点击二键触控开关一 - 开");
 
     $twoKeyOneSwitchOn.hide();
     $twoKeyOneSwitchOff.show();
+    
+    $videoOneKeySwitch.hide();
+    $videoTwoKeyOneSwitch.show();
+    $videoTwoKeyTwoSwitch.show();
+
+    console.log($videoTwoKeyOneSwitch[0].src);
+    let twoKeyOneSwitchOnImgPath = "/static/img/touch_switch/multi_touch_switch_on.png";
+    $videoTwoKeyOneSwitch.attr("src",twoKeyOneSwitchOnImgPath);
 
     $.getJSON($SCRIPT_ROOT + '/switch', {
       keypanel: 1,
@@ -518,6 +541,14 @@ $(document).ready(() => {
     $twoKeyOneSwitchOn.show();
     $twoKeyOneSwitchOff.hide();
 
+    $videoOneKeySwitch.hide();
+    $videoTwoKeyOneSwitch.show();
+    $videoTwoKeyTwoSwitch.show();
+
+    let twoKeyOneSwitchOffImgPath = "/static/img/touch_switch/multi_touch_switch_off.png";
+    $videoTwoKeyOneSwitch.attr("src",twoKeyOneSwitchOffImgPath);
+
+
   });
 
   /* 点击二键触控开关二 - 开 */
@@ -526,6 +557,13 @@ $(document).ready(() => {
 
     $twoKeyTwoSwitchOn.hide();
     $twoKeyTwoSwitchOff.show();
+
+    $videoOneKeySwitch.hide();
+    $videoTwoKeyOneSwitch.show();
+    $videoTwoKeyTwoSwitch.show();
+
+    let twoKeyTwoSwitchOnImgPath = "/static/img/touch_switch/multi_touch_switch_on.png";
+    $videoTwoKeyTwoSwitch.attr("src",twoKeyTwoSwitchOnImgPath);
 
     $.getJSON($SCRIPT_ROOT + '/switch', {
       keypanel: 1,
@@ -544,6 +582,13 @@ $(document).ready(() => {
     $twoKeyTwoSwitchOn.show();
     $twoKeyTwoSwitchOff.hide();
 
+    $videoOneKeySwitch.hide();
+    $videoTwoKeyOneSwitch.show();
+    $videoTwoKeyTwoSwitch.show();
+
+    let twoKeyTwoSwitchOffImgPath = "/static/img/touch_switch/multi_touch_switch_off.png";
+    $videoTwoKeyTwoSwitch.attr("src",twoKeyTwoSwitchOffImgPath);
+
   });
 
   /* 点击三键触控开关一 - 开 */
@@ -552,6 +597,13 @@ $(document).ready(() => {
 
     $threeKeyOneSwitchOn.hide();
     $threeKeyOneSwitchOff.show();
+    
+    $videoOneKeySwitch.hide();
+    $videoTwoKeyOneSwitch.hide();
+    $videoTwoKeyTwoSwitch.hide();
+    $videoThreeKeyOneSwitch.show();
+    $videoThreeKeyTwoSwitch.show();
+    $videoThreeKeyThreeSwitch.show();
 
     $.getJSON($SCRIPT_ROOT + '/switch', {
       keypanel: 1,
@@ -572,6 +624,14 @@ $(document).ready(() => {
     $threeKeyOneSwitchOn.show();
     $threeKeyOneSwitchOff.hide();
 
+    $videoOneKeySwitch.hide();
+    $videoTwoKeyOneSwitch.hide();
+    $videoTwoKeyTwoSwitch.hide();
+    $videoThreeKeyOneSwitch.show();
+    $videoThreeKeyTwoSwitch.show();
+    $videoThreeKeyThreeSwitch.show();
+
+
   });
 
   /* 点击三键触控开关二 - 开 */
@@ -580,6 +640,13 @@ $(document).ready(() => {
 
     $threeKeyTwoSwitchOn.hide();
     $threeKeyTwoSwitchOff.show();
+
+    $videoOneKeySwitch.hide();
+    $videoTwoKeyOneSwitch.hide();
+    $videoTwoKeyTwoSwitch.hide();
+    $videoThreeKeyOneSwitch.show();
+    $videoThreeKeyTwoSwitch.show();
+    $videoThreeKeyThreeSwitch.show();
 
     $.getJSON($SCRIPT_ROOT + '/switch', {
       keypanel: 1,
@@ -600,6 +667,13 @@ $(document).ready(() => {
     $threeKeyTwoSwitchOn.show();
     $threeKeyTwoSwitchOff.hide();
 
+    $videoOneKeySwitch.hide();
+    $videoTwoKeyOneSwitch.hide();
+    $videoTwoKeyTwoSwitch.hide();
+    $videoThreeKeyOneSwitch.show();
+    $videoThreeKeyTwoSwitch.show();
+    $videoThreeKeyThreeSwitch.show();
+
   });
 
   /* 点击三键触控开关三 - 开 */
@@ -608,6 +682,13 @@ $(document).ready(() => {
 
     $threeKeyThreeSwitchOn.hide();
     $threeKeyThreeSwitchOff.show();
+
+    $videoOneKeySwitch.hide();
+    $videoTwoKeyOneSwitch.hide();
+    $videoTwoKeyTwoSwitch.hide();
+    $videoThreeKeyOneSwitch.show();
+    $videoThreeKeyTwoSwitch.show();
+    $videoThreeKeyThreeSwitch.show();
 
     $.getJSON($SCRIPT_ROOT + '/switch', {
       keypanel: 1,
@@ -628,7 +709,15 @@ $(document).ready(() => {
     $threeKeyThreeSwitchOn.show();
     $threeKeyThreeSwitchOff.hide();
 
+    $videoOneKeySwitch.hide();
+    $videoTwoKeyOneSwitch.hide();
+    $videoTwoKeyTwoSwitch.hide();
+    $videoThreeKeyOneSwitch.show();
+    $videoThreeKeyTwoSwitch.show();
+    $videoThreeKeyThreeSwitch.show();
+
   });
+
 
   /* 点击 管理入口 -> 设备管理 */
   $deviceManageCard.on('click', ()=> {
@@ -1444,9 +1533,7 @@ $(document).ready(() => {
   url = window.location.href
 
 
-  $openWindowToggleBar.on('click', ()=>{
-    console.log($openWindowToggleBar.val());
-
+  $openWindowToggleBar.on('input propertychange', ()=>{
     console.log($openWindowToggleBar.val());
 
     let windowToggle = $openWindowToggleBar.val();
@@ -1560,6 +1647,169 @@ $(document).ready(() => {
     
   });
 
+
+  $curtainToggleBar.on('input propertychange', ()=>{
+    console.log($curtainToggleBar.val());
+    let curtainToggle = $curtainToggleBar.val();
+    let preImgPath, newImgPath;
+
+    if (curtainToggle == 0) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/01.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    } else if(curtainToggle == 5) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/02.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 10) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/03.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 15) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/04.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 25) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/05.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 30) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/06.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 35) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/07.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 40) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/08.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 45) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/09.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 50) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/10.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 55) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/11.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 60) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/12.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 65) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/13.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 70) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/14.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 75) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/15.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 80) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/16.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 85) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/17.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 90) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/18.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 95) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/19.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }else if(curtainToggle == 100) {
+      preImgPath = $curtainImg[0].src;
+      newImgPath = "/static/img/smart_curtain/20.jpg";
+      if (preImgPath != newImgPath) {
+        $curtainImg.attr("src",newImgPath);
+      }
+    }
+
+  });
+
+
+  $dimmingLampContentBack.on('click', ()=>{
+    console.log('返回独立控制页面');
+    $smartControl.hide();
+    $smartControlOn.show();
+    $manageEntry.show();
+    $manageEntryOn.hide();
+    $setGuide.show();
+    $setGuideOn.hide();
+    $other.show();
+    $otherOn.hide();
+
+    /* 独立控制页面 */
+    $touchSwitchContent.hide();
+    $deviceManageContent.hide();
+    $manageEntryContent.hide();
+    $setGuideContent.hide();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
+    $userSetupContent.hide();
+    $sceneControlMySceneChildContent.hide();
+    $openWindowMachineContent.hide();
+    $smartHomeContent.hide();
+    $independantControlContent.show();    
+  });
 
 
 });

@@ -56,10 +56,10 @@
 			</div>
 
 			<!-- ToDo: 如果已经登录，显示退出 -->
-    </div>
+	  </div>
 
 		<!-- 第二栏  -->
-    <div class="header">
+	  <div class="header">
 			<!-- 智能控制（未点击）  -->
 			<div class="smart-control hide">
 				<img src="{{ url_for('static', filename='img/smart_control.png') }}">
@@ -99,34 +99,34 @@
 			<div class="other-on hide">
 				<img src="{{ url_for('static', filename='img/other_on.png') }}">
 			</div>
-    </div>
+	  </div>
 
 		<!-- 智能控制-页面  -->
-    <div class="smart-control-content">
-        <div class="first scene-control">
+	  <div class="smart-control-content hide">
+	      <div class="first scene-control">
 					<img src="{{ url_for('static', filename='img/scene-control.png') }}">
-        </div>
-        <div class="second">
-            <div class="second-one room-control">
+	      </div>
+	      <div class="second">
+	          <div class="second-one room-control">
 						  <img src="{{ url_for('static', filename='img/room-control.png') }}">
-            </div>
+	          </div>
 
 						<div class="second-two independant-control">
 							<img src="{{ url_for('static', filename='img/independant-control.png') }}">
-            </div>
-        </div>
-        <div class="third">
-            <div class="third-one time-control">
+	          </div>
+	      </div>
+	      <div class="third">
+	          <div class="third-one time-control">
 							<img src="{{ url_for('static', filename='img/time-control.png') }}">
-            </div>
-            <div class="third-two voice-control">
+	          </div>
+	          <div class="third-two voice-control">
 							<img src="{{ url_for('static', filename='img/voice-control.png') }}">
-            </div>
-        </div>
-        <div class="fourth home-monitor">
+	          </div>
+	      </div>
+	      <div class="fourth home-monitor">
 					<img src="{{ url_for('static', filename='img/home-monitor.png') }}">
-        </div>
-    </div>
+	      </div>
+	  </div>
 
 		<!-- 管理入口-页面  -->
 		<div class="manage-entry-content hide">
@@ -198,7 +198,6 @@
 							<img src="{{ url_for('static', filename='img/other_setup.png') }}">
 						</div>
 				</div>
-
 		</div>
 
 		<!-- 其他-页面  -->
@@ -226,7 +225,7 @@
 				</div>
 		</div>
 
-		<!-- 独立控制-页面 -->
+		<!-- 智能控制->独立控制-页面 -->
 		<div class="independant-control-content hide">
 				<div class="left-side">
 					<div id="independant-left-side-buttom-one" class="left-side-buttom-one">
@@ -288,10 +287,9 @@
 						<p>返&nbsp&nbsp&nbsp&nbsp回</p>
 					</div>
 				</div>
-
 		</div>
 
-		<!-- 智能控制->开窗器-页面 -->
+		<!-- 智能控制->独立控制->开窗器-页面 -->
 		<div class="open-window-machine-content hide">
 		  <div class="left-side">
 				<div class="left-side-buttom-one hide">
@@ -348,7 +346,7 @@
 							<p>自由开合</p>
 							<div class="open-window-free-toggle">
 								<input type="range" id="open-window-toggle-bar" name="open-window-toggle-bar" step="5" min="0" max="100">
-								<span>10%</span>
+								<!--<span>10%</span>-->
 							</div>
 						</div>
 					</div>
@@ -356,7 +354,6 @@
 
 				<div class="video">
 					<img id = "window-img" src="/static/img/open_window_img/1.jpg" alt="">
-
 				</div>
 				<p class="video-text">演示动画</p>
 			</div>
@@ -371,8 +368,8 @@
 			</div>
 		</div>
 
-		<!-- 触控开关-页面 -->
-		<div class="touch-switch-content hide">
+		<!-- 智能控制->独立控制->触控开关-页面 -->
+		<div class="touch-switch-content">
 		  <div class="left-side">
 				<div class="left-side-buttom-one hide">
 				</div>
@@ -384,18 +381,6 @@
 				</div>
 
 				<div class="left-side-buttom-two-on hide">
-				</div>
-
-				<div class="left-side-buttom-three">
-				</div>
-
-				<div class="left-side-buttom-three-on hide">
-				</div>
-
-				<div class="left-side-buttom-three">
-				</div>
-
-				<div class="left-side-buttom-three-on hide">
 				</div>
 
 				<div id="touch-switch-text" class="">
@@ -419,10 +404,10 @@
 								<p>一键</p>
 								<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
 							</div>
-							<div class="one-key-switch-on hide" id="touch-one-key-switch-on">
+							<div class="one-key-switch-off hide" id="touch-one-key-switch-on">
 								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
 							</div>
-							<div class="one-key-switch-off" id="">
+							<div class="one-key-switch-on" id="">
 								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
 							</div>
 						</div>
@@ -453,10 +438,10 @@
 								<p>二键</p>
 								<img src="{{ url_for('static', filename='img/touch_switch_last.png') }}" alt="">
 							</div>
-							<div class="two-key-two-switch-on hide" id="two-two-switch-on">
+							<div class="two-key-two-switch-on" id="two-two-switch-on">
 								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
 							</div>
-							<div class="two-key-two-switch-off" id="two-two-switch-off">
+							<div class="two-key-two-switch-off hide" id="two-two-switch-off">
 								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
 							</div>
 						</div>
@@ -471,10 +456,10 @@
 								<p>一键</p>
 								<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
 							</div>
-							<div class="three-key-one-switch-on hide">
+							<div class="three-key-one-switch-on ">
 								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
 							</div>
-							<div class="three-key-one-switch-off">
+							<div class="three-key-one-switch-off hide">
 								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
 							</div>
 						</div>
@@ -485,10 +470,10 @@
 								<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
 							</div>
 
-							<div class="three-key-two-switch-on hide">
+							<div class="three-key-two-switch-off hide">
 								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
 							</div>
-							<div class="three-key-two-switch-off">
+							<div class="three-key-two-switch-on">
 								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
 							</div>
 						</div>
@@ -498,10 +483,10 @@
 								<p>三键</p>
 								<img src="{{ url_for('static', filename='img/touch_switch_last.png') }}" alt="">
 							</div>
-							<div class="three-key-three-switch-on hide">
+							<div class="three-key-three-switch-on">
 								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
 							</div>
-							<div class="three-key-three-switch-off">
+							<div class="three-key-three-switch-off hide">
 								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
 							</div>
 						</div>
@@ -509,7 +494,16 @@
 				</div>
 
 				<div class="video">
-					<img id="touch-switch-background-img" src="{{ url_for('static', filename='img/touch_switch/switch_background.png') }}" alt="">
+					<img id="video-touch-switch-background-img" src="{{ url_for('static', filename='img/touch_switch/switch_background.png') }}" alt="">
+					<!-- 一键触控开关 图片-->
+					<img id="video-one-key-switch" class="hide" src="{{ url_for('static', filename='img/touch_switch/touch_switch_off.png') }}">
+					<!-- 二键触控开关 图片-->
+					<img id="video-two-key-one-switch" class="hide" src="{{ url_for('static', filename='img/touch_switch/multi_touch_switch_off.png') }}">
+					<img id="video-two-key-two-switch" class="hide" src="{{ url_for('static', filename='img/touch_switch/multi_touch_switch_off.png') }}">
+					<!-- 三键触控开关 图片-->
+					<img id="video-three-key-one-switch" class="" src="{{ url_for('static', filename='img/touch_switch/multi_touch_switch_off.png') }}">
+					<img id="video-three-key-two-switch" class="" src="{{ url_for('static', filename='img/touch_switch/multi_touch_switch_off.png') }}">
+					<img id="video-three-key-three-switch" class="" src="{{ url_for('static', filename='img/touch_switch/multi_touch_switch_off.png') }}">
 				</div>
 				<p class="video-text">演示动画</p>
 			</div>
@@ -524,7 +518,7 @@
 			</div>
 		</div>
 
-		<!-- 智能插座-页面 -->
+		<!-- 智能控制->独立控制->智能插座-页面 -->
 		<div class="smart-plug-content hide">
 		  <div class="left-side">
 				<div class="left-side-buttom-one hide">
@@ -582,7 +576,7 @@
 			</div>
 		</div>
 
-		<!-- 智能窗帘-页面 -->
+		<!-- 智能控制->独立控制->智能窗帘-页面 -->
 		<div class="smart-curtain-content hide">
 		  <div class="left-side">
 				<div class="left-side-buttom-one hide">
@@ -638,14 +632,14 @@
 						<div class="crutain-free-group">
 							<p>自由开合</p>
 							<div class="curtain-free-toggle">
-								<input type="range" id="curtain-toggle-bar" name="curtain-toggle-bar" min="0" max="100">
+								<input type="range" id="curtain-toggle-bar" name="curtain-toggle-bar" min="0" max="100" step="5">
 							</div>
 						</div>
 					</div>
 				</div>
 
 				<div class="video">
-					<img src="{{ url_for('static', filename='img/smart_curtain/curtain_01.jpg') }}" alt="">
+					<img id="curtain-img" src="{{ url_for('static', filename='img/smart_curtain/01.jpg') }}" alt="">
 				</div>
 				<p class="video-text">演示动画</p>
 			</div>
@@ -660,7 +654,7 @@
 			</div>
 		</div>
 
-		<!-- 调光灯-页面 -->
+		<!-- 智能控制->独立控制->调光灯-页面 -->
 		<div class="dimming-lamp-content hide">
 		  <div class="left-side">
 				<div class="left-side-buttom-one hide">
@@ -716,15 +710,15 @@
 
 			<div class="buttom">
 				<div class="apply">
-					<p>应用</p>
+					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
 				</div>
-				<div class="back">
-					<p>返回</p>
+				<div id="dimming-lamp-content-back" class="back">
+					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
 				</div>
 			</div>
 		</div>
 
-		<!-- 空气盒子-页面 -->
+		<!-- 智能控制->独立控制->空气盒子-页面 -->
 		<div class="air-box-content hide">
 		  <div class="left-side">
 				<div class="left-side-buttom-one hide">

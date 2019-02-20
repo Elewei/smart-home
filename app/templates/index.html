@@ -52,7 +52,7 @@
 				<span>苏州</span>
 			</div>
 			<div class="weather_img">
-				<img src="{{ url_for('static', filename='img/duoyun.png') }}" alt="天气图标">
+				<img src="{{ url_for('static', filename='img/weather/sunny.png') }}" alt="天气图标">
 			</div>
 
 			<!-- ToDo: 如果已经登录，显示退出 -->
@@ -102,7 +102,7 @@
 	  </div>
 
 		<!-- 智能控制-页面  -->
-	  <div class="smart-control-content hide">
+	  <div class="smart-control-content">
 	      <div class="first scene-control">
 					<img src="{{ url_for('static', filename='img/scene-control.png') }}">
 	      </div>
@@ -139,13 +139,13 @@
 							<img src="{{ url_for('static', filename='img/device_manage.png') }}">
 						</div>
 
-						<div class="second-two">
+						<div id="manage-entry-device-class" class="second-two">
 							<img src="{{ url_for('static', filename='img/device_class.png') }}">
 						</div>
 				</div>
 
 				<div class="third">
-						<div class="third-one">
+						<div id="manage-entry-scene-manage" class="third-one">
 							<img src="{{ url_for('static', filename='img/scene_manage.png') }}">
 						</div>
 						<div class="third-two">
@@ -912,6 +912,238 @@
 			</div>
 		</div>
 
+		<!-- 管理入口->情景管理-页面 -->
+		<div class="scene-manage-content hide">
+			<div class="left-side">
+				<div id="scene-manage-buttom-on" class="left-side-buttom-one-on">
+				</div>
+
+				<div id="scene-manage-buttom-text" class="buttom-text">
+					<p>情景管理</p>
+				</div>
+			</div>
+
+			<div class="right-side">
+				<div class="scene-manage-first-line">
+					<span class="scene-name-label">情景名称： </span>
+					<input class="label-input" type="text" name="" value="阿毛的家">
+				</div>
+				<div class="scene-manage-second-line">
+					<span class="scene-name-label">情景图标：</span>
+					<img class="scene-manage-avator" src="{{ url_for('static', filename='img/background_entry.png') }}" alt="">
+				</div>
+				<div class="scene-manage-action">
+					<p class="scene-name-label ">执行动作:</p>
+					<div class="scene-action-one">
+						<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						<span class="scene-action-one-label">1</span>
+						<table class="scene-manage-action-table">
+							<tr>
+								<td>
+									<select>
+										<option value="register-off-open-window-machine">开窗器</option>
+										<option value="register-off-curtain">窗帘</option>
+										<option value="register-off-touch-switch">触控开关</option>
+										<option value="register-off-air-box">空气盒子</option>
+										<option value="register-off-smart-plug">智能插座</option>
+										<option value="register-off-dimming-lamp">调光灯</option>
+									</select>
+								</td>
+								<td>
+									<select>
+										<option value="register-off-dinner-room">客厅</option>
+										<option value="register-off-first-room">主卧</option>
+										<option value="register-off-second-room">次卧</option>
+										<option value="register-off-bath-room">卫生间</option>
+										<option value="register-off-kitchen-room">厨房</option>
+										<option value="register-off-other-room">其他房间</option>
+									</select>
+								</td>
+								<td>
+									<select>
+										<option value="register-off-dinner-room">打开</option>
+										<option value="register-off-first-room">关闭</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="scene-action-one">
+						<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						<span class="scene-action-one-label">1</span>
+						<table class="scene-manage-action-table">
+							<tr>
+								<td>
+									<select>
+										<option value="register-off-open-window-machine">开窗器</option>
+										<option value="register-off-curtain">窗帘</option>
+										<option value="register-off-touch-switch">触控开关</option>
+										<option value="register-off-air-box">空气盒子</option>
+										<option value="register-off-smart-plug">智能插座</option>
+										<option value="register-off-dimming-lamp">调光灯</option>
+									</select>
+								</td>
+								<td>
+									<select>
+										<option value="register-off-dinner-room">客厅</option>
+										<option value="register-off-first-room">主卧</option>
+										<option value="register-off-second-room">次卧</option>
+										<option value="register-off-bath-room">卫生间</option>
+										<option value="register-off-kitchen-room">厨房</option>
+										<option value="register-off-other-room">其他房间</option>
+									</select>
+								</td>
+								<td>
+									<select>
+										<option value="register-off-dinner-room">打开</option>
+										<option value="register-off-first-room">关闭</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="scene-action-one">
+						<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						<span class="scene-action-one-label">4</span>
+						<table class="scene-manage-action-table">
+							<tr>
+								<td>
+									<select>
+										<option value="register-off-open-window-machine">开窗器</option>
+										<option value="register-off-curtain">窗帘</option>
+										<option value="register-off-touch-switch">触控开关</option>
+										<option value="register-off-air-box">空气盒子</option>
+										<option value="register-off-smart-plug">智能插座</option>
+										<option value="register-off-dimming-lamp">调光灯</option>
+									</select>
+								</td>
+								<td>
+									<select>
+										<option value="register-off-dinner-room">客厅</option>
+										<option value="register-off-first-room">主卧</option>
+										<option value="register-off-second-room">次卧</option>
+										<option value="register-off-bath-room">卫生间</option>
+										<option value="register-off-kitchen-room">厨房</option>
+										<option value="register-off-other-room">其他房间</option>
+									</select>
+								</td>
+								<td>
+									<select>
+										<option value="register-off-dinner-room">打开</option>
+										<option value="register-off-first-room">关闭</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="scene-action-one">
+						<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						<span class="scene-action-one-label">+</span>
+						<table class="scene-manage-action-table">
+							<tr>
+								<td>
+									<select>
+										<option value="register-off-open-window-machine">开窗器</option>
+										<option value="register-off-curtain">窗帘</option>
+										<option value="register-off-touch-switch">触控开关</option>
+										<option value="register-off-air-box">空气盒子</option>
+										<option value="register-off-smart-plug">智能插座</option>
+										<option value="register-off-dimming-lamp">调光灯</option>
+									</select>
+								</td>
+								<td>
+									<select>
+										<option value="register-off-dinner-room">客厅</option>
+										<option value="register-off-first-room">主卧</option>
+										<option value="register-off-second-room">次卧</option>
+										<option value="register-off-bath-room">卫生间</option>
+										<option value="register-off-kitchen-room">厨房</option>
+										<option value="register-off-other-room">其他房间</option>
+									</select>
+								</td>
+								<td>
+									<select>
+										<option value="register-off-dinner-room">打开</option>
+										<option value="register-off-first-room">关闭</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+
+			</div>
+
+			<div class="buttom">
+				<div class="apply">
+					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
+				</div>
+				<div id="scene-manage-content-back" class="back">
+					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- 管理入口->设备分类-页面 -->
+		<div class="device-classfication-content hide">
+			<div class="left-side">
+				<div id="scene-manage-buttom-on" class="left-side-buttom-one-on">
+				</div>
+
+				<div id="scene-manage-buttom-text" class="buttom-text">
+					<p>房间列表</p>
+				</div>
+			</div>
+
+			<div class="right-side">
+				<table class="device-class-table">
+					<tr>
+						<th>房间名称</th>
+						<th>房间设备</th>
+					</tr>
+					<tr>
+						<td>
+							<span>主卧</span>
+						</td>
+						<td>
+							<select>
+								<option value="register-off-open-window-machine">开窗器</option>
+								<option value="register-off-curtain">窗帘</option>
+								<option value="register-off-touch-switch">触控开关</option>
+								<option value="register-off-air-box">空气盒子</option>
+								<option value="register-off-smart-plug">智能插座</option>
+								<option value="register-off-dimming-lamp">调光灯</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>+</td>
+						<td>
+							<!-- TODO: li -->
+							<select>
+								<option value="register-off-open-window-machine">开窗器</option>
+								<option value="register-off-curtain">窗帘</option>
+								<option value="register-off-touch-switch">触控开关</option>
+								<option value="register-off-air-box">空气盒子</option>
+								<option value="register-off-smart-plug">智能插座</option>
+								<option value="register-off-dimming-lamp">调光灯</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="buttom">
+				<div class="apply">
+					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
+				</div>
+				<div id="device-classfication-content-back" class="back">
+					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
+				</div>
+			</div>
+		</div>
+
 		<!-- 智能控制->房间控制-页面 -->
 		<div class="room-control-content hide">
 			<div class="left-side">
@@ -1209,10 +1441,10 @@
 
 			<div class="buttom">
 				<div class="apply">
-					<p>应用</p>
+					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
 				</div>
 				<div id="home-manage-content-back" class="back">
-					<p>返回</p>
+					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
 				</div>
 			</div>
 		</div>
@@ -1245,41 +1477,184 @@
 				</div>
 			</div>
 
-			<div id="scene-control-my-scene" class="right-side hide">
+			<div id="free-group-list" class="right-side hide">
 				<table class="device-manage-table">
 					<tr>
+						<th>组合名称</th>
 						<th>条件</th>
 						<th>执行动作</th>
 					</tr>
 					<tr>
+						<td>心飞杨</td>
 						<td>当温度低于15</td>
 						<td>关闭窗户，打开智能插座1</td>
 					</tr>
 					<tr>
+						<td>头口</td>
 						<td>当PM2.5低于90</td>
 						<td>打开窗户</td>
 					</tr>
 				</table>
 			</div>
 
-			<div id="scene-control-exec-log" class="right-side">
+			<div id="free-group-add" class="right-side">
 				<div class="free-group-name">
 
 				</div>
-				<div class="free-group-condition">
+				<div class="free-group-second-line">
+					<div class="free-group-condition">
+						<div class="scene-action-one">
+							<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+							<span class="scene-action-one-label">1</span>
+							<table class="scene-manage-action-table">
+								<tr>
+									<td>
+										<select>
+											<option value="register-off-open-window-machine">开窗器</option>
+											<option value="register-off-curtain">窗帘</option>
+											<option value="register-off-touch-switch">触控开关</option>
+											<option value="register-off-air-box">空气盒子</option>
+											<option value="register-off-smart-plug">智能插座</option>
+											<option value="register-off-dimming-lamp">调光灯</option>
+										</select>
+									</td>
+									<td>
+										<select>
+											<option value="register-off-dinner-room">客厅</option>
+											<option value="register-off-first-room">主卧</option>
+											<option value="register-off-second-room">次卧</option>
+											<option value="register-off-bath-room">卫生间</option>
+											<option value="register-off-kitchen-room">厨房</option>
+											<option value="register-off-other-room">其他房间</option>
+										</select>
+									</td>
+									<td>
+										<select>
+											<option value="register-off-dinner-room">打开</option>
+											<option value="register-off-first-room">关闭</option>
+										</select>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="scene-action-one">
+							<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+							<span class="scene-action-one-label">1</span>
+							<table class="scene-manage-action-table">
+								<tr>
+									<td>
+										<select>
+											<option value="register-off-open-window-machine">开窗器</option>
+											<option value="register-off-curtain">窗帘</option>
+											<option value="register-off-touch-switch">触控开关</option>
+											<option value="register-off-air-box">空气盒子</option>
+											<option value="register-off-smart-plug">智能插座</option>
+											<option value="register-off-dimming-lamp">调光灯</option>
+										</select>
+									</td>
+									<td>
+										<select>
+											<option value="register-off-dinner-room">客厅</option>
+											<option value="register-off-first-room">主卧</option>
+											<option value="register-off-second-room">次卧</option>
+											<option value="register-off-bath-room">卫生间</option>
+											<option value="register-off-kitchen-room">厨房</option>
+											<option value="register-off-other-room">其他房间</option>
+										</select>
+									</td>
+									<td>
+										<select>
+											<option value="register-off-dinner-room">打开</option>
+											<option value="register-off-first-room">关闭</option>
+										</select>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
 
-				</div>
-				<div class="free-group-action">
 
+					<div class="free-group-action">
+						<div class="scene-action-one">
+							<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+							<span class="scene-action-one-label">1</span>
+							<table class="scene-manage-action-table">
+								<tr>
+									<td>
+										<select>
+											<option value="register-off-open-window-machine">开窗器</option>
+											<option value="register-off-curtain">窗帘</option>
+											<option value="register-off-touch-switch">触控开关</option>
+											<option value="register-off-air-box">空气盒子</option>
+											<option value="register-off-smart-plug">智能插座</option>
+											<option value="register-off-dimming-lamp">调光灯</option>
+										</select>
+									</td>
+									<td>
+										<select>
+											<option value="register-off-dinner-room">客厅</option>
+											<option value="register-off-first-room">主卧</option>
+											<option value="register-off-second-room">次卧</option>
+											<option value="register-off-bath-room">卫生间</option>
+											<option value="register-off-kitchen-room">厨房</option>
+											<option value="register-off-other-room">其他房间</option>
+										</select>
+									</td>
+									<td>
+										<select>
+											<option value="register-off-dinner-room">打开</option>
+											<option value="register-off-first-room">关闭</option>
+										</select>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="scene-action-one">
+							<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+							<span class="scene-action-one-label">+</span>
+							<table class="scene-manage-action-table">
+								<tr>
+									<td>
+										<select>
+											<option value="register-off-open-window-machine">开窗器</option>
+											<option value="register-off-curtain">窗帘</option>
+											<option value="register-off-touch-switch">触控开关</option>
+											<option value="register-off-air-box">空气盒子</option>
+											<option value="register-off-smart-plug">智能插座</option>
+											<option value="register-off-dimming-lamp">调光灯</option>
+										</select>
+									</td>
+									<td>
+										<select>
+											<option value="register-off-dinner-room">客厅</option>
+											<option value="register-off-first-room">主卧</option>
+											<option value="register-off-second-room">次卧</option>
+											<option value="register-off-bath-room">卫生间</option>
+											<option value="register-off-kitchen-room">厨房</option>
+											<option value="register-off-other-room">其他房间</option>
+										</select>
+									</td>
+									<td>
+										<select>
+											<option value="register-off-dinner-room">打开</option>
+											<option value="register-off-first-room">关闭</option>
+										</select>
+									</td>
+								</tr>
+							</table>
+						</div>
+
+					</div>
 				</div>
+
 			</div>
 
 			<div class="buttom">
 				<div class="apply">
-					<p>应用</p>
+					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
 				</div>
 				<div id="scene-control-content-back" class="back">
-					<p>返回</p>
+					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
 				</div>
 			</div>
 		</div>

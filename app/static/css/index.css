@@ -968,7 +968,7 @@
   height: 60px;
   position: absolute;
   top: 300px;
-  left: 890px;  
+  left: 890px;
 }
 
 #video-two-key-two-switch {
@@ -977,7 +977,7 @@
   height: 60px;
   position: absolute;
   top: 300px;
-  left: 980px;  
+  left: 980px;
 }
 
 #video-three-key-one-switch {
@@ -986,7 +986,7 @@
   height: 60px;
   position: absolute;
   top: 300px;
-  left: 855px;    
+  left: 855px;
 }
 
 #video-three-key-two-switch {
@@ -995,7 +995,7 @@
   height: 60px;
   position: absolute;
   top: 300px;
-  left: 935px;    
+  left: 935px;
 }
 
 #video-three-key-three-switch {
@@ -1004,7 +1004,7 @@
   height: 60px;
   position: absolute;
   top: 300px;
-  left: 1015px;    
+  left: 1015px;
 }
 
 .video-text {
@@ -1679,6 +1679,19 @@ select {
 
 
 /* 家庭管理样式开始 */
+
+#home-manage-my-scene-text {
+  top: -210px;
+}
+
+#home-manage-home-mamber-text {
+  top: -210px;
+}
+
+#home-manage-home-list-text {
+  top: -210px;
+}
+
 .home-manage-home-name {
   width: 50%;
   height: 60px;
@@ -1783,14 +1796,128 @@ select {
   top: -140px;
 }
 
+.free-group-name {
+  background-color: grey;
+  width: 80%;
+  height: 40px;
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+.free-group-second-line {
+  width: 90%;
+  height: 280px;
+  background-color: grey;
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+.free-group-condition {
+  width: 49%;
+  height: 100%;
+  margin-right: 5px;
+  background-color: blue;
+  float: left;
+}
+
+.free-group-action {
+  width: 49%;
+  height: 100%;
+  margin-left: 5px;
+  background-color: blue;
+  float: right;
+}
 
 /* 管理入口 -> 自由组合 结束 */
 
 
+/* 管理入口 -> 情景管理 开始 */
 #scene-control-my-scene-text {
   top: -140px;
 }
 
 #scene-control-exec-log-text {
-  top: -140px;  
+  top: -140px;
 }
+
+
+#scene-manage-buttom-text {
+  top: -70px;
+}
+
+.scene-manage-first-line {
+  background-color: grey;
+  width: 80%;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.scene-name-label {
+  color: white;
+  font-size: 20px;
+}
+
+.label-input {
+  -webkit-appearance: none;
+  appearance: none;
+  border:none;
+  width: 80%;
+  height: 20px;
+  background: none;
+  box-shadow: none;
+  outline: none;
+  color: white;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.scene-manage-second-line {
+  background-color: grey;
+  width: 80%;
+  height: 80px;
+  margin-left: 20px;
+}
+
+.scene-manage-avator {
+  background-color: red;
+  width: 100px;
+  height: 80px;
+  border-radius: 10%;
+}
+
+.scene-manage-action {
+  background-color: grey;
+  width: 80%;
+  height: 180px;
+  margin-left: 20px;
+}
+
+.scene-action-one {
+  width: 60%;
+  height: 40px;
+  #background-color: red;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.scene-action-one-img {
+  width: 40px;
+  height: 40px;
+}
+
+.scene-action-one-label {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  top: 5px;
+  left: -30px;
+}
+
+.scene-manage-action-table {
+  position: relative;
+  top: -60px;
+  height: 40px;
+}
+
+/* 管理入口 -> 情景管理 结束 */

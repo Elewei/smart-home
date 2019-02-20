@@ -141,6 +141,16 @@ $(document).ready(() => {
   const $videoThreeKeyOneSwitch = $('#video-three-key-one-switch');
   const $videoThreeKeyTwoSwitch = $('#video-three-key-two-switch');
   const $videoThreeKeyThreeSwitch = $('#video-three-key-three-switch');
+  const $sceneManageContentBack = $('#scene-manage-content-back');
+  const $sceneManageContent = $('.scene-manage-content');
+  const $manageEntrySceneManage = $('#manage-entry-scene-manage');
+  const $deviceClassficationContentBack = $('#device-classfication-content-back');
+  const $deviceClassficationContent = $('.device-classfication-content');
+  const $manageEntryDeviceClass = $('#manage-entry-device-class');
+  const $freeGroupList = $('#free-group-list');
+  const $freeGroupAdd = $('#free-group-add');
+  const $freeGroupListText = $('#free-group-list-text');
+  const $freeGroupAddText = $('#free-group-add-text');
 
   /* 点击智能控制 */
   $smartControl.on('click', ()=>{
@@ -174,6 +184,8 @@ $(document).ready(() => {
     $openWindowMachineContent.hide();
     $homeManageContent.hide();
     $freeGroupContent.hide();
+    $sceneManageContent.hide();
+    $deviceClassficationContent.hide();
     $smartHomeContent.show();
   });
 
@@ -192,6 +204,7 @@ $(document).ready(() => {
     $independantControlContent.hide();
     $touchSwitchContent.hide();
     $deviceManageContent.hide();
+    $manageEntryContent.show();
     $setGuideContent.hide();
     $otherContent.hide();
     $independantControlContent.hide();
@@ -203,9 +216,14 @@ $(document).ready(() => {
     $deviceManageContent.hide();
     $sceneControlContent.hide();
     $roomControlContent.hide();
-    $smartHomeContent.hide();
     $userSetupContent.hide();
-    $manageEntryContent.show();
+    $sceneControlMySceneChildContent.hide();
+    $openWindowMachineContent.hide();
+    $homeManageContent.hide();
+    $freeGroupContent.hide();
+    $sceneManageContent.hide();
+    $deviceClassficationContent.hide();
+    $smartHomeContent.hide();
   });
 
   /* 点击设置向导 */
@@ -478,7 +496,7 @@ $(document).ready(() => {
 
     $oneKeySwitchKeyOn.hide();
     $oneKeySwitchKeyOff.show();
-    
+
     $videoOneKeySwitch.show();
 
     let oneKeySwitchKeyOnImgPath = "/static/img/touch_switch/touch_switch_on.png";
@@ -499,7 +517,7 @@ $(document).ready(() => {
 
     $oneKeySwitchKeyOn.show();
     $oneKeySwitchKeyOff.hide();
-    
+
     $videoOneKeySwitch.show();
 
     let oneKeySwitchKeyOnImgPath = "/static/img/touch_switch/touch_switch_off.png";
@@ -513,7 +531,7 @@ $(document).ready(() => {
 
     $twoKeyOneSwitchOn.hide();
     $twoKeyOneSwitchOff.show();
-    
+
     $videoOneKeySwitch.hide();
     $videoTwoKeyOneSwitch.show();
     $videoTwoKeyTwoSwitch.show();
@@ -597,7 +615,7 @@ $(document).ready(() => {
 
     $threeKeyOneSwitchOn.hide();
     $threeKeyOneSwitchOff.show();
-    
+
     $videoOneKeySwitch.hide();
     $videoTwoKeyOneSwitch.hide();
     $videoTwoKeyTwoSwitch.hide();
@@ -1530,8 +1548,6 @@ $(document).ready(() => {
     $smartHomeContent.show();
   });
 
-  url = window.location.href
-
 
   $openWindowToggleBar.on('input propertychange', ()=>{
     console.log($openWindowToggleBar.val());
@@ -1644,7 +1660,7 @@ $(document).ready(() => {
     $homeManageContent.hide();
     $freeGroupContent.hide();
     $smartHomeContent.show();
-    
+
   });
 
 
@@ -1808,8 +1824,162 @@ $(document).ready(() => {
     $sceneControlMySceneChildContent.hide();
     $openWindowMachineContent.hide();
     $smartHomeContent.hide();
-    $independantControlContent.show();    
+    $independantControlContent.show();
   });
 
+  /* 点击管理入口 -> 情景管理 页面 */
+  $manageEntrySceneManage.on('click', ()=>{
+    $smartControl.show();
+    $smartControlOn.hide();
+    $manageEntry.hide();
+    $manageEntryOn.show();
+    $setGuide.show();
+    $setGuideOn.hide();
+    $other.show();
+    $otherOn.hide();
+
+    /* 情景管理 页面 */
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $deviceManageContent.hide();
+    $setGuideContent.hide();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
+    $userSetupContent.hide();
+    $sceneControlMySceneChildContent.hide();
+    $openWindowMachineContent.hide();
+    $homeManageContent.hide();
+    $freeGroupContent.hide();
+    $smartHomeContent.hide();
+    $manageEntryContent.hide();
+    $sceneManageContent.show();
+  });
+
+  /* 返回管理入口页面 */
+  $sceneManageContentBack.on('click', ()=>{
+    $smartControl.show();
+    $smartControlOn.hide();
+    $manageEntry.hide();
+    $manageEntryOn.show();
+    $setGuide.show();
+    $setGuideOn.hide();
+    $other.show();
+    $otherOn.hide();
+
+    /* 独立控制页面 */
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $deviceManageContent.hide();
+    $setGuideContent.hide();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
+    $userSetupContent.hide();
+    $sceneControlMySceneChildContent.hide();
+    $openWindowMachineContent.hide();
+    $homeManageContent.hide();
+    $freeGroupContent.hide();
+    $sceneManageContent.hide();
+    $smartHomeContent.hide();
+    $manageEntryContent.show();
+  });
+
+  /* 返回管理入口页面 */
+  $deviceClassficationContentBack.on('click', ()=>{
+    $smartControl.show();
+    $smartControlOn.hide();
+    $manageEntry.hide();
+    $manageEntryOn.show();
+    $setGuide.show();
+    $setGuideOn.hide();
+    $other.show();
+    $otherOn.hide();
+
+    /* 独立控制页面 */
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $deviceManageContent.hide();
+    $manageEntryContent.show();
+    $setGuideContent.hide();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
+    $userSetupContent.hide();
+    $sceneControlMySceneChildContent.hide();
+    $openWindowMachineContent.hide();
+    $homeManageContent.hide();
+    $freeGroupContent.hide();
+    $sceneManageContent.hide();
+    $deviceClassficationContent.hide();
+    $smartHomeContent.hide();
+  });
+
+  $manageEntryDeviceClass.on('click', ()=>{
+    $smartControl.show();
+    $smartControlOn.hide();
+    $manageEntry.hide();
+    $manageEntryOn.show();
+    $setGuide.show();
+    $setGuideOn.hide();
+    $other.show();
+    $otherOn.hide();
+
+    /* 独立控制页面 */
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $deviceManageContent.hide();
+    $manageEntryContent.hide();
+    $setGuideContent.hide();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
+    $userSetupContent.hide();
+    $sceneControlMySceneChildContent.hide();
+    $openWindowMachineContent.hide();
+    $homeManageContent.hide();
+    $freeGroupContent.hide();
+    $sceneManageContent.hide();
+    $deviceClassficationContent.show();
+    $smartHomeContent.hide();
+  });
+
+  $freeGroupListText.on('click', ()=>{
+    $freeGroupList.show();
+    $freeGroupAdd.hide();
+  });
+
+  $freeGroupAddText.on('click', ()=>{
+    $freeGroupList.hide();
+    $freeGroupAdd.show();
+  });
 
 });

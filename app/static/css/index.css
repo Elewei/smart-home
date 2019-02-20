@@ -319,7 +319,7 @@
   background-size: 100% 100%;
   float: left;
   width: 15%;
-  height: 450px;
+  height: 500px;
 }
 
 .left-side-buttom-one {
@@ -566,7 +566,7 @@
 
 .right-side {
   width: 84%;
-  height: 450px;
+  height: 500px;
   border: 1px solid red;
   background-image: url('/static/img/right_side_background.png');
   background-size: 100% 100%;

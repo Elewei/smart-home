@@ -1,6 +1,6 @@
 import functools
 import serial
-
+import time
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for, jsonify
 )
@@ -45,10 +45,13 @@ def device_registry():
     # 00 code stands frequence Success
     # FF code stands frequence Failed
 
+    print("reading_str = " + reading_str)
+
     if keypanel == 1:
         device_code = packet['One_Touch_Switch_RegisterID']
     elif keypanel == 2:
-        device_code = packet['Two_Touch_Switch_RegisterID']
+        #device_code = packet['Two_Touch_Switch_RegisterID']
+        message_send = "FF FF CC 21 13 02 01 01"
     elif keypanel == 3:
         device_code = packet['Three_Touch_Switch_RegisterID']
 
@@ -60,7 +63,8 @@ def device_registry():
     # 13 code stands for DeviceID
     # 02 code stands for Data length
     #01 01 code stands for LoraID
-    message_send = "FF FF CC 21 13 02 01 01"
+    print(message_send)
+    time.sleep(3)
     d = bytes.fromhex(message_send)
     s.write(d)
 

@@ -9,5 +9,4 @@ packet = {
     "One_Touch_Switch_RegisterID": "20",
     "Two_Touch_Switch_RegisterID": "21",
     "Three_Touch_Switch_RegisterID": "22",
-
 }

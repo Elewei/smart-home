@@ -845,14 +845,13 @@ $(document).ready(() => {
     registerDeviceRoomVal = $('#register-device-room option:selected').val();
     registerDeviceRoomText =  $('#register-device-room option:selected').text();
 
-
     if(registerDeviceNameVal == "register-off-two-key-switch") {
       console.log('开始注册二键触控开关');
 
       $.getJSON($SCRIPT_ROOT + '/switch', {
         keypanel: 2,
-        key: 1,
-        state: 1
+        registerDeviceName: registerDeviceNameText,
+        registerDeviceRoom: registerDeviceRoomText,
       }, function(data) {
 
         if(data.result == 1) {

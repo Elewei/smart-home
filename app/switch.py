@@ -8,6 +8,8 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from app.db import get_db
 from . import packet
 
+DEVICE_ADDRESS = 10
+
 # 创建一个 blueprint
 bp = Blueprint('switch', __name__, url_prefix='/switch')
 
@@ -19,7 +21,8 @@ def device_registry():
     # 2 表示 2键触控开关
     # 3 表示 3键触控开关
     keypanel = request.args.get('keypanel', 0, type=int)
-    print(keypanel)
+    deviceName = request.args.get('registerDeviceName', 0, type=str)
+    deviceRoom = request.args.get('registerDeviceRoom', 0, type=str)
 
     #Device Register
     # Step 1 Open the serial port
@@ -49,7 +52,7 @@ def device_registry():
         device_code = packet['One_Touch_Switch_RegisterID']
     elif keypanel == 2:
         #device_code = packet['Two_Touch_Switch_RegisterID']
-        message_send = "FF FF CC 21 13 02 01 01"
+        message_send = "FF FF CC 21 "+ str(DEVICE_ADDRESS) +" 02 01 01"
     elif keypanel == 3:
         device_code = packet['Three_Touch_Switch_RegisterID']
 
@@ -74,6 +77,27 @@ def device_registry():
     reading_str = ''.join(['%02x ' % b for b in reading])
     print("第二次收到消息 = " + reading_str)
 
+    db = get_db()
+    error = None
+
+    if not deviceName:
+        error = 'deviceName is required.'
+    elif not deviceAddress:
+        error = 'deviceAddress is required.'
+    elif not deviceRoom:
+        error = 'deviceRoom is required.'
+    elif db.execute(
+        'SELECT id FROM device WHERE deviceAddress = ?', (deviceAddress,)
+    ).fetchone() is not None:
+        error = 'deviceAddress {} is already registered.'.format(deviceAddress)
+
+    if error is None:
+        db.execute(
+            'INSERT INTO device (deviceName, deviceAddress, deviceRoom, is_registered) VALUES (?, ?, ?, ?)',
+            (deviceName, str(DEVICE_ADDRESS), deviceRoom, 1)
+        )
+        db.commit()
+
     # 修改通信频率 '55 AA C1 02 01 01'
     # 55 AA 表示固定首部
     # C1 表示设置定义频率
@@ -93,4 +117,5 @@ def device_registry():
     # TODO:  Verity it is success
 
     ser.close()
+
     return jsonify(result=1, deviceID=reading_str)

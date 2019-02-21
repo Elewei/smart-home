@@ -3,10 +3,11 @@ DROP TABLE IF EXISTS user;
 
 CREATE TABLE device (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT UNIQUE NOT NULL,
-  address TEXT NOT NULL,
-  status TEXT,
-  is_registered TEXT
+  deviceName TEXT UNIQUE NOT NULL,
+  deviceAddress TEXT NOT NULL,
+  deviceRoom TEXT NOT NULL,
+  deviceStatus TEXT,
+  is_registered INTEGER
 );
 
 CREATE TABLE user (

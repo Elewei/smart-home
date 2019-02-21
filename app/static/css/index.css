@@ -109,11 +109,11 @@
   left: 200px;
 }
 
-.show-date .date{
+#date{
   color: white;
 }
 
-.show-date .lunar{
+#lunar{
   color: white;
 }
 
@@ -137,8 +137,9 @@
   width: 200px;
   height: 60px;
   #background-color: red;
+  text-align: center;
   position: relative;
-  left: 210px;
+  left: 225px;
 }
 
 #wendu {
@@ -201,18 +202,18 @@
 
 .first{
     width: 25%;
-    height: 450px;
+    height: 420px;
     float: left;
 }
 
 .first-one {
   width: 100%;
-  height: 220px;
+  height: 205px;
 }
 
 .first-two{
     width: 100%;
-    height: 220px;
+    height: 205px;
     margin-top: 10px;
 }
 
@@ -567,7 +568,7 @@
 .right-side {
   width: 84%;
   height: 500px;
-  border: 1px solid red;
+  #border: 1px solid red;
   background-image: url('/static/img/right_side_background.png');
   background-size: 100% 100%;
   float: right;
@@ -577,7 +578,7 @@
   clear:both;
   width: 100%;
   height: calc(50% - 3px);
-  background-color: pink;
+  #background-color: pink;
 }
 
 .open-window-machine {
@@ -607,7 +608,7 @@
   height: 100%;
   float: left;
   margin-left: 5px;
-  background-color: blue;
+  #background-color: blue;
 }
 
 .curtain img {
@@ -620,7 +621,7 @@
   height: 100%;
   float: left;
   margin-left: 5px;
-  background-color: blue;
+  #background-color: blue;
 }
 
 .up-second img {
@@ -632,7 +633,7 @@
   width: 33%;
   height: 100%;
   float: right;
-  background-color: blue;
+  #background-color: blue;
 }
 
 .touch-switch img {
@@ -655,14 +656,14 @@
   width: 100%;
   height: calc(50% - 3px);
   margin-top: 6px;
-  background-color: pink;
+  #background-color: pink;
 }
 
 .air-box {
   width: 33%;
   height: 100%;
   float: left;
-  background-color: blue;
+  #background-color: blue;
 }
 
 .air-box img {
@@ -686,7 +687,7 @@
   height: 100%;
   float: left;
   margin-left: 5px;
-  background-color: blue;
+  #background-color: blue;
 }
 
 .smart-plug img {
@@ -710,7 +711,7 @@
   width: 33%;
   height: 100%;
   float: right;
-  background-color: blue;
+  #background-color: blue;
 }
 
 .dimming-lamp img {
@@ -1607,25 +1608,11 @@ select {
 }
 
 #open-window-left-side-text {
-  clear: both;
-  position: fixed;
-  width: 80%;
-  height: 60px;
-  color: white;
-  font-size: 20px;
-  top: 208px;
-  left: 113px;
+
 }
 
 #open-window-exec-log-text {
-  clear: both;
-  position: fixed;
-  width: 80%;
-  height: 60px;
-  color: white;
-  font-size: 20px;
-  top: 275px;
-  left: 113px;
+
 }
 
 
@@ -1703,7 +1690,12 @@ select {
   left: 113px;
 }
 
-
+#open-window-toggle-bar-value {
+  color: white;
+  font-style: bold;
+  position: relative;
+  top: -30px;
+}
 
 
 /* 家庭管理样式开始 */
@@ -1949,3 +1941,8 @@ select {
 }
 
 /* 管理入口 -> 情景管理 结束 */
+
+
+.buttom-text-top {
+  top: -140px;
+}

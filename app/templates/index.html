@@ -15,13 +15,8 @@
 		<div class="top">
 			<!-- 头像与文字描述 -->
 			<div class="user-home">
-				{% if g.user %}
-					<img src="{{ url_for('static', filename='img/avator.png') }}" alt="头像">
-					<span class="user-home-text">{{ g.user['username'] }}的家</span>
-				{% else %}
-					<a href="{{ url_for('auth.register') }}">注册</a>
-					<a href="{{ url_for('auth.login') }}">登录</a>
-				{% endif %}
+				<img src="{{ url_for('static', filename='img/avator.png') }}" alt="头像">
+				<span class="user-home-text">Elewei的家</span>
 			</div>
 
 			<!-- 显示当前页面标题 -->
@@ -36,19 +31,19 @@
 
 			<!-- 显示当前日期 -->
 			<div class="show-date">
-				<span class="date" style="font-size: 20px;">2019年01月01号</span>  <br>
-				<span class="lunar" style="font-size: 15px;">甲午【马】年六月二十</span>
+				<span id="date" style="font-size: 20px;"></span>  <br>
+				<span id="lunar" style="font-size: 15px;">甲午【马】年六月二十</span>
 			</div>
 
 			<!-- 显示当前时间 -->
 			<div class="show-time">
-				<span>22:45</span>
+				<span id="clock-time">22:45:45</span>
 			</div>
 
 			<!-- 显示当前天气 -->
 			<div class="weather">
 				<span id="wendu">18℃-30℃</span> <br />
-				<span id="tianqi">多云转晴</span>
+				<span id="tianqi">晴</span>
 				<span id="city">苏州</span>
 			</div>
 
@@ -305,11 +300,11 @@
 				<div class="left-side-buttom-two-on hide">
 				</div>
 
-				<div id="open-window-left-side-text" class="">
+				<div id="open-window-left-side-text" class="buttom-text buttom-text-top">
 					<p>开窗器</p>
 				</div>
 
-				<div id="open-window-exec-log-text" class="">
+				<div id="open-window-exec-log-text" class="buttom-text buttom-text-top">
 					<p>执行记录</p>
 				</div>
 			</div>
@@ -347,7 +342,7 @@
 							<p>自由开合</p>
 							<div class="open-window-free-toggle">
 								<input type="range" id="open-window-toggle-bar" name="open-window-toggle-bar" step="5" min="0" max="100">
-								<!--<span>10%</span>-->
+								<span id="open-window-toggle-bar-value">10%</span>
 							</div>
 						</div>
 					</div>
@@ -1164,16 +1159,42 @@
 
 				</div>
 
-				<div id="independant-left-my-device-text">
+				<div id="room-control-my-room-text" class="buttom-text buttom-text-top">
 					<p>我的房间</p>
 				</div>
 
-				<div id="independant-left-exec-log-text">
+				<div id="room-control-room-desc-text" class="buttom-text buttom-text-top">
 					<p>房间描述</p>
 				</div>
 			</div>
 
-			<div class="right-side">
+			<div id="room-control-my-room" class="right-side">
+				<div class="up">
+					<div class="open-window-machine living-room">
+						<img src="{{ url_for('static', filename='img/room_control_dinner_room.png') }}" alt="">
+					</div>
+					<div class="curtain">
+						<img src="{{ url_for('static', filename='img/room_control_first_room.png') }}" alt="">
+					</div>
+					<div class="touch-switch">
+						<img src="{{ url_for('static', filename='img/room_control_second_room.png') }}" alt="">
+					</div>
+				</div>
+
+				<div class="down">
+					<div class="air-box">
+						<img src="{{ url_for('static', filename='img/room_control_bath_room.png') }}" alt="">
+					</div>
+					<div class="smart-plug">
+						<img src="{{ url_for('static', filename='img/room_control_kitchen_room.png') }}" alt="">
+					</div>
+					<div class="dimming-lamp">
+						<img src="{{ url_for('static', filename='img/room_control_other_room.png') }}" alt="">
+					</div>
+				</div>
+			</div>
+			
+			<div id="room-control-room-desc" class="right-side hide">
 				<div class="up">
 					<div class="open-window-machine living-room">
 						<img src="{{ url_for('static', filename='img/room_control_dinner_room.png') }}" alt="">
@@ -1667,6 +1688,7 @@
 
 {% block script %}
   <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/chinatime.js') }}"></script>
 	<script type=text/javascript>
   	$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
 	</script>

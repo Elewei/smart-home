@@ -31,8 +31,7 @@ def device_registry():
     # 02 code stands for data length
     # FF FF code stands for Lora ID
     message_send = "55 AA C0 02 FF FF"
-    print(message_send)
-
+    print("第一次发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
 
@@ -44,8 +43,7 @@ def device_registry():
     # 01 code stands data length
     # 00 code stands frequence Success
     # FF code stands frequence Failed
-
-    print("reading_str = " + reading_str)
+    print("第一次收到消息 = " + reading_str)
 
     if keypanel == 1:
         device_code = packet['One_Touch_Switch_RegisterID']
@@ -63,10 +61,9 @@ def device_registry():
     # 13 code stands for DeviceID
     # 02 code stands for Data length
     #01 01 code stands for LoraID
-    print(message_send)
+    print("第二次发送消息" + message_send)
     d = bytes.fromhex(message_send)
     ser.write(d)
-
 
     # return Value 01 01 cc 21 13
     # 01 01 code Stands for LoraID
@@ -75,11 +72,13 @@ def device_registry():
     # 13 code stands for DeviceID
     reading = ser.read(10)
     reading_str = ''.join(['%02x ' % b for b in reading])
+    print("第二次收到消息 = " + reading_str)
 
     # 修改通信频率 '55 AA C1 02 01 01'
     # 55 AA 表示固定首部
     # C1 表示设置定义频率
     message_send = "55 AA C1 02 01 01"
+    print("第三次发送消息" + message_send)
     d = bytes.fromhex(message_send)
     ser.write(d)
 
@@ -90,8 +89,8 @@ def device_registry():
     # 13 code stands for DeviceID
     reading = ser.read(10)
     reading_str = ''.join(['%02x ' % b for b in reading])
+    print("第三次收到消息 = " + reading_str)
     # TODO:  Verity it is success
 
     ser.close()
-
-    return jsonify(result=1)
+    return jsonify(result=1, deviceID=reading_str)

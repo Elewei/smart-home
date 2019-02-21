@@ -811,17 +811,17 @@
 			</div>
 
 			<div class="right-side device-list-page">
-				<table class="device-manage-table">
-					<tr>
-						<th>设备名称</th>
-						<th>所属房间</th>
-						<th>设备地址</th>
-					</tr>
-					<tr>
-						<td>插座</td>
-						<td>主卧</td>
-						<td>192.168.1.1</td>
-					</tr>
+				<table id="device-manage-add-table" class="device-manage-table">
+					<thead>
+						<tr>
+							<th>设备名称</th>
+							<th>所属房间</th>
+							<th>设备地址</th>
+						</tr>
+					</thead>
+					<tbody id="device-manage-table-add-tbody">
+
+					</tbody>
 				</table>
 			</div>
 
@@ -848,7 +848,7 @@
 							</select>
 						</td>
 						<td>
-							<select>
+							<select id="register-device-room">
 							  <option value="register-off-dinner-room">客厅</option>
 							  <option value="register-off-first-room">主卧</option>
 							  <option value="register-off-second-room">次卧</option>

@@ -826,14 +826,27 @@ $(document).ready(() => {
 
   });
 
+  function add_func(table_id, row_num, c_num, data) {
+    var tb=$("#" + table_id);
+    if(tb.length > 0) {
+      var trs = tb.find('tr');
+      var tds = $(trs[row_num - 1]).find('td');
+      var td = tds[c_num - 1];
+      $(td).html(data);
+    }
+  }
+
   /* 点击 管理入口 -> 设备管理 -> 注册/注销 */
   $registerPlug.on('click', ()=> {
     console.log('点击注册按钮');
 
-    value = $('#register-device-name option:selected').val();
-    console.log(value);
+    registerDeviceNameVal = $('#register-device-name option:selected').val();
+    registerDeviceNameText =  $('#register-device-name option:selected').text();
+    registerDeviceRoomVal = $('#register-device-room option:selected').val();
+    registerDeviceRoomText =  $('#register-device-room option:selected').text();
 
-    if(value == "register-off-two-key-switch") {
+
+    if(registerDeviceNameVal == "register-off-two-key-switch") {
       console.log('开始注册二键触控开关');
 
       $.getJSON($SCRIPT_ROOT + '/switch', {
@@ -841,7 +854,13 @@ $(document).ready(() => {
         key: 1,
         state: 1
       }, function(data) {
-        console.log("成功" + data.result);
+
+        if(data.result == 1) {
+          console.log("设备注册成功");
+          let markup = "<tr><td>" + registerDeviceNameText + "</td><td>" + registerDeviceRoomText + "</td><td>" + data.deviceID + "</td></tr>";
+          $("#device-manage-table-add-tbody").append(markup);
+        }
+
       });
 
 

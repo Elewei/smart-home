@@ -62,6 +62,8 @@ $(document).ready(() => {
   const $deviceManageDeviceListOn = $('#device-manage-device-list-on');
   const $deviceManageRegisterOff = $('#device-manage-register-off');
   const $deviceManageRegisterOffOn = $('#device-manage-register-off-on');
+  const $deviceManageDeviceListText = $('#device-manage-device-list-text');
+  const $deviceManageRegisterOffText = $('#device-manage-register-off-text');
 
   const $deviceManageContent = $('.device-manage-content');
   const $smartPlugContent = $('.smart-plug-content');
@@ -760,7 +762,7 @@ $(document).ready(() => {
   });
 
   /* 点击 管理入口->设备管理->设备列表 */
-  $deviceManageDeviceList.on('click', ()=>{
+  $deviceManageDeviceListText.on('click', ()=>{
     /* 选定管理入口 */
     $smartControl.show();
     $smartControlOn.hide();
@@ -792,7 +794,7 @@ $(document).ready(() => {
   });
 
   /* 点击 管理入口->设备管理->注册/注销 */
-  $deviceManageRegisterOff.on('click', ()=>{
+  $deviceManageRegisterOffText.on('click', ()=>{
     /* 选定管理入口 */
     $smartControl.show();
     $smartControlOn.hide();
@@ -824,17 +826,27 @@ $(document).ready(() => {
 
   });
 
-  /*  */
+  /* 点击 管理入口 -> 设备管理 -> 注册/注销 */
   $registerPlug.on('click', ()=> {
     console.log('点击注册按钮');
 
-    $.getJSON($SCRIPT_ROOT + '/switch', {
-      keypanel: 1,
-      key: 1,
-      state: 1
-    }, function(data) {
-      console.log(data.result);
-    });
+    value = $('#register-device-name option:selected').val();
+    console.log(value);
+
+    if(value == "register-off-two-key-switch") {
+      console.log('开始注册二键触控开关');
+
+      $.getJSON($SCRIPT_ROOT + '/switch', {
+        keypanel: 2,
+        key: 1,
+        state: 1
+      }, function(data) {
+        console.log("成功" + data.result);
+      });
+
+
+    }
+
 
   });
 
@@ -1100,7 +1112,7 @@ $(document).ready(() => {
 
   /* 点击返回 -> 智能控制 */
   $sceneControlContentBack.on('click', ()=>{
-    
+
     $smartControl.hide();
     $smartControlOn.show();
     $manageEntry.show();
@@ -2016,8 +2028,9 @@ $(document).ready(() => {
     $freeGroupContent.hide();
     $sceneManageContent.hide();
     $deviceClassficationContent.hide();
-    $smartHomeContent.hide();   
-    $manageEntryContent.show(); 
+    $smartHomeContent.hide();
+    $manageEntryContent.show();
   });
+
 
 });

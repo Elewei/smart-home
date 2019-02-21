@@ -30,7 +30,7 @@ def create_app(test_config=None):
     # init Database
     db.init_app(app)
 
-    # 注册switch
+    # 注册blueprint
     app.register_blueprint(switch.bp)
     app.register_blueprint(main.bp)
     app.register_blueprint(auth.bp)

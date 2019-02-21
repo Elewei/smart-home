@@ -19,6 +19,7 @@ def device_registry():
     # 2 表示 2键触控开关
     # 3 表示 3键触控开关
     keypanel = request.args.get('keypanel', 0, type=int)
+    print(keypanel)
 
     #Device Register
     # Step 1 Open the serial port
@@ -90,4 +91,5 @@ def device_registry():
     # TODO:  Verity it is success
 
     ser.close()
+
     return jsonify(result=1)

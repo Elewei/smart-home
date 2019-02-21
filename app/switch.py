@@ -82,8 +82,6 @@ def device_registry():
 
     if not deviceName:
         error = 'deviceName is required.'
-    elif not deviceAddress:
-        error = 'deviceAddress is required.'
     elif not deviceRoom:
         error = 'deviceRoom is required.'
     elif db.execute(

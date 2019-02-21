@@ -52,7 +52,8 @@ def device_registry():
         device_code = packet['One_Touch_Switch_RegisterID']
     elif keypanel == 2:
         #device_code = packet['Two_Touch_Switch_RegisterID']
-        message_send = "FF FF CC 21 "+ str(DEVICE_ADDRESS) +" 02 01 01"
+        deviceAddress = str(DEVICE_ADDRESS)
+        message_send = "FF FF CC 21 "+ deviceAddress +" 02 01 01"
     elif keypanel == 3:
         device_code = packet['Three_Touch_Switch_RegisterID']
 
@@ -92,7 +93,7 @@ def device_registry():
     if error is None:
         db.execute(
             'INSERT INTO device (deviceName, deviceAddress, deviceRoom, is_registered) VALUES (?, ?, ?, ?)',
-            (deviceName, str(DEVICE_ADDRESS), deviceRoom, 1)
+            (deviceName, deviceAddress, deviceRoom, 1)
         )
         db.commit()
 

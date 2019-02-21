@@ -36,7 +36,7 @@ def device_registry():
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
 
-    reading = s.read(6)
+    reading = ser.read(6)
     reading_str = ''.join(['%02x ' % b for b in reading])
     # return Code 57 AB C0 01 00
     # 57 AB stands for upload fix head
@@ -64,9 +64,8 @@ def device_registry():
     # 02 code stands for Data length
     #01 01 code stands for LoraID
     print(message_send)
-    time.sleep(3)
     d = bytes.fromhex(message_send)
-    s.write(d)
+    ser.write(d)
 
 
     # return Value 01 01 cc 21 13
@@ -74,7 +73,7 @@ def device_registry():
     # cc Stands for code Set Device ID
     # 21 code stands for 2 touch switch
     # 13 code stands for DeviceID
-    reading = s.read(10)
+    reading = ser.read(10)
     reading_str = ''.join(['%02x ' % b for b in reading])
 
     # 修改通信频率 '55 AA C1 02 01 01'
@@ -82,14 +81,14 @@ def device_registry():
     # C1 表示设置定义频率
     message_send = "55 AA C1 02 01 01"
     d = bytes.fromhex(message_send)
-    s.write(d)
+    ser.write(d)
 
     # return Value 01 01 cc 21 13
     # 01 01 code Stands for LoraID
     # cc Stands for code Set Device ID
     # 21 code stands for 2 touch switch
     # 13 code stands for DeviceID
-    reading = s.read(10)
+    reading = ser.read(10)
     reading_str = ''.join(['%02x ' % b for b in reading])
     # TODO:  Verity it is success
 

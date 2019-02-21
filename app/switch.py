@@ -30,8 +30,9 @@ def device_registry():
     # C0 code stands for disapching default frequency
     # 02 code stands for data length
     # FF FF code stands for Lora ID
-    message_send = packet['Register_Header'] + ' ' + packet['Default_Frequency'] + ' ' \
-                 + packet['Data_Length_Two'] + ' ' + packet['LoRa_ID_Broadcast']
+    message_send = "55 AA C0 02 FF FF"
+    print(message_send)
+
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
 
@@ -59,8 +60,7 @@ def device_registry():
     # 13 code stands for DeviceID
     # 02 code stands for Data length
     #01 01 code stands for LoraID
-    message_send = packet['LoRa_ID_Broadcast'] + ' ' + packet['Set_Device_Frequency'] + ' '  \
-                 + device_code + ' ' + "13" + ' ' + packet['Data_Length_Two'] + ' ' + packet['Lora_ID_First']
+    message_send = "FF FF CC 21 13 02 01 01"
     d = bytes.fromhex(message_send)
     s.write(d)
 
@@ -76,8 +76,7 @@ def device_registry():
     # 修改通信频率 '55 AA C1 02 01 01'
     # 55 AA 表示固定首部
     # C1 表示设置定义频率
-    message_send = packet['Register_Header'] + ' ' + packet['Set_Custom_Frequency'] + ' ' \
-                 + packet['Data_Length_Two'] + ' ' + packet['Lora_ID_First']
+    message_send = "55 AA C1 02 01 01"
     d = bytes.fromhex(message_send)
     s.write(d)
 

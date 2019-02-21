@@ -151,6 +151,7 @@ $(document).ready(() => {
   const $freeGroupAdd = $('#free-group-add');
   const $freeGroupListText = $('#free-group-list-text');
   const $freeGroupAddText = $('#free-group-add-text');
+  const $freeGroupContentBack = $('#free-group-content-back');
 
   /* 点击智能控制 */
   $smartControl.on('click', ()=>{
@@ -1099,6 +1100,7 @@ $(document).ready(() => {
 
   /* 点击返回 -> 智能控制 */
   $sceneControlContentBack.on('click', ()=>{
+    
     $smartControl.hide();
     $smartControlOn.show();
     $manageEntry.show();
@@ -1980,6 +1982,42 @@ $(document).ready(() => {
   $freeGroupAddText.on('click', ()=>{
     $freeGroupList.hide();
     $freeGroupAdd.show();
+  });
+
+  $freeGroupContentBack.on('click', ()=>{
+    $smartControl.show();
+    $smartControlOn.hide();
+    $manageEntry.hide();
+    $manageEntryOn.show();
+    $setGuide.show();
+    $setGuideOn.hide();
+    $other.show();
+    $otherOn.hide();
+
+    /* 独立控制页面 */
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $deviceManageContent.hide();
+    $setGuideContent.hide();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
+    $userSetupContent.hide();
+    $sceneControlMySceneChildContent.hide();
+    $openWindowMachineContent.hide();
+    $homeManageContent.hide();
+    $freeGroupContent.hide();
+    $sceneManageContent.hide();
+    $deviceClassficationContent.hide();
+    $smartHomeContent.hide();   
+    $manageEntryContent.show(); 
   });
 
 });

@@ -60,7 +60,7 @@
 .user-home a {
   font-size: 20px;
   color: white;
-  background-color: red;
+  #background-color: red;
   position: relative;
   top: 15px;
 }
@@ -742,13 +742,13 @@
   width: 50%;
   height: 90%;
   float: left;
-  background-color: pink;
+  #background-color: pink;
 }
 
 .one-key-switch {
   width: 100%;
   height: 70px;
-  background-color: grey;
+  #background-color: grey;
   margin-top: 40px;
 }
 
@@ -763,7 +763,7 @@
 .one-key-panel {
   width: 100px;
   height: 60px;
-  background-color: orange;
+  #background-color: orange;
   position: relative;
   float: left;
   top: 5px;
@@ -774,7 +774,7 @@
   width: 100%;
   height: 30%;
   color: white;
-  background-color: red;
+  #background-color: red;
   font-size: 15px;
   text-align: center;
 }
@@ -790,7 +790,7 @@
   clear: both;
   width: 35px;
   height: 35px;
-  background-color: green;
+  #background-color: green;
   position: relative;
   z-index: 15;
   top: -34px;
@@ -801,7 +801,7 @@
   #clear:both;
   width: 35px;
   height: 35px;
-  background-color: red;
+  #background-color: red;
   position: relative;
   z-index: 10;
   top: -34px;
@@ -811,14 +811,14 @@
 .two-key-switch {
   width: 100%;
   height: 70px;
-  background-color: grey;
+  #background-color: grey;
   margin-top: 40px;
 }
 
 .two-key-panel {
   width: 100px;
   height: 60px;
-  background-color: orange;
+  #background-color: orange;
   position: relative;
   float: left;
   margin-left: 30px;
@@ -829,7 +829,7 @@
   clear: both;
   width: 35px;
   height: 35px;
-  background-color: green;
+  #background-color: green;
   position: relative;
   z-index: 10;
   top: -34px;
@@ -840,7 +840,7 @@
   clear: both;
   width: 35px;
   height: 35px;
-  background-color: red;
+  #background-color: red;
   position: relative;
   z-index: 10;
   top: -34px;
@@ -851,7 +851,7 @@
   clear: both;
   width: 35px;
   height: 35px;
-  background-color: green;
+  #background-color: green;
   position: relative;
   z-index: 10;
   top: -34px;
@@ -862,7 +862,7 @@
   clear: both;
   width: 35px;
   height: 35px;
-  background-color: red;
+  #background-color: red;
   position: relative;
   z-index: 10;
   top: -34px;
@@ -873,14 +873,14 @@
 .three-key-switch {
   width: 100%;
   height: 70px;
-  background-color: grey;
+  #background-color: grey;
   margin-top: 40px;
 }
 
 .three-key-switch {
   width: 100%;
   height: 70px;
-  background-color: blue;
+  #background-color: blue;
   margin-top: 40px;
   clear: both;
 }
@@ -889,7 +889,7 @@
 .three-key-panel {
   width: 100px;
   height: 60px;
-  background-color: orange;
+  #background-color: orange;
   position: relative;
   float: left;
   margin-left: 30px;
@@ -900,7 +900,7 @@
   clear: both;
   width: 35px;
   height: 35px;
-  background-color: green;
+  #background-color: green;
   position: relative;
   z-index: 10;
   top: -34px;
@@ -911,7 +911,7 @@
   clear: both;
   width: 35px;
   height: 35px;
-  background-color: red;
+  #background-color: red;
   position: relative;
   z-index: 10;
   top: -34px;
@@ -922,7 +922,7 @@
   clear: both;
   width: 35px;
   height: 35px;
-  background-color: green;
+  #background-color: green;
   position: relative;
   z-index: 10;
   top: -34px;
@@ -933,7 +933,7 @@
   clear: both;
   width: 35px;
   height: 35px;
-  background-color: red;
+  #background-color: red;
   position: relative;
   z-index: 10;
   top: -34px;
@@ -1046,7 +1046,7 @@
   width: calc(50% - 3px);
   height: 100%;
   float: left;
-  background-color: pink;
+  #background-color: pink;
   background-image: url('/static/img/buttom_img.png');
   background-size: cover;
 }
@@ -1080,14 +1080,14 @@
 .smart-plug-bar {
   width: 100%;
   height: 70px;
-  background-color: grey;
+  #background-color: grey;
   margin-top: 30px;
 }
 
 .smart-plug-img {
   width: 80px;
   height: 60px;
-  background-color: blue;
+  #background-color: blue;
   float: left;
   position: relative;
   top: 5px;
@@ -1098,7 +1098,7 @@
   width: 100px;
   height: 40px;
   float: left;
-  background-color: orange;
+  #background-color: orange;
   position: relative;
   top: 20px;
   left:40px;
@@ -1132,28 +1132,28 @@
 .curtain-first-line {
   width: 100%;
   height: 60px;
-  background-color: grey;
+  #background-color: grey;
   margin-top: 15px;
 }
 
 .curtain-second-line {
   width: 100%;
   height: 60px;
-  background-color: grey;
+  #background-color: grey;
   margin-top: 15px;
 }
 
 .curtain-third-line {
   width: 100%;
   height: 60px;
-  background-color: grey;
+  #background-color: grey;
   margin-top: 15px;
 }
 
 .curtain-forth-line {
   width: 100%;
   height: 60px;
-  background-color: grey;
+  #background-color: grey;
   margin-top: 15px;
 }
 
@@ -1161,7 +1161,7 @@
   width: 50%;
   height: 100%;
   float: left;
-  background-color: orange;
+  #background-color: orange;
 }
 
 .curtain-all_open p {
@@ -1174,7 +1174,7 @@
 }
 
 .curtain-all_open img {
-  background-color: red;
+  #background-color: red;
   position: relative;
   float: right;
   left: -60px;
@@ -1184,7 +1184,7 @@
   width: 50%;
   height: 100%;
   float: right;
-  background-color: orange;
+  #background-color: orange;
 }
 
 .curtain-all_close p {
@@ -1197,7 +1197,7 @@
 }
 
 .curtain-all_close img {
-  background-color: red;
+  #background-color: red;
   position: relative;
   float: right;
   left: -60px;
@@ -1207,14 +1207,14 @@
   width: 50%;
   height: 100%;
   float: left;
-  background-color: orange;
+  #background-color: orange;
 }
 
 .curtain-reverse {
   width: 50%;
   height: 100%;
   float: right;
-  background-color: orange;
+  #background-color: orange;
 }
 
 .curtain-stop  p {
@@ -1243,7 +1243,7 @@
 }
 
 .curtain-reverse  img {
-  background-color: red;
+  #background-color: red;
   position: relative;
   float: right;
   left: -60px;
@@ -1253,7 +1253,7 @@
   width: 50%;
   height: 100%;
   float: left;
-  background-color: orange;
+  #background-color: orange;
 }
 
 .curtain-check  p {
@@ -1266,7 +1266,7 @@
 }
 
 .curtain-check  img {
-  background-color: red;
+  #background-color: red;
   position: relative;
   float: right;
   left: -60px;
@@ -1302,7 +1302,7 @@
   height: 60px;
   left: 118px;
   top: 0px;
-  background-color: red;
+  #background-color: red;
 }
 
 .curtain-free-toggle input[type=range]{
@@ -1522,7 +1522,7 @@ select {
 .open-window-forth-line {
   width: 100%;
   height: 60px;
-  background-color: grey;
+  #background-color: grey;
   margin-top: 15px;
 }
 
@@ -1764,7 +1764,7 @@ select {
 #home-manage-home-background-img {
   width: 100px;
   height: 80px;
-  background-color: orange;
+  #background-color: orange;
   border: 2px solid black;
   margin-left: 5px;
   position: relative;
@@ -1787,7 +1787,7 @@ select {
 .home-member-first {
   width: 120px;
   height: 120px;
-  background-color: grey;
+  #background-color: grey;
   border-radius: 10%;
   margin-left: 15px;
   margin-top: 15px;
@@ -1796,7 +1796,7 @@ select {
 .home-member-add {
   width: 120px;
   height: 120px;
-  background-color: grey;
+  #background-color: grey;
   border-radius: 10%;
   margin-left: 30px;
   margin-top: 15px;
@@ -1817,7 +1817,7 @@ select {
 }
 
 .free-group-name {
-  background-color: grey;
+  #background-color: grey;
   width: 80%;
   height: 40px;
   margin-top: 5px;
@@ -1827,7 +1827,7 @@ select {
 .free-group-second-line {
   width: 90%;
   height: 280px;
-  background-color: grey;
+  #background-color: grey;
   margin-top: 5px;
   margin-left: 20px;
 }
@@ -1836,7 +1836,7 @@ select {
   width: 49%;
   height: 100%;
   margin-right: 5px;
-  background-color: blue;
+  #background-color: blue;
   float: left;
 }
 
@@ -1844,7 +1844,7 @@ select {
   width: 49%;
   height: 100%;
   margin-left: 5px;
-  background-color: blue;
+  #background-color: blue;
   float: right;
 }
 
@@ -1866,7 +1866,7 @@ select {
 }
 
 .scene-manage-first-line {
-  background-color: grey;
+  #background-color: grey;
   width: 80%;
   height: 30px;
   margin-top: 10px;
@@ -1893,21 +1893,21 @@ select {
 }
 
 .scene-manage-second-line {
-  background-color: grey;
+  #background-color: grey;
   width: 80%;
   height: 80px;
   margin-left: 20px;
 }
 
 .scene-manage-avator {
-  background-color: red;
+  #background-color: red;
   width: 100px;
   height: 80px;
   border-radius: 10%;
 }
 
 .scene-manage-action {
-  background-color: grey;
+  #background-color: grey;
   width: 80%;
   height: 180px;
   margin-left: 20px;

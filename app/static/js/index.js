@@ -902,6 +902,26 @@ $(document).ready(() => {
     $sceneControlMySceneChildContent.hide();
     $smartHomeContent.hide();
     $openWindowMachineContent.show();
+
+
+    /* 开窗器页面初始化 */
+    let windowToggle = $openWindowToggleBar.val();
+    $openWindowToggleBarValue.text(windowToggle + '%');
+    if (windowToggle < 10) {
+      let leftOffSet = 8 + 2.67 * windowToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $openWindowToggleBarValue.css('left', leftOffSetVal);
+    } else if (windowToggle == 100) {
+      let leftOffSet = 2.67 * windowToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $openWindowToggleBarValue.css('left', leftOffSetVal);
+    } else {
+      let leftOffSet = 4 + 2.67 * windowToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $openWindowToggleBarValue.css('left', leftOffSetVal);
+    }
+
+
   });
 
   /* 点击 智能控制 -> 独立控制 -> 窗帘   */
@@ -1582,11 +1602,26 @@ $(document).ready(() => {
   });
 
 
+
   $openWindowToggleBar.on('input propertychange', ()=>{
     console.log($openWindowToggleBar.val());
-
     let windowToggle = $openWindowToggleBar.val();
+    $openWindowToggleBarValue.text(windowToggle + '%');
+    if (windowToggle < 10) {
+      let leftOffSet = 8 + 2.67 * windowToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $openWindowToggleBarValue.css('left', leftOffSetVal);
+    } else if (windowToggle == 100) {
+      let leftOffSet = 2.67 * windowToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $openWindowToggleBarValue.css('left', leftOffSetVal);
+    } else {
+      let leftOffSet = 4 + 2.67 * windowToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $openWindowToggleBarValue.css('left', leftOffSetVal);
+    }
 
+    /*
     if (windowToggle == 0) {
       console.log($windowImg[0].src);
       preImgPath = $windowImg[0].src;
@@ -1679,6 +1714,10 @@ $(document).ready(() => {
       //console.log($windowImg[0].src);
       $openWindowToggleBarValue.css('left', '270px');
     }
+    */
+
+
+
 
   });
 

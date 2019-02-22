@@ -1645,23 +1645,23 @@ $(document).ready(() => {
     }else if(windowToggle == 60) {
       $windowImg.attr("src","/static/img/open_window_img/12.jpg");
       console.log($windowImg[0].src);
-      $openWindowToggleBarValue.css('left', '176px');
+      $openWindowToggleBarValue.css('left', '163px');
     }else if(windowToggle == 65) {
       $windowImg.attr("src","/static/img/open_window_img/13.jpg");
       console.log($windowImg[0].src);
-      $openWindowToggleBarValue.css('left', '190px');
+      $openWindowToggleBarValue.css('left', '176px');
     }else if(windowToggle == 70) {
       $windowImg.attr("src","/static/img/open_window_img/14.jpg");
       console.log($windowImg[0].src);
-      $openWindowToggleBarValue.css('left', '203px');
+      $openWindowToggleBarValue.css('left', '190px');
     }else if(windowToggle == 75) {
       $windowImg.attr("src","/static/img/open_window_img/15.jpg");
       console.log($windowImg[0].src);
-      $openWindowToggleBarValue.css('left', '217px');
+      $openWindowToggleBarValue.css('left', '203px');
     }else if(windowToggle == 80) {
       $windowImg.attr("src","/static/img/open_window_img/16.jpg");
       console.log($windowImg[0].src);
-      $openWindowToggleBarValue.css('left', '229px');
+      $openWindowToggleBarValue.css('left', '216px');
     }else if(windowToggle == 85) {
       $windowImg.attr("src","/static/img/open_window_img/17.jpg");
       console.log($windowImg[0].src);

@@ -438,28 +438,6 @@
   top: 15px;
 }
 
-#touch-switch-text {
-  clear: both;
-  position: fixed;
-  width: 80%;
-  height: 60px;
-  color: white;
-  font-size: 20px;
-  top: 208px;
-  left: 100px;
-}
-
-#touch-switch-exec-log-text {
-  clear: both;
-  position: fixed;
-  width: 80%;
-  height: 60px;
-  color: white;
-  font-size: 20px;
-  top: 275px;
-  left: 100px;
-}
-
 .exec-log-text {
   clear: both;
   color: white;
@@ -787,7 +765,7 @@
   #background-color: green;
   position: relative;
   z-index: 15;
-  top: -34px;
+  top: -33px;
   left: 3px;
 }
 
@@ -798,7 +776,7 @@
   #background-color: red;
   position: relative;
   z-index: 10;
-  top: -34px;
+  top: -33px;
   left: 63px;
 }
 
@@ -826,7 +804,7 @@
   #background-color: green;
   position: relative;
   z-index: 10;
-  top: -34px;
+  top: -33px;
   left: 3px;
 }
 
@@ -837,7 +815,7 @@
   #background-color: red;
   position: relative;
   z-index: 10;
-  top: -34px;
+  top: -33px;
   left: 63px;
 }
 
@@ -848,7 +826,7 @@
   #background-color: green;
   position: relative;
   z-index: 10;
-  top: -34px;
+  top: -33px;
   left: 3px;
 }
 
@@ -859,7 +837,7 @@
   #background-color: red;
   position: relative;
   z-index: 10;
-  top: -34px;
+  top: -33px;
   left: 63px;
 }
 
@@ -897,7 +875,7 @@
   #background-color: green;
   position: relative;
   z-index: 10;
-  top: -34px;
+  top: -33px;
   left: 3px;
 }
 
@@ -908,7 +886,7 @@
   #background-color: red;
   position: relative;
   z-index: 10;
-  top: -34px;
+  top: -33px;
   left: 63px;
 }
 
@@ -919,7 +897,7 @@
   #background-color: green;
   position: relative;
   z-index: 10;
-  top: -34px;
+  top: -33px;
   left: 3px;
 }
 
@@ -930,7 +908,7 @@
   #background-color: red;
   position: relative;
   z-index: 10;
-  top: -34px;
+  top: -33px;
   left: 63px;
 }
 
@@ -940,7 +918,7 @@
   height: 35px;
   position: relative;
   z-index: 10;
-  top: -34px;
+  top: -33px;
   left: 3px;
 }
 
@@ -950,7 +928,7 @@
   height: 35px;
   position: relative;
   z-index: 10;
-  top: -34px;
+  top: -33px;
   left: 63px;
 }
 
@@ -971,7 +949,7 @@
 }
 
 #video-touch-switch-background-img {
-  width: 70%;
+  width: 90%;
   height: 100%;
 }
 
@@ -980,7 +958,7 @@
   width: 80px;
   height: 80px;
   position: absolute;
-  top: 300px;
+  top: 370px;
   left: 930px;
 }
 
@@ -990,7 +968,7 @@
   width: 60px;
   height: 60px;
   position: absolute;
-  top: 300px;
+  top: 380px;
   left: 890px;
 }
 
@@ -999,7 +977,7 @@
   width: 60px;
   height: 60px;
   position: absolute;
-  top: 300px;
+  top: 380px;
   left: 980px;
 }
 
@@ -1008,7 +986,7 @@
   width: 60px;
   height: 60px;
   position: absolute;
-  top: 300px;
+  top: 380px;
   left: 855px;
 }
 
@@ -1017,7 +995,7 @@
   width: 60px;
   height: 60px;
   position: absolute;
-  top: 300px;
+  top: 380px;
   left: 935px;
 }
 
@@ -1026,7 +1004,7 @@
   width: 60px;
   height: 60px;
   position: absolute;
-  top: 300px;
+  top: 380px;
   left: 1015px;
 }
 
@@ -1084,7 +1062,7 @@
   #background-color: blue;
   float: left;
   position: relative;
-  top: 5px;
+  top: 15px;
   left: 15px;
 }
 
@@ -1104,7 +1082,7 @@
   height: 35px;
   #background-color: green;
   position: relative;
-  top: -38px;
+  top: -37px;
   left: 125px;
 }
 
@@ -1315,7 +1293,7 @@
   width: 33px;
   border-radius: 100%;
   border-color: black;
-  background: black;
+  #background: black;
   cursor: pointer;
   background-image: url('/static/img/switch_key.png');
 }
@@ -1325,10 +1303,19 @@
   height: 40px;
   cursor: pointer;
   outline: none;
+  background-color: transparent;
   background-image: url('/static/img/process_bar.png');
 }
 
-
+#curtain-toggle-bar-value {
+  color: white;
+  position: relative;
+  top: -40px;
+  left: 120px;
+  -webkit-user-select:none;
+  user-select:none;
+  z-index: -10px;
+}
 
 /*
 input[type=range] {
@@ -1412,6 +1399,7 @@ input[type=range]::-moz-range-track {
   height: 37px;
   cursor: pointer;
   outline: none;
+  background-color: transparent;
   background-image: url('/static/img/process_bar.png');
 }
 
@@ -1611,40 +1599,6 @@ select {
 }
 
 
-#smart-curtain-left-side-text {
-  clear: both;
-  position: fixed;
-  width: 80%;
-  height: 60px;
-  color: white;
-  font-size: 20px;
-  top: 208px;
-  left: 113px;
-}
-
-#smart-curtain-exec-log-text {
-  clear: both;
-  position: fixed;
-  width: 80%;
-  height: 60px;
-  color: white;
-  font-size: 20px;
-  top: 275px;
-  left: 113px;
-}
-
-
-
-#smart-plug-left-side-text {
-  clear: both;
-  position: fixed;
-  width: 80%;
-  height: 60px;
-  color: white;
-  font-size: 20px;
-  top: 208px;
-  left: 113px;
-}
 
 #smart-plug-exec-log-text {
   clear: both;
@@ -1658,20 +1612,26 @@ select {
 }
 
 #smart-plug-img {
-  width: 70%;
+  width: 90%;
   height: 100%;
 }
 
 
+#smart-plug-toggle {
+	width: 50px;
+	height: 50px;
+	/* background-color: black; */
+	position: absolute;
+	top: 290px;
+	left: 1060px;
+	border: 1px solid white;
+	border-radius: 100%;
+}
+
+
+
 #dimming-lamp-left-side-text {
-  clear: both;
-  position: fixed;
-  width: 80%;
-  height: 60px;
-  color: white;
-  font-size: 20px;
-  top: 208px;
-  left: 113px;
+
 }
 
 #dimming-lamp-exec-log-text {
@@ -1940,7 +1900,81 @@ select {
 
 /* 管理入口 -> 情景管理 结束 */
 
+.buttom-text-one {
+  top: -70px;
+}
 
 .buttom-text-top {
   top: -140px;
+}
+
+
+.dimming-lamp-forth-line {
+  width: 100%;
+  height: 60px;
+  #background-color: grey;
+  margin-top: 15px;
+}
+
+.dimming-lamp-free-group {
+  position: relative;
+  width: 300px;
+  height: 60px;
+  top: 0px;
+  #background-color: red;
+}
+
+.dimming-lamp-free-group p {
+  color: white;
+  float: left;
+  font-size: 20px;
+  position: relative;
+  top: 0px;
+  left: 25px;
+}
+
+.dimming-lamp-toggle {
+  position: relative;
+  top: -10px;
+  left: 120px;
+}
+
+.dimming-lamp-toggle input[type=range]{
+  -webkit-appearance: none;
+  width: 300px;
+  height: 35px;
+  background: transparent;
+  outline: none;
+  position: relative;
+  top: -17px;
+  left: 0px;
+}
+
+.dimming-lamp-toggle input[type=range]::-moz-range-thumb {
+  height: 33px;
+  width: 33px;
+  border-radius: 100%;
+  border-color: black;
+  #background: black;
+  cursor: pointer;
+  background-image: url('/static/img/switch_key.png');
+}
+
+.dimming-lamp-toggle input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  background-image: url('/static/img/process_bar.png');
+}
+
+#dimming-lamp-toggle-bar-text {
+  color: white;
+  position: relative;
+  top: -40px;
+  left: 120px;
+  -webkit-user-select:none;
+  user-select:none;
+  z-index: -10px;
 }

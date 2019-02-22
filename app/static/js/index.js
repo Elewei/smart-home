@@ -136,6 +136,7 @@ $(document).ready(() => {
   const $curtainToggleBar = $('#curtain-toggle-bar');
   const $curtainImg = $('#curtain-img');
   const $dimmingLampContentBack = $('#dimming-lamp-content-back');
+
   const $videoOneKeySwitch = $('#video-one-key-switch');
   const $videoTwoKeyOneSwitch = $('#video-two-key-one-switch');
   const $videoTwoKeyTwoSwitch = $('#video-two-key-two-switch');
@@ -143,6 +144,7 @@ $(document).ready(() => {
   const $videoThreeKeyOneSwitch = $('#video-three-key-one-switch');
   const $videoThreeKeyTwoSwitch = $('#video-three-key-two-switch');
   const $videoThreeKeyThreeSwitch = $('#video-three-key-three-switch');
+
   const $sceneManageContentBack = $('#scene-manage-content-back');
   const $sceneManageContent = $('.scene-manage-content');
   const $manageEntrySceneManage = $('#manage-entry-scene-manage');
@@ -155,6 +157,11 @@ $(document).ready(() => {
   const $freeGroupAddText = $('#free-group-add-text');
   const $freeGroupContentBack = $('#free-group-content-back');
   const $openWindowToggleBarValue = $('#open-window-toggle-bar-value');
+  const $curtainToggleBarValue = $('#curtain-toggle-bar-value');
+  const $smartPlugOnImg = $('#smart-plug-on-img');
+  const $smartPlugOffImg = $('#smart-plug-off-img');
+  const $smartPlugOff = $('.smart-plug-off');
+  const $smartPlugOn = $('.smart-plug-on');
 
   /* 点击智能控制 */
   $smartControl.on('click', ()=>{
@@ -502,6 +509,11 @@ $(document).ready(() => {
     $oneKeySwitchKeyOff.show();
 
     $videoOneKeySwitch.show();
+    $videoTwoKeyOneSwitch.hide();
+    $videoTwoKeyTwoSwitch.hide();
+    $videoThreeKeyOneSwitch.hide();
+    $videoThreeKeyTwoSwitch.hide();
+    $videoThreeKeyThreeSwitch.hide();
 
     let oneKeySwitchKeyOnImgPath = "/static/img/touch_switch/touch_switch_on.png";
     $videoOneKeySwitch.attr("src",oneKeySwitchKeyOnImgPath);
@@ -523,6 +535,11 @@ $(document).ready(() => {
     $oneKeySwitchKeyOff.hide();
 
     $videoOneKeySwitch.show();
+    $videoTwoKeyOneSwitch.hide();
+    $videoTwoKeyTwoSwitch.hide();
+    $videoThreeKeyOneSwitch.hide();
+    $videoThreeKeyTwoSwitch.hide();
+    $videoThreeKeyThreeSwitch.hide();
 
     let oneKeySwitchKeyOnImgPath = "/static/img/touch_switch/touch_switch_off.png";
     $videoOneKeySwitch.attr("src",oneKeySwitchKeyOnImgPath);
@@ -539,6 +556,9 @@ $(document).ready(() => {
     $videoOneKeySwitch.hide();
     $videoTwoKeyOneSwitch.show();
     $videoTwoKeyTwoSwitch.show();
+    $videoThreeKeyOneSwitch.hide();
+    $videoThreeKeyTwoSwitch.hide();
+    $videoThreeKeyThreeSwitch.hide();
 
     console.log($videoTwoKeyOneSwitch[0].src);
     let twoKeyOneSwitchOnImgPath = "/static/img/touch_switch/multi_touch_switch_on.png";
@@ -566,6 +586,9 @@ $(document).ready(() => {
     $videoOneKeySwitch.hide();
     $videoTwoKeyOneSwitch.show();
     $videoTwoKeyTwoSwitch.show();
+    $videoThreeKeyOneSwitch.hide();
+    $videoThreeKeyTwoSwitch.hide();
+    $videoThreeKeyThreeSwitch.hide();
 
     let twoKeyOneSwitchOffImgPath = "/static/img/touch_switch/multi_touch_switch_off.png";
     $videoTwoKeyOneSwitch.attr("src",twoKeyOneSwitchOffImgPath);
@@ -583,6 +606,9 @@ $(document).ready(() => {
     $videoOneKeySwitch.hide();
     $videoTwoKeyOneSwitch.show();
     $videoTwoKeyTwoSwitch.show();
+    $videoThreeKeyOneSwitch.hide();
+    $videoThreeKeyTwoSwitch.hide();
+    $videoThreeKeyThreeSwitch.hide();
 
     let twoKeyTwoSwitchOnImgPath = "/static/img/touch_switch/multi_touch_switch_on.png";
     $videoTwoKeyTwoSwitch.attr("src",twoKeyTwoSwitchOnImgPath);
@@ -607,6 +633,9 @@ $(document).ready(() => {
     $videoOneKeySwitch.hide();
     $videoTwoKeyOneSwitch.show();
     $videoTwoKeyTwoSwitch.show();
+    $videoThreeKeyOneSwitch.hide();
+    $videoThreeKeyTwoSwitch.hide();
+    $videoThreeKeyThreeSwitch.hide();
 
     let twoKeyTwoSwitchOffImgPath = "/static/img/touch_switch/multi_touch_switch_off.png";
     $videoTwoKeyTwoSwitch.attr("src",twoKeyTwoSwitchOffImgPath);
@@ -623,9 +652,14 @@ $(document).ready(() => {
     $videoOneKeySwitch.hide();
     $videoTwoKeyOneSwitch.hide();
     $videoTwoKeyTwoSwitch.hide();
+
     $videoThreeKeyOneSwitch.show();
     $videoThreeKeyTwoSwitch.show();
     $videoThreeKeyThreeSwitch.show();
+
+    let ThreeKeyOneSwitchOnImgPath = "/static/img/touch_switch/multi_touch_switch_on.png";
+    $videoThreeKeyOneSwitch.attr("src",ThreeKeyOneSwitchOnImgPath);
+
 
     $.getJSON($SCRIPT_ROOT + '/switch', {
       keypanel: 1,
@@ -634,8 +668,6 @@ $(document).ready(() => {
     }, function(data) {
       console.log(data.result);
     });
-
-
 
   });
 
@@ -653,6 +685,8 @@ $(document).ready(() => {
     $videoThreeKeyTwoSwitch.show();
     $videoThreeKeyThreeSwitch.show();
 
+    let ThreeKeyOneSwitchOffImgPath = "/static/img/touch_switch/multi_touch_switch_off.png";
+    $videoThreeKeyOneSwitch.attr("src",ThreeKeyOneSwitchOffImgPath);
 
   });
 
@@ -669,6 +703,9 @@ $(document).ready(() => {
     $videoThreeKeyOneSwitch.show();
     $videoThreeKeyTwoSwitch.show();
     $videoThreeKeyThreeSwitch.show();
+
+    let ThreeKeyTwoSwitchOnImgPath = "/static/img/touch_switch/multi_touch_switch_on.png";
+    $videoThreeKeyTwoSwitch.attr("src",ThreeKeyTwoSwitchOnImgPath);
 
     $.getJSON($SCRIPT_ROOT + '/switch', {
       keypanel: 1,
@@ -696,6 +733,9 @@ $(document).ready(() => {
     $videoThreeKeyTwoSwitch.show();
     $videoThreeKeyThreeSwitch.show();
 
+    let ThreeKeyTwoSwitchOffImgPath = "/static/img/touch_switch/multi_touch_switch_off.png";
+    $videoThreeKeyTwoSwitch.attr("src",ThreeKeyTwoSwitchOffImgPath);
+
   });
 
   /* 点击三键触控开关三 - 开 */
@@ -711,6 +751,9 @@ $(document).ready(() => {
     $videoThreeKeyOneSwitch.show();
     $videoThreeKeyTwoSwitch.show();
     $videoThreeKeyThreeSwitch.show();
+
+    let ThreeKeyThreeSwitchOnImgPath = "/static/img/touch_switch/multi_touch_switch_on.png";
+    $videoThreeKeyThreeSwitch.attr("src",ThreeKeyThreeSwitchOnImgPath);
 
     $.getJSON($SCRIPT_ROOT + '/switch', {
       keypanel: 1,
@@ -738,8 +781,31 @@ $(document).ready(() => {
     $videoThreeKeyTwoSwitch.show();
     $videoThreeKeyThreeSwitch.show();
 
+    let ThreeKeyThreeSwitchOffImgPath = "/static/img/touch_switch/multi_touch_switch_off.png";
+    $videoThreeKeyThreeSwitch.attr("src",ThreeKeyThreeSwitchOffImgPath);
+
   });
 
+  /* 点击打开智能插座 */
+  $smartPlugOnImg.on('click', ()=>{
+    console.log('点击打开智能插座');
+    $smartPlugOn.hide();
+    $smartPlugOff.show();
+
+    let smartPlugImgPath = "/static/img/touch_switch/smart_plug_on.png";
+    $('#smart-plug-toggle').attr("src",smartPlugImgPath);
+
+  });
+
+  /* 点击关闭智能插座 */
+  $smartPlugOffImg.on('click', ()=>{
+    console.log('点击打开智能插座');
+    $smartPlugOn.show();
+    $smartPlugOff.hide();
+
+    let smartPlugImgPath = "/static/img/touch_switch/smart_plug_off.png";
+    $('#smart-plug-toggle').attr("src",smartPlugImgPath);
+  });
 
   /* 点击 管理入口 -> 设备管理 */
   $deviceManageCard.on('click', ()=> {
@@ -955,6 +1021,26 @@ $(document).ready(() => {
     $openWindowMachineContent.hide();
     $smartHomeContent.hide();
     $smartCurtainContent.show();
+
+    /* 窗帘页面初始化信息 */
+    let curtainToggle = $curtainToggleBar.val();
+    let leftOffSet = 0;
+
+    $curtainToggleBarValue.text(curtainToggle + '%');
+    if (curtainToggle < 10) {
+      leftOffSet = 126 + 2.67 * curtainToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $curtainToggleBarValue.css('left', leftOffSetVal);
+    } else if (curtainToggle == 100) {
+      leftOffSet = 118 + 2.67 * curtainToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $curtainToggleBarValue.css('left', leftOffSetVal);
+    } else {
+      leftOffSet =  120 + 2.67 * curtainToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $curtainToggleBarValue.css('left', leftOffSetVal);
+    }
+
   });
 
   /* 点击 智能控制 -> 独立控制 -> 空气盒子   */
@@ -1761,8 +1847,27 @@ $(document).ready(() => {
   $curtainToggleBar.on('input propertychange', ()=>{
     console.log($curtainToggleBar.val());
     let curtainToggle = $curtainToggleBar.val();
-    let preImgPath, newImgPath;
+    let leftOffSet = 0;
 
+    $curtainToggleBarValue.text(curtainToggle + '%');
+    if (curtainToggle < 10) {
+      leftOffSet = 126 + 2.67 * curtainToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $curtainToggleBarValue.css('left', leftOffSetVal);
+    } else if (curtainToggle == 100) {
+      leftOffSet = 118 + 2.67 * curtainToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $curtainToggleBarValue.css('left', leftOffSetVal);
+    } else {
+      leftOffSet =  120 + 2.67 * curtainToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $curtainToggleBarValue.css('left', leftOffSetVal);
+    }
+
+
+
+    /*
+    let preImgPath, newImgPath;
     if (curtainToggle == 0) {
       preImgPath = $curtainImg[0].src;
       newImgPath = "/static/img/smart_curtain/01.jpg";
@@ -1884,7 +1989,7 @@ $(document).ready(() => {
         $curtainImg.attr("src",newImgPath);
       }
     }
-
+    */
   });
 
 

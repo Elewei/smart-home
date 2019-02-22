@@ -1221,7 +1221,7 @@
 }
 
 .curtain-stop  img {
-  background-color: red;
+  #background-color: red;
   position: relative;
   float: right;
   left: -60px;
@@ -1686,9 +1686,11 @@ select {
 
 #open-window-toggle-bar-value {
   color: white;
-  font-style: bold;
   position: relative;
-  top: -30px;
+  top: -49px;
+  left: 4px;
+  cursor: none;
+  z-index: -10px;
 }
 
 

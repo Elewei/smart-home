@@ -1566,7 +1566,7 @@ select {
   width: 33px;
   border-radius: 100%;
   border-color: black;
-  background: black;
+  #background: black;
   cursor: pointer;
   background-image: url('/static/img/switch_key.png');
 }
@@ -1577,6 +1577,7 @@ select {
   cursor: pointer;
   outline: none;
   background-image: url('/static/img/process_bar.png');
+  background-color: transparent;
 }
 
 #air-box-left-side-text {
@@ -1689,7 +1690,8 @@ select {
   position: relative;
   top: -49px;
   left: 4px;
-  cursor: none;
+  -webkit-user-select:none;
+  user-select:none;
   z-index: -10px;
 }
 

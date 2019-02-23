@@ -196,7 +196,7 @@ def open_smart_plug():
     # 10 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
-    message_send = "01 01 bb 30 "+ str(smartPlugAddress) +" 01"
+    message_send = "01 01 bb 30 "+ str(smartPlugAddress) +" 00"
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
@@ -236,7 +236,7 @@ def close_smart_plug():
     # 10 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
-    message_send = "01 01 bb 30 "+ str(smartPlugAddress) +" 00"
+    message_send = "01 01 bb 30 "+ str(smartPlugAddress) +" 01"
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)

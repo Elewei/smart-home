@@ -387,6 +387,7 @@ def get_window_macine():
 
     print("获取 开窗器 位置")
     openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
+    ser = 0
 
     #Device Register
     # Step 1 Open the serial port
@@ -427,7 +428,71 @@ def get_window_macine():
             print("百分比" + str(percentValue))
             return jsonify(result=percentValue)
     except:
-        ser.close()
+        if ser:
+            ser.close()
 
+
+    return jsonify(result=0)
+
+
+
+
+@bp.route('/freewindow')
+def free_window_macine():
+
+    print("开窗器到 100%")
+    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
+    freeToggleVal = request.args.get('freeToggleVal', 0, type=int)
+    print(openWindowAddress)
+    print(freeToggleVal)
+    freeToggleValStrHex = str(hex(freeToggleVal))
+    if freeToggleVal <= 15:
+        freeToggleValStr = '0' + freeToggleValStrHex[2:]
+    else:
+        freeToggleValStr = freeToggleValStrHex[2:]
+
+    ser = 0
+
+    #Device Register
+    # Step 1 Open the serial port
+    try:
+        ser = serial.Serial('/dev/ttyAMA0',230400)
+        ser.timeout = 1
+        #ser.flushinput()
+        # Device Register "01 01 bb 10 30 64 00"
+        # 01 01 code Stands for LoraID Address
+        # aa code stands for control code
+        # 10 code stands for Open Window Machine Type
+        # 30 code stands for Open Window Machine Address
+        # 64 open window percent
+        message_send = "01 01 aa 10 " + freeToggleValStr
+        print("发送消息" + message_send)
+        message_send_hex = bytes.fromhex(message_send)
+        ser.write(message_send_hex)
+
+        while True:
+            if ser.inWaiting() > 0:
+                break;
+            time.sleep(0.5)
+
+        reading = ser.read(10)
+        reading_str = ''.join(['%02x ' % b for b in reading])
+        # return Code 01 01 aa 10 31 01 09
+        # 01 01 stands for LoraID
+        # aa code stands for control code
+        # 10 code stands Open Window Machine
+        # 31 code stands for Open Window Address
+        # 09 code 当前位置
+        print("收到消息 = " + reading_str)
+        fix_head = "01 01 aa 10 " + str(openWindowAddress) +" 01"
+        if(reading_str.find(fix_head) >= 0):
+            start = len(fix_head) + reading_str.find(fix_head) + 1
+            currentHexVal =  reading_str[start:start + 3]
+            percentValue = int(currentHexVal, 16)
+            print("百分比" + str(percentValue))
+            return jsonify(result=percentValue)
+    except:
+        if ser:
+            ser.close()
 
     return jsonify(result=0)

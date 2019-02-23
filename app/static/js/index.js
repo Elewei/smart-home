@@ -2535,7 +2535,152 @@ function get_open_window_macine_status(){
     openWinowMachineAddress: currentOpenWindowMachineAddress,
   }, function(data) {
     console.log(data.result);
+    $openWindowToggleBar = $('#open-window-toggle-bar');
+    $openWindowToggleBar.val(data.result);
+    console.log($('#open-window-toggle-bar').val());
+
+    $openWindowToggleBar.on('input propertychange', ()=>{
+      console.log($openWindowToggleBar.val());
+      let windowToggle = $openWindowToggleBar.val();
+      $openWindowToggleBarValue.text(windowToggle + '%');
+      if (windowToggle < 10) {
+        let leftOffSet = 8 + 2.67 * windowToggle;
+        leftOffSetVal = leftOffSet + 'px';
+        $openWindowToggleBarValue.css('left', leftOffSetVal);
+      } else if (windowToggle == 100) {
+        let leftOffSet = 2.67 * windowToggle;
+        leftOffSetVal = leftOffSet + 'px';
+        $openWindowToggleBarValue.css('left', leftOffSetVal);
+      } else {
+        let leftOffSet = 4 + 2.67 * windowToggle;
+        leftOffSetVal = leftOffSet + 'px';
+        $openWindowToggleBarValue.css('left', leftOffSetVal);
+      }
+
+
+      /* 设置 当前百分比 */
+      $.getJSON($SCRIPT_ROOT + '/openwindowmachine/freewindow', {
+        openWinowMachineAddress: currentOpenWindowMachineAddress,
+        freeToggleVal: windowToggle,
+      }, function(data) {
+        let openWindowMachineAddress = JSON.parse(data.result);
+        for (let i = 0; i < openWindowMachineAddress.length; i ++) {
+          selector = '#open-window-machine-address' + openWindowMachineAddress[i];
+          if (deviceAddress == openWindowMachineAddress[i]) {
+            console.log(selector);
+            $(selector).css('background-image', greenBackGroundImg);
+            currentOpenWindowMachineAddress = deviceAddress;
+          } else {
+            $(selector).css('background-image', blueBackGroundImg);
+          }
+        }
+      });
+
+      /*
+      if (windowToggle == 0) {
+        console.log($windowImg[0].src);
+        preImgPath = $windowImg[0].src;
+        newImgPath = "/static/img/open_window_img/1.jpg";
+        if (preImgPath != newImgPath) {
+          $windowImg.attr("src",newImgPath);
+        }
+        $openWindowToggleBarValue.css('left', '4px');
+      } else if(windowToggle == 5) {
+        preImgPath = $windowImg[0].src;
+        newImgPath = "/static/img/open_window_img/2.jpg";
+        if (preImgPath != newImgPath) {
+          $windowImg.attr("src",newImgPath);
+        }
+        $openWindowToggleBarValue.css('left', '18px');
+      }else if(windowToggle == 10) {
+        $windowImg.attr("src","/static/img/open_window_img/3.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '30px');
+      }else if(windowToggle == 15) {
+        $windowImg.attr("src","/static/img/open_window_img/4.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '43px');
+      }else if(windowToggle == 20) {
+        $windowImg.attr("src","/static/img/open_window_img/5.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '56px');
+      }else if(windowToggle == 25) {
+        $windowImg.attr("src","/static/img/open_window_img/6.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '70px');
+      }else if(windowToggle == 30) {
+        $windowImg.attr("src","/static/img/open_window_img/7.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '83px');
+      }else if(windowToggle == 35) {
+        $windowImg.attr("src","/static/img/open_window_img/8.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '97px');
+      }else if(windowToggle == 40) {
+        $windowImg.attr("src","/static/img/open_window_img/9.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '110px');
+      }else if(windowToggle == 45) {
+        $windowImg.attr("src","/static/img/open_window_img/10.jpg");
+        $openWindowToggleBarValue.css('left', '122px');
+        console.log($windowImg[0].src);
+      }else if(windowToggle == 50) {
+        $windowImg.attr("src","/static/img/open_window_img/11.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '136px');
+      }else if(windowToggle == 55) {
+        $windowImg.attr("src","/static/img/open_window_img/12.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '150px');
+      }else if(windowToggle == 60) {
+        $windowImg.attr("src","/static/img/open_window_img/12.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '163px');
+      }else if(windowToggle == 65) {
+        $windowImg.attr("src","/static/img/open_window_img/13.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '176px');
+      }else if(windowToggle == 70) {
+        $windowImg.attr("src","/static/img/open_window_img/14.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '190px');
+      }else if(windowToggle == 75) {
+        $windowImg.attr("src","/static/img/open_window_img/15.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '203px');
+      }else if(windowToggle == 80) {
+        $windowImg.attr("src","/static/img/open_window_img/16.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '216px');
+      }else if(windowToggle == 85) {
+        $windowImg.attr("src","/static/img/open_window_img/17.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '229px');
+      }else if(windowToggle == 90) {
+        $windowImg.attr("src","/static/img/open_window_img/18.jpg");
+        //console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '242px');
+      }else if(windowToggle == 95) {
+        $windowImg.attr("src","/static/img/open_window_img/19.jpg");
+        //console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '255px');
+      }else if(windowToggle == 100) {
+        $windowImg.attr("src","/static/img/open_window_img/20.jpg");
+        //console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '270px');
+      }
+      */
+
+    });
+
+
+
+
   });
+
+
+
+
 }
 
 window.setInterval("get_open_window_macine_status()", 1000);

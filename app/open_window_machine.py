@@ -396,26 +396,27 @@ def get_window_macine():
 
     # Device Register "01 01 bb 10 30 64 00"
     # 01 01 code Stands for LoraID Address
-    # bb code stands for control code
+    # aa code stands for control code
     # 10 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
     #message_send = "01 01 aa 10 " + str(openWindowAddress)
-    message_send = "01 01 aa 10 31" 
+    message_send = "01 01 aa 10 31"
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
 
-    reading = ser.read(6)
+    reading = ser.read(10)
     reading_str = ''.join(['%02x ' % b for b in reading])
-    # return Code 01 01 bb 10 31 01
-    # 01 01 stands for upload fix head
-    # bb code stands for control code
+    # return Code 01 01 aa 10 31 01 09
+    # 01 01 stands for LoraID
+    # aa code stands for control code
     # 10 code stands Open Window Machine
     # 31 code stands for Open Window Address
-    # 01 code stands Success
+    # 09 code 当前位置
     print("第一次收到消息 = " + reading_str)
-
+    currentHexVal =  reading_str[18:21]
+    percentValue = int(currentHexVal, 16)
 
     ser.close()
-    return jsonify(result=1)
+    return jsonify(result=percentValue)

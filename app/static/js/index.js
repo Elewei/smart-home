@@ -2,7 +2,6 @@
 var currentOpenWindowMachineAddress = 0;
 
 
-
 $(document).ready(() => {
 
   /* 第二栏 定义 */
@@ -1958,7 +1957,7 @@ $(document).ready(() => {
 
   });
 
-  
+
 
   $roomControlContentBack.on('click', ()=> {
     $smartControl.hide();
@@ -2501,8 +2500,6 @@ $(document).ready(() => {
 
 
 
-
-
 });
 
 
@@ -2529,6 +2526,23 @@ function get_open_window_machine_address(deviceAddress) {
   });
 
 }
+
+function get_open_window_macine_status(){
+  console.log(currentOpenWindowMachineAddress);
+
+  /* 开窗器 状态 */
+  $.getJSON($SCRIPT_ROOT + '/openwindowmachine/getwindow', {
+    openWinowMachineAddress: currentOpenWindowMachineAddress,
+  }, function(data) {
+    console.log(data.result);
+  });
+
+}
+
+
+window.setInterval("get_open_window_macine_status()", 200);
+
+
 
 
 //console.log(currentOpenWindowMachineAddress);

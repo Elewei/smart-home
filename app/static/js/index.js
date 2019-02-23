@@ -934,8 +934,11 @@ $(document).ready(() => {
       }, function(data) {
         if(data.result == 1) {
           console.log("设备注册成功");
-          let markup = "<tr><td>" + registerDeviceNameText + "</td><td>" + registerDeviceRoomText + "</td><td>" + data.deviceID + "</td></tr>";
+          deviceID = "10.1.1." + data.deviceID ;
+          let markup = "<tr><td>" + registerDeviceNameText + "</td><td>" + registerDeviceRoomText + "</td><td>" + deviceID + "</td></tr>";
           $("#device-manage-table-add-tbody").append(markup);
+          $('#register-device-address').text('deviceID');
+
         }
 
       });

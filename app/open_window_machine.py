@@ -58,6 +58,7 @@ def device_registry():
     print("第二次发送消息" + message_send)
     d = bytes.fromhex(message_send)
     ser.write(d)
+    ser.timeout = 5
 
     # return Value 01 01 cc 10 11
     # 01 01 code Stands for LoraID
@@ -107,7 +108,7 @@ def device_registry():
     print("第三次发送消息" + message_send)
     d = bytes.fromhex(message_send)
     ser.write(d)
-
+    ser.timeout = 5
     # return Value 57 AB C1 01 00
     # 57 AB code Stands for LoraID
     # C1 Stands for control code Set Device ID
@@ -142,4 +143,4 @@ def device_registry():
 
     ser.close()
 
-    return jsonify(result=1)
+    return jsonify(result=1, deviceID=deviceAddress)

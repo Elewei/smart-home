@@ -406,7 +406,8 @@ def get_window_macine():
         message_send_hex = bytes.fromhex(message_send)
         ser.write(message_send_hex)
 
-        reading = ser.read(10)
+        flushinput()
+        reading = ser.read(20)
         reading_str = ''.join(['%02x ' % b for b in reading])
         # return Code 01 01 aa 10 31 01 09
         # 01 01 stands for LoraID
@@ -415,7 +416,9 @@ def get_window_macine():
         # 31 code stands for Open Window Address
         # 09 code 当前位置
         print("第一次收到消息 = " + reading_str)
-        currentHexVal =  reading_str[18:21]
+        fix_head = '01 01 aa 10 31 01'
+        start = len(fix_head) + reading_str.find(fix_head) + 1
+        currentHexVal =  reading_str[start:start + 3]
         percentValue = int(currentHexVal, 16)
         print(percentValue)
     except:

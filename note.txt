@@ -33,3 +33,5 @@ pip install flask-wtf
 
 安装数据库
 pip install flask-sqlalchemy
+
+INSERT INTO device (deviceType, deviceName, deviceAddress, deviceRoom, is_registered) VALUES (10, 开窗器2, 31, 主窝, 1);

@@ -321,9 +321,36 @@
   float: left;
   width: 15%;
   height: 500px;
+  overflow: auto;
 }
 
 .left-side-buttom-one {
+  clear: both;
+  width: 80%;
+  height: 60px;
+  margin-left: 16px;
+  margin-top: 10px;
+  background-image: url('/static/img/left_side_bar_blue.png');
+  background-size: cover;
+}
+
+.left-side-text-label-one {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  left: 40px;
+  top: 15px;
+}
+
+.left-side-text-label {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  left: 30px;
+  top: 15px;
+}
+
+.left-side-buttom {
   clear: both;
   width: 80%;
   height: 60px;

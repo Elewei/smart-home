@@ -288,13 +288,12 @@
 		<!-- 智能控制->独立控制->开窗器-页面 -->
 		<div class="open-window-machine-content hide">
 		  <div class="left-side">
-				<div class="left-side-buttom-one-on">
+				<div id="open-window-machine-label-one" class="left-side-buttom-one-on">
+					<span class="left-side-text-label-one">开窗器</span>
 				</div>
-
-				<div id="open-window-left-side-text" class="buttom-text buttom-text-one">
-					<p>开窗器</p>
-				</div>
-
+				<!--
+				<div class="left-side-buttom"><span class="left-side-text-label">10.1.1.31</span></div>
+				-->
 			</div>
 
 			<div class="right-side">
@@ -302,7 +301,7 @@
 					<div class="curtain-first-line">
 						<div class="curtain-all_open">
 							<p>全开</p>
-							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+							<img id="open-window-machine-open-full" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
 						</div>
 						<div class="curtain-all_close">
 							<p>全关</p>
@@ -1604,5 +1603,7 @@
   <script src="{{ url_for('static', filename='js/chinatime.js') }}"></script>
 	<script type=text/javascript>
   	$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+
+
 	</script>
 {% endblock %}

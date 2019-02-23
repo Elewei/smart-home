@@ -1,3 +1,8 @@
+
+var currentOpenWindowMachineAddress = 0;
+
+
+
 $(document).ready(() => {
 
   /* 第二栏 定义 */
@@ -173,6 +178,7 @@ $(document).ready(() => {
   const $roomControlLeftSideButtomOneOn = $('#room-control-left-side-buttom-one-on');
   const $roomControlLeftSideButtomTwo = $('#room-control-left-side-buttom-two');
   const $roomControlLeftSideButtomTwoOn = $('#room-control-left-side-buttom-two-on');
+
 
   /* 点击智能控制 */
   $smartControl.on('click', ()=>{
@@ -895,6 +901,8 @@ $(document).ready(() => {
     }
   }
 
+
+
   /* 点击 管理入口 -> 设备管理 -> 注册/注销 */
   $registerPlug.on('click', ()=> {
     console.log('点击注册按钮');
@@ -947,7 +955,7 @@ $(document).ready(() => {
 
   });
 
-  /* 点击 智能控制 -> 独立控制 -> 开窗器   */
+  /* 点击 智能控制 -> 独立控制 -> 开窗器 页面   */
   $openWindowMachine.on('click', ()=>{
     console.log('点击开窗器');
 
@@ -999,8 +1007,25 @@ $(document).ready(() => {
       $openWindowToggleBarValue.css('left', leftOffSetVal);
     }
 
+    $('#open-window-machine-label-one').nextAll().remove();
+
+    /* 获取数据库中所有开窗器 */
+    $.getJSON($SCRIPT_ROOT + '/openwindowmachine/getall', {
+      deviceType: 10,
+    }, function(data) {
+      console.log(data.result);
+      let openWindowMachineAddress = JSON.parse(data.result);
+      for (let i = 0; i < openWindowMachineAddress.length; i ++) {
+        //console.log(openWindowMachineAddress[i]);
+        idVal = "open-window-machine-address" + openWindowMachineAddress[i];
+        let markup = "<div id="+  idVal +" class='left-side-buttom' onclick='get_open_window_machine_address("+ openWindowMachineAddress[i]  +")'><span class='left-side-text-label'>"+ "10.1.1." + openWindowMachineAddress[i] +"</span></div>";
+        $('#open-window-machine-label-one').after(markup);
+      }
+
+    });
 
   });
+
 
   /* 点击 智能控制 -> 独立控制 -> 窗帘   */
   $curtain.on('click', ()=>{
@@ -1815,8 +1840,6 @@ $(document).ready(() => {
     $smartHomeContent.show();
   });
 
-
-
   $openWindowToggleBar.on('input propertychange', ()=>{
     console.log($openWindowToggleBar.val());
     let windowToggle = $openWindowToggleBar.val();
@@ -2397,4 +2420,40 @@ $(document).ready(() => {
 
   });
 
+  /*点击开窗器 全开*/
+  $('#open-window-machine-open-full').on('click', ()=>{
+
+    console.log('点击开窗器 全开');
+    console.log(currentOpenWindowMachineAddress);
+    
+  });
+
 });
+
+
+function get_open_window_machine_address(deviceAddress) {
+
+  greenBackGroundImg = "url(/static/img/left_side_bar_green.png)";
+  blueBackGroundImg =  "url(/static/img/left_side_bar_blue.png)";
+
+  /* 获取数据库中所有开窗器 */
+  $.getJSON($SCRIPT_ROOT + '/openwindowmachine/getall', {
+    deviceType: 10,
+  }, function(data) {
+    let openWindowMachineAddress = JSON.parse(data.result);
+    for (let i = 0; i < openWindowMachineAddress.length; i ++) {
+      selector = '#open-window-machine-address' + openWindowMachineAddress[i];
+      if (deviceAddress == openWindowMachineAddress[i]) {
+        console.log(selector);
+        $(selector).css('background-image', greenBackGroundImg);
+        currentOpenWindowMachineAddress = deviceAddress;
+      } else {
+        $(selector).css('background-image', blueBackGroundImg);
+      }
+    }
+  });
+
+}
+
+
+//console.log(currentOpenWindowMachineAddress);

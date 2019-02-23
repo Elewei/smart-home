@@ -1,5 +1,6 @@
 import functools
 import serial
+import json
 import time
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for, jsonify
@@ -100,8 +101,8 @@ def device_registry():
 
     if error is None:
         db.execute(
-            'INSERT INTO device (deviceName, deviceAddress, deviceRoom, is_registered) VALUES (?, ?, ?, ?)',
-            (deviceName, deviceAddress, deviceRoom, 1)
+            'INSERT INTO device (deviceType, deviceName, deviceAddress, deviceRoom, is_registered) VALUES (?, ?, ?, ?, ?)',
+            (10, deviceName, deviceAddress, deviceRoom, 1)
         )
         db.commit()
     else:
@@ -151,3 +152,67 @@ def device_registry():
     ser.close()
 
     return jsonify(result=1, deviceID=deviceAddress)
+
+
+
+
+
+@bp.route('/getall')
+def get_open_window_macine():
+    db = get_db()
+
+    devices = db.execute(
+        'SELECT deviceAddress FROM device WHERE deviceType = ?', (10,)
+    ).fetchall()
+
+    deviceList = []
+    for device in devices:
+        deviceList.append(device[0])
+
+    jsonDevice = json.dumps(deviceList, ensure_ascii=False)
+
+    print(jsonDevice)
+
+    return jsonify(result=jsonDevice)
+
+
+
+
+@bp.route('/openwindowfull')
+def open_window_macine_full():
+
+
+    print("开窗器到 100%")
+    #deviceName = request.args.get('registerDeviceName', 0, type=str)
+    #deviceRoom = request.args.get('registerDeviceRoom', 0, type=str)
+
+    #Device Register
+    # Step 1 Open the serial port
+    ser = serial.Serial('/dev/ttyAMA0',230400)
+    ser.timeout = 3
+
+    # Device Register "01 01 bb 10 30 64 00"
+    # 01 01 code Stands for LoraID Address
+    # bb code stands for control code
+    # 10 code stands for Open Window Machine Type
+    # 30 code stands for Open Window Machine Address
+    # 64 open window percent
+    message_send = "01 01 bb 10 30 64"
+    print("发送消息" + message_send)
+    message_send_hex = bytes.fromhex(message_send)
+    ser.write(message_send_hex)
+
+    reading = ser.read(6)
+    reading_str = ''.join(['%02x ' % b for b in reading])
+    # return Code 57 AB C0 01 00 00
+    # 57 AB stands for upload fix head
+    # C0 code stands for set default frequency
+    # 01 code stands data length
+    # 00 code stands frequence Success
+    # FF code stands frequence Failed
+    print("第一次收到消息 = " + reading_str)
+
+
+    ser.close()
+
+    return jsonify(result=jsonDevice)

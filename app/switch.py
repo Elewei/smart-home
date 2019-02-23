@@ -92,8 +92,8 @@ def device_registry():
 
     if error is None:
         db.execute(
-            'INSERT INTO device (deviceName, deviceAddress, deviceRoom, is_registered) VALUES (?, ?, ?, ?)',
-            (deviceName, deviceAddress, deviceRoom, 1)
+            'INSERT INTO device (deviceType, deviceName, deviceAddress, deviceRoom, is_registered) VALUES (?, ?, ?, ?, ?)',
+            (30, deviceName, deviceAddress, deviceRoom, 1)
         )
         db.commit()
 

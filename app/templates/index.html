@@ -98,7 +98,7 @@
 	  </div>
 
 		<!-- 智能控制-页面  -->
-	  <div class="smart-control-content">
+	  <div class="smart-control-content hide">
 	      <div class="first scene-control">
 					<img src="{{ url_for('static', filename='img/scene-control.png') }}">
 	      </div>
@@ -641,7 +641,7 @@
 				</div>
 
 				<div class="video">
-
+					<img src="{{ url_for('static', filename='img/dimming_lamp.png') }}" alt="">
 				</div>
 				<p class="video-text" >演示动画</p>
 			</div>
@@ -657,7 +657,7 @@
 		</div>
 
 		<!-- 智能控制->独立控制->空气盒子-页面 -->
-		<div class="air-box-content hide">
+		<div class="air-box-content">
 		  <div class="left-side">
 				<div class="left-side-buttom-one-on">
 				</div>
@@ -700,7 +700,9 @@
 				</div>
 
 				<div class="video">
+					<div id="air-box-radar-chart">
 
+					</div>
 				</div>
 				<p class="video-text">演示动画</p>
 			</div>

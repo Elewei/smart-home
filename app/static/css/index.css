@@ -1408,6 +1408,11 @@ input[type=range]::-moz-range-track {
   font-size: 12px;
 }
 
+#air-box-radar-chart {
+  width: 100%;
+  height: 100%;
+  #background-color: grey;
+}
 
 /* 空气盒子结束 */
 

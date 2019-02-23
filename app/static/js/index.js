@@ -2452,6 +2452,24 @@ $(document).ready(() => {
   });
 
 
+  /*点击开窗器 暂停*/
+  $('#stop-open-window-machine').on('click', ()=>{
+
+    console.log('点击开窗器 暂停');
+    console.log(currentOpenWindowMachineAddress);
+
+    /* 开窗器 全关 */
+    $.getJSON($SCRIPT_ROOT + '/openwindowmachine/stopwindow', {
+      openWinowMachineAddress: currentOpenWindowMachineAddress,
+    }, function(data) {
+      console.log(data.result);
+    });
+
+  });
+
+
+
+
 
 });
 

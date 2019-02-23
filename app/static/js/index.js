@@ -2199,9 +2199,6 @@ $(document).ready(() => {
       $curtainToggleBarValue.css('left', leftOffSetVal);
     }
 
-
-
-    /*
     let preImgPath, newImgPath;
     if (curtainToggle == 0) {
       preImgPath = $curtainImg[0].src;
@@ -2324,9 +2321,26 @@ $(document).ready(() => {
         $curtainImg.attr("src",newImgPath);
       }
     }
-    */
+
+
   });
 
+
+  $curtainToggleBar.on('mouseup', ()=>{
+    console.log("滑动松开");
+
+    console.log($curtainToggleBar.val());
+    let curtainToggle = $curtainToggleBar.val();
+
+    /* 窗帘 滑动 */
+    $.getJSON($SCRIPT_ROOT + '/curtain/free', {
+      curtainAddress: currentCurtainAddress,
+      freeToggleVal: curtainToggle,
+    }, function(data) {
+      console.log(data.result);
+    });
+
+  });
 
   $dimmingLampContentBack.on('click', ()=>{
     console.log('返回独立控制页面');

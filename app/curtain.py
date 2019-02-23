@@ -382,11 +382,11 @@ def check_curtain():
 
 
 
-@bp.route('/getwindow')
-def get_window_macine():
+@bp.route('/getcurtain')
+def get_curtain_position():
 
     print("获取 开窗器 位置")
-    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
+    curtainAddress = request.args.get('curtainAddress', 0, type=int)
     ser = 0
 
     #Device Register
@@ -401,7 +401,7 @@ def get_window_macine():
         # 10 code stands for Open Window Machine Type
         # 30 code stands for Open Window Machine Address
         # 64 open window percent
-        message_send = "01 01 aa 10 " + str(openWindowAddress)
+        message_send = "01 01 aa 11 " + str(curtainAddress)
         print("发送消息" + message_send)
         message_send_hex = bytes.fromhex(message_send)
         ser.write(message_send_hex)
@@ -420,7 +420,7 @@ def get_window_macine():
         # 31 code stands for Open Window Address
         # 09 code 当前位置
         print("收到消息 = " + reading_str)
-        fix_head = "01 01 aa 10 " + str(openWindowAddress) +" 01"
+        fix_head = "01 01 aa 11 " + str(curtainAddress) +" 01"
         if(reading_str.find(fix_head) >= 0):
             start = len(fix_head) + reading_str.find(fix_head) + 1
             currentHexVal =  reading_str[start:start + 3]
@@ -437,13 +437,13 @@ def get_window_macine():
 
 
 
-@bp.route('/freewindow')
-def free_window_macine():
+@bp.route('/free')
+def free_curtain():
 
-    print("开窗器到 特定值")
-    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
+    print("窗帘 特定值")
+    curtainAddress = request.args.get('curtainAddress', 0, type=int)
     freeToggleVal = request.args.get('freeToggleVal', 0, type=int)
-    print(openWindowAddress)
+    print(curtainAddress)
     print(freeToggleVal)
     freeToggleValStrHex = str(hex(freeToggleVal))
     if freeToggleVal <= 15:
@@ -465,7 +465,7 @@ def free_window_macine():
         # 10 code stands for Open Window Machine Type
         # 30 code stands for Open Window Machine Address
         # 64 open window percent
-        message_send = "01 01 bb 10 " + str(openWindowAddress) + " " + freeToggleValStr
+        message_send = "01 01 bb 11 " + str(curtainAddress) + " " + freeToggleValStr
         print("发送消息" + message_send)
         message_send_hex = bytes.fromhex(message_send)
         ser.write(message_send_hex)
@@ -485,7 +485,7 @@ def free_window_macine():
         # 09 code 当前位置
         print("收到消息 = " + reading_str)
 
-        fix_head = "01 01 bb 10 " + str(openWindowAddress)
+        fix_head = "01 01 bb 11 " + str(curtainAddress)
         if(reading_str.find(fix_head) >= 0):
             return jsonify(result=1)
     except:

@@ -387,7 +387,6 @@ def get_window_macine():
 
     print("获取 开窗器 位置")
     openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
-    print(openWindowAddress)
 
     #Device Register
     # Step 1 Open the serial port
@@ -419,13 +418,13 @@ def get_window_macine():
         # 10 code stands Open Window Machine
         # 31 code stands for Open Window Address
         # 09 code 当前位置
-        print("第一次收到消息 = " + reading_str)
+        print("收到消息 = " + reading_str)
         fix_head = "01 01 aa 10 " + str(openWindowAddress) +"  01"
         if(reading_str.find(fix_head) > 0):
             start = len(fix_head) + reading_str.find(fix_head) + 1
             currentHexVal =  reading_str[start:start + 3]
             percentValue = int(currentHexVal, 16)
-            print(percentValue)
+            print("百分比" + str(percentValue))
             return jsonify(result=percentValue)
     except:
         ser.close()

@@ -16,6 +16,8 @@ bp = Blueprint('openwindowmachine', __name__, url_prefix='/openwindowmachine')
 @bp.route('/')
 def device_registry():
 
+    global DEVICE_ADDRESS
+
     print("注册开窗器")
     deviceName = request.args.get('registerDeviceName', 0, type=str)
     deviceRoom = request.args.get('registerDeviceRoom', 0, type=str)
@@ -102,7 +104,6 @@ def device_registry():
         db.commit()
 
     DEVICE_ADDRESS += 1
-
     # 修改通信频率 '55 AA C1 02 01 01'
     # 55 AA 表示固定首部
     # C1 表示设置定义频率

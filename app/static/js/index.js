@@ -180,6 +180,9 @@ $(document).ready(() => {
 
   const $curtainOpenFull = $('#curtain-open-full');
   const $curtainCloseFull = $('#curtain-close-full');
+  const $curtainStop = $('#curtain-stop');
+  const $curtainReverse = $('#curtain-reverse');
+  const $curtainCheck = $('#curtain-check');
 
   /* 点击智能控制 */
   $smartControl.on('click', ()=>{
@@ -1139,6 +1142,44 @@ $(document).ready(() => {
 
     /* 开窗器 全开 */
     $.getJSON($SCRIPT_ROOT + '/curtain/closecurtainfull', {
+      curtainAddress: currentCurtainAddress,
+    }, function(data) {
+      console.log(data.result);
+    });
+  });
+
+  $curtainStop.on('click', ()=>{
+    console.log('点击窗帘 暂停');
+    console.log(currentCurtainAddress);
+
+    /* 开窗器 全关 */
+    $.getJSON($SCRIPT_ROOT + '/curtain/stop', {
+      curtainAddress: currentCurtainAddress,
+    }, function(data) {
+      console.log(data.result);
+    });
+  });
+
+
+  $curtainReverse.on('click', ()=>{
+    console.log('点击窗帘 反转');
+    console.log(currentCurtainAddress);
+
+    /* 开窗器 全关 */
+    $.getJSON($SCRIPT_ROOT + '/curtain/reverse', {
+      curtainAddress: currentCurtainAddress,
+    }, function(data) {
+      console.log(data.result);
+    });
+  });
+
+
+  $curtainCheck.on('click', ()=>{
+    console.log('点击窗帘 校准');
+    console.log(currentCurtainAddress);
+
+    /* 开窗器 全关 */
+    $.getJSON($SCRIPT_ROOT + '/curtain/check', {
       curtainAddress: currentCurtainAddress,
     }, function(data) {
       console.log(data.result);

@@ -196,7 +196,7 @@ def open_curtain_full():
     # 11 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
-    message_send = "01 01 bb 11 "+ str(openWindowAddress) +" 64"
+    message_send = "01 01 bb 11 "+ str(curtainAddress) +" 64"
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
@@ -258,12 +258,12 @@ def close_curtain_full():
 
 
 
-@bp.route('/stopwindow')
-def stop_window_macine():
+@bp.route('/stop')
+def stop_curtain():
 
-    print("停止开窗器")
-    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
-    print(openWindowAddress)
+    print("停 窗帘")
+    curtainAddress = request.args.get('curtainAddress', 0, type=int)
+    print(curtainAddress)
 
     #Device Register
     # Step 1 Open the serial port
@@ -276,7 +276,7 @@ def stop_window_macine():
     # 10 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
-    message_send = "01 01 bb 10 "+ str(openWindowAddress) +" ff"
+    message_send = "01 01 bb 11 "+ str(curtainAddress) +" ff"
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
@@ -300,12 +300,12 @@ def stop_window_macine():
 
 
 
-@bp.route('/reversewindow')
-def reverse_window_macine():
+@bp.route('/reverse')
+def reverse_curtain():
 
-    print("反转 开窗器")
-    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
-    print(openWindowAddress)
+    print("反转 窗帘")
+    curtainAddress = request.args.get('curtainAddress', 0, type=int)
+    print(curtainAddress)
 
     #Device Register
     # Step 1 Open the serial port
@@ -318,7 +318,7 @@ def reverse_window_macine():
     # 10 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
-    message_send = "01 01 b1 10 "+ str(openWindowAddress) +" 01"
+    message_send = "01 01 b1 11 "+ str(curtainAddress) +" 01"
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
@@ -341,12 +341,12 @@ def reverse_window_macine():
 
 
 
-@bp.route('/checkwindow')
-def check_window_macine():
+@bp.route('/check')
+def check_curtain():
 
-    print("校准 开窗器")
-    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
-    print(openWindowAddress)
+    print("校准 窗帘")
+    curtainAddress = request.args.get('curtainAddress', 0, type=int)
+    print(curtainAddress)
 
     #Device Register
     # Step 1 Open the serial port
@@ -359,7 +359,7 @@ def check_window_macine():
     # 10 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
-    message_send = "01 01 b0 10 "+ str(openWindowAddress) +" 01"
+    message_send = "01 01 b0 10 "+ str(curtainAddress) +" 01"
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)

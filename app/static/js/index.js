@@ -162,6 +162,8 @@ $(document).ready(() => {
   const $smartPlugOffImg = $('#smart-plug-off-img');
   const $smartPlugOff = $('.smart-plug-off');
   const $smartPlugOn = $('.smart-plug-on');
+  const dimmingLampToggleBar = $('#dimming-lamp-toggle-bar');
+  const $dimmingLampToggleBarText = $('#dimming-lamp-toggle-bar-text');
 
   /* 点击智能控制 */
   $smartControl.on('click', ()=>{
@@ -1136,6 +1138,28 @@ $(document).ready(() => {
     $smartHomeContent.hide();
     $dimmingLampContent.show();
 
+    /* 调光灯页面初始化 */
+    let dimmingLampToggle = dimmingLampToggleBar.val();
+
+    $dimmingLampToggleBarText.text(dimmingLampToggle + '%');
+    let leftOffSet = 0;
+
+    if (dimmingLampToggle < 10) {
+      leftOffSet = 128 + 2.67 * dimmingLampToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $dimmingLampToggleBarText.css('left', leftOffSetVal);
+    } else if (dimmingLampToggle == 100) {
+      leftOffSet = 116 + 2.67 * dimmingLampToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $dimmingLampToggleBarText.css('left', leftOffSetVal);
+    } else {
+      leftOffSet =  123 + 2.67 * dimmingLampToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $dimmingLampToggleBarText.css('left', leftOffSetVal);
+    }
+
+
+
   });
 
   /* 点击 房间控制 */
@@ -1840,6 +1864,30 @@ $(document).ready(() => {
     $homeManageContent.hide();
     $freeGroupContent.hide();
     $smartHomeContent.show();
+
+  });
+
+
+  dimmingLampToggleBar.on('input propertychange', ()=>{
+    console.log(dimmingLampToggleBar.val());
+    let dimmingLampToggle = dimmingLampToggleBar.val();
+
+    $dimmingLampToggleBarText.text(dimmingLampToggle + '%');
+    let leftOffSet = 0;
+
+    if (dimmingLampToggle < 10) {
+      leftOffSet = 128 + 2.67 * dimmingLampToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $dimmingLampToggleBarText.css('left', leftOffSetVal);
+    } else if (dimmingLampToggle == 100) {
+      leftOffSet = 116 + 2.67 * dimmingLampToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $dimmingLampToggleBarText.css('left', leftOffSetVal);
+    } else {
+      leftOffSet =  123 + 2.67 * dimmingLampToggle;
+      leftOffSetVal = leftOffSet + 'px';
+      $dimmingLampToggleBarText.css('left', leftOffSetVal);
+    }
 
   });
 

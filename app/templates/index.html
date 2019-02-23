@@ -98,7 +98,7 @@
 	  </div>
 
 		<!-- 智能控制-页面  -->
-	  <div class="smart-control-content hide">
+	  <div class="smart-control-content">
 	      <div class="first scene-control">
 					<img src="{{ url_for('static', filename='img/scene-control.png') }}">
 	      </div>
@@ -605,7 +605,7 @@
 		</div>
 
 		<!-- 智能控制->独立控制->调光灯-页面 -->
-		<div class="dimming-lamp-content">
+		<div class="dimming-lamp-content hide">
 		  <div class="left-side">
 				<div class="left-side-buttom-one-on">
 				</div>
@@ -659,24 +659,11 @@
 		<!-- 智能控制->独立控制->空气盒子-页面 -->
 		<div class="air-box-content hide">
 		  <div class="left-side">
-				<div class="left-side-buttom-one hide">
-				</div>
-
 				<div class="left-side-buttom-one-on">
 				</div>
 
-				<div class="left-side-buttom-two">
-				</div>
-
-				<div class="left-side-buttom-two-on hide">
-				</div>
-
-				<div id="air-box-left-side-text" class="">
+				<div id="air-box-left-side-text" class="buttom-text buttom-text-one">
 					<p>空气盒子</p>
-				</div>
-
-				<div id="air-box-left-side-exec-log-text" class="">
-					<p>执行记录</p>
 				</div>
 			</div>
 
@@ -691,23 +678,23 @@
 						<input type="range" name="" value="">
 					</div>
 					<div class="air-box-line">
-						<p>PM2.5</p>
+						<p>TVOC</p>
 						<input type="range" name="" value="">
 					</div>
 					<div class="air-box-line">
-						<p>PM2.5</p>
+						<p>CO<span class="xiabiao">2</span></p>
 						<input type="range" name="" value="">
 					</div>
 					<div class="air-box-line">
-						<p>PM2.5</p>
+						<p>CO</p>
 						<input type="range" name="" value="">
 					</div>
 					<div class="air-box-line">
-						<p>PM2.5</p>
+						<p>湿度</p>
 						<input type="range" name="" value="">
 					</div>
 					<div class="air-box-line">
-						<p>PM2.5</p>
+						<p>温度</p>
 						<input type="range" name="" value="">
 					</div>
 				</div>

@@ -940,6 +940,7 @@
   margin-top: 10px;
   margin-right: 4px;
   text-align: center;
+  #background-color: #004A80;
 }
 
 .video img {
@@ -1356,14 +1357,14 @@ input[type=range]::-moz-range-track {
 
 /* 空气盒子开始 */
 .air-box-line {
-  background-color: grey;
+  #background-color: grey;
   width: 100%;
   height: 37px;
-  margin-top: 8px;
+  margin-top: 20px;
 }
 
 .air-box-line p{
-  background-color: red;
+  #background-color: red;
   float: left;
   color: white;
   font-size: 20px;
@@ -1403,7 +1404,9 @@ input[type=range]::-moz-range-track {
   background-image: url('/static/img/process_bar.png');
 }
 
-
+.xiabiao {
+  font-size: 12px;
+}
 
 
 /* 空气盒子结束 */
@@ -1568,27 +1571,6 @@ select {
   background-color: transparent;
 }
 
-#air-box-left-side-text {
-  clear: both;
-  position: fixed;
-  width: 80%;
-  height: 60px;
-  color: white;
-  font-size: 20px;
-  top: 208px;
-  left: 113px;
-}
-
-#air-box-left-side-exec-log-text {
-  clear: both;
-  position: fixed;
-  width: 80%;
-  height: 60px;
-  color: white;
-  font-size: 20px;
-  top: 275px;
-  left: 113px;
-}
 
 #open-window-left-side-text {
 
@@ -1920,7 +1902,7 @@ select {
   position: relative;
   width: 300px;
   height: 60px;
-  top: 0px;
+  top: 20px;
   #background-color: red;
 }
 
@@ -1929,7 +1911,7 @@ select {
   float: left;
   font-size: 20px;
   position: relative;
-  top: 0px;
+  top: 7px;
   left: 25px;
 }
 
@@ -1972,8 +1954,8 @@ select {
 #dimming-lamp-toggle-bar-text {
   color: white;
   position: relative;
-  top: -40px;
-  left: 120px;
+  top: -60px;
+  left: 123px;
   -webkit-user-select:none;
   user-select:none;
   z-index: -10px;

@@ -406,7 +406,6 @@ def get_window_macine():
         message_send_hex = bytes.fromhex(message_send)
         ser.write(message_send_hex)
 
-        flushinput()
         reading = ser.read(20)
         reading_str = ''.join(['%02x ' % b for b in reading])
         # return Code 01 01 aa 10 31 01 09
@@ -421,6 +420,7 @@ def get_window_macine():
         currentHexVal =  reading_str[start:start + 3]
         percentValue = int(currentHexVal, 16)
         print(percentValue)
+        flushinput()
     except:
         return jsonify(result=0)
 

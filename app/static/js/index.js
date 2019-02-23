@@ -967,6 +967,21 @@ $(document).ready(() => {
         }
 
       });
+    } else if (registerDeviceNameVal == "register-off-smart-plug") {
+      console.log('开始注册智能插座');
+      $.getJSON($SCRIPT_ROOT + '/smartplug', {
+        registerDeviceName: registerDeviceNameText,
+        registerDeviceRoom: registerDeviceRoomText,
+      }, function(data) {
+        if(data.result == 1) {
+          console.log("设备注册成功");
+          deviceID = "10.1.1." + data.deviceID ;
+          let markup = "<tr><td>" + registerDeviceNameText + "</td><td>" + registerDeviceRoomText + "</td><td>" + deviceID + "</td></tr>";
+          $("#device-manage-table-add-tbody").append(markup);
+          $('#register-device-address').text(deviceID);
+        }
+
+      });
     }
 
 

@@ -9,17 +9,17 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from app.db import get_db
 from . import packet
 
-DEVICE_ADDRESS = 61
+DEVICE_ADDRESS = 32
 
 # 创建一个 blueprint
-bp = Blueprint('curtain', __name__, url_prefix='/curtain')
+bp = Blueprint('smartplug', __name__, url_prefix='/smartplug')
 
 @bp.route('/')
 def device_registry():
 
     global DEVICE_ADDRESS
 
-    print("注册窗帘")
+    print("注册 插座")
     deviceName = request.args.get('registerDeviceName', 0, type=str)
     deviceRoom = request.args.get('registerDeviceRoom', 0, type=str)
 
@@ -48,13 +48,13 @@ def device_registry():
     print("第一次收到消息 = " + reading_str)
 
     deviceAddress = str(DEVICE_ADDRESS)
-    message_send = "FF FF CC 11 "+ deviceAddress +" 02 01 01"
+    message_send = "FF FF CC 30 "+ deviceAddress +" 02 01 01"
 
     # set Device ID "FF FF CC 10 11 02 01 01"
     # Set Device 0xff  0xff  0xcc  0x21  0x13 0x02  0x01  0x01
     # FF FF code Stands for dispatching fix head
     # CC code stands for Set Device ID
-    # 11 code stands for Curtain
+    # 10 code stands for Open Window Machine
     # 13 code stands for DeviceID
     # 02 code stands for Data length
     #01 01 code stands for LoraID
@@ -102,7 +102,7 @@ def device_registry():
     if error is None:
         db.execute(
             'INSERT INTO device (deviceType, deviceName, deviceAddress, deviceRoom, is_registered) VALUES (?, ?, ?, ?, ?)',
-            (11, deviceName, deviceAddress, deviceRoom, 1)
+            (30, deviceName, deviceAddress, deviceRoom, 1)
         )
         db.commit()
     else:
@@ -158,11 +158,11 @@ def device_registry():
 
 
 @bp.route('/getall')
-def get_curtain():
+def get_open_window_macine():
     db = get_db()
 
     devices = db.execute(
-        'SELECT deviceAddress FROM device WHERE deviceType = ?', (11,)
+        'SELECT deviceAddress FROM device WHERE deviceType = ?', (10,)
     ).fetchall()
 
     deviceList = []
@@ -178,52 +178,12 @@ def get_curtain():
 
 
 
-@bp.route('/opencurtainfull')
-def open_curtain_full():
+@bp.route('/openwindowfull')
+def open_window_macine_full():
 
-    print("窗帘到 100%")
-    curtainAddress = request.args.get('curtainAddress', 0, type=int)
-    print(curtainAddress)
-
-    #Device Register
-    # Step 1 Open the serial port
-    ser = serial.Serial('/dev/ttyAMA0',230400)
-    ser.timeout = 3
-
-    # Device Register "01 01 bb 10 30 64 00"
-    # 01 01 code Stands for LoraID Address
-    # bb code stands for control code
-    # 11 code stands for Open Window Machine Type
-    # 30 code stands for Open Window Machine Address
-    # 64 open window percent
-    message_send = "01 01 bb 11 "+ str(curtainAddress) +" 64"
-    print("发送消息" + message_send)
-    message_send_hex = bytes.fromhex(message_send)
-    ser.write(message_send_hex)
-
-    reading = ser.read(6)
-    reading_str = ''.join(['%02x ' % b for b in reading])
-    # return Code 01 01 bb 10 31 01
-    # 01 01 stands for upload fix head
-    # bb code stands for control code
-    # 10 code stands Open Window Machine
-    # 31 code stands for Open Window Address
-    # 01 code stands Success
-    print("第一次收到消息 = " + reading_str)
-
-
-    ser.close()
-    return jsonify(result=1)
-
-
-
-
-@bp.route('/closecurtainfull')
-def close_curtain_full():
-
-    print("窗帘到 0%")
-    curtainAddress = request.args.get('curtainAddress', 0, type=int)
-    print(curtainAddress)
+    print("开窗器到 100%")
+    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
+    print(openWindowAddress)
 
     #Device Register
     # Step 1 Open the serial port
@@ -236,7 +196,7 @@ def close_curtain_full():
     # 10 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
-    message_send = "01 01 bb 11 "+ str(curtainAddress) +" 00"
+    message_send = "01 01 bb 10 "+ str(openWindowAddress) +" 64"
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
@@ -258,12 +218,12 @@ def close_curtain_full():
 
 
 
-@bp.route('/stop')
-def stop_curtain():
+@bp.route('/closewindowfull')
+def close_window_macine_full():
 
-    print("停 窗帘")
-    curtainAddress = request.args.get('curtainAddress', 0, type=int)
-    print(curtainAddress)
+    print("开窗器到 0%")
+    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
+    print(openWindowAddress)
 
     #Device Register
     # Step 1 Open the serial port
@@ -276,7 +236,7 @@ def stop_curtain():
     # 10 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
-    message_send = "01 01 bb 11 "+ str(curtainAddress) +" ff"
+    message_send = "01 01 bb 10 "+ str(openWindowAddress) +" 00"
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
@@ -298,14 +258,12 @@ def stop_curtain():
 
 
 
+@bp.route('/stopwindow')
+def stop_window_macine():
 
-
-@bp.route('/reverse')
-def reverse_curtain():
-
-    print("反转 窗帘")
-    curtainAddress = request.args.get('curtainAddress', 0, type=int)
-    print(curtainAddress)
+    print("停止开窗器")
+    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
+    print(openWindowAddress)
 
     #Device Register
     # Step 1 Open the serial port
@@ -318,7 +276,7 @@ def reverse_curtain():
     # 10 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
-    message_send = "01 01 b1 11 "+ str(curtainAddress) +" 01"
+    message_send = "01 01 bb 10 "+ str(openWindowAddress) +" ff"
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
@@ -341,12 +299,13 @@ def reverse_curtain():
 
 
 
-@bp.route('/check')
-def check_curtain():
 
-    print("校准 窗帘")
-    curtainAddress = request.args.get('curtainAddress', 0, type=int)
-    print(curtainAddress)
+@bp.route('/reversewindow')
+def reverse_window_macine():
+
+    print("反转 开窗器")
+    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
+    print(openWindowAddress)
 
     #Device Register
     # Step 1 Open the serial port
@@ -359,7 +318,7 @@ def check_curtain():
     # 10 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
-    message_send = "01 01 b0 11 "+ str(curtainAddress) +" 01"
+    message_send = "01 01 b1 10 "+ str(openWindowAddress) +" 01"
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
@@ -382,11 +341,52 @@ def check_curtain():
 
 
 
-@bp.route('/getcurtain')
-def get_curtain_position():
+@bp.route('/checkwindow')
+def check_window_macine():
+
+    print("校准 开窗器")
+    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
+    print(openWindowAddress)
+
+    #Device Register
+    # Step 1 Open the serial port
+    ser = serial.Serial('/dev/ttyAMA0',230400)
+    ser.timeout = 3
+
+    # Device Register "01 01 bb 10 30 64 00"
+    # 01 01 code Stands for LoraID Address
+    # bb code stands for control code
+    # 10 code stands for Open Window Machine Type
+    # 30 code stands for Open Window Machine Address
+    # 64 open window percent
+    message_send = "01 01 b0 10 "+ str(openWindowAddress) +" 01"
+    print("发送消息" + message_send)
+    message_send_hex = bytes.fromhex(message_send)
+    ser.write(message_send_hex)
+
+    reading = ser.read(6)
+    reading_str = ''.join(['%02x ' % b for b in reading])
+    # return Code 01 01 bb 10 31 01
+    # 01 01 stands for upload fix head
+    # bb code stands for control code
+    # 10 code stands Open Window Machine
+    # 31 code stands for Open Window Address
+    # 01 code stands Success
+    print("第一次收到消息 = " + reading_str)
+
+
+    ser.close()
+    return jsonify(result=1)
+
+
+
+
+
+@bp.route('/getwindow')
+def get_window_macine():
 
     print("获取 开窗器 位置")
-    curtainAddress = request.args.get('curtainAddress', 0, type=int)
+    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
     ser = 0
 
     #Device Register
@@ -401,7 +401,7 @@ def get_curtain_position():
         # 10 code stands for Open Window Machine Type
         # 30 code stands for Open Window Machine Address
         # 64 open window percent
-        message_send = "01 01 aa 11 " + str(curtainAddress)
+        message_send = "01 01 aa 10 " + str(openWindowAddress)
         print("发送消息" + message_send)
         message_send_hex = bytes.fromhex(message_send)
         ser.write(message_send_hex)
@@ -420,7 +420,7 @@ def get_curtain_position():
         # 31 code stands for Open Window Address
         # 09 code 当前位置
         print("收到消息 = " + reading_str)
-        fix_head = "01 01 aa 11 " + str(curtainAddress) +" 01"
+        fix_head = "01 01 aa 10 " + str(openWindowAddress) +" 01"
         if(reading_str.find(fix_head) >= 0):
             start = len(fix_head) + reading_str.find(fix_head) + 1
             currentHexVal =  reading_str[start:start + 3]
@@ -437,13 +437,13 @@ def get_curtain_position():
 
 
 
-@bp.route('/free')
-def free_curtain():
+@bp.route('/freewindow')
+def free_window_macine():
 
-    print("窗帘 特定值")
-    curtainAddress = request.args.get('curtainAddress', 0, type=int)
+    print("开窗器到 特定值")
+    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
     freeToggleVal = request.args.get('freeToggleVal', 0, type=int)
-    print(curtainAddress)
+    print(openWindowAddress)
     print(freeToggleVal)
     freeToggleValStrHex = str(hex(freeToggleVal))
     if freeToggleVal <= 15:
@@ -465,7 +465,7 @@ def free_curtain():
         # 10 code stands for Open Window Machine Type
         # 30 code stands for Open Window Machine Address
         # 64 open window percent
-        message_send = "01 01 bb 11 " + str(curtainAddress) + " " + freeToggleValStr
+        message_send = "01 01 bb 10 " + str(openWindowAddress) + " " + freeToggleValStr
         print("发送消息" + message_send)
         message_send_hex = bytes.fromhex(message_send)
         ser.write(message_send_hex)
@@ -485,7 +485,7 @@ def free_curtain():
         # 09 code 当前位置
         print("收到消息 = " + reading_str)
 
-        fix_head = "01 01 bb 11 " + str(curtainAddress)
+        fix_head = "01 01 bb 10 " + str(openWindowAddress)
         if(reading_str.find(fix_head) >= 0):
             return jsonify(result=1)
     except:

@@ -7,6 +7,7 @@ from . import switch
 from . import main
 from . import open_window_machine
 from . import curtain
+from . import smartplug
 
 def create_app(test_config=None):
     # create and configure the app
@@ -38,6 +39,7 @@ def create_app(test_config=None):
     app.register_blueprint(auth.bp)
     app.register_blueprint(open_window_machine.bp)
     app.register_blueprint(curtain.bp)
+    app.register_blueprint(smartplug.bp)
 
     # make url_for('index') == url_for('blog.index')
     # in another app, you might define a separate main index here with

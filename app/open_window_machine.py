@@ -465,7 +465,7 @@ def free_window_macine():
         # 10 code stands for Open Window Machine Type
         # 30 code stands for Open Window Machine Address
         # 64 open window percent
-        message_send = "01 01 bb 10 " + freeToggleValStr
+        message_send = "01 01 bb 10 " + str(openWindowAddress) + " " + freeToggleValStr
         print("发送消息" + message_send)
         message_send_hex = bytes.fromhex(message_send)
         ser.write(message_send_hex)

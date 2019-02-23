@@ -800,7 +800,7 @@ $(document).ready(() => {
 
   /* 点击关闭智能插座 */
   $smartPlugOffImg.on('click', ()=>{
-    console.log('点击打开智能插座');
+    console.log('点击关闭智能插座');
     $smartPlugOn.show();
     $smartPlugOff.hide();
 
@@ -904,8 +904,6 @@ $(document).ready(() => {
       $(td).html(data);
     }
   }
-
-
 
   /* 点击 管理入口 -> 设备管理 -> 注册/注销 */
   $registerPlug.on('click', ()=> {

@@ -97,7 +97,8 @@ def device_registry():
         )
         db.commit()
 
-    DEVICE_ADDRESS++
+    DEVICE_ADDRESS += 1
+    
     # 修改通信频率 '55 AA C1 02 01 01'
     # 55 AA 表示固定首部
     # C1 表示设置定义频率

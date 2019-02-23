@@ -9,7 +9,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from app.db import get_db
 from . import packet
 
-DEVICE_ADDRESS = 31
+DEVICE_ADDRESS = 32
 
 # 创建一个 blueprint
 bp = Blueprint('openwindowmachine', __name__, url_prefix='/openwindowmachine')
@@ -181,7 +181,6 @@ def get_open_window_macine():
 @bp.route('/openwindowfull')
 def open_window_macine_full():
 
-
     print("开窗器到 100%")
     openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
     print(openWindowAddress)
@@ -204,12 +203,52 @@ def open_window_macine_full():
 
     reading = ser.read(6)
     reading_str = ''.join(['%02x ' % b for b in reading])
-    # return Code 57 AB C0 01 00 00
-    # 57 AB stands for upload fix head
-    # C0 code stands for set default frequency
-    # 01 code stands data length
-    # 00 code stands frequence Success
-    # FF code stands frequence Failed
+    # return Code 01 01 bb 10 31 01
+    # 01 01 stands for upload fix head
+    # bb code stands for control code
+    # 10 code stands Open Window Machine
+    # 31 code stands for Open Window Address
+    # 01 code stands Success
+    print("第一次收到消息 = " + reading_str)
+
+
+    ser.close()
+    return jsonify(result=1)
+
+
+
+
+@bp.route('/closewindowfull')
+def open_window_macine_full():
+
+    print("开窗器到 0%")
+    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
+    print(openWindowAddress)
+
+    #Device Register
+    # Step 1 Open the serial port
+    ser = serial.Serial('/dev/ttyAMA0',230400)
+    ser.timeout = 3
+
+    # Device Register "01 01 bb 10 30 64 00"
+    # 01 01 code Stands for LoraID Address
+    # bb code stands for control code
+    # 10 code stands for Open Window Machine Type
+    # 30 code stands for Open Window Machine Address
+    # 64 open window percent
+    message_send = "01 01 bb 10 "+ str(openWindowAddress) +" 00"
+    print("发送消息" + message_send)
+    message_send_hex = bytes.fromhex(message_send)
+    ser.write(message_send_hex)
+
+    reading = ser.read(6)
+    reading_str = ''.join(['%02x ' % b for b in reading])
+    # return Code 01 01 bb 10 31 01
+    # 01 01 stands for upload fix head
+    # bb code stands for control code
+    # 10 code stands Open Window Machine
+    # 31 code stands for Open Window Address
+    # 01 code stands Success
     print("第一次收到消息 = " + reading_str)
 
 

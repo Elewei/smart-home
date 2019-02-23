@@ -2435,6 +2435,24 @@ $(document).ready(() => {
 
   });
 
+
+  /*点击开窗器 全关*/
+  $('#open-window-machine-close-full').on('click', ()=>{
+
+    console.log('点击开窗器 全关');
+    console.log(currentOpenWindowMachineAddress);
+
+    /* 开窗器 全关 */
+    $.getJSON($SCRIPT_ROOT + '/openwindowmachine/closewindowfull', {
+      openWinowMachineAddress: currentOpenWindowMachineAddress,
+    }, function(data) {
+      console.log(data.result);
+    });
+
+  });
+
+
+
 });
 
 

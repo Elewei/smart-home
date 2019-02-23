@@ -359,7 +359,7 @@ def check_curtain():
     # 10 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
-    message_send = "01 01 b0 10 "+ str(curtainAddress) +" 01"
+    message_send = "01 01 b0 11 "+ str(curtainAddress) +" 01"
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)

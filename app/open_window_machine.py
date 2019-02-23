@@ -406,7 +406,7 @@ def get_window_macine():
         message_send_hex = bytes.fromhex(message_send)
         ser.write(message_send_hex)
 
-        reading = ser.read(20)
+        reading = ser.read(10)
         reading_str = ''.join(['%02x ' % b for b in reading])
         # return Code 01 01 aa 10 31 01 09
         # 01 01 stands for LoraID

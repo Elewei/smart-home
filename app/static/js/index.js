@@ -1958,6 +1958,7 @@ $(document).ready(() => {
 
   });
 
+  
 
   $roomControlContentBack.on('click', ()=> {
     $smartControl.hide();

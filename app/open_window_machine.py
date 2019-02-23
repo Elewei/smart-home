@@ -426,8 +426,9 @@ def get_window_macine():
             currentHexVal =  reading_str[start:start + 3]
             percentValue = int(currentHexVal, 16)
             print(percentValue)
+            return jsonify(result=percentValue)
     except:
-        return jsonify(result=0)
+        ser.close()
 
-    ser.close()
-    return jsonify(result=percentValue)
+
+    return jsonify(result=0)

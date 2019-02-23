@@ -2,6 +2,7 @@
 var currentOpenWindowMachineAddress = 0;
 var currentCurtainAddress = 0;
 var currentSmartPlugAddress = 0;
+var currentTouchSwitchAddress = 0;
 
 $(document).ready(() => {
 
@@ -445,6 +446,25 @@ $(document).ready(() => {
 
     $independantControlContent.hide();
     $touchSwitchContent.show();
+
+    $('#touch-switch-label-one').nextAll().remove();
+
+    /* 获取数据库中所有开窗器 */
+    $.getJSON($SCRIPT_ROOT + '/switch/getall', {
+      deviceType: 20,
+    }, function(data) {
+      console.log(data.result);
+      let touchSwitchAddress = JSON.parse(data.result);
+      for (let i = 0; i < touchSwitchAddress.length; i ++) {
+        //console.log(openWindowMachineAddress[i]);
+        idVal = "touch-switch-address" + touchSwitchAddress[i];
+        let markup = "<div id="+  idVal +" class='left-side-buttom' onclick='get_touch_switch_address("+ touchSwitchAddress[i]  +")'><span class='left-side-text-label'>"+ "10.1.1." + touchSwitchAddress[i] +"</span></div>";
+        $('#touch-switch-label-one').after(markup);
+      }
+
+    });
+
+
 
   });
 
@@ -1006,6 +1026,21 @@ $(document).ready(() => {
           let markup = "<tr><td>" + registerDeviceNameText + "</td><td>" + registerDeviceRoomText + "</td><td>" + deviceID + "</td></tr>";
           $("#device-manage-table-add-tbody").append(markup);
           $('#register-device-address').text(deviceID);
+        }
+
+      });
+    } else if (registerDeviceNameVal == "register-off-one-key-switch") {
+      console.log('开始注册一键触控开关');
+      $.getJSON($SCRIPT_ROOT + '/switch', {
+        keypanel: 1,
+        registerDeviceName: registerDeviceNameText,
+        registerDeviceRoom: registerDeviceRoomText,
+      }, function(data) {
+
+        if(data.result == 1) {
+          console.log("设备注册成功");
+          let markup = "<tr><td>" + registerDeviceNameText + "</td><td>" + registerDeviceRoomText + "</td><td>" + data.deviceID + "</td></tr>";
+          $("#device-manage-table-add-tbody").append(markup);
         }
 
       });
@@ -2810,6 +2845,30 @@ function get_smart_plug_address(deviceAddress) {
 
 }
 
+
+function get_touch_switch_address(deviceAddress) {
+  console.log(deviceAddress);
+  greenBackGroundImg = "url(/static/img/left_side_bar_green.png)";
+  blueBackGroundImg =  "url(/static/img/left_side_bar_blue.png)";
+
+  /* 获取数据库中所有开窗器 */
+  $.getJSON($SCRIPT_ROOT + '/switch/getall', {
+    deviceType: 21,
+  }, function(data) {
+    let touchSwitchPlugAddress = JSON.parse(data.result);
+    for (let i = 0; i < touchSwitchPlugAddress.length; i ++) {
+      selector = '#touch-switch-address' + touchSwitchPlugAddress[i];
+      if (deviceAddress == touchSwitchPlugAddress[i]) {
+        console.log(selector);
+        $(selector).css('background-image', greenBackGroundImg);
+        currentTouchSwitchAddress = deviceAddress;
+      } else {
+        $(selector).css('background-image', blueBackGroundImg);
+      }
+    }
+  });
+
+}
 
 
 

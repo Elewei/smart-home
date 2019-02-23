@@ -1,6 +1,7 @@
 import functools
 import serial
 import time
+import json
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for, jsonify
 )
@@ -48,14 +49,18 @@ def device_registry():
     # FF code stands frequence Failed
     print("第一次收到消息 = " + reading_str)
 
+    deviceAddress = str(DEVICE_ADDRESS)
+
     if keypanel == 1:
-        device_code = packet['One_Touch_Switch_RegisterID']
+        message_send = "FF FF CC 20 "+ deviceAddress +" 02 01 01"
+        deviceType = 20
     elif keypanel == 2:
         #device_code = packet['Two_Touch_Switch_RegisterID']
-        deviceAddress = str(DEVICE_ADDRESS)
         message_send = "FF FF CC 21 "+ deviceAddress +" 02 01 01"
+        deviceType = 21
     elif keypanel == 3:
-        device_code = packet['Three_Touch_Switch_RegisterID']
+        message_send = "FF FF CC 22 "+ deviceAddress +" 02 01 01"
+        deviceType = 22
 
     # set Device ID "FF FF CC 21 13 02 01 01"
     # Set Device 0xff  0xff  0xcc  0x21  0x13 0x02  0x01  0x01
@@ -93,7 +98,7 @@ def device_registry():
     if error is None:
         db.execute(
             'INSERT INTO device (deviceType, deviceName, deviceAddress, deviceRoom, is_registered) VALUES (?, ?, ?, ?, ?)',
-            (30, deviceName, deviceAddress, deviceRoom, 1)
+            (deviceType, deviceName, deviceAddress, deviceRoom, 1)
         )
         db.commit()
 
@@ -120,3 +125,23 @@ def device_registry():
     ser.close()
 
     return jsonify(result=1, deviceID=reading_str)
+
+
+
+@bp.route('/getall')
+def get_touch_switch():
+    db = get_db()
+
+    devices = db.execute(
+        'SELECT deviceAddress FROM device WHERE deviceType in (20,21,22)'
+    ).fetchall()
+
+    deviceList = []
+    for device in devices:
+        deviceList.append(device[0])
+
+    jsonDevice = json.dumps(deviceList, ensure_ascii=False)
+
+    print(jsonDevice)
+
+    return jsonify(result=jsonDevice)

@@ -394,7 +394,7 @@ def get_window_macine():
     try:
         ser = serial.Serial('/dev/ttyAMA0',230400)
         ser.timeout = 3
-        flushinput()
+        ser.flushinput()
         # Device Register "01 01 bb 10 30 64 00"
         # 01 01 code Stands for LoraID Address
         # aa code stands for control code
@@ -405,6 +405,11 @@ def get_window_macine():
         print("发送消息" + message_send)
         message_send_hex = bytes.fromhex(message_send)
         ser.write(message_send_hex)
+
+        while True:
+            if ser.inWaiting() > 0:
+                break;
+            time.sleep(0.5)
 
         reading = ser.read(10)
         reading_str = ''.join(['%02x ' % b for b in reading])

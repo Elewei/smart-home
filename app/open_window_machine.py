@@ -405,18 +405,22 @@ def get_window_macine():
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
 
-    reading = ser.read(10)
-    reading_str = ''.join(['%02x ' % b for b in reading])
-    # return Code 01 01 aa 10 31 01 09
-    # 01 01 stands for LoraID
-    # aa code stands for control code
-    # 10 code stands Open Window Machine
-    # 31 code stands for Open Window Address
-    # 09 code 当前位置
-    print("第一次收到消息 = " + reading_str)
-    currentHexVal =  reading_str[18:21]
-    percentValue = int(currentHexVal, 16)
-    print(percentValue)
+    try:
+        reading = ser.read(10)
+        reading_str = ''.join(['%02x ' % b for b in reading])
+        # return Code 01 01 aa 10 31 01 09
+        # 01 01 stands for LoraID
+        # aa code stands for control code
+        # 10 code stands Open Window Machine
+        # 31 code stands for Open Window Address
+        # 09 code 当前位置
+        print("第一次收到消息 = " + reading_str)
+        currentHexVal =  reading_str[18:21]
+        percentValue = int(currentHexVal, 16)
+        print(percentValue)
+    except:
+        pass
+
 
     ser.close()
     return jsonify(result=percentValue)

@@ -465,7 +465,7 @@ def free_window_macine():
         # 10 code stands for Open Window Machine Type
         # 30 code stands for Open Window Machine Address
         # 64 open window percent
-        message_send = "01 01 aa 10 " + freeToggleValStr
+        message_send = "01 01 bb 10 " + freeToggleValStr
         print("发送消息" + message_send)
         message_send_hex = bytes.fromhex(message_send)
         ser.write(message_send_hex)
@@ -484,13 +484,10 @@ def free_window_macine():
         # 31 code stands for Open Window Address
         # 09 code 当前位置
         print("收到消息 = " + reading_str)
-        fix_head = "01 01 aa 10 " + str(openWindowAddress) +" 01"
+
+        fix_head = "01 01 bb 10 " + str(openWindowAddress)
         if(reading_str.find(fix_head) >= 0):
-            start = len(fix_head) + reading_str.find(fix_head) + 1
-            currentHexVal =  reading_str[start:start + 3]
-            percentValue = int(currentHexVal, 16)
-            print("百分比" + str(percentValue))
-            return jsonify(result=percentValue)
+            return jsonify(result=1)
     except:
         if ser:
             ser.close()

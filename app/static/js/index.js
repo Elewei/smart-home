@@ -949,6 +949,21 @@ $(document).ready(() => {
         }
 
       });
+    } else if (registerDeviceNameVal == "register-off-curtain") {
+      console.log('开始注册窗帘');
+      $.getJSON($SCRIPT_ROOT + '/openwindowmachine', {
+        registerDeviceName: registerDeviceNameText,
+        registerDeviceRoom: registerDeviceRoomText,
+      }, function(data) {
+        if(data.result == 1) {
+          console.log("设备注册成功");
+          deviceID = "10.1.1." + data.deviceID ;
+          let markup = "<tr><td>" + registerDeviceNameText + "</td><td>" + registerDeviceRoomText + "</td><td>" + deviceID + "</td></tr>";
+          $("#device-manage-table-add-tbody").append(markup);
+          $('#register-device-address').text(deviceID);
+        }
+
+      });
     }
 
 
@@ -1867,7 +1882,7 @@ $(document).ready(() => {
       leftOffSetVal = leftOffSet + 'px';
       $openWindowToggleBarValue.css('left', leftOffSetVal);
     }
-    
+
 
     /* 设置 开窗器 自由组合的值的变动 当前百分比 */
     $.getJSON($SCRIPT_ROOT + '/openwindowmachine/freewindow', {

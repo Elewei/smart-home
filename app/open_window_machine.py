@@ -420,7 +420,7 @@ def get_window_macine():
         # 09 code 当前位置
         print("收到消息 = " + reading_str)
         fix_head = "01 01 aa 10 " + str(openWindowAddress) +"  01"
-        if(reading_str.find(fix_head) > 0):
+        if(reading_str.find(fix_head) >= 0):
             start = len(fix_head) + reading_str.find(fix_head) + 1
             currentHexVal =  reading_str[start:start + 3]
             percentValue = int(currentHexVal, 16)

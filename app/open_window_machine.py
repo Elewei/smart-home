@@ -440,7 +440,7 @@ def get_window_macine():
 @bp.route('/freewindow')
 def free_window_macine():
 
-    print("开窗器到 100%")
+    print("开窗器到 特定值")
     openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
     freeToggleVal = request.args.get('freeToggleVal', 0, type=int)
     print(openWindowAddress)
@@ -495,4 +495,4 @@ def free_window_macine():
         if ser:
             ser.close()
 
-    return jsonify(result=0)
+    return jsonify(result=-1)

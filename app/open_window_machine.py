@@ -294,3 +294,86 @@ def stop_window_macine():
 
     ser.close()
     return jsonify(result=1)
+
+
+
+
+
+
+@bp.route('/reversewindow')
+def reverse_window_macine():
+
+    print("反转 开窗器")
+    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
+    print(openWindowAddress)
+
+    #Device Register
+    # Step 1 Open the serial port
+    ser = serial.Serial('/dev/ttyAMA0',230400)
+    ser.timeout = 3
+
+    # Device Register "01 01 bb 10 30 64 00"
+    # 01 01 code Stands for LoraID Address
+    # bb code stands for control code
+    # 10 code stands for Open Window Machine Type
+    # 30 code stands for Open Window Machine Address
+    # 64 open window percent
+    message_send = "01 01 b1 10 "+ str(openWindowAddress) +" 01"
+    print("发送消息" + message_send)
+    message_send_hex = bytes.fromhex(message_send)
+    ser.write(message_send_hex)
+
+    reading = ser.read(6)
+    reading_str = ''.join(['%02x ' % b for b in reading])
+    # return Code 01 01 bb 10 31 01
+    # 01 01 stands for upload fix head
+    # bb code stands for control code
+    # 10 code stands Open Window Machine
+    # 31 code stands for Open Window Address
+    # 01 code stands Success
+    print("第一次收到消息 = " + reading_str)
+
+
+    ser.close()
+    return jsonify(result=1)
+
+
+
+
+
+@bp.route('/checkwindow')
+def check_window_macine():
+
+    print("校准 开窗器")
+    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
+    print(openWindowAddress)
+
+    #Device Register
+    # Step 1 Open the serial port
+    ser = serial.Serial('/dev/ttyAMA0',230400)
+    ser.timeout = 3
+
+    # Device Register "01 01 bb 10 30 64 00"
+    # 01 01 code Stands for LoraID Address
+    # bb code stands for control code
+    # 10 code stands for Open Window Machine Type
+    # 30 code stands for Open Window Machine Address
+    # 64 open window percent
+    message_send = "01 01 b0 10 "+ str(openWindowAddress) +" 01"
+    print("发送消息" + message_send)
+    message_send_hex = bytes.fromhex(message_send)
+    ser.write(message_send_hex)
+
+    reading = ser.read(6)
+    reading_str = ''.join(['%02x ' % b for b in reading])
+    # return Code 01 01 bb 10 31 01
+    # 01 01 stands for upload fix head
+    # bb code stands for control code
+    # 10 code stands Open Window Machine
+    # 31 code stands for Open Window Address
+    # 01 code stands Success
+    print("第一次收到消息 = " + reading_str)
+
+
+    ser.close()
+    return jsonify(result=1)

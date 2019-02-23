@@ -2467,6 +2467,37 @@ $(document).ready(() => {
 
   });
 
+  /*点击开窗器 暂停*/
+  $('#reverse-open-window-machine').on('click', ()=>{
+
+    console.log('点击开窗器 反转');
+    console.log(currentOpenWindowMachineAddress);
+
+    /* 开窗器 全关 */
+    $.getJSON($SCRIPT_ROOT + '/openwindowmachine/reversewindow', {
+      openWinowMachineAddress: currentOpenWindowMachineAddress,
+    }, function(data) {
+      console.log(data.result);
+    });
+
+  });
+
+  /*点击开窗器 校准*/
+  $('#check-open-window-machine').on('click', ()=>{
+
+    console.log('点击开窗器 校准');
+    console.log(currentOpenWindowMachineAddress);
+
+    /* 开窗器 全关 */
+    $.getJSON($SCRIPT_ROOT + '/openwindowmachine/checkwindow', {
+      openWinowMachineAddress: currentOpenWindowMachineAddress,
+    }, function(data) {
+      console.log(data.result);
+    });
+
+  });
+
+
 
 
 

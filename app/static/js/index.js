@@ -903,6 +903,11 @@ $(document).ready(() => {
     registerDeviceRoomVal = $('#register-device-room option:selected').val();
     registerDeviceRoomText =  $('#register-device-room option:selected').text();
 
+    console.log(registerDeviceNameVal);
+    console.log(registerDeviceNameText);
+    console.log(registerDeviceRoomVal);
+    console.log(registerDeviceRoomText);
+
     if(registerDeviceNameVal == "register-off-two-key-switch") {
       console.log('开始注册二键触控开关');
 
@@ -920,7 +925,20 @@ $(document).ready(() => {
 
       });
 
+    } else if (registerDeviceNameVal == "register-off-open-window-machine") {
+      console.log('开始注册开窗器');
 
+      $.getJSON($SCRIPT_ROOT + '/openwindowmachine', {
+        registerDeviceName: registerDeviceNameText,
+        registerDeviceRoom: registerDeviceRoomText,
+      }, function(data) {
+        if(data.result == 1) {
+          console.log("设备注册成功");
+          let markup = "<tr><td>" + registerDeviceNameText + "</td><td>" + registerDeviceRoomText + "</td><td>" + data.deviceID + "</td></tr>";
+          $("#device-manage-table-add-tbody").append(markup);
+        }
+
+      });
     }
 
 
@@ -1409,37 +1427,6 @@ $(document).ready(() => {
   /* 点击回家模式 */
   $sceneControlBackHomeMode.on('click', ()=>{
     console.log('点击回家模式');
-
-    $smartControl.hide();
-    $smartControlOn.show();
-    $manageEntry.show();
-    $manageEntryOn.hide();
-    $setGuide.show();
-    $setGuideOn.hide();
-    $other.show();
-    $otherOn.hide();
-
-    /* 独立控制页面 */
-    $independantControlContent.hide();
-    $touchSwitchContent.hide();
-    $deviceManageContent.hide();
-    $manageEntryContent.hide();
-    $setGuideContent.hide();
-    $otherContent.hide();
-    $independantControlContent.hide();
-    $touchSwitchContent.hide();
-    $smartPlugContent.hide();
-    $smartCurtainContent.hide();
-    $dimmingLampContent.hide();
-    $airBoxContent.hide();
-    $deviceManageContent.hide();
-    $sceneControlContent.hide();
-    $roomControlContent.hide();
-    $userSetupContent.hide();
-    $smartHomeContent.hide();
-    $sceneControlMySceneChildContent.show();
-
-
   });
 
   /* 点击晚餐模式 */

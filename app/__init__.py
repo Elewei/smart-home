@@ -5,6 +5,7 @@ from . import db
 from . import auth
 from . import switch
 from . import main
+from . import open_window_machine
 
 def create_app(test_config=None):
     # create and configure the app
@@ -34,6 +35,7 @@ def create_app(test_config=None):
     app.register_blueprint(switch.bp)
     app.register_blueprint(main.bp)
     app.register_blueprint(auth.bp)
+    app.register_blueprint(open_window_machine.bp)
 
     # make url_for('index') == url_for('blog.index')
     # in another app, you might define a separate main index here with

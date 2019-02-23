@@ -219,7 +219,7 @@ def open_window_macine_full():
 
 
 @bp.route('/closewindowfull')
-def open_window_macine_full():
+def close_window_macine_full():
 
     print("开窗器到 0%")
     openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)

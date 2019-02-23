@@ -908,6 +908,8 @@ $(document).ready(() => {
     console.log(registerDeviceRoomVal);
     console.log(registerDeviceRoomText);
 
+    $('#register-device-address').text();
+
     if(registerDeviceNameVal == "register-off-two-key-switch") {
       console.log('开始注册二键触控开关');
 
@@ -937,8 +939,7 @@ $(document).ready(() => {
           deviceID = "10.1.1." + data.deviceID ;
           let markup = "<tr><td>" + registerDeviceNameText + "</td><td>" + registerDeviceRoomText + "</td><td>" + deviceID + "</td></tr>";
           $("#device-manage-table-add-tbody").append(markup);
-          $('#register-device-address').text('deviceID');
-
+          $('#register-device-address').text(deviceID);
         }
 
       });

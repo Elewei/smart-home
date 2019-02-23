@@ -8,7 +8,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from app.db import get_db
 from . import packet
 
-DEVICE_ADDRESS = 11
+DEVICE_ADDRESS = 30
 
 # 创建一个 blueprint
 bp = Blueprint('openwindowmachine', __name__, url_prefix='/openwindowmachine')
@@ -100,6 +100,8 @@ def device_registry():
             (deviceName, deviceAddress, deviceRoom, 1)
         )
         db.commit()
+
+    DEVICE_ADDRESS++;
 
     # 修改通信频率 '55 AA C1 02 01 01'
     # 55 AA 表示固定首部

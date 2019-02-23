@@ -183,8 +183,8 @@ def open_window_macine_full():
 
 
     print("开窗器到 100%")
-    #deviceName = request.args.get('registerDeviceName', 0, type=str)
-    #deviceRoom = request.args.get('registerDeviceRoom', 0, type=str)
+    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
+    print(openWindowAddress)
 
     #Device Register
     # Step 1 Open the serial port
@@ -197,7 +197,7 @@ def open_window_macine_full():
     # 10 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
-    message_send = "01 01 bb 10 30 64"
+    message_send = "01 01 bb 10 "+ str(openWindowAddress) +" 64"
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
@@ -214,5 +214,4 @@ def open_window_macine_full():
 
 
     ser.close()
-
-    return jsonify(result=jsonDevice)
+    return jsonify(result=1)

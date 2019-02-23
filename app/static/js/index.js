@@ -2425,7 +2425,14 @@ $(document).ready(() => {
 
     console.log('点击开窗器 全开');
     console.log(currentOpenWindowMachineAddress);
-    
+
+    /* 开窗器 全开 */
+    $.getJSON($SCRIPT_ROOT + '/openwindowmachine/openwindowfull', {
+      openWinowMachineAddress: currentOpenWindowMachineAddress,
+    }, function(data) {
+      console.log(data.result);
+    });
+
   });
 
 });

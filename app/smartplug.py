@@ -158,11 +158,11 @@ def device_registry():
 
 
 @bp.route('/getall')
-def get_open_window_macine():
+def get_smart_plug():
     db = get_db()
 
     devices = db.execute(
-        'SELECT deviceAddress FROM device WHERE deviceType = ?', (10,)
+        'SELECT deviceAddress FROM device WHERE deviceType = ?', (30,)
     ).fetchall()
 
     deviceList = []
@@ -178,12 +178,12 @@ def get_open_window_macine():
 
 
 
-@bp.route('/openwindowfull')
-def open_window_macine_full():
+@bp.route('/open')
+def open_smart_plug():
 
-    print("开窗器到 100%")
-    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
-    print(openWindowAddress)
+    print("开 插座")
+    smartPlugAddress = request.args.get('smartPlugAddress', 0, type=int)
+    print(smartPlugAddress)
 
     #Device Register
     # Step 1 Open the serial port
@@ -196,7 +196,7 @@ def open_window_macine_full():
     # 10 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
-    message_send = "01 01 bb 10 "+ str(openWindowAddress) +" 64"
+    message_send = "01 01 bb 30 "+ str(smartPlugAddress) +" 01"
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
@@ -218,12 +218,12 @@ def open_window_macine_full():
 
 
 
-@bp.route('/closewindowfull')
-def close_window_macine_full():
+@bp.route('/close')
+def close_smart_plug():
 
-    print("开窗器到 0%")
-    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
-    print(openWindowAddress)
+    print("关 插座")
+    smartPlugAddress = request.args.get('smartPlugAddress', 0, type=int)
+    print(smartPlugAddress)
 
     #Device Register
     # Step 1 Open the serial port
@@ -236,7 +236,7 @@ def close_window_macine_full():
     # 10 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
-    message_send = "01 01 bb 10 "+ str(openWindowAddress) +" 00"
+    message_send = "01 01 bb 30 "+ str(smartPlugAddress) +" 00"
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
@@ -254,242 +254,3 @@ def close_window_macine_full():
 
     ser.close()
     return jsonify(result=1)
-
-
-
-
-@bp.route('/stopwindow')
-def stop_window_macine():
-
-    print("停止开窗器")
-    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
-    print(openWindowAddress)
-
-    #Device Register
-    # Step 1 Open the serial port
-    ser = serial.Serial('/dev/ttyAMA0',230400)
-    ser.timeout = 3
-
-    # Device Register "01 01 bb 10 30 64 00"
-    # 01 01 code Stands for LoraID Address
-    # bb code stands for control code
-    # 10 code stands for Open Window Machine Type
-    # 30 code stands for Open Window Machine Address
-    # 64 open window percent
-    message_send = "01 01 bb 10 "+ str(openWindowAddress) +" ff"
-    print("发送消息" + message_send)
-    message_send_hex = bytes.fromhex(message_send)
-    ser.write(message_send_hex)
-
-    reading = ser.read(6)
-    reading_str = ''.join(['%02x ' % b for b in reading])
-    # return Code 01 01 bb 10 31 01
-    # 01 01 stands for upload fix head
-    # bb code stands for control code
-    # 10 code stands Open Window Machine
-    # 31 code stands for Open Window Address
-    # 01 code stands Success
-    print("第一次收到消息 = " + reading_str)
-
-
-    ser.close()
-    return jsonify(result=1)
-
-
-
-
-
-
-@bp.route('/reversewindow')
-def reverse_window_macine():
-
-    print("反转 开窗器")
-    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
-    print(openWindowAddress)
-
-    #Device Register
-    # Step 1 Open the serial port
-    ser = serial.Serial('/dev/ttyAMA0',230400)
-    ser.timeout = 3
-
-    # Device Register "01 01 bb 10 30 64 00"
-    # 01 01 code Stands for LoraID Address
-    # bb code stands for control code
-    # 10 code stands for Open Window Machine Type
-    # 30 code stands for Open Window Machine Address
-    # 64 open window percent
-    message_send = "01 01 b1 10 "+ str(openWindowAddress) +" 01"
-    print("发送消息" + message_send)
-    message_send_hex = bytes.fromhex(message_send)
-    ser.write(message_send_hex)
-
-    reading = ser.read(6)
-    reading_str = ''.join(['%02x ' % b for b in reading])
-    # return Code 01 01 bb 10 31 01
-    # 01 01 stands for upload fix head
-    # bb code stands for control code
-    # 10 code stands Open Window Machine
-    # 31 code stands for Open Window Address
-    # 01 code stands Success
-    print("第一次收到消息 = " + reading_str)
-
-
-    ser.close()
-    return jsonify(result=1)
-
-
-
-
-
-@bp.route('/checkwindow')
-def check_window_macine():
-
-    print("校准 开窗器")
-    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
-    print(openWindowAddress)
-
-    #Device Register
-    # Step 1 Open the serial port
-    ser = serial.Serial('/dev/ttyAMA0',230400)
-    ser.timeout = 3
-
-    # Device Register "01 01 bb 10 30 64 00"
-    # 01 01 code Stands for LoraID Address
-    # bb code stands for control code
-    # 10 code stands for Open Window Machine Type
-    # 30 code stands for Open Window Machine Address
-    # 64 open window percent
-    message_send = "01 01 b0 10 "+ str(openWindowAddress) +" 01"
-    print("发送消息" + message_send)
-    message_send_hex = bytes.fromhex(message_send)
-    ser.write(message_send_hex)
-
-    reading = ser.read(6)
-    reading_str = ''.join(['%02x ' % b for b in reading])
-    # return Code 01 01 bb 10 31 01
-    # 01 01 stands for upload fix head
-    # bb code stands for control code
-    # 10 code stands Open Window Machine
-    # 31 code stands for Open Window Address
-    # 01 code stands Success
-    print("第一次收到消息 = " + reading_str)
-
-
-    ser.close()
-    return jsonify(result=1)
-
-
-
-
-
-@bp.route('/getwindow')
-def get_window_macine():
-
-    print("获取 开窗器 位置")
-    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
-    ser = 0
-
-    #Device Register
-    # Step 1 Open the serial port
-    try:
-        ser = serial.Serial('/dev/ttyAMA0',230400)
-        ser.timeout = 1
-        #ser.flushinput()
-        # Device Register "01 01 bb 10 30 64 00"
-        # 01 01 code Stands for LoraID Address
-        # aa code stands for control code
-        # 10 code stands for Open Window Machine Type
-        # 30 code stands for Open Window Machine Address
-        # 64 open window percent
-        message_send = "01 01 aa 10 " + str(openWindowAddress)
-        print("发送消息" + message_send)
-        message_send_hex = bytes.fromhex(message_send)
-        ser.write(message_send_hex)
-
-        while True:
-            if ser.inWaiting() > 0:
-                break;
-            time.sleep(0.5)
-
-        reading = ser.read(10)
-        reading_str = ''.join(['%02x ' % b for b in reading])
-        # return Code 01 01 aa 10 31 01 09
-        # 01 01 stands for LoraID
-        # aa code stands for control code
-        # 10 code stands Open Window Machine
-        # 31 code stands for Open Window Address
-        # 09 code 当前位置
-        print("收到消息 = " + reading_str)
-        fix_head = "01 01 aa 10 " + str(openWindowAddress) +" 01"
-        if(reading_str.find(fix_head) >= 0):
-            start = len(fix_head) + reading_str.find(fix_head) + 1
-            currentHexVal =  reading_str[start:start + 3]
-            percentValue = int(currentHexVal, 16)
-            print("百分比" + str(percentValue))
-            return jsonify(result=percentValue)
-    except:
-        if ser:
-            ser.close()
-
-
-    return jsonify(result=0)
-
-
-
-
-@bp.route('/freewindow')
-def free_window_macine():
-
-    print("开窗器到 特定值")
-    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
-    freeToggleVal = request.args.get('freeToggleVal', 0, type=int)
-    print(openWindowAddress)
-    print(freeToggleVal)
-    freeToggleValStrHex = str(hex(freeToggleVal))
-    if freeToggleVal <= 15:
-        freeToggleValStr = '0' + freeToggleValStrHex[2:]
-    else:
-        freeToggleValStr = freeToggleValStrHex[2:]
-
-    ser = 0
-
-    #Device Register
-    # Step 1 Open the serial port
-    try:
-        ser = serial.Serial('/dev/ttyAMA0',230400)
-        ser.timeout = 1
-        #ser.flushinput()
-        # Device Register "01 01 bb 10 30 64 00"
-        # 01 01 code Stands for LoraID Address
-        # aa code stands for control code
-        # 10 code stands for Open Window Machine Type
-        # 30 code stands for Open Window Machine Address
-        # 64 open window percent
-        message_send = "01 01 bb 10 " + str(openWindowAddress) + " " + freeToggleValStr
-        print("发送消息" + message_send)
-        message_send_hex = bytes.fromhex(message_send)
-        ser.write(message_send_hex)
-
-        while True:
-            if ser.inWaiting() > 0:
-                break;
-            time.sleep(0.5)
-
-        reading = ser.read(10)
-        reading_str = ''.join(['%02x ' % b for b in reading])
-        # return Code 01 01 aa 10 31 01 09
-        # 01 01 stands for LoraID
-        # aa code stands for control code
-        # 10 code stands Open Window Machine
-        # 31 code stands for Open Window Address
-        # 09 code 当前位置
-        print("收到消息 = " + reading_str)
-
-        fix_head = "01 01 bb 10 " + str(openWindowAddress)
-        if(reading_str.find(fix_head) >= 0):
-            return jsonify(result=1)
-    except:
-        if ser:
-            ser.close()
-
-    return jsonify(result=-1)

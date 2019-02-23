@@ -1,6 +1,7 @@
 
 var currentOpenWindowMachineAddress = 0;
 var currentCurtainAddress = 0;
+var currentSmartPlugAddress = 0;
 
 $(document).ready(() => {
 
@@ -796,6 +797,18 @@ $(document).ready(() => {
     let smartPlugImgPath = "/static/img/touch_switch/smart_plug_on.png";
     $('#smart-plug-toggle').attr("src",smartPlugImgPath);
 
+
+    /* 获取数据库中所有窗帘 */
+    $.getJSON($SCRIPT_ROOT + '/smartplug/open', {
+      smartPlugAddress: currentSmartPlugAddress,
+    }, function(data) {
+      console.log(data.result);
+
+
+    });
+
+
+
   });
 
   /* 点击关闭智能插座 */
@@ -806,6 +819,16 @@ $(document).ready(() => {
 
     let smartPlugImgPath = "/static/img/touch_switch/smart_plug_off.png";
     $('#smart-plug-toggle').attr("src",smartPlugImgPath);
+
+    /* 获取数据库中所有窗帘 */
+    $.getJSON($SCRIPT_ROOT + '/smartplug/close', {
+      smartPlugAddress: currentSmartPlugAddress,
+    }, function(data) {
+      console.log(data.result);
+
+
+    });
+
   });
 
   /* 点击 管理入口 -> 设备管理 */
@@ -1381,6 +1404,24 @@ $(document).ready(() => {
     $deviceManageContent.hide();
     $sceneControlContent.hide();
     $roomControlContent.hide();
+
+
+    $('#smart-plug-label-one').nextAll().remove();
+
+    /* 获取数据库中所有窗帘 */
+    $.getJSON($SCRIPT_ROOT + '/smartplug/getall', {
+      deviceType: 30,
+    }, function(data) {
+      console.log(data.result);
+      let smartPlugAddress = JSON.parse(data.result);
+      for (let i = 0; i < smartPlugAddress.length; i ++) {
+        //console.log(openWindowMachineAddress[i]);
+        idVal = "smart-plug-address" + smartPlugAddress[i];
+        let markup = "<div id="+  idVal +" class='left-side-buttom' onclick='get_smart_plug_address("+ smartPlugAddress[i]  +")'><span class='left-side-text-label'>"+ "10.1.1." + smartPlugAddress[i] +"</span></div>";
+        $('#smart-plug-label-one').after(markup);
+      }
+
+    });
 
   });
 
@@ -2739,6 +2780,32 @@ function get_curtain_address(deviceAddress) {
   });
 
 }
+
+
+function get_smart_plug_address(deviceAddress) {
+  console.log(deviceAddress);
+  greenBackGroundImg = "url(/static/img/left_side_bar_green.png)";
+  blueBackGroundImg =  "url(/static/img/left_side_bar_blue.png)";
+
+  /* 获取数据库中所有开窗器 */
+  $.getJSON($SCRIPT_ROOT + '/smartplug/getall', {
+    deviceType: 30,
+  }, function(data) {
+    let smartPlugAddress = JSON.parse(data.result);
+    for (let i = 0; i < smartPlugAddress.length; i ++) {
+      selector = '#smart-plug-address' + smartPlugAddress[i];
+      if (deviceAddress == smartPlugAddress[i]) {
+        console.log(selector);
+        $(selector).css('background-image', greenBackGroundImg);
+        currentSmartPlugAddress = deviceAddress;
+      } else {
+        $(selector).css('background-image', blueBackGroundImg);
+      }
+    }
+  });
+
+}
+
 
 
 

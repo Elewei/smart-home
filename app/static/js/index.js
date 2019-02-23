@@ -2541,10 +2541,12 @@ function get_open_window_machine_address(deviceAddress) {
 
 
 
+
+/*
 function get_open_window_macine_status(){
   console.log(currentOpenWindowMachineAddress);
 
-  /* 开窗器 状态 */
+  // 开窗器 状态
   $.getJSON($SCRIPT_ROOT + '/openwindowmachine/getwindow', {
     openWinowMachineAddress: currentOpenWindowMachineAddress,
   }, function(data) {
@@ -2572,7 +2574,7 @@ function get_open_window_macine_status(){
       }
 
 
-      /* 设置 当前百分比 */
+      // 设置 当前百分比
       $.getJSON($SCRIPT_ROOT + '/openwindowmachine/freewindow', {
         openWinowMachineAddress: currentOpenWindowMachineAddress,
         freeToggleVal: windowToggle,
@@ -2590,7 +2592,7 @@ function get_open_window_macine_status(){
         }
       });
 
-      /*
+
       if (windowToggle == 0) {
         console.log($windowImg[0].src);
         preImgPath = $windowImg[0].src;
@@ -2683,19 +2685,19 @@ function get_open_window_macine_status(){
         //console.log($windowImg[0].src);
         $openWindowToggleBarValue.css('left', '270px');
       }
-      */
+
 
     });
 
+*/
+
+
+  //});
 
 
 
-  });
 
-
-
-
-}
+//}
 
 // window.setInterval("get_open_window_macine_status()", 1000);
 

@@ -189,7 +189,7 @@ def open_smart_plug():
     # Step 1 Open the serial port
     ser = serial.Serial('/dev/ttyAMA0',230400)
     ser.timeout = 3
-
+    time.sleep(3)
     # Device Register "01 01 bb 10 30 64 00"
     # 01 01 code Stands for LoraID Address
     # bb code stands for control code
@@ -203,7 +203,7 @@ def open_smart_plug():
 
     reading = ser.read(6)
     reading_str = ''.join(['%02x ' % b for b in reading])
-    # return Code 01 01 bb 10 31 01
+    # return Code 01 01 bb 30 31 01
     # 01 01 stands for upload fix head
     # bb code stands for control code
     # 10 code stands Open Window Machine
@@ -229,7 +229,7 @@ def close_smart_plug():
     # Step 1 Open the serial port
     ser = serial.Serial('/dev/ttyAMA0',230400)
     ser.timeout = 3
-
+    time.sleep(3)
     # Device Register "01 01 bb 10 30 64 00"
     # 01 01 code Stands for LoraID Address
     # bb code stands for control code
@@ -243,7 +243,7 @@ def close_smart_plug():
 
     reading = ser.read(6)
     reading_str = ''.join(['%02x ' % b for b in reading])
-    # return Code 01 01 bb 10 31 01
+    # return Code 01 01 bb 30 31 01
     # 01 01 stands for upload fix head
     # bb code stands for control code
     # 10 code stands Open Window Machine

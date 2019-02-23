@@ -391,21 +391,21 @@ def get_window_macine():
 
     #Device Register
     # Step 1 Open the serial port
-    ser = serial.Serial('/dev/ttyAMA0',230400)
-    ser.timeout = 3
-
-    # Device Register "01 01 bb 10 30 64 00"
-    # 01 01 code Stands for LoraID Address
-    # aa code stands for control code
-    # 10 code stands for Open Window Machine Type
-    # 30 code stands for Open Window Machine Address
-    # 64 open window percent
-    message_send = "01 01 aa 10 " + str(openWindowAddress)
-    print("发送消息" + message_send)
-    message_send_hex = bytes.fromhex(message_send)
-    ser.write(message_send_hex)
-
     try:
+        ser = serial.Serial('/dev/ttyAMA0',230400)
+        ser.timeout = 3
+
+        # Device Register "01 01 bb 10 30 64 00"
+        # 01 01 code Stands for LoraID Address
+        # aa code stands for control code
+        # 10 code stands for Open Window Machine Type
+        # 30 code stands for Open Window Machine Address
+        # 64 open window percent
+        message_send = "01 01 aa 10 " + str(openWindowAddress)
+        print("发送消息" + message_send)
+        message_send_hex = bytes.fromhex(message_send)
+        ser.write(message_send_hex)
+
         reading = ser.read(10)
         reading_str = ''.join(['%02x ' % b for b in reading])
         # return Code 01 01 aa 10 31 01 09
@@ -419,8 +419,7 @@ def get_window_macine():
         percentValue = int(currentHexVal, 16)
         print(percentValue)
     except:
-        pass
-
+        return jsonify(result=0)
 
     ser.close()
     return jsonify(result=percentValue)

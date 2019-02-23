@@ -394,7 +394,7 @@ def get_window_macine():
     try:
         ser = serial.Serial('/dev/ttyAMA0',230400)
         ser.timeout = 3
-
+        flushinput()
         # Device Register "01 01 bb 10 30 64 00"
         # 01 01 code Stands for LoraID Address
         # aa code stands for control code
@@ -421,7 +421,6 @@ def get_window_macine():
             currentHexVal =  reading_str[start:start + 3]
             percentValue = int(currentHexVal, 16)
             print(percentValue)
-        flushinput()
     except:
         return jsonify(result=0)
 

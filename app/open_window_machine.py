@@ -416,7 +416,7 @@ def get_window_macine():
         # 31 code stands for Open Window Address
         # 09 code 当前位置
         print("第一次收到消息 = " + reading_str)
-        fix_head = '01 01 aa 10 31 01'
+        fix_head = "01 01 aa 10 " + str(openWindowAddress) +"  01"
         start = len(fix_head) + reading_str.find(fix_head) + 1
         currentHexVal =  reading_str[start:start + 3]
         percentValue = int(currentHexVal, 16)

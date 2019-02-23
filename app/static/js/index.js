@@ -1840,7 +1840,7 @@ $(document).ready(() => {
   });
 
   /* 监听 开窗器 自由组合的值的变动 */
-  $openWindowToggleBar.on('input propertychange', ()=>{
+  $openWindowToggleBar.on('click', ()=>{
     console.log($openWindowToggleBar.val());
     let windowToggle = $openWindowToggleBar.val();
     $openWindowToggleBarValue.text(windowToggle + '%');

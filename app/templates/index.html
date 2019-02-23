@@ -540,12 +540,10 @@
 		<div class="smart-curtain-content hide">
 		  <div class="left-side">
 
-				<div class="left-side-buttom-one-on">
+				<div id="curtain-label-one" class="left-side-buttom-one-on">
+					<span class="left-side-text-label-one">智能窗帘</span>
 				</div>
 
-				<div id="smart-curtain-left-side-text" class="buttom-text buttom-text-one">
-					<p>智能窗帘</p>
-				</div>
 			</div>
 
 			<div class="right-side">
@@ -553,11 +551,11 @@
 					<div class="curtain-first-line">
 						<div class="curtain-all_open">
 							<p>全开</p>
-							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+							<img id="curtain-open-full" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
 						</div>
 						<div class="curtain-all_close">
 							<p>全关</p>
-							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+							<img id="curtain-close-full" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
 						</div>
 					</div>
 					<div class="curtain-second-line">

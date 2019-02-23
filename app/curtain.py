@@ -158,11 +158,11 @@ def device_registry():
 
 
 @bp.route('/getall')
-def get_open_window_macine():
+def get_curtain():
     db = get_db()
 
     devices = db.execute(
-        'SELECT deviceAddress FROM device WHERE deviceType = ?', (10,)
+        'SELECT deviceAddress FROM device WHERE deviceType = ?', (11,)
     ).fetchall()
 
     deviceList = []
@@ -178,12 +178,12 @@ def get_open_window_macine():
 
 
 
-@bp.route('/openwindowfull')
-def open_window_macine_full():
+@bp.route('/opencurtainfull')
+def open_curtain_full():
 
-    print("开窗器到 100%")
-    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
-    print(openWindowAddress)
+    print("窗帘到 100%")
+    curtainAddress = request.args.get('curtainAddress', 0, type=int)
+    print(curtainAddress)
 
     #Device Register
     # Step 1 Open the serial port
@@ -193,10 +193,10 @@ def open_window_macine_full():
     # Device Register "01 01 bb 10 30 64 00"
     # 01 01 code Stands for LoraID Address
     # bb code stands for control code
-    # 10 code stands for Open Window Machine Type
+    # 11 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
-    message_send = "01 01 bb 10 "+ str(openWindowAddress) +" 64"
+    message_send = "01 01 bb 11 "+ str(openWindowAddress) +" 64"
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
@@ -218,12 +218,12 @@ def open_window_macine_full():
 
 
 
-@bp.route('/closewindowfull')
-def close_window_macine_full():
+@bp.route('/closecurtainfull')
+def close_curtain_full():
 
-    print("开窗器到 0%")
-    openWindowAddress = request.args.get('openWinowMachineAddress', 0, type=int)
-    print(openWindowAddress)
+    print("窗帘到 0%")
+    curtainAddress = request.args.get('curtainAddress', 0, type=int)
+    print(curtainAddress)
 
     #Device Register
     # Step 1 Open the serial port
@@ -236,7 +236,7 @@ def close_window_macine_full():
     # 10 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
-    message_send = "01 01 bb 10 "+ str(openWindowAddress) +" 00"
+    message_send = "01 01 bb 11 "+ str(curtainAddress) +" 00"
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)

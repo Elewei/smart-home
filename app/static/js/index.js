@@ -1,6 +1,6 @@
 
 var currentOpenWindowMachineAddress = 0;
-
+var currentCurtainAddress = 0;
 
 $(document).ready(() => {
 
@@ -178,6 +178,8 @@ $(document).ready(() => {
   const $roomControlLeftSideButtomTwo = $('#room-control-left-side-buttom-two');
   const $roomControlLeftSideButtomTwoOn = $('#room-control-left-side-buttom-two-on');
 
+  const $curtainOpenFull = $('#curtain-open-full');
+  const $curtainCloseFull = $('#curtain-close-full');
 
   /* 点击智能控制 */
   $smartControl.on('click', ()=>{
@@ -1092,7 +1094,57 @@ $(document).ready(() => {
       $curtainToggleBarValue.css('left', leftOffSetVal);
     }
 
+    $('#curtain-label-one').nextAll().remove();
+
+    /* 获取数据库中所有窗帘 */
+    $.getJSON($SCRIPT_ROOT + '/curtain/getall', {
+      deviceType: 11,
+    }, function(data) {
+      console.log(data.result);
+      let curtainAddress = JSON.parse(data.result);
+      for (let i = 0; i < curtainAddress.length; i ++) {
+        //console.log(openWindowMachineAddress[i]);
+        idVal = "curtain-address" + curtainAddress[i];
+        let markup = "<div id="+  idVal +" class='left-side-buttom' onclick='get_curtain_address("+ curtainAddress[i]  +")'><span class='left-side-text-label'>"+ "10.1.1." + curtainAddress[i] +"</span></div>";
+        $('#curtain-label-one').after(markup);
+      }
+
+    });
+
+
+
+
   });
+
+
+  /* 点击 智能窗帘 全开 */
+  $curtainOpenFull.on('click', ()=>{
+    console.log('点击 智能窗帘 全开');
+
+    console.log(currentCurtainAddress);
+
+    /* 开窗器 全开 */
+    $.getJSON($SCRIPT_ROOT + '/curtain/opencurtainfull', {
+      curtainAddress: currentCurtainAddress,
+    }, function(data) {
+      console.log(data.result);
+    });
+
+  });
+
+  $curtainCloseFull.on('click', ()=>{
+    console.log('点击 智能窗帘 全关');
+
+    console.log(currentCurtainAddress);
+
+    /* 开窗器 全开 */
+    $.getJSON($SCRIPT_ROOT + '/curtain/closecurtainfull', {
+      curtainAddress: currentCurtainAddress,
+    }, function(data) {
+      console.log(data.result);
+    });
+  });
+
 
   /* 点击 智能控制 -> 独立控制 -> 空气盒子   */
   $airBox.on('click', ()=>{
@@ -2594,6 +2646,31 @@ function get_open_window_machine_address(deviceAddress) {
 
 }
 
+
+
+function get_curtain_address(deviceAddress) {
+  console.log(deviceAddress);
+  greenBackGroundImg = "url(/static/img/left_side_bar_green.png)";
+  blueBackGroundImg =  "url(/static/img/left_side_bar_blue.png)";
+
+  /* 获取数据库中所有开窗器 */
+  $.getJSON($SCRIPT_ROOT + '/curtain/getall', {
+    deviceType: 11,
+  }, function(data) {
+    let curtainAddress = JSON.parse(data.result);
+    for (let i = 0; i < curtainAddress.length; i ++) {
+      selector = '#curtain-address' + curtainAddress[i];
+      if (deviceAddress == curtainAddress[i]) {
+        console.log(selector);
+        $(selector).css('background-image', greenBackGroundImg);
+        currentCurtainAddress = deviceAddress;
+      } else {
+        $(selector).css('background-image', blueBackGroundImg);
+      }
+    }
+  });
+
+}
 
 
 

@@ -67,7 +67,20 @@ def device_registry():
     reading = ser.read(10)
     reading_str = ''.join(['%02x ' % b for b in reading])
     print("第二次收到消息 = " + reading_str)
+    if "01 01 cc 10" in reading_str:
+        start = reading_str.find("01 01 cc 10")
+        end = start + 14
+        receiveDeviceAddress =  reading_str[end-2: end]
+        if receiveDeviceAddress == deviceAddress:
+            pass
+        else:
+            d = bytes.fromhex(message_send)
+            ser.write(d)
+    else:
+        d = bytes.fromhex(message_send)
+        ser.write(d)
 
+    # 插入数据库
     db = get_db()
     error = None
 
@@ -104,7 +117,28 @@ def device_registry():
     reading = ser.read(10)
     reading_str = ''.join(['%02x ' % b for b in reading])
     print("第三次收到消息 = " + reading_str)
+
     # TODO:  Verity it is success
+    sureString = "57 AB C1"
+    if sureString in reading_str:
+        start = reading_str.find(sureString)
+        end = start + len(sureString) + 3
+        dataLen =  reading_str[end-2: end]
+        if(dataLen == '01'):
+            value = reading_str[end+1: end+2]
+            if value == '00':
+                pass
+            else:
+                message_send = "55 AA C1 02 01 01"
+                print("第三次发送消息" + message_send)
+                d = bytes.fromhex(message_send)
+                ser.write(d)
+    else:
+        message_send = "55 AA C1 02 01 01"
+        print("第三次发送消息" + message_send)
+        d = bytes.fromhex(message_send)
+        ser.write(d)
+
 
     ser.close()
 

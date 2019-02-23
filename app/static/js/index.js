@@ -164,6 +164,15 @@ $(document).ready(() => {
   const $smartPlugOn = $('.smart-plug-on');
   const dimmingLampToggleBar = $('#dimming-lamp-toggle-bar');
   const $dimmingLampToggleBarText = $('#dimming-lamp-toggle-bar-text');
+  const $roomControlRoomDescText = $('#room-control-room-desc-text');
+  const $roomControlMyRoom = $('#room-control-my-room');
+  const $roomControlRoomDesc = $('#room-control-room-desc');
+
+  const $roomControlMyRoomText = $('#room-control-my-room-text');
+  const $roomControlLeftSideButtomOne = $('#room-control-left-side-buttom-one');
+  const $roomControlLeftSideButtomOneOn = $('#room-control-left-side-buttom-one-on');
+  const $roomControlLeftSideButtomTwo = $('#room-control-left-side-buttom-two');
+  const $roomControlLeftSideButtomTwoOn = $('#room-control-left-side-buttom-two-on');
 
   /* 点击智能控制 */
   $smartControl.on('click', ()=>{
@@ -383,24 +392,7 @@ $(document).ready(() => {
 
   });
 
-  /* 点击独立控制页面左侧-我的设备 */
-  $independantLeftMyDeviceText.on('click', ()=>{
-    console.log('点击第一个按钮');
-    $leftSideButtomOne.hide();
-    $leftSideButtomOneOn.show();
-    $leftSideButtomTwo.show();
-    $leftSideButtomTwoOn.hide();
 
-  });
-
-  /* 点击独立控制页面左侧-执行记录 */
-  $independantLeftExecLogText.on('click', ()=>{
-    console.log('点击第二个按钮');
-    $leftSideButtomOne.show();
-    $leftSideButtomOneOn.hide();
-    $leftSideButtomTwo.hide();
-    $leftSideButtomTwoOn.show();
-  });
 
   /* 设置向导 -> 用户设置-页面 左侧按钮 */
   $userSetupBasicInfoText.on('click', ()=>{
@@ -464,11 +456,12 @@ $(document).ready(() => {
     $independantControlContent.hide();
     $touchSwitchContent.show();
 
+    /*
     $leftSideButtomOne.hide();
     $leftSideButtomOneOn.show();
     $leftSideButtomTwo.show();
     $leftSideButtomTwoOn.hide();
-
+    */
 
     console.log("touch switch");
 
@@ -493,10 +486,6 @@ $(document).ready(() => {
     $independantControlContent.hide();
     $touchSwitchContent.show();
 
-    $leftSideButtomOne.show();
-    $leftSideButtomOneOn.hide();
-    $leftSideButtomTwo.hide();
-    $leftSideButtomTwoOn.show();
 
     console.log("exec switch");
 
@@ -2390,5 +2379,32 @@ $(document).ready(() => {
     $manageEntryContent.show();
   });
 
+  /* 点击房间控制 -> 房间描述 */
+  $roomControlRoomDescText.on('click', ()=>{
+    console.log('点击房间控制 -> 房间描述');
+
+    $roomControlLeftSideButtomOne.show();
+    $roomControlLeftSideButtomOneOn.hide();
+    $roomControlLeftSideButtomTwo.hide();
+    $roomControlLeftSideButtomTwoOn.show();
+
+    $roomControlMyRoom.hide();
+    $roomControlRoomDesc.show();
+
+  });
+
+  /* 点击房间控制 -> 我的房间 */
+  $roomControlMyRoomText.on('click', ()=>{
+    console.log('点击房间控制 -> 我的房间');
+
+    $roomControlLeftSideButtomOne.hide();
+    $roomControlLeftSideButtomOneOn.show();
+    $roomControlLeftSideButtomTwo.show();
+    $roomControlLeftSideButtomTwoOn.hide();
+
+    $roomControlMyRoom.show();
+    $roomControlRoomDesc.hide();
+
+  });
 
 });

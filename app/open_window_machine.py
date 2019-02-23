@@ -392,7 +392,7 @@ def get_window_macine():
     # Step 1 Open the serial port
     try:
         ser = serial.Serial('/dev/ttyAMA0',230400)
-        ser.timeout = 3
+        ser.timeout = 1
         #ser.flushinput()
         # Device Register "01 01 bb 10 30 64 00"
         # 01 01 code Stands for LoraID Address

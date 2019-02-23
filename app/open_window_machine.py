@@ -91,6 +91,8 @@ def device_registry():
         error = 'deviceName is required.'
     elif not deviceRoom:
         error = 'deviceRoom is required.'
+    elif not deviceAddress:
+        error = 'deviceAddress is required.'
     elif db.execute(
         'SELECT id FROM device WHERE deviceAddress = ?', (deviceAddress,)
     ).fetchone() is not None:
@@ -102,6 +104,8 @@ def device_registry():
             (deviceName, deviceAddress, deviceRoom, 1)
         )
         db.commit()
+    else:
+        return jsonify(result=0)
 
     DEVICE_ADDRESS += 1
     # 修改通信频率 '55 AA C1 02 01 01'

@@ -36,7 +36,7 @@ def device_registry():
 
     reading = ser.read(6)
     reading_str = ''.join(['%02x ' % b for b in reading])
-    # return Code 57 AB C0 01 00
+    # return Code 57 AB C0 01 00 00
     # 57 AB stands for upload fix head
     # C0 code stands for set default frequency
     # 01 code stands data length
@@ -47,8 +47,7 @@ def device_registry():
     deviceAddress = str(DEVICE_ADDRESS)
     message_send = "FF FF CC 10 "+ deviceAddress +" 02 01 01"
 
-
-    # set Device ID "FF FF CC 21 13 02 01 01"
+    # set Device ID "FF FF CC 10 11 02 01 01"
     # Set Device 0xff  0xff  0xcc  0x21  0x13 0x02  0x01  0x01
     # FF FF code Stands for dispatching fix head
     # CC code stands for Set Device ID
@@ -60,11 +59,11 @@ def device_registry():
     d = bytes.fromhex(message_send)
     ser.write(d)
 
-    # return Value 01 01 cc 21 13
+    # return Value 01 01 cc 10 11
     # 01 01 code Stands for LoraID
-    # cc Stands for code Set Device ID
-    # 21 code stands for 2 touch switch
-    # 13 code stands for DeviceID
+    # cc Stands for control code Set Device ID
+    # 10 code stands for open window machine
+    # 11 code stands for DeviceID
     reading = ser.read(10)
     reading_str = ''.join(['%02x ' % b for b in reading])
     print("第二次收到消息 = " + reading_str)
@@ -96,11 +95,12 @@ def device_registry():
     d = bytes.fromhex(message_send)
     ser.write(d)
 
-    # return Value 01 01 cc 21 13
-    # 01 01 code Stands for LoraID
-    # cc Stands for code Set Device ID
-    # 21 code stands for 2 touch switch
-    # 13 code stands for DeviceID
+    # return Value 57 AB C1 01 00
+    # 57 AB code Stands for LoraID
+    # C1 Stands for control code Set Device ID
+    # 01 code stands for Data Length
+    # 00 code stands for Success
+    # if FF is Failer
     reading = ser.read(10)
     reading_str = ''.join(['%02x ' % b for b in reading])
     print("第三次收到消息 = " + reading_str)

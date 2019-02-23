@@ -2536,11 +2536,9 @@ function get_open_window_macine_status(){
   }, function(data) {
     console.log(data.result);
   });
-
 }
 
-
-window.setInterval("get_open_window_macine_status()", 200);
+window.setInterval("get_open_window_macine_status()", 1000);
 
 
 

@@ -400,8 +400,7 @@ def get_window_macine():
     # 10 code stands for Open Window Machine Type
     # 30 code stands for Open Window Machine Address
     # 64 open window percent
-    #message_send = "01 01 aa 10 " + str(openWindowAddress)
-    message_send = "01 01 aa 10 31"
+    message_send = "01 01 aa 10 " + str(openWindowAddress)
     print("发送消息" + message_send)
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
@@ -417,6 +416,7 @@ def get_window_macine():
     print("第一次收到消息 = " + reading_str)
     currentHexVal =  reading_str[18:21]
     percentValue = int(currentHexVal, 16)
+    print(percentValue)
 
     ser.close()
     return jsonify(result=percentValue)

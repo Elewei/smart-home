@@ -881,6 +881,7 @@ $(document).ready(() => {
 
 
     console.log("点击注册/注销");
+    $('#register-device-address').text(' ');
 
   });
 
@@ -907,8 +908,6 @@ $(document).ready(() => {
     console.log(registerDeviceNameText);
     console.log(registerDeviceRoomVal);
     console.log(registerDeviceRoomText);
-
-    $('#register-device-address').text(' ');
 
     if(registerDeviceNameVal == "register-off-two-key-switch") {
       console.log('开始注册二键触控开关');

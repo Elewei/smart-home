@@ -8,7 +8,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from app.db import get_db
 from . import packet
 
-DEVICE_ADDRESS = 30
+DEVICE_ADDRESS = 31
 
 # 创建一个 blueprint
 bp = Blueprint('openwindowmachine', __name__, url_prefix='/openwindowmachine')

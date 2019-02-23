@@ -951,7 +951,7 @@ $(document).ready(() => {
       });
     } else if (registerDeviceNameVal == "register-off-curtain") {
       console.log('开始注册窗帘');
-      $.getJSON($SCRIPT_ROOT + '/openwindowmachine', {
+      $.getJSON($SCRIPT_ROOT + '/curtain', {
         registerDeviceName: registerDeviceNameText,
         registerDeviceRoom: registerDeviceRoomText,
       }, function(data) {

@@ -807,7 +807,9 @@ $(document).ready(() => {
 
     });
 
-
+    setTimeout( function(){
+      console.log('wait 3s');
+    }, 3 * 1000 );
 
   });
 
@@ -825,9 +827,11 @@ $(document).ready(() => {
       smartPlugAddress: currentSmartPlugAddress,
     }, function(data) {
       console.log(data.result);
-
-
     });
+
+    setTimeout( function(){
+      console.log('wait 3s');
+    }, 3 * 1000 );
 
   });
 

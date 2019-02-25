@@ -198,7 +198,7 @@ def device_turn_off():
     # 2 表示 2键触控开关
     # 3 表示 3键触控开关
     keypanel = request.args.get('keypanel', 0, type=int)
-    switchAddress = request.args.get('swichAddress', 0, type=int)
+    switchAddress = request.args.get('deviceAddress', 0, type=int)
 
     if keypanel == 1:
         message_send = "01 01 bb 20 "+ str(switchAddress) +" 01 00"

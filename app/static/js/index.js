@@ -537,10 +537,12 @@ $(document).ready(() => {
     let oneKeySwitchKeyOnImgPath = "/static/img/touch_switch/touch_switch_on.png";
     $videoOneKeySwitch.attr("src",oneKeySwitchKeyOnImgPath);
 
-    $.getJSON($SCRIPT_ROOT + '/switch', {
+
+
+    $.getJSON($SCRIPT_ROOT + '/switch/turnon', {
+      deviceAddress: currentTouchSwitchAddress,
       keypanel: 1,
       key: 1,
-      state: 1
     }, function(data) {
       console.log(data.result);
     });

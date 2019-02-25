@@ -147,6 +147,83 @@ def get_touch_switch():
     return jsonify(result=jsonDevice)
 
 
+@bp.route('/turnon')
+def device_turnon():
+
+    # 1 表示 1键触控开关
+    # 2 表示 2键触控开关
+    # 3 表示 3键触控开关
+    keypanel = request.args.get('keypanel', 0, type=int)
+    switchAddress = request.args.get('deviceAddress', 0, type=int)
+    key = request.args.get('key', 0, type=int)
+    print(keypanel)
+    print(switchAddress)
+    print(key)
+
+    #Device Register
+    # Step 1 Open the serial port
+    ser = serial.Serial('/dev/ttyAMA0',230400)
+    ser.timeout = 3
+
+
+    if keypanel == 1:
+        message_send = "01 01 bb 20 "+ switchAddress +" 01 01"
+        deviceType = 20
+    elif keypanel == 2:
+        #device_code = packet['Two_Touch_Switch_RegisterID']
+        message_send = "01 01 bb 21 "+ switchAddress +" 00"
+        deviceType = 21
+    elif keypanel == 3:
+        message_send = "01 01 bb 22 "+ deviceAddress +" 02 01 01"
+        deviceType = 22
+
+    message_send_hex = bytes.fromhex(message_send)
+    ser.write(message_send_hex)
+
+    reading = ser.read(10)
+    reading_str = ''.join(['%02x ' % b for b in reading])
+
+    print("收到消息 = " + reading_str)
+
+    ser.close()
+    return jsonify(result=1)
+
+
+
+@bp.route('/turnoff')
+def device_turn_off():
+
+    # 1 表示 1键触控开关
+    # 2 表示 2键触控开关
+    # 3 表示 3键触控开关
+    keypanel = request.args.get('keypanel', 0, type=int)
+    switchAddress = request.args.get('swichAddress', 0, type=int)
+
+    if keypanel == 1:
+        message_send = "01 01 bb 20 "+ switchAddress +" 01 00"
+        deviceType = 20
+    elif keypanel == 2:
+        #device_code = packet['Two_Touch_Switch_RegisterID']
+        message_send = "01 01 bb 21 "+ switchAddress +" 00"
+        deviceType = 21
+    elif keypanel == 3:
+        message_send = "01 01 bb 22 "+ deviceAddress +" 02 01 01"
+        deviceType = 22
+
+    message_send_hex = bytes.fromhex(message_send)
+    ser.write(message_send_hex)
+
+    reading = ser.read(10)
+    reading_str = ''.join(['%02x ' % b for b in reading])
+
+    print("收到消息 = " + reading_str)
+
+    ser.close()
+    return jsonify(result=1)
+
+
+
+
 @bp.route('/off')
 def device_off():
 

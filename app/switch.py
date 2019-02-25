@@ -14,7 +14,7 @@ DEVICE_ADDRESS = 10
 # 创建一个 blueprint
 bp = Blueprint('switch', __name__, url_prefix='/switch')
 
-@bp.route('/')
+@bp.route('/register')
 def device_registry():
 
     print("注册触控开关")
@@ -49,6 +49,7 @@ def device_registry():
     # FF code stands frequence Failed
     print("第一次收到消息 = " + reading_str)
 
+    global DEVICE_ADDRESS
     deviceAddress = str(DEVICE_ADDRESS)
 
     if keypanel == 1:

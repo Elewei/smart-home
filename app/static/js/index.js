@@ -1032,7 +1032,7 @@ $(document).ready(() => {
       });
     } else if (registerDeviceNameVal == "register-off-one-key-switch") {
       console.log('开始注册一键触控开关');
-      $.getJSON($SCRIPT_ROOT + '/switch', {
+      $.getJSON($SCRIPT_ROOT + '/switch/register', {
         keypanel: 1,
         registerDeviceName: registerDeviceNameText,
         registerDeviceRoom: registerDeviceRoomText,

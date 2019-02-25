@@ -593,10 +593,10 @@ $(document).ready(() => {
     let twoKeyOneSwitchOnImgPath = "/static/img/touch_switch/multi_touch_switch_on.png";
     $videoTwoKeyOneSwitch.attr("src",twoKeyOneSwitchOnImgPath);
 
-    $.getJSON($SCRIPT_ROOT + '/switch', {
-      keypanel: 1,
+    $.getJSON($SCRIPT_ROOT + '/switch/turnon', {
+      deviceAddress: currentTouchSwitchAddress,
+      keypanel: 2,
       key: 1,
-      state: 1
     }, function(data) {
       console.log(data.result);
     });
@@ -622,6 +622,13 @@ $(document).ready(() => {
     let twoKeyOneSwitchOffImgPath = "/static/img/touch_switch/multi_touch_switch_off.png";
     $videoTwoKeyOneSwitch.attr("src",twoKeyOneSwitchOffImgPath);
 
+    $.getJSON($SCRIPT_ROOT + '/switch/turnoff', {
+      deviceAddress: currentTouchSwitchAddress,
+      keypanel: 2,
+      key: 1,
+    }, function(data) {
+      console.log(data.result);
+    });
 
   });
 
@@ -642,10 +649,10 @@ $(document).ready(() => {
     let twoKeyTwoSwitchOnImgPath = "/static/img/touch_switch/multi_touch_switch_on.png";
     $videoTwoKeyTwoSwitch.attr("src",twoKeyTwoSwitchOnImgPath);
 
-    $.getJSON($SCRIPT_ROOT + '/switch', {
-      keypanel: 1,
-      key: 1,
-      state: 1
+    $.getJSON($SCRIPT_ROOT + '/switch/turnon', {
+      deviceAddress: currentTouchSwitchAddress,
+      keypanel: 2,
+      key: 2,
     }, function(data) {
       console.log(data.result);
     });
@@ -668,6 +675,15 @@ $(document).ready(() => {
 
     let twoKeyTwoSwitchOffImgPath = "/static/img/touch_switch/multi_touch_switch_off.png";
     $videoTwoKeyTwoSwitch.attr("src",twoKeyTwoSwitchOffImgPath);
+
+    $.getJSON($SCRIPT_ROOT + '/switch/turnff', {
+      deviceAddress: currentTouchSwitchAddress,
+      keypanel: 2,
+      key: 2,
+    }, function(data) {
+      console.log(data.result);
+    });
+
 
   });
 

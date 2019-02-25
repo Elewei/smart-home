@@ -56,7 +56,6 @@ def device_registry():
         message_send = "FF FF CC 20 "+ deviceAddress +" 02 01 01"
         deviceType = 20
     elif keypanel == 2:
-        #device_code = packet['Two_Touch_Switch_RegisterID']
         message_send = "FF FF CC 21 "+ deviceAddress +" 02 01 01"
         deviceType = 21
     elif keypanel == 3:
@@ -171,9 +170,11 @@ def device_turnon():
         message_send = "01 01 bb 20 "+ str(switchAddress) +" 01 01"
         deviceType = 20
     elif keypanel == 2:
-        #device_code = packet['Two_Touch_Switch_RegisterID']
-        message_send = "01 01 bb 21 "+ switchAddress +" 00"
         deviceType = 21
+        if key == 1:
+            message_send = "01 01 bb 21 "+ str(switchAddress) +" 01 01"
+        else:
+            message_send = "01 01 bb 21 "+ str(switchAddress) +" 02 01"
     elif keypanel == 3:
         message_send = "01 01 bb 22 "+ deviceAddress +" 02 01 01"
         deviceType = 22
@@ -199,7 +200,8 @@ def device_turn_off():
     # 3 表示 3键触控开关
     keypanel = request.args.get('keypanel', 0, type=int)
     switchAddress = request.args.get('deviceAddress', 0, type=int)
-
+    key = request.args.get('key', 0, type=int)
+    
     #Device Register
     # Step 1 Open the serial port
     ser = serial.Serial('/dev/ttyAMA0',230400)
@@ -209,9 +211,11 @@ def device_turn_off():
         message_send = "01 01 bb 20 "+ str(switchAddress) +" 01 00"
         deviceType = 20
     elif keypanel == 2:
-        #device_code = packet['Two_Touch_Switch_RegisterID']
-        message_send = "01 01 bb 21 "+ switchAddress +" 00"
         deviceType = 21
+        if key == 1:
+            message_send = "01 01 bb 21 "+ str(switchAddress) +" 01 00"
+        else:
+            message_send = "01 01 bb 21 "+ str(switchAddress) +" 02 00"
     elif keypanel == 3:
         message_send = "01 01 bb 22 "+ deviceAddress +" 02 01 01"
         deviceType = 22

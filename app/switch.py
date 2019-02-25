@@ -168,7 +168,7 @@ def device_turnon():
 
 
     if keypanel == 1:
-        message_send = "01 01 bb 20 "+ switchAddress +" 01 01"
+        message_send = "01 01 bb 20 "+ str(switchAddress) +" 01 01"
         deviceType = 20
     elif keypanel == 2:
         #device_code = packet['Two_Touch_Switch_RegisterID']
@@ -201,7 +201,7 @@ def device_turn_off():
     switchAddress = request.args.get('swichAddress', 0, type=int)
 
     if keypanel == 1:
-        message_send = "01 01 bb 20 "+ switchAddress +" 01 00"
+        message_send = "01 01 bb 20 "+ str(switchAddress) +" 01 00"
         deviceType = 20
     elif keypanel == 2:
         #device_code = packet['Two_Touch_Switch_RegisterID']

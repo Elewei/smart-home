@@ -2132,6 +2132,26 @@ $(document).ready(() => {
     $smartHomeContent.show();
   });
 
+
+  function getNowFormatDate() {
+      var date = new Date();
+      var seperator1 = "-";
+      var seperator2 = ":";
+      var month = date.getMonth() + 1;
+      var strDate = date.getDate();
+      if (month >= 1 && month <= 9) {
+          month = "0" + month;
+      }
+      if (strDate >= 0 && strDate <= 9) {
+          strDate = "0" + strDate;
+      }
+      var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+              + " " + date.getHours() + seperator2 + date.getMinutes()
+              + seperator2 + date.getSeconds();
+      return currentdate;
+  }
+
+
   /* 监听 开窗器 自由组合的值的变动 */
   $openWindowToggleBar.on('input propertychange', ()=>{
 
@@ -2755,115 +2775,127 @@ $(document).ready(() => {
 
     let windowToggle = $openWindowToggleBar.val();
 
+    /*
     switch (parseInt(windowToggle/5)) {
       case 0:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/1.jpg");
           $openWindowToggleBarValue.css('left', '4px');
-        }, 500 );
+          console.log(getNowFormatDate());
+        }, 1000 );
       case 1:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/2.jpg");
           $openWindowToggleBarValue.css('left', '18px');
-        }, 500 );
+        }, 1000 );
       case 2:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/3.jpg");
           $openWindowToggleBarValue.css('left', '30px');
-        }, 500 );
+        }, 1000 );
       case 3:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/4.jpg");
           $openWindowToggleBarValue.css('left', '43px');
-        }, 500 );
+        }, 1000 );
       case 4:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/5.jpg");
           $openWindowToggleBarValue.css('left', '56px');
-        }, 500 );
+        }, 1000 );
       case 5:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/6.jpg");
           $openWindowToggleBarValue.css('left', '70px');
-        }, 500 );
+        }, 1000 );
       case 6:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/7.jpg");
           $openWindowToggleBarValue.css('left', '83px');
-        }, 500 );
+        }, 1000 );
       case 7:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/8.jpg");
           $openWindowToggleBarValue.css('left', '97px');
-        }, 500 );
+        }, 1000 );
       case 8:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/9.jpg");
           $openWindowToggleBarValue.css('left', '110px');
-        }, 500 );
+        }, 1000 );
       case 9:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/10.jpg");
           $openWindowToggleBarValue.css('left', '122px');
-        }, 500 );
+        }, 1000 );
       case 10:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/11.jpg");
           $openWindowToggleBarValue.css('left', '136px');
-        }, 500 );
+        }, 1000 );
       case 11:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/12.jpg");
           $openWindowToggleBarValue.css('left', '150px');
-        }, 500 );
+        }, 1000 );
       case 12:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/13.jpg");
           $openWindowToggleBarValue.css('left', '163px');
-        }, 500 );
+        }, 1000 );
       case 13:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/14.jpg");
           $openWindowToggleBarValue.css('left', '176px');
-        }, 500 );
+        }, 1000 );
+        console.log(getNowFormatDate());
       case 14:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/15.jpg");
           $openWindowToggleBarValue.css('left', '190px');
-        }, 500 );
+        }, 1000 );
       case 15:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/16.jpg");
           $openWindowToggleBarValue.css('left', '203px');
-        }, 500 );
+        }, 1000 );
       case 16:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/17.jpg");
           $openWindowToggleBarValue.css('left', '216px');
-        }, 500 );
+        }, 1000 );
       case 17:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/18.jpg");
           $openWindowToggleBarValue.css('left', '229px');
-        }, 500 );
+        }, 1000 );
       case 18:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/19.jpg");
           $openWindowToggleBarValue.css('left', '242px');
-        }, 500 );
+        }, 1000 );
       case 19:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/19.jpg");
           $openWindowToggleBarValue.css('left', '255px');
-        }, 500 );
+        }, 1000 );
       case 20:
         setTimeout( function(){
           $windowImg.attr("src","/static/img/open_window_img/20.jpg");
           $openWindowToggleBarValue.css('left', '270px');
-        }, 500 );
+          $openWindowToggleBar.val(100)
+          $openWindowToggleBarValue.text(100 + '%');
+        }, 1000 );
+        console.log(getNowFormatDate());
         break;
       default:
     }
+    */
+
+    $windowImg.attr("src","/static/img/open_window_img/20.jpg");
+    $openWindowToggleBarValue.css('left', '270px');
+    $openWindowToggleBar.val(100)
+    $openWindowToggleBarValue.text(100 + '%');
 
 
     /* 开窗器 全开 */
@@ -2885,6 +2917,11 @@ $(document).ready(() => {
     console.log('点击开窗器 全关');
     console.log(currentOpenWindowMachineAddress);
 
+    $windowImg.attr("src","/static/img/open_window_img/1.jpg");
+    $openWindowToggleBarValue.css('left', '4px');
+    $openWindowToggleBar.val(0)
+    $openWindowToggleBarValue.text(0 + '%');
+
     /* 开窗器 全关 */
     $.getJSON($SCRIPT_ROOT + '/openwindowmachine/closewindowfull', {
       openWinowMachineAddress: currentOpenWindowMachineAddress,
@@ -2900,16 +2937,31 @@ $(document).ready(() => {
     console.log('点击开窗器 暂停');
     console.log(currentOpenWindowMachineAddress);
 
-    /* 开窗器 全关 */
+    /* 开窗器 暂停 */
     $.getJSON($SCRIPT_ROOT + '/openwindowmachine/stopwindow', {
       openWinowMachineAddress: currentOpenWindowMachineAddress,
     }, function(data) {
       console.log(data.result);
+
+      $.getJSON($SCRIPT_ROOT + '/openwindowmachine/getwindow', {
+        openWinowMachineAddress: currentOpenWindowMachineAddress,
+      }, function(data) {
+        console.log(data.result);
+        var num = parseInt(data.result/5);
+        var px = 4 + num * 13 + 'px';
+
+        $windowImg.attr("src","/static/img/open_window_img/"+ num +".jpg");
+        $openWindowToggleBarValue.css('left', px);
+        $openWindowToggleBar.val(data.result)
+        $openWindowToggleBarValue.text(data.result + '%');
+
+      });
+
     });
 
   });
 
-  /*点击开窗器 暂停*/
+  /*点击开窗器 反转*/
   $('#reverse-open-window-machine').on('click', ()=>{
 
     console.log('点击开窗器 反转');

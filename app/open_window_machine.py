@@ -292,6 +292,8 @@ def stop_window_macine():
     print("第一次收到消息 = " + reading_str)
 
 
+
+
     ser.close()
     return jsonify(result=1)
 

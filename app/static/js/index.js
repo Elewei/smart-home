@@ -565,6 +565,14 @@ $(document).ready(() => {
     let oneKeySwitchKeyOnImgPath = "/static/img/touch_switch/touch_switch_off.png";
     $videoOneKeySwitch.attr("src",oneKeySwitchKeyOnImgPath);
 
+    $.getJSON($SCRIPT_ROOT + '/switch/turnoff', {
+      deviceAddress: currentTouchSwitchAddress,
+      keypanel: 1,
+      key: 1,
+    }, function(data) {
+      console.log(data.result);
+    });
+
   });
 
   /* 点击二键触控开关一 - 开 */

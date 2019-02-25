@@ -1294,9 +1294,16 @@ $(document).ready(() => {
   /* 点击 智能窗帘 全开 */
   $curtainOpenFull.on('click', ()=>{
     console.log('点击 智能窗帘 全开');
-
     console.log(currentCurtainAddress);
 
+    $curtainToggleBar.val(100);
+    preImgPath = $curtainImg[0].src;
+    newImgPath = "/static/img/smart_curtain/20.jpg";
+    if (preImgPath != newImgPath) {
+      $curtainImg.attr("src",newImgPath);
+    }
+    $curtainToggleBarValue.text(100 + '%');
+    $curtainToggleBarValue.css('left', '387px');
     /* 开窗器 全开 */
     $.getJSON($SCRIPT_ROOT + '/curtain/opencurtainfull', {
       curtainAddress: currentCurtainAddress,
@@ -1308,8 +1315,16 @@ $(document).ready(() => {
 
   $curtainCloseFull.on('click', ()=>{
     console.log('点击 智能窗帘 全关');
-
     console.log(currentCurtainAddress);
+
+    $curtainToggleBar.val(0);
+    preImgPath = $curtainImg[0].src;
+    newImgPath = "/static/img/smart_curtain/01.jpg";
+    if (preImgPath != newImgPath) {
+      $curtainImg.attr("src",newImgPath);
+    }
+    $curtainToggleBarValue.text(0 + '%');
+    $curtainToggleBarValue.css('left', '126px');
 
     /* 开窗器 全开 */
     $.getJSON($SCRIPT_ROOT + '/curtain/closecurtainfull', {
@@ -1328,6 +1343,32 @@ $(document).ready(() => {
       curtainAddress: currentCurtainAddress,
     }, function(data) {
       console.log(data.result);
+
+      $.getJSON($SCRIPT_ROOT + '/curtain/getcurtain', {
+        curtainAddress: currentCurtainAddress,
+      }, function(data) {
+        console.log(data.result);
+        let num = parseInt(data.result/5);
+        px = 126 + 2.67 * data.result + 'px';
+        $curtainToggleBar.val(0);
+        preImgPath = $curtainImg[0].src;
+
+        if (num < 10) {
+          newImgPath = "/static/img/smart_curtain/0"+ num +".jpg";
+        } else {
+          newImgPath = "/static/img/smart_curtain/"+ num +".jpg";
+        }
+
+        if (preImgPath != newImgPath) {
+          $curtainImg.attr("src",newImgPath);
+        }
+
+        $curtainToggleBarValue.css('left', px);
+        $curtainToggleBarValue.text(data.result + '%');
+
+      });
+
+
     });
   });
 
@@ -2953,7 +2994,7 @@ $(document).ready(() => {
         $windowImg.attr("src","/static/img/open_window_img/"+ num +".jpg");
         $openWindowToggleBarValue.css('left', px);
         $openWindowToggleBar.val(data.result)
-        $openWindowToggleBarValue.text(data.result + '%');
+        $openWindowToggleBarValue.text(0 + '%');
 
       });
 

@@ -13,7 +13,7 @@ from . import packet
 # 创建一个 blueprint
 bp = Blueprint('airbox', __name__, url_prefix='/airbox')
 
-@bp.route('/')
+@bp.route('/getdata')
 def get_data():
 
     print("获取空气盒子数据")
@@ -32,16 +32,34 @@ def get_data():
     message_send_hex = bytes.fromhex(message_send)
     ser.write(message_send_hex)
 
-    reading = ser.read(20)
+    reading = ser.read(10)
     reading_str = ''.join(['%02x ' % b for b in reading])
-    # return Code 57 AB C0 01 00 00
+
+    # return Code 01 01 aa 50 c8 12 01 22 00 02
     # 57 AB stands for upload fix head
     # C0 code stands for set default frequency
     # 01 code stands data length
     # 00 code stands frequence Success
     # FF code stands frequence Failed
-    print("第一次收到消息 = " + reading_str)
+    print("收到消息 = " + reading_str)
+
+
+
+    fix_head = "01 01 aa 50"
+    if(reading_str.find(fix_head) >= 0):
+        start = len(fix_head) + reading_str.find(fix_head) + 1
+        currentHexVal =  reading_str[start:start + 20]
+        pm = int(currentHexVal[0:2],16)
+        co = int(currentHexVal[3:5],16)
+        co2 = int(currentHexVal[6:8],16)
+        hcho = int(currentHexVal[9:11],16)
+        temperature = int(currentHexVal[12:14],16)
+        humidity = int(currentHexVal[15:17],16)
+        tvoc = 0
+        ser.close()
+        print(pm, co, co2, hcho, temperature, humidity)
+        return jsonify(result=1, pm=pm, co=co, co2=co2, hcho=hcho, temperature=temperature, humidity=humidity, tvoc=tvoc)
 
     ser.close()
 
-    return jsonify(result=1)
+    return jsonify(result=0)

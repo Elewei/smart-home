@@ -1468,6 +1468,12 @@ input[type=range]::-moz-range-track {
   font-size: 12px;
 }
 
+.shangbiao {
+  font-size: 12px;
+  position: relative;
+  top: -5px;
+}
+
 #air-box-radar-chart {
   width: 100%;
   height: 100%;
@@ -2039,4 +2045,36 @@ select {
   -webkit-user-select:none;
   user-select:none;
   z-index: -10px;
+}
+
+.air-box-text {
+  width: 15px;
+  height: 15px;
+  font-size: 25px;
+  color: white;
+  #background-color: red;
+  position: relative;
+  z-index: 20;
+  top: 0px;
+  left: 360px;
+}
+
+.air-box-text-label {
+  width: 15px;
+  height: 15px;
+  font-size: 20px;
+  color: white;
+  #background-color: red;
+  position: relative;
+  z-index: 20;
+  top: 0px;
+  left: 360px;
+}
+
+.left-one-unit {
+  margin-left: 17px;
+}
+
+.left-two-unit {
+  margin-left: 26px;
 }

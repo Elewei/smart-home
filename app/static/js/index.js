@@ -1871,7 +1871,6 @@ $(document).ready(() => {
     $independantControlContent.show();
   });
 
-
   $touchSwitchContentBack.on('click', ()=>{
     console.log('返回独立控制页面');
     $smartControl.hide();
@@ -2258,8 +2257,12 @@ $(document).ready(() => {
 
   });
 
-  /*  */
+  /* 开窗器 鼠标松开 */
   $openWindowToggleBar.on('mouseup', ()=>{
+    console.log('滑动松开');
+    console.log($openWindowToggleBar.val());
+    let windowToggle = $openWindowToggleBar.val();
+
     /* 设置 开窗器 自由组合的值的变动 当前百分比 */
     $.getJSON($SCRIPT_ROOT + '/openwindowmachine/freewindow', {
       openWinowMachineAddress: currentOpenWindowMachineAddress,
@@ -2306,7 +2309,6 @@ $(document).ready(() => {
 
   });
 
-
   $dimmingLampToggleBar.on('input propertychange', ()=>{
     console.log(dimmingLampToggleBar.val());
     let dimmingLampToggle = dimmingLampToggleBar.val();
@@ -2329,7 +2331,6 @@ $(document).ready(() => {
     }
 
   });
-
 
   $curtainToggleBar.on('input propertychange', ()=>{
     console.log($curtainToggleBar.val());
@@ -2476,7 +2477,6 @@ $(document).ready(() => {
 
 
   });
-
 
   $curtainToggleBar.on('mouseup', ()=>{
     console.log("滑动松开");

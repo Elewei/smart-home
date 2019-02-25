@@ -2757,95 +2757,110 @@ $(document).ready(() => {
 
     switch (parseInt(windowToggle/5)) {
       case 0:
-        preImgPath = $windowImg[0].src;
-        newImgPath = "/static/img/open_window_img/1.jpg";
-        if (preImgPath != newImgPath) {
-          $windowImg.attr("src",newImgPath);
-        }
-        $openWindowToggleBarValue.css('left', '4px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/1.jpg");
+          $openWindowToggleBarValue.css('left', '4px');
+        }, 500 );
       case 1:
-        preImgPath = $windowImg[0].src;
-        newImgPath = "/static/img/open_window_img/2.jpg";
-        if (preImgPath != newImgPath) {
-          $windowImg.attr("src",newImgPath);
-        }
-        $openWindowToggleBarValue.css('left', '18px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/2.jpg");
+          $openWindowToggleBarValue.css('left', '18px');
+        }, 500 );
       case 2:
-        $windowImg.attr("src","/static/img/open_window_img/3.jpg");
-        console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '30px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/3.jpg");
+          $openWindowToggleBarValue.css('left', '30px');
+        }, 500 );
       case 3:
-        $windowImg.attr("src","/static/img/open_window_img/4.jpg");
-        console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '43px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/4.jpg");
+          $openWindowToggleBarValue.css('left', '43px');
+        }, 500 );
       case 4:
-        $windowImg.attr("src","/static/img/open_window_img/5.jpg");
-        console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '56px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/5.jpg");
+          $openWindowToggleBarValue.css('left', '56px');
+        }, 500 );
       case 5:
-        $windowImg.attr("src","/static/img/open_window_img/6.jpg");
-        console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '70px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/6.jpg");
+          $openWindowToggleBarValue.css('left', '70px');
+        }, 500 );
       case 6:
-        $windowImg.attr("src","/static/img/open_window_img/7.jpg");
-        console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '83px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/7.jpg");
+          $openWindowToggleBarValue.css('left', '83px');
+        }, 500 );
       case 7:
-        $windowImg.attr("src","/static/img/open_window_img/8.jpg");
-        console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '97px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/8.jpg");
+          $openWindowToggleBarValue.css('left', '97px');
+        }, 500 );
       case 8:
-        $windowImg.attr("src","/static/img/open_window_img/9.jpg");
-        console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '110px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/9.jpg");
+          $openWindowToggleBarValue.css('left', '110px');
+        }, 500 );
       case 9:
-        $windowImg.attr("src","/static/img/open_window_img/10.jpg");
-        $openWindowToggleBarValue.css('left', '122px');
-        console.log($windowImg[0].src);
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/10.jpg");
+          $openWindowToggleBarValue.css('left', '122px');
+        }, 500 );
       case 10:
-        $windowImg.attr("src","/static/img/open_window_img/11.jpg");
-        console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '136px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/11.jpg");
+          $openWindowToggleBarValue.css('left', '136px');
+        }, 500 );
       case 11:
-        $windowImg.attr("src","/static/img/open_window_img/12.jpg");
-        console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '150px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/12.jpg");
+          $openWindowToggleBarValue.css('left', '150px');
+        }, 500 );
       case 12:
-        $windowImg.attr("src","/static/img/open_window_img/12.jpg");
-        console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '163px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/13.jpg");
+          $openWindowToggleBarValue.css('left', '163px');
+        }, 500 );
       case 13:
-        $windowImg.attr("src","/static/img/open_window_img/13.jpg");
-        console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '176px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/14.jpg");
+          $openWindowToggleBarValue.css('left', '176px');
+        }, 500 );
       case 14:
-        $windowImg.attr("src","/static/img/open_window_img/14.jpg");
-        console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '190px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/15.jpg");
+          $openWindowToggleBarValue.css('left', '190px');
+        }, 500 );
       case 15:
-        $windowImg.attr("src","/static/img/open_window_img/15.jpg");
-        console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '203px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/16.jpg");
+          $openWindowToggleBarValue.css('left', '203px');
+        }, 500 );
       case 16:
-        $windowImg.attr("src","/static/img/open_window_img/16.jpg");
-        console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '216px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/17.jpg");
+          $openWindowToggleBarValue.css('left', '216px');
+        }, 500 );
       case 17:
-        $windowImg.attr("src","/static/img/open_window_img/17.jpg");
-        console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '229px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/18.jpg");
+          $openWindowToggleBarValue.css('left', '229px');
+        }, 500 );
       case 18:
-        $windowImg.attr("src","/static/img/open_window_img/18.jpg");
-        //console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '242px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/19.jpg");
+          $openWindowToggleBarValue.css('left', '242px');
+        }, 500 );
       case 19:
-        $windowImg.attr("src","/static/img/open_window_img/19.jpg");
-        //console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '255px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/19.jpg");
+          $openWindowToggleBarValue.css('left', '255px');
+        }, 500 );
       case 20:
-        $windowImg.attr("src","/static/img/open_window_img/20.jpg");
-        //console.log($windowImg[0].src);
-        $openWindowToggleBarValue.css('left', '270px');
+        setTimeout( function(){
+          $windowImg.attr("src","/static/img/open_window_img/20.jpg");
+          $openWindowToggleBarValue.css('left', '270px');
+        }, 500 );
         break;
       default:
     }

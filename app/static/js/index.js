@@ -2148,6 +2148,7 @@ $(document).ready(() => {
     console.log($openWindowToggleBar.val());
     let windowToggle = $openWindowToggleBar.val();
     $openWindowToggleBarValue.text(windowToggle + '%');
+
     if (windowToggle < 10) {
       let leftOffSet = 8 + 2.67 * windowToggle;
       leftOffSetVal = leftOffSet + 'px';
@@ -2752,11 +2753,113 @@ $(document).ready(() => {
     console.log('点击开窗器 全开');
     console.log(currentOpenWindowMachineAddress);
 
+    let windowToggle = $openWindowToggleBar.val();
+
+    switch (phaseInt(windowToggle/5)) {
+      case 0:
+        preImgPath = $windowImg[0].src;
+        newImgPath = "/static/img/open_window_img/1.jpg";
+        if (preImgPath != newImgPath) {
+          $windowImg.attr("src",newImgPath);
+        }
+        $openWindowToggleBarValue.css('left', '4px');
+      case 1:
+        preImgPath = $windowImg[0].src;
+        newImgPath = "/static/img/open_window_img/2.jpg";
+        if (preImgPath != newImgPath) {
+          $windowImg.attr("src",newImgPath);
+        }
+        $openWindowToggleBarValue.css('left', '18px');
+      case 2:
+        $windowImg.attr("src","/static/img/open_window_img/3.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '30px');
+      case 3:
+        $windowImg.attr("src","/static/img/open_window_img/4.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '43px');
+      case 4:
+        $windowImg.attr("src","/static/img/open_window_img/5.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '56px');
+      case 5:
+        $windowImg.attr("src","/static/img/open_window_img/6.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '70px');
+      case 6:
+        $windowImg.attr("src","/static/img/open_window_img/7.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '83px');
+      case 7:
+        $windowImg.attr("src","/static/img/open_window_img/8.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '97px');
+      case 8:
+        $windowImg.attr("src","/static/img/open_window_img/9.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '110px');
+      case 9:
+        $windowImg.attr("src","/static/img/open_window_img/10.jpg");
+        $openWindowToggleBarValue.css('left', '122px');
+        console.log($windowImg[0].src);
+      case 10:
+        $windowImg.attr("src","/static/img/open_window_img/11.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '136px');
+      case 11:
+        $windowImg.attr("src","/static/img/open_window_img/12.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '150px');
+      case 12:
+        $windowImg.attr("src","/static/img/open_window_img/12.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '163px');
+      case 13:
+        $windowImg.attr("src","/static/img/open_window_img/13.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '176px');
+      case 14:
+        $windowImg.attr("src","/static/img/open_window_img/14.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '190px');
+      case 15:
+        $windowImg.attr("src","/static/img/open_window_img/15.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '203px');
+      case 16:
+        $windowImg.attr("src","/static/img/open_window_img/16.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '216px');
+      case 17:
+        $windowImg.attr("src","/static/img/open_window_img/17.jpg");
+        console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '229px');
+      case 18:
+        $windowImg.attr("src","/static/img/open_window_img/18.jpg");
+        //console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '242px');
+      case 19:
+        $windowImg.attr("src","/static/img/open_window_img/19.jpg");
+        //console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '255px');
+      case 20:
+        $windowImg.attr("src","/static/img/open_window_img/20.jpg");
+        //console.log($windowImg[0].src);
+        $openWindowToggleBarValue.css('left', '270px');
+        break;
+      default:
+    }
+
+
     /* 开窗器 全开 */
     $.getJSON($SCRIPT_ROOT + '/openwindowmachine/openwindowfull', {
       openWinowMachineAddress: currentOpenWindowMachineAddress,
     }, function(data) {
       console.log(data.result);
+
+
+
+
     });
 
   });

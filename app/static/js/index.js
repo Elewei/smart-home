@@ -1350,9 +1350,8 @@ $(document).ready(() => {
         console.log(data.result);
         let num = parseInt(data.result/5);
         px = 126 + 2.67 * data.result + 'px';
-        $curtainToggleBar.val(0);
+        $curtainToggleBar.val(data.result);
         preImgPath = $curtainImg[0].src;
-
         if (num < 10) {
           newImgPath = "/static/img/smart_curtain/0"+ num +".jpg";
         } else {

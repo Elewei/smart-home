@@ -751,6 +751,17 @@
   margin-top: 40px;
 }
 
+.one-key-switch-disable {
+	width: 40%;
+	height: 70px;
+	background-color: grey;
+	opacity: 0.8;
+	position: absolute;
+	z-index: 20;
+	top: 240px;
+	left: 250px;
+}
+
 .switch-panel {
   width: 60px;
   height: 100%;
@@ -812,6 +823,18 @@
   height: 70px;
   #background-color: grey;
   margin-top: 40px;
+}
+
+
+.two-key-switch-disable {
+	width: 40%;
+	height: 70px;
+	background-color: grey;
+	opacity: 0.8;
+	position: absolute;
+	z-index: 20;
+	top: 350px;
+	left: 250px;
 }
 
 .two-key-panel {
@@ -884,6 +907,16 @@
   clear: both;
 }
 
+.three-key-switch-disable {
+	width: 40%;
+	height: 70px;
+	background-color: grey;
+	opacity: 0.8;
+	position: absolute;
+	z-index: 20;
+	top: 460px;
+	left: 250px;
+}
 
 .three-key-panel {
   width: 100px;

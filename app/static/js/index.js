@@ -2970,9 +2970,6 @@ $(document).ready(() => {
     }, function(data) {
       console.log(data.result);
 
-
-
-
     });
 
   });
@@ -3019,7 +3016,7 @@ $(document).ready(() => {
         $windowImg.attr("src","/static/img/open_window_img/"+ num +".jpg");
         $openWindowToggleBarValue.css('left', px);
         $openWindowToggleBar.val(data.result)
-        $openWindowToggleBarValue.text(0 + '%');
+        $openWindowToggleBarValue.text(data.result + '%');
 
       });
 

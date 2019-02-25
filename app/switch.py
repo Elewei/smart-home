@@ -201,7 +201,7 @@ def device_turn_off():
     keypanel = request.args.get('keypanel', 0, type=int)
     switchAddress = request.args.get('deviceAddress', 0, type=int)
     key = request.args.get('key', 0, type=int)
-    
+
     #Device Register
     # Step 1 Open the serial port
     ser = serial.Serial('/dev/ttyAMA0',230400)

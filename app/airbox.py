@@ -9,7 +9,6 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from app.db import get_db
 from . import packet
 
-DEVICE_ADDRESS = 91
 
 # 创建一个 blueprint
 bp = Blueprint('airbox', __name__, url_prefix='/airbox')
@@ -17,10 +16,7 @@ bp = Blueprint('airbox', __name__, url_prefix='/airbox')
 @bp.route('/')
 def get_data():
 
-    global DEVICE_ADDRESS
-
     print("获取空气盒子数据")
-
 
     #Device Register
     # Step 1 Open the serial port
@@ -48,4 +44,4 @@ def get_data():
 
     ser.close()
 
-    return jsonify(result=1, deviceID=deviceAddress)
+    return jsonify(result=1)

@@ -2755,7 +2755,7 @@ $(document).ready(() => {
 
     let windowToggle = $openWindowToggleBar.val();
 
-    switch (phaseInt(windowToggle/5)) {
+    switch (parseInt(windowToggle/5)) {
       case 0:
         preImgPath = $windowImg[0].src;
         newImgPath = "/static/img/open_window_img/1.jpg";

@@ -1466,7 +1466,7 @@ $(document).ready(() => {
       }, function(data) {
         console.log(data.result);
         if (data.result) {
-          console.log('PM Value' + pm);
+          console.log('PM Value' + data.pm);
           pm = data.pm;
           co = data.co;
           co2=data.co2;
@@ -1478,8 +1478,9 @@ $(document).ready(() => {
 
       });
     }
+    getAirBoxValue();
 
-    setInterval(getAirBoxValue(),1000);
+    setInterval(getAirBoxValue(),2 * 1000);
 
     $('#pmValue').text(pm);
     $('#coValue').text(co);

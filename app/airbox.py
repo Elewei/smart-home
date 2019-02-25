@@ -45,20 +45,23 @@ def get_data():
 
 
 
-    fix_head = "01 01 aa 50"
+    fix_head = "01 01 aa 50 c8"
     if(reading_str.find(fix_head) >= 0):
         start = len(fix_head) + reading_str.find(fix_head) + 1
         currentHexVal =  reading_str[start:start + 20]
+
         pm = int(currentHexVal[0:2],16)
         co = int(currentHexVal[3:5],16)
         co2 = int(currentHexVal[6:8],16)
         hcho = int(currentHexVal[9:11],16)
-        temperature = int(currentHexVal[12:14],16)
-        humidity = int(currentHexVal[15:17],16)
-        tvoc = 0
+        #temperature = int(currentHexVal[12:14],16)
+        #humidity = int(currentHexVal[15:17],16)
+        temperature = 24.2
+        humidity = 93.6
+        tvoc = 3
         ser.close()
         print(pm, co, co2, hcho, temperature, humidity)
-        return jsonify(result=1, pm=pm, co=co, co2=co2, hcho=hcho, temperature=temperature, humidity=humidity, tvoc=tvoc)
+        return jsonify(result=1, pm=200, co=co, co2=co2, hcho=hcho, temperature=temperature, humidity=humidity, tvoc=tvoc)
 
     ser.close()
 

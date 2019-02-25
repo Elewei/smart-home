@@ -1466,6 +1466,7 @@ $(document).ready(() => {
       }, function(data) {
         console.log(data.result);
         if (data.result) {
+          console.log('PM Value' + pm);
           pm = data.pm;
           co = data.co;
           co2=data.co2;

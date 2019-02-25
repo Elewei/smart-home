@@ -1482,13 +1482,17 @@ $(document).ready(() => {
 
     setInterval(getAirBoxValue(),2 * 1000);
 
-    $('#pmValue').text(pm);
-    $('#coValue').text(co);
-    $('#co2Value').text(co2);
-    $('#hchoValue').text(hcho);
-    $('#temperatureValue').text(temperature);
-    $('#humidityValue').text(humidity);
-    $('#tvocValue').text(tvoc);
+    //$('#pmValue').text(pm);
+    $('#pmValue').text(40);
+    $('#coValue').text(5);
+    $('#co2Value').text(70);
+    $('#hchoValue').text(0);
+    //$('#temperatureValue').text(temperature);
+    $('#temperatureValue').text(24.2);
+    //$('#humidityValue').text(humidity);
+    $('#humidityValue').text(93.6);
+    //$('#tvocValue').text(tvoc);
+    $('#tvocValue').text(3);
 
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('air-box-radar-chart'));
@@ -1556,12 +1560,13 @@ $(document).ready(() => {
         // },
         radar: {
             indicator: [
-              {name: 'PM2.5', max: 300},
-              {name: '甲醛', max: 250},
-              {name: 'TVOC', max: 300},
-              {name: 'CO2', max: 5},
-              {name: '湿度', max: 200},
-              {name: '温度', max: 100}
+              {name: 'PM2.5', max: 800},
+              {name: '甲醛', max: 500},
+              {name: 'TVOC', max: 500},
+              {name: 'CO', max: 20},
+              {name: 'CO2', max: 500},
+              {name: '湿度', max: 100},
+              {name: '温度', max: 70}
             ],
             shape: 'circle',
             splitNumber: 5,

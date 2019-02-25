@@ -79,6 +79,7 @@ $(document).ready(() => {
   const $deviceManageCard = $('.device-manage-card');
   const $airBoxContent = $('.air-box-content');
   const $registerPlug = $('#register-plug');
+  const $offPlug = $('#off-plug');
   const $smartCurtainContent = $('.smart-curtain-content');
   const $dimmingLampContent = $('.dimming-lamp-content');
   const $sceneControlContent = $('.scene-control-content');
@@ -168,7 +169,7 @@ $(document).ready(() => {
   const $smartPlugOffImg = $('#smart-plug-off-img');
   const $smartPlugOff = $('.smart-plug-off');
   const $smartPlugOn = $('.smart-plug-on');
-  const dimmingLampToggleBar = $('#dimming-lamp-toggle-bar');
+  const $dimmingLampToggleBar = $('#dimming-lamp-toggle-bar');
   const $dimmingLampToggleBarText = $('#dimming-lamp-toggle-bar-text');
   const $roomControlRoomDescText = $('#room-control-room-desc-text');
   const $roomControlMyRoom = $('#room-control-my-room');
@@ -404,8 +405,6 @@ $(document).ready(() => {
 
   });
 
-
-
   /* 设置向导 -> 用户设置-页面 左侧按钮 */
   $userSetupBasicInfoText.on('click', ()=>{
     console.log('设置向导 -> 用户设置-页面 左侧按钮 基本信息');
@@ -416,7 +415,6 @@ $(document).ready(() => {
     $userSetupChangePasswdOn.hide();
   });
 
-
   /* 设置向导 -> 用户设置-页面 左侧按钮 */
   $userSetupChangePasswdText.on('click', ()=>{
     console.log('设置向导 -> 用户设置-页面 左侧按钮 修改密码');
@@ -426,7 +424,6 @@ $(document).ready(() => {
     $userSetupChangePasswd.hide();
     $userSetupChangePasswdOn.show();
   });
-
 
   /* 点击 管理入口 -> 独立控制 -> 触控开关 */
   $touchSwitch.on('click', ()=>{
@@ -952,7 +949,7 @@ $(document).ready(() => {
     }
   }
 
-  /* 点击 管理入口 -> 设备管理 -> 注册/注销 */
+  /* 点击 管理入口 -> 设备管理 -> 注册/注销 添加设备 */
   $registerPlug.on('click', ()=> {
     console.log('点击注册按钮');
 
@@ -961,13 +958,14 @@ $(document).ready(() => {
     registerDeviceRoomVal = $('#register-device-room option:selected').val();
     registerDeviceRoomText =  $('#register-device-room option:selected').text();
 
-    console.log(registerDeviceNameVal);
-    console.log(registerDeviceNameText);
-    console.log(registerDeviceRoomVal);
-    console.log(registerDeviceRoomText);
+    //console.log(registerDeviceNameVal);
+    //console.log(registerDeviceNameText);
+    //console.log(registerDeviceRoomVal);
+    //console.log(registerDeviceRoomText);
 
     if(registerDeviceNameVal == "register-off-two-key-switch") {
       console.log('开始注册二键触控开关');
+
 
       $.getJSON($SCRIPT_ROOT + '/switch', {
         keypanel: 2,
@@ -977,7 +975,8 @@ $(document).ready(() => {
 
         if(data.result == 1) {
           console.log("设备注册成功");
-          let markup = "<tr><td>" + registerDeviceNameText + "</td><td>" + registerDeviceRoomText + "</td><td>" + data.deviceID + "</td></tr>";
+          deviceID = "10.1.1." + data.deviceID ;
+          let markup = "<tr id="+ deviceID +"><td>" + registerDeviceNameText + "</td><td>" + registerDeviceRoomText + "</td><td>" + deviceID + "</td></tr>";
           $("#device-manage-table-add-tbody").append(markup);
         }
 
@@ -1046,6 +1045,105 @@ $(document).ready(() => {
       });
     }
 
+
+  });
+
+  /* 点击 管理入口 -> 设备管理 -> 注册/注销 删除设备 */
+  $offPlug.on('click', ()=> {
+    console.log('点击注销按钮');
+
+    offRegisterDeviceNameVal = $('#register-device-name option:selected').val();
+    offRegisterDeviceNameText =  $('#register-device-name option:selected').text();
+    offRegisterDeviceRoomVal = $('#register-device-room option:selected').val();
+    offRegisterDeviceRoomText =  $('#register-device-room option:selected').text();
+    offRegisterDeviceAddress =  $('#off-register-address').val();
+
+    //console.log(registerDeviceNameVal);
+    //console.log(registerDeviceNameText);
+    //console.log(registerDeviceRoomVal);
+    //console.log(registerDeviceRoomText);
+    //console.log(offRegisterDeviceAddress);
+
+    if(offRegisterDeviceNameVal == "register-off-two-key-switch") {
+      console.log('开始删除二键触控开关');
+
+      $.getJSON($SCRIPT_ROOT + '/switch', {
+        keypanel: 2,
+        offRegisterDeviceName: offRegisterDeviceNameText,
+        offRegisterDeviceRoom: offRegisterDeviceRoomText,
+        offRegisterDeviceAddress: offRegisterDeviceAddress,
+      }, function(data) {
+
+        if(data.result == 1) {
+          console.log("设备删除成功");
+          //let markup = "<tr><td>" + registerDeviceNameText + "</td><td>" + registerDeviceRoomText + "</td><td>" + data.deviceID + "</td></tr>";
+          //$("#device-manage-table-add-tbody").append(markup);
+        }
+
+      });
+
+    } else if (offRegisterDeviceNameVal == "register-off-open-window-machine") {
+      console.log('开始注册开窗器');
+
+      $.getJSON($SCRIPT_ROOT + '/openwindowmachine', {
+        registerDeviceName: registerDeviceNameText,
+        registerDeviceRoom: registerDeviceRoomText,
+      }, function(data) {
+        if(data.result == 1) {
+          console.log("设备注册成功");
+          deviceID = "10.1.1." + data.deviceID ;
+          let markup = "<tr><td>" + registerDeviceNameText + "</td><td>" + registerDeviceRoomText + "</td><td>" + deviceID + "</td></tr>";
+          $("#device-manage-table-add-tbody").append(markup);
+          $('#register-device-address').text(deviceID);
+        }
+
+      });
+    } else if (offRegisterDeviceNameVal == "register-off-curtain") {
+      console.log('开始注册窗帘');
+      $.getJSON($SCRIPT_ROOT + '/curtain', {
+        registerDeviceName: registerDeviceNameText,
+        registerDeviceRoom: registerDeviceRoomText,
+      }, function(data) {
+        if(data.result == 1) {
+          console.log("设备注册成功");
+          deviceID = "10.1.1." + data.deviceID ;
+          let markup = "<tr><td>" + registerDeviceNameText + "</td><td>" + registerDeviceRoomText + "</td><td>" + deviceID + "</td></tr>";
+          $("#device-manage-table-add-tbody").append(markup);
+          $('#register-device-address').text(deviceID);
+        }
+
+      });
+    } else if (offRegisterDeviceNameVal == "register-off-smart-plug") {
+      console.log('开始注册智能插座');
+      $.getJSON($SCRIPT_ROOT + '/smartplug', {
+        registerDeviceName: registerDeviceNameText,
+        registerDeviceRoom: registerDeviceRoomText,
+      }, function(data) {
+        if(data.result == 1) {
+          console.log("设备注册成功");
+          deviceID = "10.1.1." + data.deviceID ;
+          let markup = "<tr><td>" + registerDeviceNameText + "</td><td>" + registerDeviceRoomText + "</td><td>" + deviceID + "</td></tr>";
+          $("#device-manage-table-add-tbody").append(markup);
+          $('#register-device-address').text(deviceID);
+        }
+
+      });
+    } else if (offRegisterDeviceNameVal == "register-off-one-key-switch") {
+      console.log('开始注册一键触控开关');
+      $.getJSON($SCRIPT_ROOT + '/switch', {
+        keypanel: 1,
+        registerDeviceName: registerDeviceNameText,
+        registerDeviceRoom: registerDeviceRoomText,
+      }, function(data) {
+
+        if(data.result == 1) {
+          console.log("设备注册成功");
+          let markup = "<tr><td>" + registerDeviceNameText + "</td><td>" + registerDeviceRoomText + "</td><td>" + data.deviceID + "</td></tr>";
+          $("#device-manage-table-add-tbody").append(markup);
+        }
+
+      });
+    }
 
   });
 
@@ -1120,7 +1218,6 @@ $(document).ready(() => {
 
   });
 
-
   /* 点击 智能控制 -> 独立控制 -> 窗帘   */
   $curtain.on('click', ()=>{
     console.log('点击打开窗帘页面');
@@ -1194,7 +1291,6 @@ $(document).ready(() => {
 
   });
 
-
   /* 点击 智能窗帘 全开 */
   $curtainOpenFull.on('click', ()=>{
     console.log('点击 智能窗帘 全开');
@@ -1235,7 +1331,6 @@ $(document).ready(() => {
     });
   });
 
-
   $curtainReverse.on('click', ()=>{
     console.log('点击窗帘 反转');
     console.log(currentCurtainAddress);
@@ -1248,7 +1343,6 @@ $(document).ready(() => {
     });
   });
 
-
   $curtainCheck.on('click', ()=>{
     console.log('点击窗帘 校准');
     console.log(currentCurtainAddress);
@@ -1260,7 +1354,6 @@ $(document).ready(() => {
       console.log(data.result);
     });
   });
-
 
   /* 点击 智能控制 -> 独立控制 -> 空气盒子   */
   $airBox.on('click', ()=>{
@@ -1682,7 +1775,7 @@ $(document).ready(() => {
     console.log('点击自定义模式');
   });
 
-  /*  */
+  /* 点击返回 */
   $deviceManageContentBack.on('click', ()=> {
     $smartControl.show();
     $smartControlOn.hide();
@@ -2041,16 +2134,17 @@ $(document).ready(() => {
   });
 
   /* 监听 开窗器 自由组合的值的变动 */
-  $openWindowToggleBar.on('click', ()=>{
+  $openWindowToggleBar.on('input propertychange', ()=>{
 
     // 开窗器 状态
+    /*
     $.getJSON($SCRIPT_ROOT + '/openwindowmachine/getwindow', {
       openWinowMachineAddress: currentOpenWindowMachineAddress,
     }, function(data) {
       console.log(data.result);
       var start = data.result;
     });
-
+    */
 
     console.log($openWindowToggleBar.val());
     let windowToggle = $openWindowToggleBar.val();
@@ -2069,148 +2163,113 @@ $(document).ready(() => {
       $openWindowToggleBarValue.css('left', leftOffSetVal);
     }
 
+    if (windowToggle == 0) {
+      console.log($windowImg[0].src);
+      preImgPath = $windowImg[0].src;
+      newImgPath = "/static/img/open_window_img/1.jpg";
+      if (preImgPath != newImgPath) {
+        $windowImg.attr("src",newImgPath);
+      }
+      $openWindowToggleBarValue.css('left', '4px');
+    } else if(windowToggle <= 5) {
+      preImgPath = $windowImg[0].src;
+      newImgPath = "/static/img/open_window_img/2.jpg";
+      if (preImgPath != newImgPath) {
+        $windowImg.attr("src",newImgPath);
+      }
+      $openWindowToggleBarValue.css('left', '18px');
+    }else if(windowToggle <= 10) {
+      $windowImg.attr("src","/static/img/open_window_img/3.jpg");
+      console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '30px');
+    }else if(windowToggle <= 15) {
+      $windowImg.attr("src","/static/img/open_window_img/4.jpg");
+      console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '43px');
+    }else if(windowToggle <= 20) {
+      $windowImg.attr("src","/static/img/open_window_img/5.jpg");
+      console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '56px');
+    }else if(windowToggle <= 25) {
+      $windowImg.attr("src","/static/img/open_window_img/6.jpg");
+      console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '70px');
+    }else if(windowToggle <= 30) {
+      $windowImg.attr("src","/static/img/open_window_img/7.jpg");
+      console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '83px');
+    }else if(windowToggle <= 35) {
+      $windowImg.attr("src","/static/img/open_window_img/8.jpg");
+      console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '97px');
+    }else if(windowToggle <= 40) {
+      $windowImg.attr("src","/static/img/open_window_img/9.jpg");
+      console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '110px');
+    }else if(windowToggle <= 45) {
+      $windowImg.attr("src","/static/img/open_window_img/10.jpg");
+      $openWindowToggleBarValue.css('left', '122px');
+      console.log($windowImg[0].src);
+    }else if(windowToggle <= 50) {
+      $windowImg.attr("src","/static/img/open_window_img/11.jpg");
+      console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '136px');
+    }else if(windowToggle <= 55) {
+      $windowImg.attr("src","/static/img/open_window_img/12.jpg");
+      console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '150px');
+    }else if(windowToggle <= 60) {
+      $windowImg.attr("src","/static/img/open_window_img/12.jpg");
+      console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '163px');
+    }else if(windowToggle <= 65) {
+      $windowImg.attr("src","/static/img/open_window_img/13.jpg");
+      console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '176px');
+    }else if(windowToggle <= 70) {
+      $windowImg.attr("src","/static/img/open_window_img/14.jpg");
+      console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '190px');
+    }else if(windowToggle <= 75) {
+      $windowImg.attr("src","/static/img/open_window_img/15.jpg");
+      console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '203px');
+    }else if(windowToggle <= 80) {
+      $windowImg.attr("src","/static/img/open_window_img/16.jpg");
+      console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '216px');
+    }else if(windowToggle <= 85) {
+      $windowImg.attr("src","/static/img/open_window_img/17.jpg");
+      console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '229px');
+    }else if(windowToggle <= 90) {
+      $windowImg.attr("src","/static/img/open_window_img/18.jpg");
+      //console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '242px');
+    }else if(windowToggle <= 95) {
+      $windowImg.attr("src","/static/img/open_window_img/19.jpg");
+      //console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '255px');
+    }else if(windowToggle <= 100) {
+      $windowImg.attr("src","/static/img/open_window_img/20.jpg");
+      //console.log($windowImg[0].src);
+      $openWindowToggleBarValue.css('left', '270px');
+    }
 
+  });
+
+  /*  */
+  $openWindowToggleBar.on('mouseup', ()=>{
     /* 设置 开窗器 自由组合的值的变动 当前百分比 */
     $.getJSON($SCRIPT_ROOT + '/openwindowmachine/freewindow', {
       openWinowMachineAddress: currentOpenWindowMachineAddress,
       freeToggleVal: windowToggle,
     }, function(data) {
       if(data.result != -1) {
-
-        /*
-        division = parseInt(windowToggle/5);
-
-        switch (division) {
-          case 0:
-          case 1:
-          case 2:
-          case 3:
-          case 4:
-          case 5:
-          case 6:
-          case 7:
-          case 8:
-          case 9:
-          case 10:
-          case 11:
-          case 12:
-          case 13:
-          case 14:
-          case 15:
-          case 16:
-          case 17:
-          case 18:
-          case 19:
-          case 20:
-            break;
-          default:
-        }
-        */
-        if (windowToggle == 0) {
-          console.log($windowImg[0].src);
-          preImgPath = $windowImg[0].src;
-          newImgPath = "/static/img/open_window_img/1.jpg";
-          if (preImgPath != newImgPath) {
-            $windowImg.attr("src",newImgPath);
-          }
-          $openWindowToggleBarValue.css('left', '4px');
-        } else if(windowToggle <= 5) {
-          preImgPath = $windowImg[0].src;
-          newImgPath = "/static/img/open_window_img/2.jpg";
-          if (preImgPath != newImgPath) {
-            $windowImg.attr("src",newImgPath);
-          }
-          $openWindowToggleBarValue.css('left', '18px');
-        }else if(windowToggle <= 10) {
-          $windowImg.attr("src","/static/img/open_window_img/3.jpg");
-          console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '30px');
-        }else if(windowToggle <= 15) {
-          $windowImg.attr("src","/static/img/open_window_img/4.jpg");
-          console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '43px');
-        }else if(windowToggle <= 20) {
-          $windowImg.attr("src","/static/img/open_window_img/5.jpg");
-          console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '56px');
-        }else if(windowToggle <= 25) {
-          $windowImg.attr("src","/static/img/open_window_img/6.jpg");
-          console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '70px');
-        }else if(windowToggle <= 30) {
-          $windowImg.attr("src","/static/img/open_window_img/7.jpg");
-          console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '83px');
-        }else if(windowToggle <= 35) {
-          $windowImg.attr("src","/static/img/open_window_img/8.jpg");
-          console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '97px');
-        }else if(windowToggle <= 40) {
-          $windowImg.attr("src","/static/img/open_window_img/9.jpg");
-          console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '110px');
-        }else if(windowToggle <= 45) {
-          $windowImg.attr("src","/static/img/open_window_img/10.jpg");
-          $openWindowToggleBarValue.css('left', '122px');
-          console.log($windowImg[0].src);
-        }else if(windowToggle <= 50) {
-          $windowImg.attr("src","/static/img/open_window_img/11.jpg");
-          console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '136px');
-        }else if(windowToggle <= 55) {
-          $windowImg.attr("src","/static/img/open_window_img/12.jpg");
-          console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '150px');
-        }else if(windowToggle <= 60) {
-          $windowImg.attr("src","/static/img/open_window_img/12.jpg");
-          console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '163px');
-        }else if(windowToggle <= 65) {
-          $windowImg.attr("src","/static/img/open_window_img/13.jpg");
-          console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '176px');
-        }else if(windowToggle <= 70) {
-          $windowImg.attr("src","/static/img/open_window_img/14.jpg");
-          console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '190px');
-        }else if(windowToggle <= 75) {
-          $windowImg.attr("src","/static/img/open_window_img/15.jpg");
-          console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '203px');
-        }else if(windowToggle <= 80) {
-          $windowImg.attr("src","/static/img/open_window_img/16.jpg");
-          console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '216px');
-        }else if(windowToggle <= 85) {
-          $windowImg.attr("src","/static/img/open_window_img/17.jpg");
-          console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '229px');
-        }else if(windowToggle <= 90) {
-          $windowImg.attr("src","/static/img/open_window_img/18.jpg");
-          //console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '242px');
-        }else if(windowToggle <= 95) {
-          $windowImg.attr("src","/static/img/open_window_img/19.jpg");
-          //console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '255px');
-        }else if(windowToggle <= 100) {
-          $windowImg.attr("src","/static/img/open_window_img/20.jpg");
-          //console.log($windowImg[0].src);
-          $openWindowToggleBarValue.css('left', '270px');
-        }
-
+        console.log('成功');
       }
     });
-
-
-
-
-
-
-
   });
-
-
 
   $roomControlContentBack.on('click', ()=> {
     $smartControl.hide();
@@ -2248,7 +2307,7 @@ $(document).ready(() => {
   });
 
 
-  dimmingLampToggleBar.on('input propertychange', ()=>{
+  $dimmingLampToggleBar.on('input propertychange', ()=>{
     console.log(dimmingLampToggleBar.val());
     let dimmingLampToggle = dimmingLampToggleBar.val();
 
@@ -2702,7 +2761,6 @@ $(document).ready(() => {
 
   });
 
-
   /*点击开窗器 全关*/
   $('#open-window-machine-close-full').on('click', ()=>{
 
@@ -2717,7 +2775,6 @@ $(document).ready(() => {
     });
 
   });
-
 
   /*点击开窗器 暂停*/
   $('#stop-open-window-machine').on('click', ()=>{
@@ -2764,9 +2821,6 @@ $(document).ready(() => {
 
   });
 
-
-
-
 });
 
 
@@ -2794,8 +2848,6 @@ function get_open_window_machine_address(deviceAddress) {
 
 }
 
-
-
 function get_curtain_address(deviceAddress) {
   console.log(deviceAddress);
   greenBackGroundImg = "url(/static/img/left_side_bar_green.png)";
@@ -2819,7 +2871,6 @@ function get_curtain_address(deviceAddress) {
   });
 
 }
-
 
 function get_smart_plug_address(deviceAddress) {
   console.log(deviceAddress);
@@ -2845,7 +2896,6 @@ function get_smart_plug_address(deviceAddress) {
 
 }
 
-
 function get_touch_switch_address(deviceAddress) {
   console.log(deviceAddress);
   greenBackGroundImg = "url(/static/img/left_side_bar_green.png)";
@@ -2869,34 +2919,3 @@ function get_touch_switch_address(deviceAddress) {
   });
 
 }
-
-
-
-/*
-function get_open_window_macine_status(){
-  console.log(currentOpenWindowMachineAddress);
-
-  // 开窗器 状态
-  $.getJSON($SCRIPT_ROOT + '/openwindowmachine/getwindow', {
-    openWinowMachineAddress: currentOpenWindowMachineAddress,
-  }, function(data) {
-    console.log(data.result);
-    $openWindowToggleBar = $('#open-window-toggle-bar');
-    $openWindowToggleBar.val(data.result);
-    console.log($('#open-window-toggle-bar').val());
-
-    });
-
-*/
-
-
-  //});
-
-
-
-
-//}
-
-// window.setInterval("get_open_window_macine_status()", 1000);
-
-//console.log(currentOpenWindowMachineAddress);

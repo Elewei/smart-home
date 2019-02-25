@@ -124,7 +124,7 @@ def device_registry():
 
     ser.close()
 
-    return jsonify(result=1, deviceID=reading_str)
+    return jsonify(result=1, deviceID=deviceAddress)
 
 
 
@@ -145,3 +145,19 @@ def get_touch_switch():
     print(jsonDevice)
 
     return jsonify(result=jsonDevice)
+
+
+@bp.route('/off')
+def device_off():
+
+    # 1 表示 1键触控开关
+    # 2 表示 2键触控开关
+    # 3 表示 3键触控开关
+    keypanel = request.args.get('keypanel', 0, type=int)
+    deviceName = request.args.get('registerDeviceName', 0, type=str)
+    deviceRoom = request.args.get('registerDeviceRoom', 0, type=str)
+
+    db = get_db()
+    db.execute('DELETE FROM post WHERE deviceAddress = ?', (deviceAddress,))
+
+    return jsonify(result=1)

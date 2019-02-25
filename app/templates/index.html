@@ -784,7 +784,7 @@
 
 						</td>
 						<td>
-							<button class="button-register" type="button" id="register-plug">注册</button>
+							<button id="register-plug" class="button-register" type="button">添加设备</button>
 						</td>
 					</tr>
 				</table>
@@ -798,7 +798,7 @@
 					</tr>
 					<tr>
 						<td>
-							<select>
+							<select id="off-register-name">
 								<option value="register-off-open-window-machine">开窗器</option>
 								<option value="register-off-curtain">窗帘</option>
 								<option value="register-off-touch-switch">触控开关</option>
@@ -808,7 +808,7 @@
 							</select>
 						</td>
 						<td>
-							<select>
+							<select id="off-register-room">
 								<option value="register-off-dinner-room">客厅</option>
 								<option value="register-off-first-room">主卧</option>
 								<option value="register-off-second-room">次卧</option>
@@ -817,9 +817,11 @@
 								<option value="register-off-other-room">其他房间</option>
 							</select>
 						</td>
-						<td>192.168.1.1</td>
 						<td>
-							<button class="button-off" type="button" id="off-plug">注销</button>
+							<input id="off-register-address" class = "input-text-custom" type="text" name="deviceAddress" placeholder="输入地址">
+						</td>
+						<td>
+							<button class="button-off" type="button" id="off-plug">删除设备</button>
 						</td>
 					</tr>
 				</table>

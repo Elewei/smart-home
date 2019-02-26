@@ -9,7 +9,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from app.db import get_db
 from . import packet
 
-DEVICE_ADDRESS = A0
+DEVICE_ADDRESS = 70
 
 # 创建一个 blueprint
 bp = Blueprint('smartplug', __name__, url_prefix='/smartplug')

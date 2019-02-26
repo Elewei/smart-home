@@ -61,7 +61,7 @@ def get_data():
         tvoc = 3
         ser.close()
         print(pm, co, co2, hcho, temperature, humidity)
-        return jsonify(result=1, pm=200, co=co, co2=co2, hcho=hcho, temperature=temperature, humidity=humidity, tvoc=tvoc)
+        return jsonify(result=1, pm=pm, co=co, co2=co2, hcho=hcho, temperature=temperature, humidity=humidity, tvoc=tvoc)
 
     ser.close()
 

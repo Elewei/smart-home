@@ -1430,6 +1430,50 @@ $(document).ready(() => {
   var tvoc = 0;
 
 
+  $('#air-box-data-refersh').on('click', ()=>{
+    console.log('点击刷新页面');
+
+    function getAirBoxValue() {
+      console.log('获取空气盒子数据');
+      /* 获取数据库中所有窗帘 */
+      $.getJSON($SCRIPT_ROOT + '/airbox/getdata', {
+        deviceType: 30,
+      }, function(data) {
+        console.log(data.result);
+        if (data.result) {
+          console.log('PM Value' + data.pm);
+          pm = data.pm;
+          co = data.co;
+          co2=data.co2;
+          hcho = data.hcho;
+          temperature = data.temperature;
+          humidity = data.humidity;
+          tvoc = data.tvoc;
+        }
+
+      });
+    }
+    getAirBoxValue();
+
+    $('#pmValue').text(pm);
+    $('#coValue').text(co);
+    $('#co2Value').text(co2);
+    $('#hchoValue').text(hcho);
+    //$('#pmValue').text(40);
+    //$('#coValue').text(5);
+    //$('#co2Value').text(70);
+    //$('#hchoValue').text(0);
+    //$('#temperatureValue').text(temperature);
+    $('#temperatureValue').text(93.6);
+    //$('#humidityValue').text(humidity);
+    $('#humidityValue').text(24.2);
+    //$('#tvocValue').text(tvoc);
+    $('#tvocValue').text(3);
+
+
+  });
+
+
   /* 点击 智能控制 -> 独立控制 -> 空气盒子   */
   $airBox.on('click', ()=>{
     console.log('点击打开空气盒子');
@@ -1482,7 +1526,7 @@ $(document).ready(() => {
 
     //setInterval(getAirBoxValue(),2 * 1000);
 
-    $('#pmValue').text(18);
+    $('#pmValue').text(pm);
     $('#coValue').text(co);
     $('#co2Value').text(co2);
     $('#hchoValue').text(hcho);

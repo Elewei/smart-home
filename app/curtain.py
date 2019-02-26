@@ -9,7 +9,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from app.db import get_db
 from . import packet
 
-DEVICE_ADDRESS = 61
+DEVICE_ADDRESS = 60
 
 # 创建一个 blueprint
 bp = Blueprint('curtain', __name__, url_prefix='/curtain')

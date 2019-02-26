@@ -1482,11 +1482,14 @@ $(document).ready(() => {
 
     //setInterval(getAirBoxValue(),2 * 1000);
 
-    //$('#pmValue').text(pm);
-    $('#pmValue').text(40);
-    $('#coValue').text(5);
-    $('#co2Value').text(70);
-    $('#hchoValue').text(0);
+    $('#pmValue').text(pm);
+    $('#coValue').text(co);
+    $('#co2Value').text(co2);
+    $('#hchoValue').text(hcho);
+    //$('#pmValue').text(40);
+    //$('#coValue').text(5);
+    //$('#co2Value').text(70);
+    //$('#hchoValue').text(0);
     //$('#temperatureValue').text(temperature);
     $('#temperatureValue').text(24.2);
     //$('#humidityValue').text(humidity);

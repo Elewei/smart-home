@@ -1482,7 +1482,7 @@ $(document).ready(() => {
 
     //setInterval(getAirBoxValue(),2 * 1000);
 
-    $('#pmValue').text(pm);
+    $('#pmValue').text(18);
     $('#coValue').text(co);
     $('#co2Value').text(co2);
     $('#hchoValue').text(hcho);
@@ -1491,9 +1491,9 @@ $(document).ready(() => {
     //$('#co2Value').text(70);
     //$('#hchoValue').text(0);
     //$('#temperatureValue').text(temperature);
-    $('#temperatureValue').text(24.2);
+    $('#temperatureValue').text(93.6);
     //$('#humidityValue').text(humidity);
-    $('#humidityValue').text(93.6);
+    $('#humidityValue').text(24.2);
     //$('#tvocValue').text(tvoc);
     $('#tvocValue').text(3);
 

@@ -105,8 +105,6 @@ def device_registry():
             (30, deviceName, deviceAddress, deviceRoom, 1)
         )
         db.commit()
-    else:
-        return jsonify(result=0)
 
     DEVICE_ADDRESS += 1
     # 修改通信频率 '55 AA C1 02 01 01'

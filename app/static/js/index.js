@@ -1480,7 +1480,7 @@ $(document).ready(() => {
     }
     getAirBoxValue();
 
-    setInterval(getAirBoxValue(),2 * 1000);
+    //setInterval(getAirBoxValue(),2 * 1000);
 
     //$('#pmValue').text(pm);
     $('#pmValue').text(40);

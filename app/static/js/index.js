@@ -6,22 +6,6 @@ var currentTouchSwitchAddress = 0;
 
 $(document).ready(() => {
 
-  /* 第二栏 定义 */
-  const $smartControl = $('.smart-control');
-  const $smartControlOn = $('.smart-control-on');
-  const $manageEntry = $('.manage-entry');
-  const $manageEntryOn = $('.manage-entry-on');
-  const $setGuide = $('.set-guide');
-  const $setGuideOn = $('.set-guide-on');
-  const $other = $('.other');
-  const $otherOn = $('.other-on');
-
-  /* 定义四个页面内容 Card */
-  const $smartHomeContent = $('.smart-control-content');
-  const $manageEntryContent = $('.manage-entry-content');
-  const $setGuideContent = $('.set-guide-content');
-  const $otherContent = $('.other-content');
-
   /* 智能控制 -> 独立控制页面 */
   const $independantLeftMyDeviceText = $('#independant-left-my-device-text');
   const $independantLeftExecLogText = $('#independant-left-exec-log-text');
@@ -31,10 +15,8 @@ $(document).ready(() => {
   const $leftSideButtomTwo = $('.left-side-buttom-two');
   const $leftSideButtomTwoOn = $('.left-side-buttom-two-on');
 
-  const $independantControl = $('.independant-control');
-  const $independantControlContent = $('.independant-control-content');
 
-  const $touchSwitchContent = $('.touch-switch-content');
+  
   const $smartPlug = $('.smart-plug');
   const $touchSwitch = $('.touch-switch');
 
@@ -61,7 +43,7 @@ $(document).ready(() => {
   const $threeKeyThreeSwitchOn = $('.three-key-three-switch-on');
   const $threeKeyThreeSwitchOff = $('.three-key-three-switch-off');
 
-  const $roomControl = $('.room-control');
+  
   const $roomControlContent = $('.room-control-content');
 
   const $deviceManageDeviceList = $('#device-manage-device-list');
@@ -72,23 +54,25 @@ $(document).ready(() => {
   const $deviceManageRegisterOffText = $('#device-manage-register-off-text');
 
   const $deviceManageContent = $('.device-manage-content');
-  const $smartPlugContent = $('.smart-plug-content');
+  
   const $deviceListPage = $('.device-list-page');
   const $registerOffPage = $('.register-off-page');
 
   const $deviceManageCard = $('.device-manage-card');
-  const $airBoxContent = $('.air-box-content');
+  
   const $registerPlug = $('#register-plug');
   const $offPlug = $('#off-plug');
-  const $smartCurtainContent = $('.smart-curtain-content');
-  const $dimmingLampContent = $('.dimming-lamp-content');
+  
+  
+  
+
   const $sceneControlContent = $('.scene-control-content');
 
   const $openWindowMachine = $('.open-window-machine');
   const $curtain = $('.curtain');
   const $airBox = $('.air-box');
   const $dimmingLamp = $('.dimming-lamp');
-  const $sceneControl = $('.scene-control');
+  
 
   const $userSetupContent = $('.user-setup-content');
   const $setGuideUserSetup = $('#set-guide-user-setup');
@@ -120,12 +104,8 @@ $(document).ready(() => {
   const $sceneControlSleepMode = $('#scene-control-sleep-mode');
   const $sceneControlCustomMode = $('#scene-control-custom-mode');
   const $deviceManageContentBack = $('#device-manage-content-back');
-  const $openWindowMachineContent = $('.open-window-machine-content');
-  const $openWindowMachineContentBack = $('#open-window-machine-content-back');
-  const $smartCurtainContentBack = $('#smart-curtain-content-back');
-  const $touchSwitchContentBack = $('#touch-switch-content-back');
-  const $airBoxContentBack = $('#air-box-content-back');
-  const $smartPlugContentBack = $('#smart-plug-content-back');
+
+
   const $manageEntryHomeManage = $('#manage-entry-home-manage');
   const $homeManageContent = $('.home-manage-content');
   const $homeManageHomeMamberText = $('#home-manage-home-mamber-text');
@@ -136,13 +116,13 @@ $(document).ready(() => {
   const $homeManageContentBack = $('#home-manage-content-back');
   const $manageEntryFreeGroup = $('#manage-entry-free-group');
   const $freeGroupContent = $('.free-group-content');
-  const $independantControlContentBack = $('#independant-control-content-back');
+  
   const $openWindowToggleBar = $('#open-window-toggle-bar');
   const $windowImg = $('#window-img');
   const $roomControlContentBack = $('#room-control-content-back');
   const $curtainToggleBar = $('#curtain-toggle-bar');
   const $curtainImg = $('#curtain-img');
-  const $dimmingLampContentBack = $('#dimming-lamp-content-back');
+  
 
   const $videoOneKeySwitch = $('#video-one-key-switch');
   const $videoTwoKeyOneSwitch = $('#video-two-key-one-switch');
@@ -187,7 +167,51 @@ $(document).ready(() => {
   const $curtainReverse = $('#curtain-reverse');
   const $curtainCheck = $('#curtain-check');
 
-  /* 点击智能控制 */
+
+  /* 第二栏 定义 */
+  const $smartControl = $('.smart-control');
+  const $smartControlOn = $('.smart-control-on');
+  const $manageEntry = $('.manage-entry');
+  const $manageEntryOn = $('.manage-entry-on');
+  const $setGuide = $('.set-guide');
+  const $setGuideOn = $('.set-guide-on');
+  const $other = $('.other');
+  const $otherOn = $('.other-on');
+
+  /* 定义四个主页面内容 */
+  const $smartHomeContent = $('.smart-control-content');
+  const $manageEntryContent = $('.manage-entry-content');
+  const $setGuideContent = $('.set-guide-content');
+  const $otherContent = $('.other-content');
+
+
+  /* 智能控制页面点击事件 定义 */
+  const $sceneControl = $('.scene-control');
+  const $roomControl = $('.room-control');
+  const $independantControl = $('.independant-control'); 
+  const $timeControl = $('.time-control'); 
+  const $voiceControl = $('.voice-control');
+  const $homeMonitor = $('.home-monitor');
+
+
+  /* 智能控制独立控制页面事件 定义 */
+  const $independantControlContent = $('.independant-control-content');
+  const $openWindowMachineContent = $('.open-window-machine-content');
+  const $touchSwitchContent = $('.touch-switch-content');
+  const $airBoxContent = $('.air-box-content');
+  const $smartPlugContent = $('.smart-plug-content');
+  const $smartCurtainContent = $('.smart-curtain-content');
+  const $dimmingLampContent = $('.dimming-lamp-content');
+
+  const $independantControlContentBack = $('#independant-control-content-back');
+  const $openWindowMachineContentBack = $('#open-window-machine-content-back');
+  const $touchSwitchContentBack = $('#touch-switch-content-back');
+  const $airBoxContentBack = $('#air-box-content-back');
+  const $smartCurtainContentBack = $('#smart-curtain-content-back');
+  const $smartPlugContentBack = $('#smart-plug-content-back');  
+  const $dimmingLampContentBack = $('#dimming-lamp-content-back');
+
+  /* 点击智能控制标题 */
   $smartControl.on('click', ()=>{
     $smartControl.hide();
     $smartControlOn.show();
@@ -224,7 +248,7 @@ $(document).ready(() => {
     $smartHomeContent.show();
   });
 
-  /* 点击管理入口 */
+  /* 点击管理入口标题 */
   $manageEntry.on('click', ()=>{
     $smartControl.show();
     $smartControlOn.hide();
@@ -261,7 +285,7 @@ $(document).ready(() => {
     $smartHomeContent.hide();
   });
 
-  /* 点击设置向导 */
+  /* 点击设置向导标题 */
   $setGuide.on('click', ()=>{
     $smartControl.show();
     $smartControlOn.hide();
@@ -292,7 +316,7 @@ $(document).ready(() => {
     $setGuideContent.show();
   });
 
-  /* 点击其他 */
+  /* 点击其他标题*/
   $other.on('click', ()=>{
     $smartControl.show();
     $smartControlOn.hide();
@@ -321,33 +345,12 @@ $(document).ready(() => {
     $setGuideContent.hide();
     $userSetupContent.hide();
     $otherContent.show();
-
   });
-
-  /* 点击独立控制 */
-  $independantControl.on('click', ()=>{
-    $smartControl.hide();
-    $smartControlOn.show();
-    $manageEntry.show();
-    $manageEntryOn.hide();
-    $setGuide.show();
-    $setGuideOn.hide();
-    $other.show();
-    $otherOn.hide();
-
-    $smartHomeContent.hide();
-    $manageEntryContent.hide();
-    $setGuideContent.hide();
-    $otherContent.hide();
-
-    $independantControlContent.show();
-
-  });
-
-  /* 点击智能控制 -> 情景控制  */
+  
+  /* 点击情景控制 -> 情景控制  */
   $sceneControl.on('click', ()=>{
     console.log('点击智能控制 -> 情景控制');
-
+    /* 显示智能控制标题 */
     $smartControl.hide();
     $smartControlOn.show();
     $manageEntry.show();
@@ -357,7 +360,7 @@ $(document).ready(() => {
     $other.show();
     $otherOn.hide();
 
-    /* 独立控制页面 */
+    /* 显示情景控制页面 */
     $independantControlContent.hide();
     $touchSwitchContent.hide();
     $deviceManageContent.hide();
@@ -402,8 +405,55 @@ $(document).ready(() => {
 
     $sceneControlMyScene.hide();
     $sceneControlExecLog.show();
-
   });
+
+  /* 点击 智能控制 -> 房间控制 */
+  $roomControl.on('click', ()=>{
+    console.log("点击房间控制");
+
+    $smartControl.hide();
+    $smartControlOn.show();
+    $manageEntry.show();
+    $manageEntryOn.hide();
+    $setGuide.show();
+    $setGuideOn.hide();
+    $other.show();
+    $otherOn.hide();
+
+    $smartHomeContent.hide();
+    $manageEntryContent.hide();
+    $setGuideContent.hide();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.show();
+  });
+
+  /* 点击 智能控制 -> 独立控制 */
+  $independantControl.on('click', ()=>{
+    $smartControl.hide();
+    $smartControlOn.show();
+    $manageEntry.show();
+    $manageEntryOn.hide();
+    $setGuide.show();
+    $setGuideOn.hide();
+    $other.show();
+    $otherOn.hide();
+
+    $smartHomeContent.hide();
+    $manageEntryContent.hide();
+    $setGuideContent.hide();
+    $otherContent.hide();
+
+    $independantControlContent.show();
+  });
+
 
   /* 设置向导 -> 用户设置-页面 左侧按钮 */
   $userSetupBasicInfoText.on('click', ()=>{
@@ -460,9 +510,6 @@ $(document).ready(() => {
       }
 
     });
-
-
-
   });
 
   /* 点击触控开关-左侧栏-我的设备 */
@@ -492,7 +539,6 @@ $(document).ready(() => {
     */
 
     console.log("touch switch");
-
   });
 
   /* 点击触控开关-左侧栏-执行记录 */
@@ -516,7 +562,6 @@ $(document).ready(() => {
 
 
     console.log("exec switch");
-
   });
 
   /* 点击一键触控开关 - 开 */
@@ -600,9 +645,6 @@ $(document).ready(() => {
     }, function(data) {
       console.log(data.result);
     });
-
-
-
   });
 
   /* 点击二键触控开关一 - 关 */
@@ -629,7 +671,6 @@ $(document).ready(() => {
     }, function(data) {
       console.log(data.result);
     });
-
   });
 
   /* 点击二键触控开关二 - 开 */
@@ -1311,10 +1352,6 @@ $(document).ready(() => {
       }
 
     });
-
-
-
-
   });
 
   /* 点击 智能窗帘 全开 */
@@ -1772,35 +1809,6 @@ $(document).ready(() => {
     }
 
 
-
-  });
-
-  /* 点击 房间控制 */
-  $roomControl.on('click', ()=>{
-    console.log("点击房间控制");
-
-    $smartControl.hide();
-    $smartControlOn.show();
-    $manageEntry.show();
-    $manageEntryOn.hide();
-    $setGuide.show();
-    $setGuideOn.hide();
-    $other.show();
-    $otherOn.hide();
-
-    $smartHomeContent.hide();
-    $manageEntryContent.hide();
-    $setGuideContent.hide();
-    $otherContent.hide();
-    $independantControlContent.hide();
-    $touchSwitchContent.hide();
-    $smartPlugContent.hide();
-    $smartCurtainContent.hide();
-    $dimmingLampContent.hide();
-    $airBoxContent.hide();
-    $deviceManageContent.hide();
-    $sceneControlContent.hide();
-    $roomControlContent.show();
 
   });
 

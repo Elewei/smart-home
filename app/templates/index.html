@@ -221,6 +221,151 @@
 				</div>
 		</div>
 
+		<!-- 智能控制->情景控制-页面 -->
+		<div class="scene-control-content hide">
+			<div class="left-side">
+				<div id="scene-control-left-side-buttom-one" class="left-side-buttom-one hide">
+
+				</div>
+
+				<div id="scene-control-left-side-buttom-one-on" class="left-side-buttom-one-on">
+
+				</div>
+
+				<div id="scene-control-left-side-buttom-two" class="left-side-buttom-two">
+
+				</div>
+
+				<div id="scene-control-left-sice-buttom-two-on" class="left-side-buttom-two-on hide">
+
+				</div>
+
+				<div class="buttom-text" id="scene-control-my-scene-text">
+					<p>我的情景</p>
+				</div>
+
+				<div class="buttom-text" id="scene-control-exec-log-text">
+					<p>执行记录</p>
+				</div>
+			</div>
+
+			<div id="scene-control-my-scene" class="right-side">
+				<div class="up">
+					<div id="scene-control-back-home-mode" class="up-first">
+						<img src="{{ url_for('static', filename='img/scene_control_back_home_mode.png') }}" alt="">
+					</div>
+					<div id="scene-control-dinner-mode" class="up-second">
+						<img src="{{ url_for('static', filename='img/scene_control_dinner_mode.png') }}" alt="">
+					</div>
+					<div id="scene-control-leave-home-mode" class="up-third">
+						<img src="{{ url_for('static', filename='img/scene_control_leave_home_mode.png') }}" alt="">
+					</div>
+				</div>
+
+				<div class="down">
+					<div id="scene-control-rain-mode" class="down-first">
+						<img src="{{ url_for('static', filename='img/scene_control_rain_mode.png') }}" alt="">
+					</div>
+					<div id="scene-control-sleep-mode" class="down-second">
+						<img src="{{ url_for('static', filename='img/scene_control_sleep_mode.png') }}" alt="">
+					</div>
+					<div id="scene-control-custom-mode" class="down-third">
+						<img src="{{ url_for('static', filename='img/scene_control_custom_mode.png') }}" alt="">
+					</div>
+				</div>
+			</div>
+
+			<div id="scene-control-exec-log" class="right-side hide">
+				<table class="device-manage-table">
+					<tr>
+						<th>设备名称</th>
+						<th>执行动作</th>
+					</tr>
+					<tr>
+						<td>插座</td>
+						<td>开</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="buttom">
+				<div class="apply">
+					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
+				</div>
+				<div id="scene-control-content-back" class="back">
+					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- 智能控制->房间控制-页面 -->
+		<div class="room-control-content hide">
+			<div class="left-side">
+				<div id="room-control-left-side-buttom-one" class="left-side-buttom-one hide">
+
+				</div>
+
+				<div id="room-control-left-side-buttom-one-on" class="left-side-buttom-one-on">
+
+				</div>
+
+				<div id="room-control-left-side-buttom-two" class="left-side-buttom-two">
+
+				</div>
+
+				<div id="room-control-left-side-buttom-two-on" class="left-side-buttom-two-on hide">
+
+				</div>
+
+				<div id="room-control-my-room-text" class="buttom-text buttom-text-top">
+					<p>我的房间</p>
+				</div>
+
+				<div id="room-control-room-desc-text" class="buttom-text buttom-text-top">
+					<p>房间描述</p>
+				</div>
+			</div>
+
+			<div id="room-control-my-room" class="right-side">
+				<div class="up">
+					<div class="open-window-machine living-room">
+						<img src="{{ url_for('static', filename='img/room_control_dinner_room.png') }}" alt="">
+					</div>
+					<div class="curtain">
+						<img src="{{ url_for('static', filename='img/room_control_first_room.png') }}" alt="">
+					</div>
+					<div class="touch-switch">
+						<img src="{{ url_for('static', filename='img/room_control_second_room.png') }}" alt="">
+					</div>
+				</div>
+
+				<div class="down">
+					<div class="air-box">
+						<img src="{{ url_for('static', filename='img/room_control_bath_room.png') }}" alt="">
+					</div>
+					<div class="smart-plug">
+						<img src="{{ url_for('static', filename='img/room_control_kitchen_room.png') }}" alt="">
+					</div>
+					<div class="dimming-lamp">
+						<img src="{{ url_for('static', filename='img/room_control_other_room.png') }}" alt="">
+					</div>
+				</div>
+			</div>
+
+			<div id="room-control-room-desc" class="right-side hide">
+
+			</div>
+
+			<div class="buttom">
+				<div class="apply">
+					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
+				</div>
+				<div id="room-control-content-back" class="back">
+					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
+				</div>
+			</div>
+		</div>
+
 		<!-- 智能控制->独立控制-页面 -->
 		<div class="independant-control-content hide">
 				<div class="left-side">
@@ -1094,74 +1239,6 @@
 			</div>
 		</div>
 
-		<!-- 智能控制->房间控制-页面 -->
-		<div class="room-control-content hide">
-			<div class="left-side">
-				<div id="room-control-left-side-buttom-one" class="left-side-buttom-one hide">
-
-				</div>
-
-				<div id="room-control-left-side-buttom-one-on" class="left-side-buttom-one-on">
-
-				</div>
-
-				<div id="room-control-left-side-buttom-two" class="left-side-buttom-two">
-
-				</div>
-
-				<div id="room-control-left-side-buttom-two-on" class="left-side-buttom-two-on hide">
-
-				</div>
-
-				<div id="room-control-my-room-text" class="buttom-text buttom-text-top">
-					<p>我的房间</p>
-				</div>
-
-				<div id="room-control-room-desc-text" class="buttom-text buttom-text-top">
-					<p>房间描述</p>
-				</div>
-			</div>
-
-			<div id="room-control-my-room" class="right-side">
-				<div class="up">
-					<div class="open-window-machine living-room">
-						<img src="{{ url_for('static', filename='img/room_control_dinner_room.png') }}" alt="">
-					</div>
-					<div class="curtain">
-						<img src="{{ url_for('static', filename='img/room_control_first_room.png') }}" alt="">
-					</div>
-					<div class="touch-switch">
-						<img src="{{ url_for('static', filename='img/room_control_second_room.png') }}" alt="">
-					</div>
-				</div>
-
-				<div class="down">
-					<div class="air-box">
-						<img src="{{ url_for('static', filename='img/room_control_bath_room.png') }}" alt="">
-					</div>
-					<div class="smart-plug">
-						<img src="{{ url_for('static', filename='img/room_control_kitchen_room.png') }}" alt="">
-					</div>
-					<div class="dimming-lamp">
-						<img src="{{ url_for('static', filename='img/room_control_other_room.png') }}" alt="">
-					</div>
-				</div>
-			</div>
-
-			<div id="room-control-room-desc" class="right-side hide">
-
-			</div>
-
-			<div class="buttom">
-				<div class="apply">
-					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
-				</div>
-				<div id="room-control-content-back" class="back">
-					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
-				</div>
-			</div>
-		</div>
-
 		<!-- 设置向导 -> 用户设置-页面 -->
 		<div class="user-setup-content hide">
 		  <div class="left-side">
@@ -1217,83 +1294,6 @@
 				</div>
 				<div class="back">
 					<p>返回</p>
-				</div>
-			</div>
-		</div>
-
-		<!-- 智能控制->情景控制-页面 -->
-		<div class="scene-control-content hide">
-			<div class="left-side">
-				<div id="scene-control-left-side-buttom-one" class="left-side-buttom-one hide">
-
-				</div>
-
-				<div id="scene-control-left-side-buttom-one-on" class="left-side-buttom-one-on">
-
-				</div>
-
-				<div id="scene-control-left-side-buttom-two" class="left-side-buttom-two">
-
-				</div>
-
-				<div id="scene-control-left-sice-buttom-two-on" class="left-side-buttom-two-on hide">
-
-				</div>
-
-				<div class="buttom-text" id="scene-control-my-scene-text">
-					<p>我的情景</p>
-				</div>
-
-				<div class="buttom-text" id="scene-control-exec-log-text">
-					<p>执行记录</p>
-				</div>
-			</div>
-
-			<div id="scene-control-my-scene" class="right-side">
-				<div class="up">
-					<div id="scene-control-back-home-mode" class="up-first">
-						<img src="{{ url_for('static', filename='img/scene_control_back_home_mode.png') }}" alt="">
-					</div>
-					<div id="scene-control-dinner-mode" class="up-second">
-						<img src="{{ url_for('static', filename='img/scene_control_dinner_mode.png') }}" alt="">
-					</div>
-					<div id="scene-control-leave-home-mode" class="up-third">
-						<img src="{{ url_for('static', filename='img/scene_control_leave_home_mode.png') }}" alt="">
-					</div>
-				</div>
-
-				<div class="down">
-					<div id="scene-control-rain-mode" class="down-first">
-						<img src="{{ url_for('static', filename='img/scene_control_rain_mode.png') }}" alt="">
-					</div>
-					<div id="scene-control-sleep-mode" class="down-second">
-						<img src="{{ url_for('static', filename='img/scene_control_sleep_mode.png') }}" alt="">
-					</div>
-					<div id="scene-control-custom-mode" class="down-third">
-						<img src="{{ url_for('static', filename='img/scene_control_custom_mode.png') }}" alt="">
-					</div>
-				</div>
-			</div>
-
-			<div id="scene-control-exec-log" class="right-side hide">
-				<table class="device-manage-table">
-					<tr>
-						<th>设备名称</th>
-						<th>执行动作</th>
-					</tr>
-					<tr>
-						<td>插座</td>
-						<td>开</td>
-					</tr>
-				</table>
-			</div>
-
-			<div class="buttom">
-				<div class="apply">
-					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
-				</div>
-				<div id="scene-control-content-back" class="back">
-					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
 				</div>
 			</div>
 		</div>

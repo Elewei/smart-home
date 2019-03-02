@@ -1606,17 +1606,17 @@ input[type=range]{
 }
 
 input[type=range]:focus {
-  outline: none; 
+  outline: none;
 }
 
 input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none; 
+  -webkit-appearance: none;
   height: 33px;
   width: 33px;
   border-radius: 100%;
   cursor: pointer;
   border-color: black;
-  margin-top: 3px; 
+  margin-top: 3px;
   background-image: url('/static/img/switch_key.png');
 }
 

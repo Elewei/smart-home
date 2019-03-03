@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS device;
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS scene;
+DROP TABLE IF EXISTS scene_action;
 
 CREATE TABLE device (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -18,11 +19,18 @@ CREATE TABLE user (
   password TEXT NOT NULL
 );
 
+
 CREATE TABLE scene (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  sceneName TEXT NOT NULL,
-  sceneBackground TEXT NOT NULL,
-  actionDevice TEXT,
+  sceneName TEXT UNIQUE NOT NULL,
+  sceneBackground TEXT NOT NULL
+);
+
+CREATE TABLE scene_action (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  actionDevice TEXT NOT NULL,
   actionRoom TEXT NOT NULL,
-  action TEXT NOT NULL,
+  action TEXT,
+  scene_id INTEGER,
+  FOREIGN KEY (scene_id) REFERENCES scene (id)
 );

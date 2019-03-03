@@ -580,16 +580,12 @@
   #background-color: pink;
 }
 
-.open-window-machine {
-  width: 33%;
-  height: 100%;
-  float: left;
-}
-
 .up-first {
-  width: 33%;
-  height: 100%;
+  width: 32%;
+  height: 95%;
   float: left;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 .up-first img {
@@ -597,30 +593,12 @@
   height: 100%;
 }
 
-.open-window-machine img {
-  width: 100%;
-  height: 100%;
-}
-
-.curtain {
-  width: 33%;
-  height: 100%;
-  float: left;
-  margin-left: 5px;
-  #background-color: blue;
-}
-
-.curtain img {
-  width: 100%;
-  height: 100%;
-}
-
 .up-second {
-  width: 33%;
-  height: 100%;
+  width: 32%;
+  height: 95%;
   float: left;
-  margin-left: 5px;
-  #background-color: blue;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .up-second img {
@@ -628,22 +606,12 @@
   height: 100%;
 }
 
-.touch-switch {
-  width: 33%;
-  height: 100%;
-  float: right;
-  #background-color: blue;
-}
-
-.touch-switch img {
-  width: 100%;
-  height: 100%;
-}
-
 .up-third {
-  width: 33%;
-  height: 100%;
+  width: 32%;
+  height: 95%;
   float: right;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 .up-third img {
@@ -654,26 +622,14 @@
 .down {
   width: 100%;
   height: calc(50% - 3px);
-  margin-top: 6px;
-  #background-color: pink;
-}
-
-.air-box {
-  width: 33%;
-  height: 100%;
-  float: left;
-  #background-color: blue;
-}
-
-.air-box img {
-  width: 100%;
-  height: 100%;
+  margin-top: 8px;
 }
 
 .down-first {
-  width: 33%;
-  height: 100%;
+  width: 32%;
+  height: 95%;
   float: left;
+  margin-left: 10px;
 }
 
 .down-first img {
@@ -681,24 +637,11 @@
   height: 100%;
 }
 
-.smart-plug {
-  width: 33%;
-  height: 100%;
-  float: left;
-  margin-left: 5px;
-  #background-color: blue;
-}
-
-.smart-plug img {
-  width: 100%;
-  height: 100%;
-}
-
 .down-second {
-  width: 33%;
-  height: 100%;
+  width: 32%;
+  height: 95%;
   float: left;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .down-second img {
@@ -706,22 +649,11 @@
   height: 100%;
 }
 
-.dimming-lamp {
-  width: 33%;
-  height: 100%;
-  float: right;
-  #background-color: blue;
-}
-
-.dimming-lamp img {
-  width: 100%;
-  height: 100%;
-}
-
 .down-third {
-  width: 33%;
-  height: 100%;
+  width: 32%;
+  height: 95%;
   float: right;
+  margin-right: 10px;
 }
 
 .down-third img {

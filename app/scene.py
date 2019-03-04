@@ -20,7 +20,7 @@ def scene_add():
 
     print("添加情景")
     error = None
-    sceneName = "情景1"
+    sceneName = "模式"
     sceneBackground = "default/path"
     db = get_db()
     
@@ -39,3 +39,33 @@ def scene_add():
 
 
     return jsonify(result=0)
+
+
+
+@bp.route('/getall')
+def scene_getall():
+
+    print("获取所有情景")
+
+    error = None
+
+    db = get_db()
+    
+    scenes = db.execute(
+        'SELECT sceneName FROM scene'
+    ).fetchall()
+
+    sceneList = []
+    
+    print(scenes)
+
+    for scene in scenes:
+        sceneList.append(scene[0])
+
+    print(sceneList)
+
+    jsonScene = json.dumps(sceneList, ensure_ascii=False)
+    print(jsonScene)
+
+
+    return jsonify(result=jsonScene)

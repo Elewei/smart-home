@@ -3,6 +3,7 @@ var currentOpenWindowMachineAddress = 0;
 var currentCurtainAddress = 0;
 var currentSmartPlugAddress = 0;
 var currentTouchSwitchAddress = 0;
+var currentSceneName = '';
 
 $(document).ready(() => {
 
@@ -15,10 +16,6 @@ $(document).ready(() => {
   const $leftSideButtomTwo = $('.left-side-buttom-two');
   const $leftSideButtomTwoOn = $('.left-side-buttom-two-on');
 
-
-  
-  const $smartPlug = $('.smart-plug');
-  const $touchSwitch = $('.touch-switch');
 
   const $touchSwitchText = $('#touch-switch-text');
   const $myDeviceOn = $('.my-device-on');
@@ -68,10 +65,7 @@ $(document).ready(() => {
 
   const $sceneControlContent = $('.scene-control-content');
 
-  const $openWindowMachine = $('.open-window-machine');
-  const $curtain = $('.curtain');
-  const $airBox = $('.air-box');
-  const $dimmingLamp = $('.dimming-lamp');
+
   
 
   const $userSetupContent = $('.user-setup-content');
@@ -132,9 +126,6 @@ $(document).ready(() => {
   const $videoThreeKeyTwoSwitch = $('#video-three-key-two-switch');
   const $videoThreeKeyThreeSwitch = $('#video-three-key-three-switch');
 
-  const $sceneManageContentBack = $('#scene-manage-content-back');
-  const $sceneManageContent = $('.scene-manage-content');
-  const $manageEntrySceneManage = $('#manage-entry-scene-manage');
   const $deviceClassficationContentBack = $('#device-classfication-content-back');
   const $deviceClassficationContent = $('.device-classfication-content');
   const $manageEntryDeviceClass = $('#manage-entry-device-class');
@@ -211,6 +202,20 @@ $(document).ready(() => {
   const $smartPlugContentBack = $('#smart-plug-content-back');  
   const $dimmingLampContentBack = $('#dimming-lamp-content-back');
 
+  const $openWindowMachine = $('.open-window-machine');
+  const $curtain = $('.curtain');
+  const $airBox = $('.air-box');
+  const $dimmingLamp = $('.dimming-lamp');
+  const $smartPlug = $('.smart-plug');
+  const $touchSwitch = $('.touch-switch');
+
+
+
+  /* 管理入口情景管理页面事件 定义 */
+  const $manageEntrySceneManage = $('#manage-entry-scene-manage');
+  const $sceneManageContentBack = $('#scene-manage-content-back');
+  const $sceneManageContent = $('.scene-manage-content');
+  
   /* 点击智能控制标题 */
   $smartControl.on('click', ()=>{
     $smartControl.hide();
@@ -1507,7 +1512,6 @@ $(document).ready(() => {
     //$('#tvocValue').text(tvoc);
     $('#tvocValue').text(3);
 
-
   });
 
 
@@ -1701,9 +1705,6 @@ $(document).ready(() => {
 
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
-
-
-
 
   });
 
@@ -2750,6 +2751,25 @@ $(document).ready(() => {
     $smartHomeContent.hide();
     $manageEntryContent.hide();
     $sceneManageContent.show();
+
+
+    $('#scene-manage-label-one').nextAll().remove();
+
+    /* 获取数据库中所有情景管理的名称 */
+    $.getJSON($SCRIPT_ROOT + '/scene/getall', {
+      deviceType: 10,
+    }, function(data) {
+      console.log(data.result);
+      let sceneName = JSON.parse(data.result);
+      for (let i = 0; i < sceneName.length; i++) {
+        console.log(sceneName[i]);
+        idVal = "scene-mamage-name" + i;
+        let markup = "<div id="+  idVal +" class='left-side-buttom' onclick='get_scene_name("+ "\"" + sceneName[i] + "\"" +")'><span class='left-side-text-label'>"+ sceneName[i] +"</span></div>";
+        $('#scene-manage-label-one').after(markup);
+      }
+
+    });
+
   });
 
   /* 返回管理入口页面 */
@@ -3253,4 +3273,28 @@ function get_touch_switch_address(deviceAddress) {
     }
   });
 
+}
+
+
+function get_scene_name(touchSceneName) {
+  console.log(touchSceneName);
+  greenBackGroundImg = "url(/static/img/left_side_bar_green.png)";
+  blueBackGroundImg =  "url(/static/img/left_side_bar_blue.png)";
+
+  /* 获取数据库中所有开窗器 */
+  $.getJSON($SCRIPT_ROOT + '/scene/getall', {
+    deviceType: 21,
+  }, function(data) {
+    let sceneName = JSON.parse(data.result);
+    for (let i = 0; i < sceneName.length; i ++) {
+      selector = '#scene-mamage-name' + i;
+      if (touchSceneName == sceneName[i]) {
+        console.log(selector);
+        $(selector).css('background-image', greenBackGroundImg);
+        currentSceneName = touchSceneName;
+      } else {
+        $(selector).css('background-image', blueBackGroundImg);
+      }
+    }
+  });
 }

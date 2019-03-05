@@ -98,7 +98,7 @@
 	  </div>
 
 		<!-- 智能控制-页面  -->
-	  <div class="smart-control-content">
+	  <div class="smart-control-content hide">
 	      <div class="first scene-control">
 					<img src="{{ url_for('static', filename='img/scene-control.png') }}">
 	      </div>
@@ -1008,10 +1008,10 @@
 		</div>
 
 		<!-- 管理入口->情景管理-页面 -->
-		<div class="scene-manage-content hide">
+		<div class="scene-manage-content">
 			<div class="left-side">				
 				<div id="scene-manage-label-one" class="left-side-buttom-one-on">
-					<span class="left-side-text-label-one">情景管理</span>
+					<span class="left-side-text-label-one">添加情景</span>
 				</div>
 
 			</div>
@@ -1019,7 +1019,7 @@
 			<div class="right-side">
 				<div class="scene-manage-first-line">
 					<span class="scene-name-label">情景名称： </span>
-					<input class="label-input" type="text" name="" value="阿毛的家">
+					<input id="scene-manage-scene-name-input" class="label-input" type="text" name="" value="" placeholder="添加情景名称">
 				</div>
 				<div class="scene-manage-second-line">
 					<span class="scene-name-label">情景图标：</span>
@@ -1027,8 +1027,9 @@
 				</div>
 				<div class="scene-manage-action">
 					<p class="scene-name-label ">执行动作:</p>
+					
 					<div class="scene-action-one">
-						<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						<img class="scene-action-one-add" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
 						<span class="scene-action-one-label">1</span>
 						<table class="scene-manage-action-table">
 							<tr>
@@ -1060,109 +1061,10 @@
 								</td>
 							</tr>
 						</table>
+						<img class="scene-action-one-delete" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						<span class="scene-action-one-delete-label">-</span>
 					</div>
-					<div class="scene-action-one">
-						<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						<span class="scene-action-one-label">1</span>
-						<table class="scene-manage-action-table">
-							<tr>
-								<td>
-									<select>
-										<option value="register-off-open-window-machine">开窗器</option>
-										<option value="register-off-curtain">窗帘</option>
-										<option value="register-off-touch-switch">触控开关</option>
-										<option value="register-off-air-box">空气盒子</option>
-										<option value="register-off-smart-plug">智能插座</option>
-										<option value="register-off-dimming-lamp">调光灯</option>
-									</select>
-								</td>
-								<td>
-									<select>
-										<option value="register-off-dinner-room">客厅</option>
-										<option value="register-off-first-room">主卧</option>
-										<option value="register-off-second-room">次卧</option>
-										<option value="register-off-bath-room">卫生间</option>
-										<option value="register-off-kitchen-room">厨房</option>
-										<option value="register-off-other-room">其他房间</option>
-									</select>
-								</td>
-								<td>
-									<select>
-										<option value="register-off-dinner-room">打开</option>
-										<option value="register-off-first-room">关闭</option>
-									</select>
-								</td>
-							</tr>
-						</table>
-					</div>
-					<div class="scene-action-one">
-						<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						<span class="scene-action-one-label">4</span>
-						<table class="scene-manage-action-table">
-							<tr>
-								<td>
-									<select>
-										<option value="register-off-open-window-machine">开窗器</option>
-										<option value="register-off-curtain">窗帘</option>
-										<option value="register-off-touch-switch">触控开关</option>
-										<option value="register-off-air-box">空气盒子</option>
-										<option value="register-off-smart-plug">智能插座</option>
-										<option value="register-off-dimming-lamp">调光灯</option>
-									</select>
-								</td>
-								<td>
-									<select>
-										<option value="register-off-dinner-room">客厅</option>
-										<option value="register-off-first-room">主卧</option>
-										<option value="register-off-second-room">次卧</option>
-										<option value="register-off-bath-room">卫生间</option>
-										<option value="register-off-kitchen-room">厨房</option>
-										<option value="register-off-other-room">其他房间</option>
-									</select>
-								</td>
-								<td>
-									<select>
-										<option value="register-off-dinner-room">打开</option>
-										<option value="register-off-first-room">关闭</option>
-									</select>
-								</td>
-							</tr>
-						</table>
-					</div>
-					<div class="scene-action-one">
-						<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						<span class="scene-action-one-label">+</span>
-						<table class="scene-manage-action-table">
-							<tr>
-								<td>
-									<select>
-										<option value="register-off-open-window-machine">开窗器</option>
-										<option value="register-off-curtain">窗帘</option>
-										<option value="register-off-touch-switch">触控开关</option>
-										<option value="register-off-air-box">空气盒子</option>
-										<option value="register-off-smart-plug">智能插座</option>
-										<option value="register-off-dimming-lamp">调光灯</option>
-									</select>
-								</td>
-								<td>
-									<select>
-										<option value="register-off-dinner-room">客厅</option>
-										<option value="register-off-first-room">主卧</option>
-										<option value="register-off-second-room">次卧</option>
-										<option value="register-off-bath-room">卫生间</option>
-										<option value="register-off-kitchen-room">厨房</option>
-										<option value="register-off-other-room">其他房间</option>
-									</select>
-								</td>
-								<td>
-									<select>
-										<option value="register-off-dinner-room">打开</option>
-										<option value="register-off-first-room">关闭</option>
-									</select>
-								</td>
-							</tr>
-						</table>
-					</div>
+					
 				</div>
 
 

@@ -1852,14 +1852,22 @@ input[type=range]::-moz-range-track {
 .scene-action-one {
   width: 60%;
   height: 40px;
-  #background-color: red;
   display: inline-block;
   margin-top: 10px;
 }
 
-.scene-action-one-img {
+.scene-action-one-add {
   width: 40px;
   height: 40px;
+}
+
+.scene-action-one-delete {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  top: -110px;
+  left: 465px;
 }
 
 .scene-action-one-label {
@@ -1870,11 +1878,21 @@ input[type=range]::-moz-range-track {
   left: -30px;
 }
 
+.scene-action-one-delete-label {
+  color: white;
+  font-size: 30px;
+  position: relative;
+  top: -107px;
+  left: 436px;  
+}
+
 .scene-manage-action-table {
   position: relative;
   top: -60px;
   height: 40px;
 }
+
+
 
 /* 管理入口 -> 情景管理 结束 */
 

@@ -3292,6 +3292,7 @@ function get_scene_name(touchSceneName) {
         console.log(selector);
         $(selector).css('background-image', greenBackGroundImg);
         currentSceneName = touchSceneName;
+        $('#scene-manage-scene-name-input').val(currentSceneName);
       } else {
         $(selector).css('background-image', blueBackGroundImg);
       }

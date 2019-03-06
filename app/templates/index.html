@@ -11,8 +11,8 @@
 
 <div class="main">
   <div class="wrap">
-		<!-- 第一栏  -->
-		<div class="top">
+	<!-- 第一栏  -->
+	<div class="top">
 			<!-- 头像与文字描述 -->
 			<div class="user-home">
 				<img src="{{ url_for('static', filename='img/avator.png') }}" alt="头像">
@@ -52,984 +52,1318 @@
 			</div>
 
 			<!-- ToDo: 如果已经登录，显示退出 -->
-	  </div>
+	</div>
 
-		<!-- 第二栏  -->
-	  <div class="header">
-			<!-- 智能控制（未点击）  -->
-			<div class="smart-control hide">
-				<img src="{{ url_for('static', filename='img/smart_control.png') }}">
-			</div>
-
-			<!-- 智能控制（点击）  -->
-			<div class="smart-control-on">
-				<img src="{{ url_for('static', filename='img/smart_control_on.png') }}">
-			</div>
-
-			<!-- 管理入口（未点击）  -->
-			<div class="manage-entry">
-				<img src="{{ url_for('static', filename='img/manage_entry.png') }}">
-			</div>
-
-			<!-- 管理入口（点击）  -->
-			<div class="manage-entry-on hide">
-				<img src="{{ url_for('static', filename='img/manage_entry_on.png') }}">
-			</div>
-
-			<!-- 设置向导（未点击）  -->
-			<div class="set-guide">
-				<img src="{{ url_for('static', filename='img/set_guide.png') }}">
-			</div>
-
-			<!-- 设置向导（点击）  -->
-			<div class="set-guide-on hide">
-				<img src="{{ url_for('static', filename='img/set_guide_on.png') }}">
-			</div>
-
-			<!-- 其他（未点击）  -->
-			<div class="other">
-				<img src="{{ url_for('static', filename='img/other.png') }}">
-			</div>
-
-			<!-- 其他（点击）  -->
-			<div class="other-on hide">
-				<img src="{{ url_for('static', filename='img/other_on.png') }}">
-			</div>
-	  </div>
-
-		<!-- 智能控制-页面  -->
-	  <div class="smart-control-content hide">
-	      <div class="first scene-control">
-					<img src="{{ url_for('static', filename='img/scene-control.png') }}">
-	      </div>
-	      <div class="second">
-	          <div class="second-one room-control">
-						  <img src="{{ url_for('static', filename='img/room-control.png') }}">
-	          </div>
-
-						<div class="second-two independant-control">
-							<img src="{{ url_for('static', filename='img/independant-control.png') }}">
-	          </div>
-	      </div>
-	      <div class="third">
-	          <div class="third-one time-control">
-							<img src="{{ url_for('static', filename='img/time-control.png') }}">
-	          </div>
-	          <div class="third-two voice-control">
-							<img src="{{ url_for('static', filename='img/voice-control.png') }}">
-	          </div>
-	      </div>
-	      <div class="fourth home-monitor">
-					<img src="{{ url_for('static', filename='img/home-monitor.png') }}">
-	      </div>
-	  </div>
-
-		<!-- 管理入口-页面  -->
-		<div class="manage-entry-content hide">
-				<div id="manage-entry-home-manage" class="first">
-					<img src="{{ url_for('static', filename='img/home_manage.png') }}">
-				</div>
-
-				<div id="" class="second">
-						<div class="second-one device-manage-card">
-							<img src="{{ url_for('static', filename='img/device_manage.png') }}">
-						</div>
-
-						<div id="manage-entry-device-class" class="second-two">
-							<img src="{{ url_for('static', filename='img/device_class.png') }}">
-						</div>
-				</div>
-
-				<div class="third">
-						<div id="manage-entry-scene-manage" class="third-one">
-							<img src="{{ url_for('static', filename='img/scene_manage.png') }}">
-						</div>
-						<div class="third-two">
-							<img src="{{ url_for('static', filename='img/gateway_manage.png') }}">
-						</div>
-				</div>
-
-				<div id="manage-entry-free-group" class="fourth">
-					<img src="{{ url_for('static', filename='img/free_group.png') }}">
-				</div>
+	<!-- 第二栏  -->
+    <div class="header">
+		<!-- 智能控制（未点击）  -->
+		<div class="smart-control hide">
+			<img src="{{ url_for('static', filename='img/smart_control.png') }}">
 		</div>
 
-		<!-- 设置向导-页面  -->
-		<div class="set-guide-content hide">
-				<div class="first">
-					<div class="first-one">
-						<img src="{{ url_for('static', filename='img/network_setup.png') }}">
-					</div>
-
-					<div class="first-two">
-						<img src="{{ url_for('static', filename='img/sleep_setup.png') }}">
-					</div>
-				</div>
-
-				<div class="second">
-						<div class="second-one" id="set-guide-user-setup">
-							<img src="{{ url_for('static', filename='img/user_setup.png') }}">
-						</div>
-
-						<div class="second-two">
-							<img src="{{ url_for('static', filename='img/assist_feature.png') }}">
-						</div>
-				</div>
-
-				<div class="third">
-						<div class="third-one">
-							<img src="{{ url_for('static', filename='img/display_setup.png') }}">
-						</div>
-						<div class="third-two">
-							<img src="{{ url_for('static', filename='img/initial_setup.png') }}">
-						</div>
-				</div>
-
-				<div class="fourth">
-						<div class="fourth-one voice-setup">
-							<img src="{{ url_for('static', filename='img/voice_setup.png') }}">
-						</div>
-
-						<div class="fourth-two other-setup">
-							<img src="{{ url_for('static', filename='img/other_setup.png') }}">
-						</div>
-				</div>
+		<!-- 智能控制（点击）  -->
+		<div class="smart-control-on">
+			<img src="{{ url_for('static', filename='img/smart_control_on.png') }}">
 		</div>
 
-		<!-- 其他-页面  -->
-		<div class="other-content hide">
-				<div class="first">
-					<img src="{{ url_for('static', filename='img/common_faq.png') }}">
-				</div>
-
-				<div class="second">
-						<div class="second-one">
-							<img src="{{ url_for('static', filename='img/contact_us.png') }}">
-						</div>
-				</div>
-
-				<div class="third">
-						<div class="third-one">
-							<img src="{{ url_for('static', filename='img/version.png') }}">
-						</div>
-				</div>
-
-				<div class="fourth">
-					<div class="fourth-one other-content-about-us">
-						<img src="{{ url_for('static', filename='img/about_us.png') }}">
-					</div>
-				</div>
+		<!-- 管理入口（未点击）  -->
+		<div class="manage-entry">
+			<img src="{{ url_for('static', filename='img/manage_entry.png') }}">
 		</div>
 
-		<!-- 智能控制->情景控制-页面 -->
-		<div class="scene-control-content hide">
+		<!-- 管理入口（点击）  -->
+		<div class="manage-entry-on hide">
+			<img src="{{ url_for('static', filename='img/manage_entry_on.png') }}">
+		</div>
+
+		<!-- 设置向导（未点击）  -->
+		<div class="set-guide">
+			<img src="{{ url_for('static', filename='img/set_guide.png') }}">
+		</div>
+
+		<!-- 设置向导（点击）  -->
+		<div class="set-guide-on hide">
+			<img src="{{ url_for('static', filename='img/set_guide_on.png') }}">
+		</div>
+
+		<!-- 其他（未点击）  -->
+		<div class="other">
+			<img src="{{ url_for('static', filename='img/other.png') }}">
+		</div>
+
+		<!-- 其他（点击）  -->
+		<div class="other-on hide">
+			<img src="{{ url_for('static', filename='img/other_on.png') }}">
+		</div>
+    </div>
+
+	<!-- 智能控制-页面  -->
+    <div class="smart-control-content">
+      <div class="first scene-control">
+				<img src="{{ url_for('static', filename='img/scene-control.png') }}">
+      </div>
+      <div class="second">
+          <div class="second-one room-control">
+					  <img src="{{ url_for('static', filename='img/room-control.png') }}">
+          </div>
+
+					<div class="second-two independant-control">
+						<img src="{{ url_for('static', filename='img/independant-control.png') }}">
+          </div>
+      </div>
+      <div class="third">
+          <div class="third-one time-control">
+						<img src="{{ url_for('static', filename='img/time-control.png') }}">
+          </div>
+          <div class="third-two voice-control">
+						<img src="{{ url_for('static', filename='img/voice-control.png') }}">
+          </div>
+      </div>
+      <div class="fourth home-monitor">
+				<img src="{{ url_for('static', filename='img/home-monitor.png') }}">
+      </div>
+    </div>
+
+	<!-- 管理入口-页面  -->
+	<div class="manage-entry-content hide">
+			<div id="manage-entry-home-manage" class="first">
+				<img src="{{ url_for('static', filename='img/home_manage.png') }}">
+			</div>
+
+			<div id="" class="second">
+					<div class="second-one device-manage-card">
+						<img src="{{ url_for('static', filename='img/device_manage.png') }}">
+					</div>
+
+					<div id="manage-entry-device-class" class="second-two">
+						<img src="{{ url_for('static', filename='img/device_class.png') }}">
+					</div>
+			</div>
+
+			<div class="third">
+					<div id="manage-entry-scene-manage" class="third-one">
+						<img src="{{ url_for('static', filename='img/scene_manage.png') }}">
+					</div>
+					<div class="third-two">
+						<img src="{{ url_for('static', filename='img/gateway_manage.png') }}">
+					</div>
+			</div>
+
+			<div id="manage-entry-free-group" class="fourth">
+				<img src="{{ url_for('static', filename='img/free_group.png') }}">
+			</div>
+	</div>
+
+	<!-- 设置向导-页面  -->
+	<div class="set-guide-content hide">
+			<div class="first">
+				<div class="first-one">
+					<img src="{{ url_for('static', filename='img/network_setup.png') }}">
+				</div>
+
+				<div class="first-two">
+					<img src="{{ url_for('static', filename='img/sleep_setup.png') }}">
+				</div>
+			</div>
+
+			<div class="second">
+					<div class="second-one" id="set-guide-user-setup">
+						<img src="{{ url_for('static', filename='img/user_setup.png') }}">
+					</div>
+
+					<div class="second-two">
+						<img src="{{ url_for('static', filename='img/assist_feature.png') }}">
+					</div>
+			</div>
+
+			<div class="third">
+					<div class="third-one">
+						<img src="{{ url_for('static', filename='img/display_setup.png') }}">
+					</div>
+					<div class="third-two">
+						<img src="{{ url_for('static', filename='img/initial_setup.png') }}">
+					</div>
+			</div>
+
+			<div class="fourth">
+					<div class="fourth-one voice-setup">
+						<img src="{{ url_for('static', filename='img/voice_setup.png') }}">
+					</div>
+
+					<div class="fourth-two other-setup">
+						<img src="{{ url_for('static', filename='img/other_setup.png') }}">
+					</div>
+			</div>
+	</div>
+
+	<!-- 其他-页面  -->
+	<div class="other-content hide">
+			<div class="first">
+				<img src="{{ url_for('static', filename='img/common_faq.png') }}">
+			</div>
+
+			<div class="second">
+					<div class="second-one">
+						<img src="{{ url_for('static', filename='img/contact_us.png') }}">
+					</div>
+			</div>
+
+			<div class="third">
+					<div class="third-one">
+						<img src="{{ url_for('static', filename='img/version.png') }}">
+					</div>
+			</div>
+
+			<div class="fourth">
+				<div class="fourth-one other-content-about-us">
+					<img src="{{ url_for('static', filename='img/about_us.png') }}">
+				</div>
+			</div>
+	</div>
+
+	<!-- 智能控制->情景控制-页面 -->
+	<div class="scene-control-content hide">
+		<div class="left-side">
+			<div id="scene-control-left-side-buttom-one" class="left-side-buttom-one hide">
+
+			</div>
+
+			<div id="scene-control-left-side-buttom-one-on" class="left-side-buttom-one-on">
+
+			</div>
+
+			<div id="scene-control-left-side-buttom-two" class="left-side-buttom-two">
+
+			</div>
+
+			<div id="scene-control-left-sice-buttom-two-on" class="left-side-buttom-two-on hide">
+
+			</div>
+
+			<div class="buttom-text" id="scene-control-my-scene-text">
+				<p>我的情景</p>
+			</div>
+
+			<div class="buttom-text" id="scene-control-exec-log-text">
+				<p>执行记录</p>
+			</div>
+		</div>
+
+		<div id="scene-control-my-scene" class="right-side">
+			<div class="up">
+				<div id="scene-control-back-home-mode" class="up-first">
+					<img src="{{ url_for('static', filename='img/scene_control_back_home_mode.png') }}" alt="">
+				</div>
+				<div id="scene-control-dinner-mode" class="up-second">
+					<img src="{{ url_for('static', filename='img/scene_control_dinner_mode.png') }}" alt="">
+				</div>
+				<div id="scene-control-leave-home-mode" class="up-third">
+					<img src="{{ url_for('static', filename='img/scene_control_leave_home_mode.png') }}" alt="">
+				</div>
+			</div>
+
+			<div class="down">
+				<div id="scene-control-rain-mode" class="down-first">
+					<img src="{{ url_for('static', filename='img/scene_control_rain_mode.png') }}" alt="">
+				</div>
+				<div id="scene-control-sleep-mode" class="down-second">
+					<img src="{{ url_for('static', filename='img/scene_control_sleep_mode.png') }}" alt="">
+				</div>
+				<div id="scene-control-custom-mode" class="down-third">
+					<img src="{{ url_for('static', filename='img/scene_control_custom_mode.png') }}" alt="">
+				</div>
+			</div>
+		</div>
+
+		<div id="scene-control-exec-log" class="right-side hide">
+			<table class="device-manage-table">
+				<tr>
+					<th>设备名称</th>
+					<th>执行动作</th>
+				</tr>
+				<tr>
+					<td>插座</td>
+					<td>开</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="buttom">
+			<div class="apply">
+				<p>应&nbsp&nbsp&nbsp&nbsp用</p>
+			</div>
+			<div id="scene-control-content-back" class="back">
+				<p>返&nbsp&nbsp&nbsp&nbsp回</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 智能控制->房间控制-页面 -->
+	<div class="room-control-content hide">
+		<div class="left-side">
+			<div id="room-control-left-side-buttom-one" class="left-side-buttom-one hide">
+
+			</div>
+
+			<div id="room-control-left-side-buttom-one-on" class="left-side-buttom-one-on">
+
+			</div>
+
+			<div id="room-control-left-side-buttom-two" class="left-side-buttom-two">
+
+			</div>
+
+			<div id="room-control-left-side-buttom-two-on" class="left-side-buttom-two-on hide">
+
+			</div>
+
+			<div id="room-control-my-room-text" class="buttom-text buttom-text-top">
+				<p>我的房间</p>
+			</div>
+
+			<div id="room-control-room-desc-text" class="buttom-text buttom-text-top">
+				<p>房间描述</p>
+			</div>
+		</div>
+
+		<div id="room-control-my-room" class="right-side">
+			<div class="up">
+				<div class="up-first living-room">
+					<img src="{{ url_for('static', filename='img/room_control_dinner_room.png') }}" alt="">
+				</div>
+				<div class="up-second">
+					<img src="{{ url_for('static', filename='img/room_control_first_room.png') }}" alt="">
+				</div>
+				<div class="up-third">
+					<img src="{{ url_for('static', filename='img/room_control_second_room.png') }}" alt="">
+				</div>
+			</div>
+
+			<div class="down">
+				<div class="down-first">
+					<img src="{{ url_for('static', filename='img/room_control_bath_room.png') }}" alt="">
+				</div>
+				<div class="down-second">
+					<img src="{{ url_for('static', filename='img/room_control_kitchen_room.png') }}" alt="">
+				</div>
+				<div class="down-third">
+					<img src="{{ url_for('static', filename='img/room_control_other_room.png') }}" alt="">
+				</div>
+			</div>
+		</div>
+
+		<div id="room-control-room-desc" class="right-side hide">
+
+		</div>
+
+		<div class="buttom">
+			<div class="apply">
+				<p>应&nbsp&nbsp&nbsp&nbsp用</p>
+			</div>
+			<div id="room-control-content-back" class="back">
+				<p>返&nbsp&nbsp&nbsp&nbsp回</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 智能控制->独立控制-页面 -->
+	<div class="independant-control-content hide">
 			<div class="left-side">
-				<div id="scene-control-left-side-buttom-one" class="left-side-buttom-one hide">
+				<div id="independant-left-side-buttom-one" class="left-side-buttom-one hide">
 
 				</div>
 
-				<div id="scene-control-left-side-buttom-one-on" class="left-side-buttom-one-on">
+				<div id="independant-left-side-buttom-one-on" class="left-side-buttom-one-on show">
 
 				</div>
 
-				<div id="scene-control-left-side-buttom-two" class="left-side-buttom-two">
+				<div id="independant-left-side-buttom-two" class="left-side-buttom-two show">
 
 				</div>
 
-				<div id="scene-control-left-sice-buttom-two-on" class="left-side-buttom-two-on hide">
+				<div id="independant-left-sice-buttom-two-on" class="left-side-buttom-two-on hide">
 
 				</div>
 
-				<div class="buttom-text" id="scene-control-my-scene-text">
-					<p>我的情景</p>
+				<div id="independant-left-my-device-text">
+					<p>我的设备</p>
 				</div>
 
-				<div class="buttom-text" id="scene-control-exec-log-text">
+				<div id="independant-left-exec-log-text">
 					<p>执行记录</p>
 				</div>
 			</div>
 
-			<div id="scene-control-my-scene" class="right-side">
+			<div class="right-side">
 				<div class="up">
-					<div id="scene-control-back-home-mode" class="up-first">
-						<img src="{{ url_for('static', filename='img/scene_control_back_home_mode.png') }}" alt="">
+					<div class="up-first open-window-machine">
+						<img src="{{ url_for('static', filename='img/open_window_machine.png') }}" alt="">
 					</div>
-					<div id="scene-control-dinner-mode" class="up-second">
-						<img src="{{ url_for('static', filename='img/scene_control_dinner_mode.png') }}" alt="">
+					<div class="up-second curtain">
+						<img src="{{ url_for('static', filename='img/indepandent_curtain.png') }}" alt="">
 					</div>
-					<div id="scene-control-leave-home-mode" class="up-third">
-						<img src="{{ url_for('static', filename='img/scene_control_leave_home_mode.png') }}" alt="">
+					<div class="up-third touch-switch">
+						<img src="{{ url_for('static', filename='img/indepandent_touch_switch.png') }}" alt="">
 					</div>
 				</div>
 
 				<div class="down">
-					<div id="scene-control-rain-mode" class="down-first">
-						<img src="{{ url_for('static', filename='img/scene_control_rain_mode.png') }}" alt="">
+					<div class="down-first air-box">
+						<img src="{{ url_for('static', filename='img/indepandent_air_box.png') }}" alt="">
 					</div>
-					<div id="scene-control-sleep-mode" class="down-second">
-						<img src="{{ url_for('static', filename='img/scene_control_sleep_mode.png') }}" alt="">
+					<div class="down-second smart-plug">
+						<img src="{{ url_for('static', filename='img/indepandent_smart_plug.png') }}" alt="">
 					</div>
-					<div id="scene-control-custom-mode" class="down-third">
-						<img src="{{ url_for('static', filename='img/scene_control_custom_mode.png') }}" alt="">
+					<div class="down-third dimming-lamp">
+						<img src="{{ url_for('static', filename='img/indepandent_dimming_lamp.png') }}" alt="">
 					</div>
 				</div>
-			</div>
-
-			<div id="scene-control-exec-log" class="right-side hide">
-				<table class="device-manage-table">
-					<tr>
-						<th>设备名称</th>
-						<th>执行动作</th>
-					</tr>
-					<tr>
-						<td>插座</td>
-						<td>开</td>
-					</tr>
-				</table>
 			</div>
 
 			<div class="buttom">
 				<div class="apply">
 					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
 				</div>
-				<div id="scene-control-content-back" class="back">
+				<div id="independant-control-content-back" class="back">
 					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
 				</div>
 			</div>
+	</div>
+
+	<!-- 智能控制->独立控制->开窗器-页面 -->
+	<div class="open-window-machine-content hide">
+	  <div class="left-side">
+			<div id="open-window-machine-label-one" class="left-side-buttom-one-on">
+				<span class="left-side-text-label-one">开窗器</span>
+			</div>
+			<!--
+			<div class="left-side-buttom"><span class="left-side-text-label">10.1.1.31</span></div>
+			-->
 		</div>
 
-		<!-- 智能控制->房间控制-页面 -->
-		<div class="room-control-content hide">
-			<div class="left-side">
-				<div id="room-control-left-side-buttom-one" class="left-side-buttom-one hide">
-
-				</div>
-
-				<div id="room-control-left-side-buttom-one-on" class="left-side-buttom-one-on">
-
-				</div>
-
-				<div id="room-control-left-side-buttom-two" class="left-side-buttom-two">
-
-				</div>
-
-				<div id="room-control-left-side-buttom-two-on" class="left-side-buttom-two-on hide">
-
-				</div>
-
-				<div id="room-control-my-room-text" class="buttom-text buttom-text-top">
-					<p>我的房间</p>
-				</div>
-
-				<div id="room-control-room-desc-text" class="buttom-text buttom-text-top">
-					<p>房间描述</p>
-				</div>
-			</div>
-
-			<div id="room-control-my-room" class="right-side">
-				<div class="up">
-					<div class="up-first living-room">
-						<img src="{{ url_for('static', filename='img/room_control_dinner_room.png') }}" alt="">
+		<div class="right-side">
+			<div class="switch-board">
+				<div class="curtain-first-line">
+					<div class="curtain-all_open">
+						<p>全开</p>
+						<img id="open-window-machine-open-full" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
 					</div>
-					<div class="up-second">
-						<img src="{{ url_for('static', filename='img/room_control_first_room.png') }}" alt="">
-					</div>
-					<div class="up-third">
-						<img src="{{ url_for('static', filename='img/room_control_second_room.png') }}" alt="">
+					<div class="curtain-all_close">
+						<p>全关</p>
+						<img id="open-window-machine-close-full" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
 					</div>
 				</div>
-
-				<div class="down">
-					<div class="down-first">
-						<img src="{{ url_for('static', filename='img/room_control_bath_room.png') }}" alt="">
+				<div class="curtain-second-line">
+					<div class="curtain-stop">
+						<p>停</p>
+						<img id="stop-open-window-machine" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
 					</div>
-					<div class="down-second">
-						<img src="{{ url_for('static', filename='img/room_control_kitchen_room.png') }}" alt="">
+					<div class="curtain-reverse">
+						<p>反转</p>
+						<img id="reverse-open-window-machine" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
 					</div>
-					<div class="down-third">
-						<img src="{{ url_for('static', filename='img/room_control_other_room.png') }}" alt="">
+				</div>
+				<div class="curtain-third-line">
+					<div id="check-open-window-machine" class="curtain-check">
+						<p>校准</p>
+						<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+					</div>
+				</div>
+				<div class="open-window-forth-line">
+					<div class="open-window-free-group">
+						<p>自由开合</p>
+						<div class="open-window-free-toggle">
+							<input type="range" id="open-window-toggle-bar" name="open-window-toggle-bar" step="1" min="0" max="100">
+							<span id="open-window-toggle-bar-value"></span>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<div id="room-control-room-desc" class="right-side hide">
-
+			<div class="video">
+				<img id = "window-img" src="/static/img/open_window_img/1.jpg" alt="">
 			</div>
-
-			<div class="buttom">
-				<div class="apply">
-					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
-				</div>
-				<div id="room-control-content-back" class="back">
-					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
-				</div>
-			</div>
+			<p class="video-text">演示动画</p>
 		</div>
 
-		<!-- 智能控制->独立控制-页面 -->
-		<div class="independant-control-content hide">
-				<div class="left-side">
-					<div id="independant-left-side-buttom-one" class="left-side-buttom-one hide">
-
-					</div>
-
-					<div id="independant-left-side-buttom-one-on" class="left-side-buttom-one-on show">
-
-					</div>
-
-					<div id="independant-left-side-buttom-two" class="left-side-buttom-two show">
-
-					</div>
-
-					<div id="independant-left-sice-buttom-two-on" class="left-side-buttom-two-on hide">
-
-					</div>
-
-					<div id="independant-left-my-device-text">
-						<p>我的设备</p>
-					</div>
-
-					<div id="independant-left-exec-log-text">
-						<p>执行记录</p>
-					</div>
-				</div>
-
-				<div class="right-side">
-					<div class="up">
-						<div class="up-first open-window-machine">
-							<img src="{{ url_for('static', filename='img/open_window_machine.png') }}" alt="">
-						</div>
-						<div class="up-second curtain">
-							<img src="{{ url_for('static', filename='img/indepandent_curtain.png') }}" alt="">
-						</div>
-						<div class="up-third touch-switch">
-							<img src="{{ url_for('static', filename='img/indepandent_touch_switch.png') }}" alt="">
-						</div>
-					</div>
-
-					<div class="down">
-						<div class="down-first air-box">
-							<img src="{{ url_for('static', filename='img/indepandent_air_box.png') }}" alt="">
-						</div>
-						<div class="down-second smart-plug">
-							<img src="{{ url_for('static', filename='img/indepandent_smart_plug.png') }}" alt="">
-						</div>
-						<div class="down-third dimming-lamp">
-							<img src="{{ url_for('static', filename='img/indepandent_dimming_lamp.png') }}" alt="">
-						</div>
-					</div>
-				</div>
-
-				<div class="buttom">
-					<div class="apply">
-						<p>应&nbsp&nbsp&nbsp&nbsp用</p>
-					</div>
-					<div id="independant-control-content-back" class="back">
-						<p>返&nbsp&nbsp&nbsp&nbsp回</p>
-					</div>
-				</div>
-		</div>
-
-		<!-- 智能控制->独立控制->开窗器-页面 -->
-		<div class="open-window-machine-content hide">
-		  <div class="left-side">
-				<div id="open-window-machine-label-one" class="left-side-buttom-one-on">
-					<span class="left-side-text-label-one">开窗器</span>
-				</div>
-				<!--
-				<div class="left-side-buttom"><span class="left-side-text-label">10.1.1.31</span></div>
-				-->
+		<div class="buttom">
+			<div class="apply">
+				<p>应&nbsp&nbsp&nbsp&nbsp用</p>
 			</div>
-
-			<div class="right-side">
-				<div class="switch-board">
-					<div class="curtain-first-line">
-						<div class="curtain-all_open">
-							<p>全开</p>
-							<img id="open-window-machine-open-full" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						</div>
-						<div class="curtain-all_close">
-							<p>全关</p>
-							<img id="open-window-machine-close-full" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						</div>
-					</div>
-					<div class="curtain-second-line">
-						<div class="curtain-stop">
-							<p>停</p>
-							<img id="stop-open-window-machine" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						</div>
-						<div class="curtain-reverse">
-							<p>反转</p>
-							<img id="reverse-open-window-machine" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						</div>
-					</div>
-					<div class="curtain-third-line">
-						<div id="check-open-window-machine" class="curtain-check">
-							<p>校准</p>
-							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						</div>
-					</div>
-					<div class="open-window-forth-line">
-						<div class="open-window-free-group">
-							<p>自由开合</p>
-							<div class="open-window-free-toggle">
-								<input type="range" id="open-window-toggle-bar" name="open-window-toggle-bar" step="1" min="0" max="100">
-								<span id="open-window-toggle-bar-value"></span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="video">
-					<img id = "window-img" src="/static/img/open_window_img/1.jpg" alt="">
-				</div>
-				<p class="video-text">演示动画</p>
-			</div>
-
-			<div class="buttom">
-				<div class="apply">
-					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
-				</div>
-				<div id="open-window-machine-content-back" class="back">
-					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
-				</div>
+			<div id="open-window-machine-content-back" class="back">
+				<p>返&nbsp&nbsp&nbsp&nbsp回</p>
 			</div>
 		</div>
+	</div>
 
-		<!-- 智能控制->独立控制->触控开关-页面 -->
-		<div class="touch-switch-content hide">
-		  <div class="left-side">
-				<div id="touch-switch-label-one" class="left-side-buttom-one-on">
-						<span class="left-side-text-label-one">触控开关</span>
-				</div>
-
+	<!-- 智能控制->独立控制->触控开关-页面 -->
+	<div class="touch-switch-content hide">
+	  <div class="left-side">
+			<div id="touch-switch-label-one" class="left-side-buttom-one-on">
+					<span class="left-side-text-label-one">触控开关</span>
 			</div>
 
-			<div class="right-side">
-				<div class="switch-board">
-					<!-- 一键触控开关 -->
-					<div class="one-key-switch">
-				  	<div class="switch-panel">
-							<img src="{{ url_for('static', filename='img/one_key_switch_panel.png') }}" alt="一键触控开关">
-				  	</div>
-						<div class="one-key-panel">
-							<div class="switch-bar">
-								<p>一键</p>
-								<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
-							</div>
-							<div class="one-key-switch-off hide" id="touch-one-key-switch-on">
-								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
-							</div>
-							<div class="one-key-switch-on" id="">
-								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
-							</div>
-						</div>
-					</div>
-
-					<div class="one-key-switch-disable hide">
-
-					</div>
-
-					<!-- 二键触控开关 -->
-					<div class="two-key-switch">
-						<div class="switch-panel">
-							<img src="{{ url_for('static', filename='img/two_key_switch_panel.png') }}" alt="二键触控开关">
-				  	</div>
-
-						<div class="one-key-panel">
-							<div class="switch-bar">
-								<p>一键</p>
-								<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
-							</div>
-							<div class="two-key-one-switch-on" id="two-one-switch-on">
-								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
-							</div>
-
-							<div class="two-key-one-switch-off hide" id="two-one-switch-off">
-								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
-							</div>
-						</div>
-
-						<div class="two-key-panel">
-							<div class="switch-bar">
-								<p>二键</p>
-								<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
-							</div>
-							<div class="two-key-two-switch-on" id="two-two-switch-on">
-								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
-							</div>
-							<div class="two-key-two-switch-off hide" id="two-two-switch-off">
-								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
-							</div>
-						</div>
-					</div>
-
-					<div class="two-key-switch-disable hide">
-
-					</div>
-
-					<div class="three-key-switch">
-						<div class="switch-panel">
-							<img src="{{ url_for('static', filename='img/three_key_switch_panel.png') }}" alt="一键触控开关">
-				  	</div>
-
-						<div class="one-key-panel">
-							<div class="switch-bar">
-								<p>一键</p>
-								<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
-							</div>
-							<div class="three-key-one-switch-on ">
-								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
-							</div>
-							<div class="three-key-one-switch-off hide">
-								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
-							</div>
-						</div>
-
-						<div class="two-key-panel">
-							<div class="switch-bar">
-								<p>二键</p>
-								<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
-							</div>
-
-							<div class="three-key-two-switch-off hide">
-								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
-							</div>
-							<div class="three-key-two-switch-on">
-								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
-							</div>
-						</div>
-
-						<div class="three-key-panel">
-							<div class="switch-bar">
-								<p>三键</p>
-								<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
-							</div>
-							<div class="three-key-three-switch-on">
-								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
-							</div>
-							<div class="three-key-three-switch-off hide">
-								<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
-							</div>
-						</div>
-						<div class="three-key-switch-disable hide">
-
-						</div>
-					</div>
-				</div>
-
-				<div class="video">
-					<img id="video-touch-switch-background-img" src="{{ url_for('static', filename='img/touch_switch/switch_background.png') }}" alt="">
-					<!-- 一键触控开关 图片-->
-					<img id="video-one-key-switch" class="hide" src="{{ url_for('static', filename='img/touch_switch/touch_switch_off.png') }}">
-					<!-- 二键触控开关 图片-->
-					<img id="video-two-key-one-switch" class="hide" src="{{ url_for('static', filename='img/touch_switch/multi_touch_switch_off.png') }}">
-					<img id="video-two-key-two-switch" class="hide" src="{{ url_for('static', filename='img/touch_switch/multi_touch_switch_off.png') }}">
-					<!-- 三键触控开关 图片-->
-					<img id="video-three-key-one-switch" class="hide" src="{{ url_for('static', filename='img/touch_switch/multi_touch_switch_off.png') }}">
-					<img id="video-three-key-two-switch" class="hide" src="{{ url_for('static', filename='img/touch_switch/multi_touch_switch_off.png') }}">
-					<img id="video-three-key-three-switch" class="hide" src="{{ url_for('static', filename='img/touch_switch/multi_touch_switch_off.png') }}">
-				</div>
-				<p class="video-text">演示动画</p>
-			</div>
-
-			<div class="buttom">
-				<div class="apply">
-					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
-				</div>
-				<div id="touch-switch-content-back" class="back">
-					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
-				</div>
-			</div>
 		</div>
 
-		<!-- 智能控制->独立控制->智能插座-页面 -->
-		<div class="smart-plug-content hide">
-		  <div class="left-side">
-				<div id="smart-plug-label-one" class="left-side-buttom-one-on">
-					<span class="left-side-text-label-one">智能插座</span>
-				</div>
-
-			</div>
-
-			<div class="right-side">
-				<div class="switch-board">
-					<div class="smart-plug-bar">
-						<div class="smart-plug-img">
-							<img src="{{ url_for('static', filename='img/smart_plug_panel.png') }}" alt="">
-						</div>
-						<div class="smart-plug-toggle">
+		<div class="right-side">
+			<div class="switch-board">
+				<!-- 一键触控开关 -->
+				<div class="one-key-switch">
+			  	<div class="switch-panel">
+						<img src="{{ url_for('static', filename='img/one_key_switch_panel.png') }}" alt="一键触控开关">
+			  	</div>
+					<div class="one-key-panel">
+						<div class="switch-bar">
+							<p>一键</p>
 							<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
 						</div>
-						<div class="smart-plug-on">
-							<img id="smart-plug-on-img" src="{{ url_for('static', filename='img/switch_key.png') }}" alt="">
+						<div class="one-key-switch-off hide" id="touch-one-key-switch-on">
+							<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
 						</div>
-						<div class="smart-plug-off hide">
-							<img id="smart-plug-off-img" src="{{ url_for('static', filename='img/switch_key.png') }}" alt="">
+						<div class="one-key-switch-on" id="">
+							<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
 						</div>
 					</div>
 				</div>
 
-				<div class="video">
-					<img id="smart-plug-img" src="{{ url_for('static', filename='img/touch_switch/smart_plug.png') }}" alt="">
-					<img id="smart-plug-toggle" src="{{ url_for('static', filename='img/touch_switch/smart_plug_off.png') }}" alt="">
+				<div class="one-key-switch-disable hide">
+
 				</div>
-				<p class="video-text">演示动画</p>
+
+				<!-- 二键触控开关 -->
+				<div class="two-key-switch">
+					<div class="switch-panel">
+						<img src="{{ url_for('static', filename='img/two_key_switch_panel.png') }}" alt="二键触控开关">
+			  	</div>
+
+					<div class="one-key-panel">
+						<div class="switch-bar">
+							<p>一键</p>
+							<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
+						</div>
+						<div class="two-key-one-switch-on" id="two-one-switch-on">
+							<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
+						</div>
+
+						<div class="two-key-one-switch-off hide" id="two-one-switch-off">
+							<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
+						</div>
+					</div>
+
+					<div class="two-key-panel">
+						<div class="switch-bar">
+							<p>二键</p>
+							<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
+						</div>
+						<div class="two-key-two-switch-on" id="two-two-switch-on">
+							<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
+						</div>
+						<div class="two-key-two-switch-off hide" id="two-two-switch-off">
+							<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
+						</div>
+					</div>
+				</div>
+
+				<div class="two-key-switch-disable hide">
+
+				</div>
+
+				<div class="three-key-switch">
+					<div class="switch-panel">
+						<img src="{{ url_for('static', filename='img/three_key_switch_panel.png') }}" alt="一键触控开关">
+			  	</div>
+
+					<div class="one-key-panel">
+						<div class="switch-bar">
+							<p>一键</p>
+							<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
+						</div>
+						<div class="three-key-one-switch-on ">
+							<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
+						</div>
+						<div class="three-key-one-switch-off hide">
+							<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
+						</div>
+					</div>
+
+					<div class="two-key-panel">
+						<div class="switch-bar">
+							<p>二键</p>
+							<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
+						</div>
+
+						<div class="three-key-two-switch-off hide">
+							<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
+						</div>
+						<div class="three-key-two-switch-on">
+							<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
+						</div>
+					</div>
+
+					<div class="three-key-panel">
+						<div class="switch-bar">
+							<p>三键</p>
+							<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
+						</div>
+						<div class="three-key-three-switch-on">
+							<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="开">
+						</div>
+						<div class="three-key-three-switch-off hide">
+							<img src="{{ url_for('static', filename='img/switch_key.png') }}" alt="关">
+						</div>
+					</div>
+					<div class="three-key-switch-disable hide">
+
+					</div>
+				</div>
 			</div>
 
-			<div class="buttom">
-				<div  class="apply">
-					<p>应用</p>
+			<div class="video">
+				<img id="video-touch-switch-background-img" src="{{ url_for('static', filename='img/touch_switch/switch_background.png') }}" alt="">
+				<!-- 一键触控开关 图片-->
+				<img id="video-one-key-switch" class="hide" src="{{ url_for('static', filename='img/touch_switch/touch_switch_off.png') }}">
+				<!-- 二键触控开关 图片-->
+				<img id="video-two-key-one-switch" class="hide" src="{{ url_for('static', filename='img/touch_switch/multi_touch_switch_off.png') }}">
+				<img id="video-two-key-two-switch" class="hide" src="{{ url_for('static', filename='img/touch_switch/multi_touch_switch_off.png') }}">
+				<!-- 三键触控开关 图片-->
+				<img id="video-three-key-one-switch" class="hide" src="{{ url_for('static', filename='img/touch_switch/multi_touch_switch_off.png') }}">
+				<img id="video-three-key-two-switch" class="hide" src="{{ url_for('static', filename='img/touch_switch/multi_touch_switch_off.png') }}">
+				<img id="video-three-key-three-switch" class="hide" src="{{ url_for('static', filename='img/touch_switch/multi_touch_switch_off.png') }}">
+			</div>
+			<p class="video-text">演示动画</p>
+		</div>
+
+		<div class="buttom">
+			<div class="apply">
+				<p>应&nbsp&nbsp&nbsp&nbsp用</p>
+			</div>
+			<div id="touch-switch-content-back" class="back">
+				<p>返&nbsp&nbsp&nbsp&nbsp回</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 智能控制->独立控制->智能插座-页面 -->
+	<div class="smart-plug-content hide">
+	  <div class="left-side">
+			<div id="smart-plug-label-one" class="left-side-buttom-one-on">
+				<span class="left-side-text-label-one">智能插座</span>
+			</div>
+
+		</div>
+
+		<div class="right-side">
+			<div class="switch-board">
+				<div class="smart-plug-bar">
+					<div class="smart-plug-img">
+						<img src="{{ url_for('static', filename='img/smart_plug_panel.png') }}" alt="">
+					</div>
+					<div class="smart-plug-toggle">
+						<img src="{{ url_for('static', filename='img/touch_switch.png') }}" alt="">
+					</div>
+					<div class="smart-plug-on">
+						<img id="smart-plug-on-img" src="{{ url_for('static', filename='img/switch_key.png') }}" alt="">
+					</div>
+					<div class="smart-plug-off hide">
+						<img id="smart-plug-off-img" src="{{ url_for('static', filename='img/switch_key.png') }}" alt="">
+					</div>
 				</div>
-				<div id="smart-plug-content-back" class="back">
-					<p>返回</p>
+			</div>
+
+			<div class="video">
+				<img id="smart-plug-img" src="{{ url_for('static', filename='img/touch_switch/smart_plug.png') }}" alt="">
+				<img id="smart-plug-toggle" src="{{ url_for('static', filename='img/touch_switch/smart_plug_off.png') }}" alt="">
+			</div>
+			<p class="video-text">演示动画</p>
+		</div>
+
+		<div class="buttom">
+			<div  class="apply">
+				<p>应用</p>
+			</div>
+			<div id="smart-plug-content-back" class="back">
+				<p>返回</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 智能控制->独立控制->智能窗帘-页面 -->
+	<div class="smart-curtain-content hide">
+	  <div class="left-side">
+
+			<div id="curtain-label-one" class="left-side-buttom-one-on">
+				<span class="left-side-text-label-one">智能窗帘</span>
+			</div>
+
+		</div>
+
+		<div class="right-side">
+			<div class="switch-board">
+				<div class="curtain-first-line">
+					<div class="curtain-all_open">
+						<p>全开</p>
+						<img id="curtain-open-full" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+					</div>
+					<div class="curtain-all_close">
+						<p>全关</p>
+						<img id="curtain-close-full" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+					</div>
 				</div>
+				<div class="curtain-second-line">
+					<div class="curtain-stop">
+						<p>停</p>
+						<img id="curtain-stop" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+					</div>
+					<div id="curtain-reverse" class="curtain-reverse">
+						<p>反转</p>
+						<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+					</div>
+				</div>
+				<div class="curtain-third-line">
+					<div id="curtain-check" class="curtain-check">
+						<p>校准</p>
+						<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+					</div>
+				</div>
+				<div class="curtain-forth-line">
+					<div class="crutain-free-group">
+						<p>自由开合</p>
+						<div class="curtain-free-toggle">
+							<input type="range" id="curtain-toggle-bar" name="curtain-toggle-bar" min="0" max="100" step="5">
+						</div>
+						<span id="curtain-toggle-bar-value"></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="video">
+				<img id="curtain-img" src="{{ url_for('static', filename='img/smart_curtain/01.jpg') }}" alt="">
+			</div>
+			<p class="video-text">演示动画</p>
+		</div>
+
+		<div class="buttom">
+			<div  class="apply">
+				<p>应&nbsp&nbsp&nbsp&nbsp用</p>
+			</div>
+			<div id="smart-curtain-content-back" class="back">
+				<p>返&nbsp&nbsp&nbsp&nbsp回</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 智能控制->独立控制->调光灯-页面 -->
+	<div class="dimming-lamp-content hide">
+	  <div class="left-side">
+			<div class="left-side-buttom-one-on">
+			</div>
+
+			<div id="dimming-lamp-left-side-text" class="buttom-text buttom-text-one">
+				<p>调光灯</p>
 			</div>
 		</div>
 
-		<!-- 智能控制->独立控制->智能窗帘-页面 -->
-		<div class="smart-curtain-content hide">
-		  <div class="left-side">
-
-				<div id="curtain-label-one" class="left-side-buttom-one-on">
-					<span class="left-side-text-label-one">智能窗帘</span>
+		<div class="right-side">
+			<div class="switch-board">
+				<div class="curtain-first-line">
+					<div class="curtain-all_open">
+						<p>全开</p>
+						<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+					</div>
 				</div>
-
+				<div class="curtain-second-line">
+					<div class="curtain-stop">
+						<p>停</p>
+						<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+					</div>
+				</div>
+				<div class="curtain-forth-line">
+					<div class="dimming-lamp-free-group">
+						<p>自由调控</p>
+						<div class="dimming-lamp-toggle">
+							<input type="range" id="dimming-lamp-toggle-bar" name="curtain-toggle-bar" min="0" max="100" step="1">
+						</div>
+						<span id="dimming-lamp-toggle-bar-text">10%</span>
+					</div>
+				</div>
 			</div>
 
-			<div class="right-side">
-				<div class="switch-board">
-					<div class="curtain-first-line">
-						<div class="curtain-all_open">
-							<p>全开</p>
-							<img id="curtain-open-full" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						</div>
-						<div class="curtain-all_close">
-							<p>全关</p>
-							<img id="curtain-close-full" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						</div>
-					</div>
-					<div class="curtain-second-line">
-						<div class="curtain-stop">
-							<p>停</p>
-							<img id="curtain-stop" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						</div>
-						<div id="curtain-reverse" class="curtain-reverse">
-							<p>反转</p>
-							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						</div>
-					</div>
-					<div class="curtain-third-line">
-						<div id="curtain-check" class="curtain-check">
-							<p>校准</p>
-							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						</div>
-					</div>
-					<div class="curtain-forth-line">
-						<div class="crutain-free-group">
-							<p>自由开合</p>
-							<div class="curtain-free-toggle">
-								<input type="range" id="curtain-toggle-bar" name="curtain-toggle-bar" min="0" max="100" step="5">
-							</div>
-							<span id="curtain-toggle-bar-value"></span>
-						</div>
-					</div>
-				</div>
+			<div class="video">
+				<img src="{{ url_for('static', filename='img/dimming_lamp.png') }}" alt="">
+			</div>
+			<p class="video-text" >演示动画</p>
+		</div>
 
-				<div class="video">
-					<img id="curtain-img" src="{{ url_for('static', filename='img/smart_curtain/01.jpg') }}" alt="">
-				</div>
-				<p class="video-text">演示动画</p>
+		<div class="buttom">
+			<div class="apply">
+				<p>应&nbsp&nbsp&nbsp&nbsp用</p>
+			</div>
+			<div id="dimming-lamp-content-back" class="back">
+				<p>返&nbsp&nbsp&nbsp&nbsp回</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 智能控制->独立控制->空气盒子-页面 -->
+	<div class="air-box-content hide">
+	  <div class="left-side">
+			<div class="left-side-buttom-one-on">
 			</div>
 
-			<div class="buttom">
-				<div  class="apply">
-					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
-				</div>
-				<div id="smart-curtain-content-back" class="back">
-					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
-				</div>
+			<div id="air-box-left-side-text" class="buttom-text buttom-text-one">
+				<p>空气盒子</p>
 			</div>
 		</div>
 
-		<!-- 智能控制->独立控制->调光灯-页面 -->
-		<div class="dimming-lamp-content hide">
-		  <div class="left-side">
-				<div class="left-side-buttom-one-on">
+		<div class="right-side">
+			<div class="switch-board">
+				<div class="air-box-line">
+					<p>PM2.5</p>
+					<input type="range" name="" value="">
+					<span id="pmValue" class="air-box-text"></span>
+					<span class="air-box-text-label">ug/m<span class="shangbiao">3<span></span>
 				</div>
-
-				<div id="dimming-lamp-left-side-text" class="buttom-text buttom-text-one">
-					<p>调光灯</p>
+				<div class="air-box-line">
+					<p>甲醛</p>
+					<input type="range" name="" value="">
+					<span id="hchoValue" class="air-box-text left-one-unit"></span>
+					<span class="air-box-text-label">ppb</span>
+				</div>
+				<div class="air-box-line">
+					<p>TVOC</p>
+					<input type="range" name="" value="">
+					<span id="tvocValue" class="air-box-text"></span>
+					<span class="air-box-text-label">ppb</span>
+				</div>
+				<div class="air-box-line">
+					<p>CO<span class="xiabiao">2</span></p>
+					<input type="range" name="" value="">
+					<span id="co2Value" class="air-box-text left-one-unit"></span>
+					<span class="air-box-text-label">ppm</span>
+				</div>
+				<div class="air-box-line">
+					<p>CO</p>
+					<input type="range" name="" value="">
+					<span id="coValue" class="air-box-text left-two-unit"></span>
+					<span class="air-box-text-label">ppm</span>
+				</div>
+				<div class="air-box-line">
+					<p>湿度</p>
+					<input type="range" name="" value="">
+					<span id="temperatureValue" class="air-box-text left-one-unit"></span>
+					<span class="air-box-text-label">%RH</span>
+				</div>
+				<div class="air-box-line">
+					<p>温度</p>
+					<input type="range" name="" value="">
+					<span id="humidityValue" class="air-box-text left-one-unit"></span>
+					<span class="air-box-text-label">℃</span>
 				</div>
 			</div>
 
-			<div class="right-side">
-				<div class="switch-board">
-					<div class="curtain-first-line">
-						<div class="curtain-all_open">
-							<p>全开</p>
-							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						</div>
-					</div>
-					<div class="curtain-second-line">
-						<div class="curtain-stop">
-							<p>停</p>
-							<img src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						</div>
-					</div>
-					<div class="curtain-forth-line">
-						<div class="dimming-lamp-free-group">
-							<p>自由调控</p>
-							<div class="dimming-lamp-toggle">
-								<input type="range" id="dimming-lamp-toggle-bar" name="curtain-toggle-bar" min="0" max="100" step="1">
-							</div>
-							<span id="dimming-lamp-toggle-bar-text">10%</span>
-						</div>
-					</div>
-				</div>
+			<div class="video">
+				<div id="air-box-radar-chart">
 
-				<div class="video">
-					<img src="{{ url_for('static', filename='img/dimming_lamp.png') }}" alt="">
 				</div>
-				<p class="video-text" >演示动画</p>
+			</div>
+			<p class="video-text">演示动画</p>
+		</div>
+
+		<div class="buttom">
+			<div id='air-box-data-refersh' class="apply">
+				<p>刷&nbsp&nbsp&nbsp&nbsp新</p>
+			</div>
+			<div id="air-box-content-back" class="back">
+				<p>返&nbsp&nbsp&nbsp&nbsp回</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 管理入口->设备管理-页面 -->
+	<div class="device-manage-content hide">
+		<div class="left-side">
+			<div id="device-manage-device-list" class="left-side-buttom-one hide">
 			</div>
 
-			<div class="buttom">
-				<div class="apply">
-					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
-				</div>
-				<div id="dimming-lamp-content-back" class="back">
-					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
-				</div>
+			<div id="device-manage-device-list-on" class="left-side-buttom-one-on">
+			</div>
+
+			<div id="device-manage-register-off" class="left-side-buttom-two">
+			</div>
+
+			<div id="device-manage-register-off-on" class="left-side-buttom-two-on hide">
+			</div>
+
+			<div id="device-manage-device-list-text" class="buttom-text buttom-text-top">
+				<p>设备列表</p>
+			</div>
+
+			<div id="device-manage-register-off-text" class="buttom-text buttom-text-top">
+				<p>注册/注销</p>
 			</div>
 		</div>
 
-		<!-- 智能控制->独立控制->空气盒子-页面 -->
-		<div class="air-box-content hide">
-		  <div class="left-side">
-				<div class="left-side-buttom-one-on">
-				</div>
+		<div class="right-side device-list-page">
+			<table id="device-manage-add-table" class="device-manage-table">
+				<thead>
+					<tr>
+						<th>设备名称</th>
+						<th>所属房间</th>
+						<th>设备地址</th>
+					</tr>
+				</thead>
+				<tbody id="device-manage-table-add-tbody">
 
-				<div id="air-box-left-side-text" class="buttom-text buttom-text-one">
-					<p>空气盒子</p>
-				</div>
-			</div>
-
-			<div class="right-side">
-				<div class="switch-board">
-					<div class="air-box-line">
-						<p>PM2.5</p>
-						<input type="range" name="" value="">
-						<span id="pmValue" class="air-box-text"></span>
-						<span class="air-box-text-label">ug/m<span class="shangbiao">3<span></span>
-					</div>
-					<div class="air-box-line">
-						<p>甲醛</p>
-						<input type="range" name="" value="">
-						<span id="hchoValue" class="air-box-text left-one-unit"></span>
-						<span class="air-box-text-label">ppb</span>
-					</div>
-					<div class="air-box-line">
-						<p>TVOC</p>
-						<input type="range" name="" value="">
-						<span id="tvocValue" class="air-box-text"></span>
-						<span class="air-box-text-label">ppb</span>
-					</div>
-					<div class="air-box-line">
-						<p>CO<span class="xiabiao">2</span></p>
-						<input type="range" name="" value="">
-						<span id="co2Value" class="air-box-text left-one-unit"></span>
-						<span class="air-box-text-label">ppm</span>
-					</div>
-					<div class="air-box-line">
-						<p>CO</p>
-						<input type="range" name="" value="">
-						<span id="coValue" class="air-box-text left-two-unit"></span>
-						<span class="air-box-text-label">ppm</span>
-					</div>
-					<div class="air-box-line">
-						<p>湿度</p>
-						<input type="range" name="" value="">
-						<span id="temperatureValue" class="air-box-text left-one-unit"></span>
-						<span class="air-box-text-label">%RH</span>
-					</div>
-					<div class="air-box-line">
-						<p>温度</p>
-						<input type="range" name="" value="">
-						<span id="humidityValue" class="air-box-text left-one-unit"></span>
-						<span class="air-box-text-label">℃</span>
-					</div>
-				</div>
-
-				<div class="video">
-					<div id="air-box-radar-chart">
-
-					</div>
-				</div>
-				<p class="video-text">演示动画</p>
-			</div>
-
-			<div class="buttom">
-				<div id='air-box-data-refersh' class="apply">
-					<p>刷&nbsp&nbsp&nbsp&nbsp新</p>
-				</div>
-				<div id="air-box-content-back" class="back">
-					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
-				</div>
-			</div>
+				</tbody>
+			</table>
 		</div>
 
-		<!-- 管理入口->设备管理-页面 -->
-		<div class="device-manage-content hide">
-			<div class="left-side">
-				<div id="device-manage-device-list" class="left-side-buttom-one hide">
-				</div>
+		<div class="right-side register-off-page hide">
+			<p>设备注册</p>
+			<table id="device-manage-table">
+				<tr>
+					<th>设备名称</th>
+					<th>所属房间</th>
+					<th>设备地址</th>
+					<th>注册/注销</th>
+				</tr>
+				<tr>
+					<td>
+						<select id="register-device-name">
+						  <option value="register-off-open-window-machine">开窗器</option>
+						  <option value="register-off-curtain">窗帘</option>
+						  <option value="register-off-one-key-switch">一键触控开关</option>
+							<option value="register-off-two-key-switch">二键触控开关</option>
+							<option value="register-off-three-key-switch">三键触控开关</option>
+						  <option value="register-off-air-box">空气盒子</option>
+							<option value="register-off-smart-plug">智能插座</option>
+							<option value="register-off-dimming-lamp">调光灯</option>
+						</select>
+					</td>
+					<td>
+						<select id="register-device-room">
+						  <option value="register-off-dinner-room">客厅</option>
+						  <option value="register-off-first-room">主卧</option>
+						  <option value="register-off-second-room">次卧</option>
+						  <option value="register-off-bath-room">卫生间</option>
+							<option value="register-off-kitchen-room">厨房</option>
+							<option value="register-off-other-room">其他房间</option>
+						</select>
+					</td>
+					<td id="register-device-address">
 
-				<div id="device-manage-device-list-on" class="left-side-buttom-one-on">
-				</div>
+					</td>
+					<td>
+						<button id="register-plug" class="button-register" type="button">添加设备</button>
+					</td>
+				</tr>
+			</table>
+			<p>设备注销</p>
+			<table id="device-manage-table">
+				<tr>
+					<th>设备名称</th>
+					<th>所属房间</th>
+					<th>设备地址</th>
+					<th>注册/注销</th>
+				</tr>
+				<tr>
+					<td>
+						<select id="off-register-name">
+							<option value="register-off-open-window-machine">开窗器</option>
+							<option value="register-off-curtain">窗帘</option>
+							<option value="register-off-touch-switch">触控开关</option>
+							<option value="register-off-air-box">空气盒子</option>
+							<option value="register-off-smart-plug">智能插座</option>
+							<option value="register-off-dimming-lamp">调光灯</option>
+						</select>
+					</td>
+					<td>
+						<select id="off-register-room">
+							<option value="register-off-dinner-room">客厅</option>
+							<option value="register-off-first-room">主卧</option>
+							<option value="register-off-second-room">次卧</option>
+							<option value="register-off-bath-room">卫生间</option>
+							<option value="register-off-kitchen-room">厨房</option>
+							<option value="register-off-other-room">其他房间</option>
+						</select>
+					</td>
+					<td>
+						<input id="off-register-address" class = "input-text-custom" type="text" name="deviceAddress" placeholder="输入地址">
+					</td>
+					<td>
+						<button class="button-off" type="button" id="off-plug">删除设备</button>
+					</td>
+				</tr>
+			</table>
+		</div>
 
-				<div id="device-manage-register-off" class="left-side-buttom-two">
-				</div>
+		<div class="buttom">
+			<div class="apply">
+				<p>应&nbsp&nbsp&nbsp&nbsp用</p>
+			</div>
+			<div id="device-manage-content-back" class="back">
+				<p>返&nbsp&nbsp&nbsp&nbsp回</p>
+			</div>
+		</div>
+	</div>
 
-				<div id="device-manage-register-off-on" class="left-side-buttom-two-on hide">
-				</div>
-
-				<div id="device-manage-device-list-text" class="buttom-text buttom-text-top">
-					<p>设备列表</p>
-				</div>
-
-				<div id="device-manage-register-off-text" class="buttom-text buttom-text-top">
-					<p>注册/注销</p>
-				</div>
+	<!-- 管理入口->情景管理-页面 -->
+	<div class="scene-manage-content hide">
+		<div class="left-side">				
+			<div id="scene-manage-label-one" class="left-side-buttom-one-on">
+				<span class="left-side-text-label-one">添加情景</span>
 			</div>
 
-			<div class="right-side device-list-page">
-				<table id="device-manage-add-table" class="device-manage-table">
-					<thead>
+		</div>
+
+		<div class="right-side">
+			<div class="scene-manage-first-line">
+				<span class="scene-name-label">情景名称： </span>
+				<input id="scene-manage-scene-name-input" class="label-input" type="text" name="" value="" placeholder="添加情景名称">
+			</div>
+			<div class="scene-manage-second-line">
+				<span class="scene-name-label">情景图标：</span>
+				<img class="scene-manage-avator" src="{{ url_for('static', filename='img/background_entry.png') }}" alt="">
+			</div>
+			<div class="scene-manage-action">
+				<p class="scene-name-label ">执行动作:</p>
+				
+				<div class="scene-action-one">
+					<img class="scene-action-one-add-num" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+					<span class="scene-action-one-label">1</span>
+					<table class="scene-manage-action-table">
 						<tr>
-							<th>设备名称</th>
-							<th>所属房间</th>
-							<th>设备地址</th>
+							<td>
+								<select>
+									<option value="register-off-open-window-machine">开窗器</option>
+									<option value="register-off-curtain">窗帘</option>
+									<option value="register-off-touch-switch">触控开关</option>
+									<option value="register-off-air-box">空气盒子</option>
+									<option value="register-off-smart-plug">智能插座</option>
+									<option value="register-off-dimming-lamp">调光灯</option>
+								</select>
+							</td>
+							<td>
+								<select>
+									<option value="register-off-dinner-room">客厅</option>
+									<option value="register-off-first-room">主卧</option>
+									<option value="register-off-second-room">次卧</option>
+									<option value="register-off-bath-room">卫生间</option>
+									<option value="register-off-kitchen-room">厨房</option>
+									<option value="register-off-other-room">其他房间</option>
+								</select>
+							</td>
+							<td>
+								<select>
+									<option value="register-off-dinner-room">打开</option>
+									<option value="register-off-first-room">关闭</option>
+								</select>
+							</td>
 						</tr>
-					</thead>
-					<tbody id="device-manage-table-add-tbody">
+					</table>
+					<div>
+						<img id="scene-action-one-add1" class="scene-action-one-add" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+					  <span class="scene-action-one-add-label">+</span>
+					  <img id="scene-action-one-delete1" class="scene-action-one-delete" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+					  <span class="scene-action-one-delete-label">-</span>
+					</div>
 
-					</tbody>
-				</table>
+				</div>
+				
 			</div>
 
-			<div class="right-side register-off-page hide">
-				<p>设备注册</p>
-				<table id="device-manage-table">
-					<tr>
-						<th>设备名称</th>
-						<th>所属房间</th>
-						<th>设备地址</th>
-						<th>注册/注销</th>
-					</tr>
-					<tr>
-						<td>
-							<select id="register-device-name">
-							  <option value="register-off-open-window-machine">开窗器</option>
-							  <option value="register-off-curtain">窗帘</option>
-							  <option value="register-off-one-key-switch">一键触控开关</option>
-								<option value="register-off-two-key-switch">二键触控开关</option>
-								<option value="register-off-three-key-switch">三键触控开关</option>
-							  <option value="register-off-air-box">空气盒子</option>
-								<option value="register-off-smart-plug">智能插座</option>
-								<option value="register-off-dimming-lamp">调光灯</option>
-							</select>
-						</td>
-						<td>
-							<select id="register-device-room">
-							  <option value="register-off-dinner-room">客厅</option>
-							  <option value="register-off-first-room">主卧</option>
-							  <option value="register-off-second-room">次卧</option>
-							  <option value="register-off-bath-room">卫生间</option>
-								<option value="register-off-kitchen-room">厨房</option>
-								<option value="register-off-other-room">其他房间</option>
-							</select>
-						</td>
-						<td id="register-device-address">
 
-						</td>
-						<td>
-							<button id="register-plug" class="button-register" type="button">添加设备</button>
-						</td>
-					</tr>
-				</table>
-				<p>设备注销</p>
-				<table id="device-manage-table">
-					<tr>
-						<th>设备名称</th>
-						<th>所属房间</th>
-						<th>设备地址</th>
-						<th>注册/注销</th>
-					</tr>
-					<tr>
-						<td>
-							<select id="off-register-name">
-								<option value="register-off-open-window-machine">开窗器</option>
-								<option value="register-off-curtain">窗帘</option>
-								<option value="register-off-touch-switch">触控开关</option>
-								<option value="register-off-air-box">空气盒子</option>
-								<option value="register-off-smart-plug">智能插座</option>
-								<option value="register-off-dimming-lamp">调光灯</option>
-							</select>
-						</td>
-						<td>
-							<select id="off-register-room">
-								<option value="register-off-dinner-room">客厅</option>
-								<option value="register-off-first-room">主卧</option>
-								<option value="register-off-second-room">次卧</option>
-								<option value="register-off-bath-room">卫生间</option>
-								<option value="register-off-kitchen-room">厨房</option>
-								<option value="register-off-other-room">其他房间</option>
-							</select>
-						</td>
-						<td>
-							<input id="off-register-address" class = "input-text-custom" type="text" name="deviceAddress" placeholder="输入地址">
-						</td>
-						<td>
-							<button class="button-off" type="button" id="off-plug">删除设备</button>
-						</td>
-					</tr>
-				</table>
+		</div>
+
+		<div class="buttom">
+			<div class="apply">
+				<p>应&nbsp&nbsp&nbsp&nbsp用</p>
+			</div>
+			<div id="scene-manage-content-back" class="back">
+				<p>返&nbsp&nbsp&nbsp&nbsp回</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 管理入口->设备分类-页面 -->
+	<div class="device-classfication-content hide">
+		<div class="left-side">
+			<div id="scene-manage-buttom-on" class="left-side-buttom-one-on">
 			</div>
 
-			<div class="buttom">
-				<div class="apply">
-					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
-				</div>
-				<div id="device-manage-content-back" class="back">
-					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
-				</div>
+			<div id="scene-manage-buttom-text" class="buttom-text">
+				<p>房间列表</p>
 			</div>
 		</div>
 
-		<!-- 管理入口->情景管理-页面 -->
-		<div class="scene-manage-content">
-			<div class="left-side">				
-				<div id="scene-manage-label-one" class="left-side-buttom-one-on">
-					<span class="left-side-text-label-one">添加情景</span>
+		<div class="right-side">
+			<table class="device-class-table">
+				<tr>
+					<th>房间名称</th>
+					<th>房间设备</th>
+				</tr>
+				<tr>
+					<td>
+						<span>主卧</span>
+					</td>
+					<td>
+						<select>
+							<option value="register-off-open-window-machine">开窗器</option>
+							<option value="register-off-curtain">窗帘</option>
+							<option value="register-off-touch-switch">触控开关</option>
+							<option value="register-off-air-box">空气盒子</option>
+							<option value="register-off-smart-plug">智能插座</option>
+							<option value="register-off-dimming-lamp">调光灯</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td>
+						<!-- TODO: li -->
+						<select>
+							<option value="register-off-open-window-machine">开窗器</option>
+							<option value="register-off-curtain">窗帘</option>
+							<option value="register-off-touch-switch">触控开关</option>
+							<option value="register-off-air-box">空气盒子</option>
+							<option value="register-off-smart-plug">智能插座</option>
+							<option value="register-off-dimming-lamp">调光灯</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="buttom">
+			<div class="apply">
+				<p>应&nbsp&nbsp&nbsp&nbsp用</p>
+			</div>
+			<div id="device-classfication-content-back" class="back">
+				<p>返&nbsp&nbsp&nbsp&nbsp回</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 设置向导 -> 用户设置-页面 -->
+	<div class="user-setup-content hide">
+	  <div class="left-side">
+			<div id="user-setup-basic-info" class="left-side-buttom-one">
+			</div>
+
+			<div id="user-setup-basic-info-on" class="left-side-buttom-one-on hide">
+			</div>
+
+			<div id="user-setup-change-passwd" class="left-side-buttom-two hide">
+			</div>
+
+			<div id="user-setup-change-passwd-on" class="left-side-buttom-two-on" >
+			</div>
+
+			<div id="user-setup-basic-info-text" class="buttom-text">
+				<p>基本信息</p>
+			</div>
+
+			<div id="user-setup-change-passwd-text" class="buttom-text">
+				<p>修改密码</p>
+			</div>
+
+		</div>
+
+		<div class="right-side">
+			<div class="switch-board">
+				<div class="smart-plug-bar">
+					<div class="smart-plug-img">
+						<img src="" alt="">
+					</div>
+					<div class="smart-plug-toggle">
+						<img src="" alt="">
+					</div>
+					<div class="smart-plug-on hide">
+
+					</div>
+					<div class="smart-plug-off">
+
+					</div>
 				</div>
+			</div>
+
+			<div class="video">
+
+			</div>
+			<p>演示动画</p>
+		</div>
+
+		<div class="buttom">
+			<div class="apply">
+				<p>应用</p>
+			</div>
+			<div class="back">
+				<p>返回</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 管理入口 -> 家庭管理-页面 -->
+	<div class="home-manage-content hide">
+		<div class="left-side">
+			<div id="home-manage-left-side-buttom-one" class="left-side-buttom-one hide">
 
 			</div>
 
-			<div class="right-side">
-				<div class="scene-manage-first-line">
-					<span class="scene-name-label">情景名称： </span>
-					<input id="scene-manage-scene-name-input" class="label-input" type="text" name="" value="" placeholder="添加情景名称">
-				</div>
-				<div class="scene-manage-second-line">
-					<span class="scene-name-label">情景图标：</span>
-					<img class="scene-manage-avator" src="{{ url_for('static', filename='img/background_entry.png') }}" alt="">
-				</div>
-				<div class="scene-manage-action">
-					<p class="scene-name-label ">执行动作:</p>
-					
+			<div id="home-manage-left-side-buttom-one-on" class="left-side-buttom-one-on">
+
+			</div>
+
+			<div id="home-manage-left-side-buttom-two" class="left-side-buttom-two">
+
+			</div>
+
+			<div id="home-manage-left-sice-buttom-two-on" class="left-side-buttom-two-on hide">
+
+			</div>
+
+			<div id="home-manage-left-side-buttom-three" class="left-side-buttom-three">
+
+			</div>
+
+			<div id="home-manage-left-sice-buttom-three-on" class="left-side-buttom-three-on hide">
+
+			</div>
+
+			<div class="buttom-text" id="home-manage-my-scene-text">
+				<p>家庭信息</p>
+			</div>
+
+			<div class="buttom-text" id="home-manage-home-mamber-text">
+				<p>家庭成员</p>
+			</div>
+
+			<div class="buttom-text" id="home-manage-home-list-text">
+				<p>房间列表</p>
+			</div>
+		</div>
+
+		<div id="home-manage-home-information" class="right-side hide">
+			<div class="home-manage-home-name">
+				<span class="home-manage-home-info-label">家庭名称:</span>
+				<input id="home-manage-user-home-name" class="home-manage-home-info-input" type="text" name="home-manage-user-home-name" value="elewei的家">
+			</div>
+			<div class="home-manage-home-address">
+				<span class="home-manage-home-info-label">家庭地址:</span>
+				<input class="home-manage-home-info-input" type="text" name="home-manage-user-home-address" value="江苏省苏州市高新区">
+			</div>
+			<div class="home-manage-home-background">
+				<span class="home-manage-home-info-label">家庭背景:</span>
+				<img id="home-manage-home-background-img" src="{{ url_for('static', filename='img/background_entry.png') }}" alt="">
+			</div>
+		</div>
+
+		<div id="home-manage-home-member" class="right-side">
+			<div class="home-member-first">
+				<img src="{{ url_for('static', filename='img/home_member_qingse.png') }}" alt="">
+				<span class="home-member-text">阿毛</span>
+			</div>
+			<div class="home-member-add">
+				<img src="{{ url_for('static', filename='img/home_member_add.png') }}" alt="">
+			</div>
+		</div>
+
+		<div id="home-manage-home-room-list" class="right-side hide">
+			<table class="home-room-list-table">
+				<tr>
+					<th>序号</th>
+					<th>房间</th>
+				</tr>
+				<tr>
+					<td>01</td>
+					<td>主卧</td>
+				</tr>
+				<tr>
+					<td>02</td>
+					<td>次卧</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="scene-control-exec-log" class="right-side hide">
+			<table class="device-manage-table">
+				<tr>
+					<th>设备名称</th>
+					<th>执行动作</th>
+				</tr>
+				<tr>
+					<td>插座</td>
+					<td>开</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="buttom">
+			<div class="apply">
+				<p>应&nbsp&nbsp&nbsp&nbsp用</p>
+			</div>
+			<div id="home-manage-content-back" class="back">
+				<p>返&nbsp&nbsp&nbsp&nbsp回</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 管理入口 -> 自由组合-页面 -->
+	<div class="free-group-content hide">
+		<div class="left-side">
+			<div id="scene-control-left-side-buttom-one" class="left-side-buttom-one hide">
+
+			</div>
+
+			<div id="scene-control-left-side-buttom-one-on" class="left-side-buttom-one-on">
+
+			</div>
+
+			<div id="scene-control-left-side-buttom-two" class="left-side-buttom-two">
+
+			</div>
+
+			<div id="scene-control-left-sice-buttom-two-on" class="left-side-buttom-two-on hide">
+
+			</div>
+
+			<div class="buttom-text" id="free-group-list-text">
+				<p>组合列表</p>
+			</div>
+
+			<div class="buttom-text" id="free-group-add-text">
+				<p>添加组合</p>
+			</div>
+		</div>
+
+		<div id="free-group-list" class="right-side hide">
+			<table class="device-manage-table">
+				<tr>
+					<th>组合名称</th>
+					<th>条件</th>
+					<th>执行动作</th>
+				</tr>
+				<tr>
+					<td>心飞杨</td>
+					<td>当温度低于15</td>
+					<td>关闭窗户，打开智能插座1</td>
+				</tr>
+				<tr>
+					<td>头口</td>
+					<td>当PM2.5低于90</td>
+					<td>打开窗户</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="free-group-add" class="right-side">
+			<div class="free-group-name">
+
+			</div>
+			<div class="free-group-second-line">
+				<div class="free-group-condition">
 					<div class="scene-action-one">
-						<img class="scene-action-one-add-num" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
 						<span class="scene-action-one-label">1</span>
 						<table class="scene-manage-action-table">
 							<tr>
@@ -1061,462 +1395,128 @@
 								</td>
 							</tr>
 						</table>
-						<div>
-							<img id="scene-action-one-add1" class="scene-action-one-add" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						  <span class="scene-action-one-add-label">+</span>
-						  <img id="scene-action-one-delete1" class="scene-action-one-delete" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						  <span class="scene-action-one-delete-label">-</span>
-						</div>
-
 					</div>
-					
-				</div>
-
-
-			</div>
-
-			<div class="buttom">
-				<div class="apply">
-					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
-				</div>
-				<div id="scene-manage-content-back" class="back">
-					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
-				</div>
-			</div>
-		</div>
-
-		<!-- 管理入口->设备分类-页面 -->
-		<div class="device-classfication-content hide">
-			<div class="left-side">
-				<div id="scene-manage-buttom-on" class="left-side-buttom-one-on">
-				</div>
-
-				<div id="scene-manage-buttom-text" class="buttom-text">
-					<p>房间列表</p>
-				</div>
-			</div>
-
-			<div class="right-side">
-				<table class="device-class-table">
-					<tr>
-						<th>房间名称</th>
-						<th>房间设备</th>
-					</tr>
-					<tr>
-						<td>
-							<span>主卧</span>
-						</td>
-						<td>
-							<select>
-								<option value="register-off-open-window-machine">开窗器</option>
-								<option value="register-off-curtain">窗帘</option>
-								<option value="register-off-touch-switch">触控开关</option>
-								<option value="register-off-air-box">空气盒子</option>
-								<option value="register-off-smart-plug">智能插座</option>
-								<option value="register-off-dimming-lamp">调光灯</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td>+</td>
-						<td>
-							<!-- TODO: li -->
-							<select>
-								<option value="register-off-open-window-machine">开窗器</option>
-								<option value="register-off-curtain">窗帘</option>
-								<option value="register-off-touch-switch">触控开关</option>
-								<option value="register-off-air-box">空气盒子</option>
-								<option value="register-off-smart-plug">智能插座</option>
-								<option value="register-off-dimming-lamp">调光灯</option>
-							</select>
-						</td>
-					</tr>
-				</table>
-			</div>
-
-			<div class="buttom">
-				<div class="apply">
-					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
-				</div>
-				<div id="device-classfication-content-back" class="back">
-					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
-				</div>
-			</div>
-		</div>
-
-		<!-- 设置向导 -> 用户设置-页面 -->
-		<div class="user-setup-content hide">
-		  <div class="left-side">
-				<div id="user-setup-basic-info" class="left-side-buttom-one">
-				</div>
-
-				<div id="user-setup-basic-info-on" class="left-side-buttom-one-on hide">
-				</div>
-
-				<div id="user-setup-change-passwd" class="left-side-buttom-two hide">
-				</div>
-
-				<div id="user-setup-change-passwd-on" class="left-side-buttom-two-on" >
-				</div>
-
-				<div id="user-setup-basic-info-text" class="buttom-text">
-					<p>基本信息</p>
-				</div>
-
-				<div id="user-setup-change-passwd-text" class="buttom-text">
-					<p>修改密码</p>
-				</div>
-
-			</div>
-
-			<div class="right-side">
-				<div class="switch-board">
-					<div class="smart-plug-bar">
-						<div class="smart-plug-img">
-							<img src="" alt="">
-						</div>
-						<div class="smart-plug-toggle">
-							<img src="" alt="">
-						</div>
-						<div class="smart-plug-on hide">
-
-						</div>
-						<div class="smart-plug-off">
-
-						</div>
+					<div class="scene-action-one">
+						<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						<span class="scene-action-one-label">1</span>
+						<table class="scene-manage-action-table">
+							<tr>
+								<td>
+									<select>
+										<option value="register-off-open-window-machine">开窗器</option>
+										<option value="register-off-curtain">窗帘</option>
+										<option value="register-off-touch-switch">触控开关</option>
+										<option value="register-off-air-box">空气盒子</option>
+										<option value="register-off-smart-plug">智能插座</option>
+										<option value="register-off-dimming-lamp">调光灯</option>
+									</select>
+								</td>
+								<td>
+									<select>
+										<option value="register-off-dinner-room">客厅</option>
+										<option value="register-off-first-room">主卧</option>
+										<option value="register-off-second-room">次卧</option>
+										<option value="register-off-bath-room">卫生间</option>
+										<option value="register-off-kitchen-room">厨房</option>
+										<option value="register-off-other-room">其他房间</option>
+									</select>
+								</td>
+								<td>
+									<select>
+										<option value="register-off-dinner-room">打开</option>
+										<option value="register-off-first-room">关闭</option>
+									</select>
+								</td>
+							</tr>
+						</table>
 					</div>
 				</div>
 
-				<div class="video">
 
-				</div>
-				<p>演示动画</p>
-			</div>
-
-			<div class="buttom">
-				<div class="apply">
-					<p>应用</p>
-				</div>
-				<div class="back">
-					<p>返回</p>
-				</div>
-			</div>
-		</div>
-
-		<!-- 管理入口 -> 家庭管理-页面 -->
-		<div class="home-manage-content hide">
-			<div class="left-side">
-				<div id="home-manage-left-side-buttom-one" class="left-side-buttom-one hide">
-
-				</div>
-
-				<div id="home-manage-left-side-buttom-one-on" class="left-side-buttom-one-on">
-
-				</div>
-
-				<div id="home-manage-left-side-buttom-two" class="left-side-buttom-two">
-
-				</div>
-
-				<div id="home-manage-left-sice-buttom-two-on" class="left-side-buttom-two-on hide">
-
-				</div>
-
-				<div id="home-manage-left-side-buttom-three" class="left-side-buttom-three">
-
-				</div>
-
-				<div id="home-manage-left-sice-buttom-three-on" class="left-side-buttom-three-on hide">
-
-				</div>
-
-				<div class="buttom-text" id="home-manage-my-scene-text">
-					<p>家庭信息</p>
-				</div>
-
-				<div class="buttom-text" id="home-manage-home-mamber-text">
-					<p>家庭成员</p>
-				</div>
-
-				<div class="buttom-text" id="home-manage-home-list-text">
-					<p>房间列表</p>
-				</div>
-			</div>
-
-			<div id="home-manage-home-information" class="right-side hide">
-				<div class="home-manage-home-name">
-					<span class="home-manage-home-info-label">家庭名称:</span>
-					<input id="home-manage-user-home-name" class="home-manage-home-info-input" type="text" name="home-manage-user-home-name" value="elewei的家">
-				</div>
-				<div class="home-manage-home-address">
-					<span class="home-manage-home-info-label">家庭地址:</span>
-					<input class="home-manage-home-info-input" type="text" name="home-manage-user-home-address" value="江苏省苏州市高新区">
-				</div>
-				<div class="home-manage-home-background">
-					<span class="home-manage-home-info-label">家庭背景:</span>
-					<img id="home-manage-home-background-img" src="{{ url_for('static', filename='img/background_entry.png') }}" alt="">
-				</div>
-			</div>
-
-			<div id="home-manage-home-member" class="right-side">
-				<div class="home-member-first">
-					<img src="{{ url_for('static', filename='img/home_member_qingse.png') }}" alt="">
-					<span class="home-member-text">阿毛</span>
-				</div>
-				<div class="home-member-add">
-					<img src="{{ url_for('static', filename='img/home_member_add.png') }}" alt="">
-				</div>
-			</div>
-
-			<div id="home-manage-home-room-list" class="right-side hide">
-				<table class="home-room-list-table">
-					<tr>
-						<th>序号</th>
-						<th>房间</th>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>主卧</td>
-					</tr>
-					<tr>
-						<td>02</td>
-						<td>次卧</td>
-					</tr>
-				</table>
-			</div>
-
-			<div id="scene-control-exec-log" class="right-side hide">
-				<table class="device-manage-table">
-					<tr>
-						<th>设备名称</th>
-						<th>执行动作</th>
-					</tr>
-					<tr>
-						<td>插座</td>
-						<td>开</td>
-					</tr>
-				</table>
-			</div>
-
-			<div class="buttom">
-				<div class="apply">
-					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
-				</div>
-				<div id="home-manage-content-back" class="back">
-					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
-				</div>
-			</div>
-		</div>
-
-		<!-- 管理入口 -> 自由组合-页面 -->
-		<div class="free-group-content hide">
-			<div class="left-side">
-				<div id="scene-control-left-side-buttom-one" class="left-side-buttom-one hide">
-
-				</div>
-
-				<div id="scene-control-left-side-buttom-one-on" class="left-side-buttom-one-on">
-
-				</div>
-
-				<div id="scene-control-left-side-buttom-two" class="left-side-buttom-two">
-
-				</div>
-
-				<div id="scene-control-left-sice-buttom-two-on" class="left-side-buttom-two-on hide">
-
-				</div>
-
-				<div class="buttom-text" id="free-group-list-text">
-					<p>组合列表</p>
-				</div>
-
-				<div class="buttom-text" id="free-group-add-text">
-					<p>添加组合</p>
-				</div>
-			</div>
-
-			<div id="free-group-list" class="right-side hide">
-				<table class="device-manage-table">
-					<tr>
-						<th>组合名称</th>
-						<th>条件</th>
-						<th>执行动作</th>
-					</tr>
-					<tr>
-						<td>心飞杨</td>
-						<td>当温度低于15</td>
-						<td>关闭窗户，打开智能插座1</td>
-					</tr>
-					<tr>
-						<td>头口</td>
-						<td>当PM2.5低于90</td>
-						<td>打开窗户</td>
-					</tr>
-				</table>
-			</div>
-
-			<div id="free-group-add" class="right-side">
-				<div class="free-group-name">
-
-				</div>
-				<div class="free-group-second-line">
-					<div class="free-group-condition">
-						<div class="scene-action-one">
-							<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-							<span class="scene-action-one-label">1</span>
-							<table class="scene-manage-action-table">
-								<tr>
-									<td>
-										<select>
-											<option value="register-off-open-window-machine">开窗器</option>
-											<option value="register-off-curtain">窗帘</option>
-											<option value="register-off-touch-switch">触控开关</option>
-											<option value="register-off-air-box">空气盒子</option>
-											<option value="register-off-smart-plug">智能插座</option>
-											<option value="register-off-dimming-lamp">调光灯</option>
-										</select>
-									</td>
-									<td>
-										<select>
-											<option value="register-off-dinner-room">客厅</option>
-											<option value="register-off-first-room">主卧</option>
-											<option value="register-off-second-room">次卧</option>
-											<option value="register-off-bath-room">卫生间</option>
-											<option value="register-off-kitchen-room">厨房</option>
-											<option value="register-off-other-room">其他房间</option>
-										</select>
-									</td>
-									<td>
-										<select>
-											<option value="register-off-dinner-room">打开</option>
-											<option value="register-off-first-room">关闭</option>
-										</select>
-									</td>
-								</tr>
-							</table>
-						</div>
-						<div class="scene-action-one">
-							<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-							<span class="scene-action-one-label">1</span>
-							<table class="scene-manage-action-table">
-								<tr>
-									<td>
-										<select>
-											<option value="register-off-open-window-machine">开窗器</option>
-											<option value="register-off-curtain">窗帘</option>
-											<option value="register-off-touch-switch">触控开关</option>
-											<option value="register-off-air-box">空气盒子</option>
-											<option value="register-off-smart-plug">智能插座</option>
-											<option value="register-off-dimming-lamp">调光灯</option>
-										</select>
-									</td>
-									<td>
-										<select>
-											<option value="register-off-dinner-room">客厅</option>
-											<option value="register-off-first-room">主卧</option>
-											<option value="register-off-second-room">次卧</option>
-											<option value="register-off-bath-room">卫生间</option>
-											<option value="register-off-kitchen-room">厨房</option>
-											<option value="register-off-other-room">其他房间</option>
-										</select>
-									</td>
-									<td>
-										<select>
-											<option value="register-off-dinner-room">打开</option>
-											<option value="register-off-first-room">关闭</option>
-										</select>
-									</td>
-								</tr>
-							</table>
-						</div>
+				<div class="free-group-action">
+					<div class="scene-action-one">
+						<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						<span class="scene-action-one-label">1</span>
+						<table class="scene-manage-action-table">
+							<tr>
+								<td>
+									<select>
+										<option value="register-off-open-window-machine">开窗器</option>
+										<option value="register-off-curtain">窗帘</option>
+										<option value="register-off-touch-switch">触控开关</option>
+										<option value="register-off-air-box">空气盒子</option>
+										<option value="register-off-smart-plug">智能插座</option>
+										<option value="register-off-dimming-lamp">调光灯</option>
+									</select>
+								</td>
+								<td>
+									<select>
+										<option value="register-off-dinner-room">客厅</option>
+										<option value="register-off-first-room">主卧</option>
+										<option value="register-off-second-room">次卧</option>
+										<option value="register-off-bath-room">卫生间</option>
+										<option value="register-off-kitchen-room">厨房</option>
+										<option value="register-off-other-room">其他房间</option>
+									</select>
+								</td>
+								<td>
+									<select>
+										<option value="register-off-dinner-room">打开</option>
+										<option value="register-off-first-room">关闭</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="scene-action-one">
+						<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						<span class="scene-action-one-label">+</span>
+						<table class="scene-manage-action-table">
+							<tr>
+								<td>
+									<select>
+										<option value="register-off-open-window-machine">开窗器</option>
+										<option value="register-off-curtain">窗帘</option>
+										<option value="register-off-touch-switch">触控开关</option>
+										<option value="register-off-air-box">空气盒子</option>
+										<option value="register-off-smart-plug">智能插座</option>
+										<option value="register-off-dimming-lamp">调光灯</option>
+									</select>
+								</td>
+								<td>
+									<select>
+										<option value="register-off-dinner-room">客厅</option>
+										<option value="register-off-first-room">主卧</option>
+										<option value="register-off-second-room">次卧</option>
+										<option value="register-off-bath-room">卫生间</option>
+										<option value="register-off-kitchen-room">厨房</option>
+										<option value="register-off-other-room">其他房间</option>
+									</select>
+								</td>
+								<td>
+									<select>
+										<option value="register-off-dinner-room">打开</option>
+										<option value="register-off-first-room">关闭</option>
+									</select>
+								</td>
+							</tr>
+						</table>
 					</div>
 
-
-					<div class="free-group-action">
-						<div class="scene-action-one">
-							<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-							<span class="scene-action-one-label">1</span>
-							<table class="scene-manage-action-table">
-								<tr>
-									<td>
-										<select>
-											<option value="register-off-open-window-machine">开窗器</option>
-											<option value="register-off-curtain">窗帘</option>
-											<option value="register-off-touch-switch">触控开关</option>
-											<option value="register-off-air-box">空气盒子</option>
-											<option value="register-off-smart-plug">智能插座</option>
-											<option value="register-off-dimming-lamp">调光灯</option>
-										</select>
-									</td>
-									<td>
-										<select>
-											<option value="register-off-dinner-room">客厅</option>
-											<option value="register-off-first-room">主卧</option>
-											<option value="register-off-second-room">次卧</option>
-											<option value="register-off-bath-room">卫生间</option>
-											<option value="register-off-kitchen-room">厨房</option>
-											<option value="register-off-other-room">其他房间</option>
-										</select>
-									</td>
-									<td>
-										<select>
-											<option value="register-off-dinner-room">打开</option>
-											<option value="register-off-first-room">关闭</option>
-										</select>
-									</td>
-								</tr>
-							</table>
-						</div>
-						<div class="scene-action-one">
-							<img class="scene-action-one-img" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-							<span class="scene-action-one-label">+</span>
-							<table class="scene-manage-action-table">
-								<tr>
-									<td>
-										<select>
-											<option value="register-off-open-window-machine">开窗器</option>
-											<option value="register-off-curtain">窗帘</option>
-											<option value="register-off-touch-switch">触控开关</option>
-											<option value="register-off-air-box">空气盒子</option>
-											<option value="register-off-smart-plug">智能插座</option>
-											<option value="register-off-dimming-lamp">调光灯</option>
-										</select>
-									</td>
-									<td>
-										<select>
-											<option value="register-off-dinner-room">客厅</option>
-											<option value="register-off-first-room">主卧</option>
-											<option value="register-off-second-room">次卧</option>
-											<option value="register-off-bath-room">卫生间</option>
-											<option value="register-off-kitchen-room">厨房</option>
-											<option value="register-off-other-room">其他房间</option>
-										</select>
-									</td>
-									<td>
-										<select>
-											<option value="register-off-dinner-room">打开</option>
-											<option value="register-off-first-room">关闭</option>
-										</select>
-									</td>
-								</tr>
-							</table>
-						</div>
-
-					</div>
 				</div>
-
 			</div>
 
-			<div class="buttom">
-				<div class="apply">
-					<p>应&nbsp&nbsp&nbsp&nbsp用</p>
-				</div>
-				<div id="free-group-content-back" class="back">
-					<p>返&nbsp&nbsp&nbsp&nbsp回</p>
-				</div>
+		</div>
+
+		<div class="buttom">
+			<div class="apply">
+				<p>应&nbsp&nbsp&nbsp&nbsp用</p>
+			</div>
+			<div id="free-group-content-back" class="back">
+				<p>返&nbsp&nbsp&nbsp&nbsp回</p>
 			</div>
 		</div>
+	</div>
 
   </div>
 </div>

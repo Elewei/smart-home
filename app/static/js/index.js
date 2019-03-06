@@ -1008,7 +1008,6 @@ $(document).ready(() => {
 
     console.log("点击注册/注销");
     $('#register-device-address').text(' ');
-
   });
 
   function add_func(table_id, row_num, c_num, data) {
@@ -1216,7 +1215,6 @@ $(document).ready(() => {
 
       });
     }
-
   });
 
   /* 点击 智能控制 -> 独立控制 -> 开窗器 页面   */
@@ -2261,8 +2259,6 @@ $(document).ready(() => {
     $homeManageContent.hide();
     $smartHomeContent.hide();
     $freeGroupContent.show();
-
-
   });
 
   /* 点击独立控制 返回按钮 */
@@ -3173,6 +3169,18 @@ $(document).ready(() => {
     }, function(data) {
       console.log(data.result);
     });
+  });
+
+
+  /* 点击 管理入口->情景管理-> 删除按钮 */
+  $('#scene-action-one-delete1').on('click', ()=>{
+    console.log('删除一行');
+    
+    
+  });
+
+  $('#scene-action-one-add1').on('click', ()=>{
+    console.log('添加一行');
 
   });
 

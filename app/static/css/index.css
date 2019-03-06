@@ -1861,13 +1861,27 @@ input[type=range]::-moz-range-track {
   height: 40px;
 }
 
+.scene-action-one-add-num {
+  width: 40px;
+  height: 40px;
+}
+
+.scene-action-one-add {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+  top: -110px;
+  left: 465px; 
+}
+
 .scene-action-one-delete {
   width: 40px;
   height: 40px;
   display: inline-block;
   position: relative;
   top: -110px;
-  left: 465px;
+  left: 445px;
 }
 
 .scene-action-one-label {
@@ -1876,6 +1890,16 @@ input[type=range]::-moz-range-track {
   position: relative;
   top: 5px;
   left: -30px;
+  pointer-events: none;
+}
+
+.scene-action-one-add-label {
+  color: white;
+  font-size: 30px;
+  position: relative;
+  top: -104px;
+  left: 433px;  
+  pointer-events: none;
 }
 
 .scene-action-one-delete-label {
@@ -1883,7 +1907,8 @@ input[type=range]::-moz-range-track {
   font-size: 30px;
   position: relative;
   top: -107px;
-  left: 436px;  
+  left: 416px;  
+  pointer-events: none;
 }
 
 .scene-manage-action-table {

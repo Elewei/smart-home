@@ -1029,7 +1029,7 @@
 					<p class="scene-name-label ">执行动作:</p>
 					
 					<div class="scene-action-one">
-						<img class="scene-action-one-add" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						<img class="scene-action-one-add-num" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
 						<span class="scene-action-one-label">1</span>
 						<table class="scene-manage-action-table">
 							<tr>
@@ -1061,8 +1061,13 @@
 								</td>
 							</tr>
 						</table>
-						<img class="scene-action-one-delete" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
-						<span class="scene-action-one-delete-label">-</span>
+						<div>
+							<img id="scene-action-one-add1" class="scene-action-one-add" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						  <span class="scene-action-one-add-label">+</span>
+						  <img id="scene-action-one-delete1" class="scene-action-one-delete" src="{{ url_for('static', filename='img/curtain.png') }}" alt="">
+						  <span class="scene-action-one-delete-label">-</span>
+						</div>
+
 					</div>
 					
 				</div>

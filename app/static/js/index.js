@@ -1825,6 +1825,7 @@ $(document).ready(() => {
     $otherOn.hide();
 
     /* 显示用户设置页面 */
+    /*
     $independantControlContent.hide();
     $touchSwitchContent.hide();
     $deviceManageContent.hide();
@@ -1842,6 +1843,7 @@ $(document).ready(() => {
     $smartHomeContent.hide();
     $manageEntryContent.hide();
     $userSetupContent.show();
+    */
   });
 
   /* 点击返回 -> 情景控制 主界面 */

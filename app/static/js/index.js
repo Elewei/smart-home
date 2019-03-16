@@ -216,6 +216,12 @@ $(document).ready(() => {
   const $sceneManageContentBack = $('#scene-manage-content-back');
   const $sceneManageContent = $('.scene-manage-content');
   
+  /* 设置向导 页面点击事件 定义 */
+  $setGuideNetworkSetup = $('#set-guide-network-setup');
+  
+  /* 设置向导 网络设置 定义 */
+  const $networkSetupContent = $('.network-setup-content');
+  const $networkSetupContentBack = $('#network-setup-content-back');
   
   /* 设置向导 页面点击事件 */
   const $voiceSetup = $('.voice-setup');
@@ -259,6 +265,7 @@ $(document).ready(() => {
     $sceneManageContent.hide();
     $deviceClassficationContent.hide();
 	$voiceSetupContent.hide();
+	$networkSetupContent.hide();
     $smartHomeContent.show();
   });
 
@@ -3198,6 +3205,118 @@ $(document).ready(() => {
 
   });
   
+  /* 点击 设置向导 -> 网络设置 */
+  $setGuideNetworkSetup.on('click', ()=>{
+    console.log('点击网络设置');
+    $smartControl.show();
+    $smartControlOn.hide();
+    $manageEntry.show();
+    $manageEntryOn.hide();
+    $setGuide.hide();
+    $setGuideOn.show();
+    $other.show();
+    $otherOn.hide();
+
+    /* 独立控制页面 */
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $deviceManageContent.hide();
+    $manageEntryContent.hide();
+    $setGuideContent.hide();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
+    $userSetupContent.hide();
+    $sceneControlMySceneChildContent.hide();
+    $openWindowMachineContent.hide();
+    $homeManageContent.hide();
+    $freeGroupContent.hide();
+    $sceneManageContent.hide();
+    $deviceClassficationContent.hide();
+	$voiceSetupContent.hide();
+	$networkSetupContent.show();
+    $smartHomeContent.hide();	  
+	  
+  });
+
+  /* 点击设置向导 -> 网络设置 -> 返回 */
+  $networkSetupContentBack.on('click', ()=>{
+      $smartControl.show();
+      $smartControlOn.hide();
+      $manageEntry.show();
+      $manageEntryOn.hide();
+      $setGuide.hide();
+      $setGuideOn.show();
+      $other.show();
+      $otherOn.hide();
+
+      /* 独立控制页面 */
+      $independantControlContent.hide();
+      $touchSwitchContent.hide();
+      $deviceManageContent.hide();
+      $manageEntryContent.hide();
+      $setGuideContent.show();
+      $otherContent.hide();
+      $independantControlContent.hide();
+      $touchSwitchContent.hide();
+      $smartPlugContent.hide();
+      $smartCurtainContent.hide();
+      $dimmingLampContent.hide();
+      $airBoxContent.hide();
+      $deviceManageContent.hide();
+      $sceneControlContent.hide();
+      $roomControlContent.hide();
+      $userSetupContent.hide();
+      $sceneControlMySceneChildContent.hide();
+      $openWindowMachineContent.hide();
+      $homeManageContent.hide();
+      $freeGroupContent.hide();
+      $sceneManageContent.hide();
+      $deviceClassficationContent.hide();
+  	  $voiceSetupContent.hide();
+  	  $networkSetupContent.hide();
+      $smartHomeContent.hide();  	
+  });
+  
+  /* 点击设置向导 -> 网络设置 -> 开启关闭WLAN */
+  $('#wireless-switch-toggle').on('click', ()=>{
+	  console.log('点击WLAN 开');
+	  $('#wireless-switch-toggle').hide();
+	  $('#wireless-switch-toggle-on').show();
+	  $('#wireless-wlan-switch-bar').attr('src', '/static/img/wlan_switch_bar_on.png');
+  });
+  
+  /* 点击设置向导 -> 网络设置 -> 关闭关闭WLAN */
+  $('#wireless-switch-toggle-on').on('click', ()=>{
+	  console.log('点击WLAN 关');
+	  $('#wireless-switch-toggle-on').hide();
+	  $('#wireless-switch-toggle').show();
+	  $('#wireless-wlan-switch-bar').attr('src', '/static/img/wlan_switch_bar.png');
+  });
+
+  /* 点击设置向导 -> 网络设置 -> 自动连接 开*/
+  $('#wireless-info-label-switch').on('click', ()=>{
+    console.log('点击自动连接 开');
+    $('#wireless-info-label-switch').hide();
+    $('#wireless-info-label-switch-on').show();
+    $('#wireless-info-label-bar').attr('src', '/static/img/wlan_switch_bar_on.png');
+  });
+
+  /* 点击设置向导 -> 网络设置 -> 自动连接 关*/
+  $('#wireless-info-label-switch-on').on('click', ()=>{
+    console.log('点击自动连接 关');
+    $('#wireless-info-label-switch-on').hide(); 
+    $('#wireless-info-label-switch').show();
+    $('#wireless-info-label-bar').attr('src', '/static/img/wlan_switch_bar.png');
+  });  
+  
   /* 点击 设置向导 -> 声音设置 */
   $voiceSetup.on('click', ()=>{
     console.log('点击声音设置');
@@ -3277,6 +3396,7 @@ $(document).ready(() => {
     $smartHomeContent.hide();
 	$voiceSetupContent.hide();
   });
+
 
 });
 

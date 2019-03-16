@@ -342,6 +342,14 @@
   top: 15px;
 }
 
+.left-side-text-label-only-one {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  left: 48px;
+  top: -45px;
+}
+
 .left-side-text-label {
   color: white;
   font-size: 20px;
@@ -2031,3 +2039,137 @@ input[type=range]::-moz-range-track {
 .left-two-unit {
   margin-left: 26px;
 }
+
+
+.right-side-left {
+	height: 100%;
+	width: 50%;
+	float: left;
+}
+
+.right-side-right {
+	height: 100%;
+	width: 50%;
+	float: right;
+}
+
+.right-first-block {
+	height: 80px;
+	width: 60%;
+	line-height: 80px;
+	margin-left: 30px;
+}
+
+.right-first-block span {
+	font-size: 20px;
+	color: white;
+}
+
+#wireless-switch-toggle {
+	position: relative;
+	left: -100px;
+}
+
+#wireless-switch-toggle-on {
+	position: relative;
+	left: -40px;	
+}
+
+.right-second-block {
+  height: 100px;
+  width: 90%;
+  margin-left: 30px;
+  margin-top: 10px;  
+
+}
+
+.wireless-connected-label {
+  color: white;
+  font-size: 17px;
+}
+
+.wireless-wlan-icon {
+  position: relative;
+
+}
+
+.wireless-label {
+  font-size: 17px;
+  color: white;
+  margin-left: 10px;
+}
+
+.wireless-label-connected {
+  font-size: 17px;
+  color: green;
+  margin-left: 10px;  
+}
+
+.wireless-password {
+  position: relative;
+  margin-left: 125px;
+}
+
+.wireless-setup-icon {
+  position: relative;
+  margin-left: 35px; 
+}
+
+
+hr {
+  width: 90%;
+  color: grey;
+  size: 20;
+  margin-top: 3px;
+}
+
+.right-third-block {
+  height: 100px;
+  margin-left: 30px;
+  margin-top: 15px;
+}
+
+.wireless-show-info {
+  width: 90%;
+  position: orange;
+  margin-top: 90px;
+
+}
+
+.left-side-rigth-section {
+  height: 30px;
+  width: 80%;
+  margin-top: 13px;
+}
+
+.wireless-info-label {
+  color: white;
+  font-size: 17px;
+}
+
+.wireless-info-label-content {
+  color: white;
+  font-size: 17px;
+  float: right;
+}
+
+#wireless-info-label-bar {
+  float: right;
+
+}
+
+#wireless-info-label-switch {
+  position: relative;
+  left: 184px;
+  margin-top: 3px;
+}
+
+#wireless-info-label-switch-on {
+  position: relative;
+  left: 242px;
+  margin-top: 3px;  
+}
+
+
+
+

@@ -98,7 +98,7 @@
     </div>
 
 	<!-- 智能控制-页面  -->
-    <div class="smart-control-content">
+    <div class="smart-control-content hide">
       <div class="first scene-control">
 				<img src="{{ url_for('static', filename='img/scene-control.png') }}">
       </div>
@@ -157,7 +157,7 @@
 	<!-- 设置向导-页面  -->
 	<div class="set-guide-content hide">
 			<div class="first">
-				<div class="first-one">
+				<div id="set-guide-network-setup" class="first-one">
 					<img src="{{ url_for('static', filename='img/network_setup.png') }}">
 				</div>
 
@@ -1517,6 +1517,111 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- 设置向导 -> 网络设置-页面 -->
+	<div class="network-setup-content">
+		<div class="left-side">
+			<div id="" class="left-side-buttom-one-on">
+
+			</div>
+
+			<div class="left-side-text-label-only-one" id="">
+				<p>网络设置</p>
+			</div>
+		</div>
+
+		<div id="" class="right-side">
+		  <div class="right-side-left">
+		    <div class="right-first-block">
+			    <span>开启WLAN</span>	
+				  <img id="wireless-wlan-switch-bar" src="{{ url_for('static', filename='img/wlan_switch_bar.png') }}" alt="">
+				  <img id="wireless-switch-toggle" src="{{ url_for('static', filename='img/switch_key.png') }}" alt="">
+				  <img class="hide" id="wireless-switch-toggle-on" src="{{ url_for('static', filename='img/switch_key.png') }}" alt="">
+			  </div>	
+			  <div class="right-second-block">
+			  	<span class="wireless-connected-label">链接中的WLAN</span>
+			  	<hr />
+					<div class="">
+						<img class="wireless-wlan-icon" src="{{ url_for('static', filename='img/wifi_strong.png') }}" alt="wifi信号">
+					  <span class="wireless-label-connected">ChinaNet-VV5J</span>
+					  <img class="wireless-password" src="{{ url_for('static', filename='img/wlan_setup.png') }}" alt="wifi信号">	
+					  <img class="wireless-setup-icon" src="{{ url_for('static', filename='img/wlan_setup_icon_on.png') }}" alt="wifi信号">	
+					</div>
+				</div>
+				<div class="right-third-block">
+			  	<span class="wireless-connected-label">获取附近的WLAN</span>
+			  	<hr />
+					<div class="">
+						<img class="wireless-wlan-icon" src="{{ url_for('static', filename='img/wifi_strong.png') }}" alt="wifi信号">
+					  <span class="wireless-label">ChinaNet-VV5J</span>
+					  <img class="wireless-password" src="{{ url_for('static', filename='img/wlan_setup.png') }}" alt="wifi信号">	
+					  <img class="wireless-setup-icon" src="{{ url_for('static', filename='img/wlan_setup_icon_on.png') }}" alt="wifi信号">	
+					</div>
+			  	<hr />
+					<div class="">
+						<img class="wireless-wlan-icon" src="{{ url_for('static', filename='img/wifi_strong.png') }}" alt="wifi信号">
+					  <span class="wireless-label">ChinaNet-VV5J</span>
+					  <img class="wireless-password" src="{{ url_for('static', filename='img/wlan_setup.png') }}" alt="wifi信号">	
+					  <img class="wireless-setup-icon" src="{{ url_for('static', filename='img/wlan_setup_icon_on.png') }}" alt="wifi信号">	
+					</div>
+			  	<hr />
+					<div class="">
+						<img class="wireless-wlan-icon" src="{{ url_for('static', filename='img/wifi_strong.png') }}" alt="wifi信号">
+					  <span class="wireless-label">ChinaNet-VV5J</span>
+					  <img class="wireless-password" src="{{ url_for('static', filename='img/wlan_setup.png') }}" alt="wifi信号">	
+					  <img class="wireless-setup-icon" src="{{ url_for('static', filename='img/wlan_setup_icon_on.png') }}" alt="wifi信号">	
+					</div>													
+				</div>
+		  </div>
+		  <div class="right-side-right">
+		  	<div class="wireless-show-info">
+		  		<div class="left-side-rigth-section">
+			  		<span class="wireless-info-label">自动连接</span>
+					  <img id="wireless-info-label-bar" src="{{ url_for('static', filename='img/wlan_switch_bar.png') }}" alt="">
+					  <img id="wireless-info-label-switch" src="{{ url_for('static', filename='img/switch_key.png') }}" alt="">
+					  <img class="hide" id="wireless-info-label-switch-on" src="{{ url_for('static', filename='img/switch_key.png')}}">	
+			  	</div>
+			  	<div class="left-side-rigth-section">
+			  		<span class="wireless-info-label">状态信息</span>
+			  		<span class="wireless-info-label-content">已连接</span>		
+			  	</div>
+			  	<div class="left-side-rigth-section">
+			  		<span class="wireless-info-label">信号强度</span>
+			  		<span class="wireless-info-label-content">极佳</span>		
+			  	</div>
+			  	<div class="left-side-rigth-section">
+			  		<span class="wireless-info-label">链接速度</span>
+			  		<span class="wireless-info-label-content">144Mbps</span>		
+			  	</div>
+			  	<div class="left-side-rigth-section">
+			  		<span class="wireless-info-label">安全性</span>
+			  		<span class="wireless-info-label-content">WPA/WPA2 PSK</span>		
+			  	</div>	
+			  	<div class="left-side-rigth-section">
+			  		<span class="wireless-info-label">IP地址</span>
+			  		<span class="wireless-info-label-content">192.168.1.10</span>		
+			  	</div>	
+			  	<div class="left-side-rigth-section">
+			  		<span class="wireless-info-label">子网掩码</span>
+			  		<span class="wireless-info-label-content">255.255.255.0</span>		
+			  	</div>	
+			  	<div class="left-side-rigth-section">
+			  		<span class="wireless-info-label">网关地址</span>
+			  		<span class="wireless-info-label-content">192.168.1.1</span>		
+			  	</div>				  				  				  			  				  				  		
+		  	</div>	  	
+		  </div>
+		</div>
+
+		<div class="buttom">
+			<div class="apply">
+				<p>应&nbsp&nbsp&nbsp&nbsp用</p>
+			</div>
+			<div id="network-setup-content-back" class="back">
+				<p>返&nbsp&nbsp&nbsp&nbsp回</p>
+			</div>
+		</div>
+	</div>	
 	
 	<!-- 设置向导 -> 声音设置-页面 -->
 	<div class="voice-setup-content hide">

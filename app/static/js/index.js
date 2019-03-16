@@ -216,6 +216,14 @@ $(document).ready(() => {
   const $sceneManageContentBack = $('#scene-manage-content-back');
   const $sceneManageContent = $('.scene-manage-content');
   
+  
+  /* 设置向导 页面点击事件 */
+  const $voiceSetup = $('.voice-setup');
+  
+  /* 设置向导 -> 声音设置 页面事件 定义 */
+  const $voiceSetupContent = $('.voice-setup-content');
+  const $voiceSetupContentBack = $('#voice-setup-content-back');
+  
   /* 点击智能控制标题 */
   $smartControl.on('click', ()=>{
     $smartControl.hide();
@@ -250,6 +258,7 @@ $(document).ready(() => {
     $freeGroupContent.hide();
     $sceneManageContent.hide();
     $deviceClassficationContent.hide();
+	$voiceSetupContent.hide();
     $smartHomeContent.show();
   });
 
@@ -288,6 +297,7 @@ $(document).ready(() => {
     $sceneManageContent.hide();
     $deviceClassficationContent.hide();
     $smartHomeContent.hide();
+	$voiceSetupContent.hide();
   });
 
   /* 点击设置向导标题 */
@@ -319,6 +329,7 @@ $(document).ready(() => {
     $manageEntryContent.hide();
     $userSetupContent.hide();
     $setGuideContent.show();
+	$voiceSetupContent.hide();
   });
 
   /* 点击其他标题*/
@@ -350,6 +361,7 @@ $(document).ready(() => {
     $setGuideContent.hide();
     $userSetupContent.hide();
     $otherContent.show();
+	$voiceSetupContent.hide();
   });
   
   /* 点击情景控制 -> 情景控制  */
@@ -3184,6 +3196,86 @@ $(document).ready(() => {
   $('#scene-action-one-add1').on('click', ()=>{
     console.log('添加一行');
 
+  });
+  
+  /* 点击 设置向导 -> 声音设置 */
+  $voiceSetup.on('click', ()=>{
+    console.log('点击声音设置');
+    
+	$smartControl.show();
+    $smartControlOn.hide();
+    $manageEntry.show();
+    $manageEntryOn.hide();
+    $setGuide.hide();
+    $setGuideOn.show();
+    $other.show();
+    $otherOn.hide();
+
+    /* 独立控制页面 */
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $deviceManageContent.hide();
+    $manageEntryContent.hide();
+    $setGuideContent.hide();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
+    $userSetupContent.hide();
+    $sceneControlMySceneChildContent.hide();
+    $openWindowMachineContent.hide();
+    $homeManageContent.hide();
+    $freeGroupContent.hide();
+    $sceneManageContent.hide();
+    $deviceClassficationContent.hide();
+    $smartHomeContent.hide();
+	$voiceSetupContent.show();
+  });
+  
+  /* 点击 设置向导 -> 声音设置 -> 返回 */
+  $voiceSetupContentBack.on('click', ()=>{
+    console.log('点击声音设置->返回');
+    
+	$smartControl.show();
+    $smartControlOn.hide();
+    $manageEntry.show();
+    $manageEntryOn.hide();
+    $setGuide.hide();
+    $setGuideOn.show();
+    $other.show();
+    $otherOn.hide();
+
+    /* 独立控制页面 */
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $deviceManageContent.hide();
+    $manageEntryContent.hide();
+    $setGuideContent.show();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
+    $userSetupContent.hide();
+    $sceneControlMySceneChildContent.hide();
+    $openWindowMachineContent.hide();
+    $homeManageContent.hide();
+    $freeGroupContent.hide();
+    $sceneManageContent.hide();
+    $deviceClassficationContent.hide();
+    $smartHomeContent.hide();
+	$voiceSetupContent.hide();
   });
 
 });

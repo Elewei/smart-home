@@ -61,14 +61,10 @@ $(document).ready(() => {
   const $offPlug = $('#off-plug');
   
   
-  
 
   const $sceneControlContent = $('.scene-control-content');
 
 
-  
-
-  const $userSetupContent = $('.user-setup-content');
   const $setGuideUserSetup = $('#set-guide-user-setup');
 
   const $userSetupBasicInfo = $('#user-setup-basic-info');
@@ -226,6 +222,10 @@ $(document).ready(() => {
   /* 设置向导 页面点击事件 */
   const $voiceSetup = $('.voice-setup');
   
+
+  /* 设置向导 -> 页面设置 */
+  const $userSetupContent = $('.user-setup-content');
+
   /* 设置向导 -> 声音设置 页面事件 定义 */
   const $voiceSetupContent = $('.voice-setup-content');
   const $voiceSetupContentBack = $('#voice-setup-content-back');
@@ -264,8 +264,8 @@ $(document).ready(() => {
     $freeGroupContent.hide();
     $sceneManageContent.hide();
     $deviceClassficationContent.hide();
-	$voiceSetupContent.hide();
-	$networkSetupContent.hide();
+	  $voiceSetupContent.hide();
+	  $networkSetupContent.hide();
     $smartHomeContent.show();
   });
 
@@ -1843,11 +1843,11 @@ $(document).ready(() => {
     $other.show();
     $otherOn.hide();
 
-    /* 显示用户设置页面 */
-    /*
+    /* 独立控制页面 */
     $independantControlContent.hide();
     $touchSwitchContent.hide();
     $deviceManageContent.hide();
+    $manageEntryContent.hide();
     $setGuideContent.hide();
     $otherContent.hide();
     $independantControlContent.hide();
@@ -1859,10 +1859,17 @@ $(document).ready(() => {
     $deviceManageContent.hide();
     $sceneControlContent.hide();
     $roomControlContent.hide();
-    $smartHomeContent.hide();
-    $manageEntryContent.hide();
     $userSetupContent.show();
-    */
+    $sceneControlMySceneChildContent.hide();
+    $openWindowMachineContent.hide();
+    $homeManageContent.hide();
+    $freeGroupContent.hide();
+    $sceneManageContent.hide();
+    $deviceClassficationContent.hide();
+    $voiceSetupContent.hide();
+    $networkSetupContent.hide();
+    $smartHomeContent.hide();
+
   });
 
   /* 点击返回 -> 情景控制 主界面 */
@@ -3361,7 +3368,7 @@ $(document).ready(() => {
   $voiceSetupContentBack.on('click', ()=>{
     console.log('点击声音设置->返回');
     
-	$smartControl.show();
+	  $smartControl.show();
     $smartControlOn.hide();
     $manageEntry.show();
     $manageEntryOn.hide();
@@ -3394,7 +3401,47 @@ $(document).ready(() => {
     $sceneManageContent.hide();
     $deviceClassficationContent.hide();
     $smartHomeContent.hide();
-	$voiceSetupContent.hide();
+	  $voiceSetupContent.hide();
+  });
+
+
+  $('#user-setup-content-back').on('click', ()=>{
+    console.log('点击用户设置->返回');
+    
+    $smartControl.show();
+    $smartControlOn.hide();
+    $manageEntry.show();
+    $manageEntryOn.hide();
+    $setGuide.hide();
+    $setGuideOn.show();
+    $other.show();
+    $otherOn.hide();
+
+    /* 独立控制页面 */
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $deviceManageContent.hide();
+    $manageEntryContent.hide();
+    $setGuideContent.show();
+    $otherContent.hide();
+    $independantControlContent.hide();
+    $touchSwitchContent.hide();
+    $smartPlugContent.hide();
+    $smartCurtainContent.hide();
+    $dimmingLampContent.hide();
+    $airBoxContent.hide();
+    $deviceManageContent.hide();
+    $sceneControlContent.hide();
+    $roomControlContent.hide();
+    $userSetupContent.hide();
+    $sceneControlMySceneChildContent.hide();
+    $openWindowMachineContent.hide();
+    $homeManageContent.hide();
+    $freeGroupContent.hide();
+    $sceneManageContent.hide();
+    $deviceClassficationContent.hide();
+    $smartHomeContent.hide();
+    $voiceSetupContent.hide();
   });
 
 

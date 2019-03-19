@@ -1615,7 +1615,6 @@ input[type=range]::-moz-range-track {
 }
 
 
-
 #dimming-lamp-left-side-text {
 
 }
@@ -2170,6 +2169,32 @@ hr {
   margin-top: 3px;  
 }
 
+#user-setup-basic-info-text {
+  position: relative;
+  top: -140px;
+}
+
+#user-setup-change-passwd-text {
+  position: relative;
+  top: -140px;  
+}
+
+.user-setup-avator-setup {
+  margin-left:  20px;
+  margin-top: 20px;
+}
+
+.user-setup-avator-label {
+  font-size: 20px;
+  color: white;
+}
+
+.setup-user-avator {
+  width: 80px;
+  height: 80px;
+  margin-left: 20px;
+  border-radius: 100%;
+}
 
 
 

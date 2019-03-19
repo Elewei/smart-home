@@ -55,7 +55,7 @@
 	</div>
 
 	<!-- 第二栏  -->
-    <div class="header">
+  <div class="header">
 		<!-- 智能控制（未点击）  -->
 		<div class="smart-control hide">
 			<img src="{{ url_for('static', filename='img/smart_control.png') }}">
@@ -98,7 +98,7 @@
     </div>
 
 	<!-- 智能控制-页面  -->
-    <div class="smart-control-content hide">
+  <div class="smart-control-content">
       <div class="first scene-control">
 				<img src="{{ url_for('static', filename='img/scene-control.png') }}">
       </div>
@@ -122,7 +122,7 @@
       <div class="fourth home-monitor">
 				<img src="{{ url_for('static', filename='img/home-monitor.png') }}">
       </div>
-    </div>
+  </div>
 
 	<!-- 管理入口-页面  -->
 	<div class="manage-entry-content hide">
@@ -153,7 +153,6 @@
 				<img src="{{ url_for('static', filename='img/free_group.png') }}">
 			</div>
 	</div>
-
 	<!-- 设置向导-页面  -->
 	<div class="set-guide-content hide">
 			<div class="first">
@@ -220,7 +219,6 @@
 				</div>
 			</div>
 	</div>
-
 	<!-- 智能控制->情景控制-页面 -->
 	<div class="scene-control-content hide">
 		<div class="left-side">
@@ -1171,33 +1169,27 @@
 
 		<div class="right-side">
 			<div class="switch-board">
-				<div class="smart-plug-bar">
-					<div class="smart-plug-img">
-						<img src="" alt="">
-					</div>
-					<div class="smart-plug-toggle">
-						<img src="" alt="">
-					</div>
-					<div class="smart-plug-on hide">
-
-					</div>
-					<div class="smart-plug-off">
-
-					</div>
+				<div class="user-setup-avator-setup">
+					<span class="user-setup-avator-label">头像设置</span>
+					<img class="setup-user-avator" src="{{ url_for('static', filename='img/avator.png') }}" alt="头像">	
 				</div>
+				<div class="change-nick-name">
+					<span class="change-nick-label">修改昵称</span>
+					<input type="" name="">	
+				</div>
+				
 			</div>
 
 			<div class="video">
 
 			</div>
-			<p>演示动画</p>
 		</div>
 
 		<div class="buttom">
 			<div class="apply">
 				<p>应用</p>
 			</div>
-			<div class="back">
+			<div id="user-setup-content-back" class="back">
 				<p>返回</p>
 			</div>
 		</div>
@@ -1519,7 +1511,7 @@
 	</div>
 	
 	<!-- 设置向导 -> 网络设置-页面 -->
-	<div class="network-setup-content">
+	<div class="network-setup-content hide">
 		<div class="left-side">
 			<div id="" class="left-side-buttom-one-on">
 

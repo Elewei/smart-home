@@ -48,7 +48,7 @@
 			</div>
 
 			<div class="weather_img">
-				<img src="{{ url_for('static', filename='img/weather/sunny.png') }}" alt="天气图标">
+				<img id="weatherPic" src="{{ url_for('static', filename='img/weather/sunny.png') }}" alt="天气图标">
 			</div>
 
 			<!-- ToDo: 如果已经登录，显示退出 -->
@@ -1649,9 +1649,10 @@
 {% block script %}
   <script src="{{ url_for('static', filename='js/index.js') }}"></script>
   <script src="{{ url_for('static', filename='js/chinatime.js') }}"></script>
-	<script type=text/javascript>
+  <script src="{{ url_for('static', filename='js/weather.js') }}"></script>
+  <script type=text/javascript>
   	$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
 
 
-	</script>
+  </script>
 {% endblock %}

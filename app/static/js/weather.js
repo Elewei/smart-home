@@ -1,4 +1,8 @@
 
+/*
+  获取天气信息
+
+*/
 
 
 function get_weather_info() {
@@ -12,6 +16,7 @@ function get_weather_info() {
     complete: function () { console.log("获取天气数据完成") },
     success: function (data) {
       console.log(data);
+      
       let currentCity = data.HeWeather6[0].basic.location;
       let currentTmp = data.HeWeather6[0].now.tmp + '℃';
       let currentWeather = data.HeWeather6[0].now.cond_txt;
@@ -22,10 +27,14 @@ function get_weather_info() {
 	  console.log(currentCity);
 	  console.log(currentWeatherPic);
 	  
+	  
 	  document.getElementById("wendu").innerText = currentTmp;
 	  document.getElementById("tianqi").innerText = currentWeather;
 	  document.getElementById("city").innerText = currentCity;
-	  //document.getElementById("weatherPic").innerText = currentWeatherPic;      
+	  //document.getElementById("weatherPic").innerText = currentWeatherPic;  
+	  let weatherPicPath = '/static/img/heweather/' + currentWeatherPic + '.png';
+	  console.log(weatherPicPath);
+	  $('#weatherPic').attr("src",weatherPicPath);    
     }
   });
 
@@ -35,6 +44,4 @@ function get_weather_info() {
 
 
 
-
-
-//window.onload = get_weather_info;
+addLoadEvent(get_weather_info);

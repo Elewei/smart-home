@@ -144,4 +144,5 @@ function shapetime(h, m, s) {
 	return h + ":" + m + ":" + s
 }
 
-window.onload = showDate;
+
+addLoadEvent(showDate);
